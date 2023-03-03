@@ -1,0 +1,157 @@
+openapi: 3.0.0
+info:
+  title: Hendelsesmottak for Produksjonsplassregister
+  description: API for å kunne sende endringer av produksjonsplasser inn i produksjonsplassregisteret. Dette APIet er inngangen
+    for endringer som rapporteres av MATS-endrings-service.
+  version: 0.0.1
+servers:
+  - url: http://localhost:8080
+    description: For å teste lokalt på maskinen din
+
+security:
+  - BasicAuth: [ ]
+
+paths:
+  /produksjonsplassEndring:
+    post:
+      summary: Endepunkt for å ta imot endringer på en produksjonsplass
+      description: Mottar endringer på en produksjonsplass og oppretter eller oppdaterer en produksjonsplass
+      requestBody:
+        description: Endring på en produksjonsplass
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ProduksjonsplassEndring"
+      responses:
+        '201':
+          description: Created new produksjonsplass
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: 12345
+        '204':
+          description: Updated produksjonsplass successfully
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: 12345
+  /produksjonsplassEndring/{kildeRef}:
+    delete:
+      summary: Sletter en produksjonsplass med angitt kildeRef
+      parameters:
+        - in: path
+          name: kildeRef
+          schema:
+            type: integer
+          required: true
+          description: Referanse til produksjonsplassen som skal slettet
+      responses:
+        '200':
+          description: Slettet ok
+        '401':
+          description: Finner ikke kildereferansen
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: 12345
+
+
+components:
+  securitySchemes:
+    BasicAuth:
+      type: http
+      scheme: basic
+  schemas:
+    ProduksjonsplassEndring:
+      type: object
+      properties:
+        kildeRef:
+          type: integer
+          format: int64
+          example: 12343212343
+          description: Referanse til denne produksjonsplassen i kildesystemet
+        kilde:
+          type: string
+          example: MATS
+          description: Kodeverksverdi for kildesystem
+        lokasjoner:
+          type: array
+          items:
+            $ref: "#/components/schemas/Lokasjon"
+          description: Liste over lokasjoner knyttet mot produksjonsplassen
+        driftsansvarlige:
+          type: array
+          items:
+            $ref: "#/components/schemas/Driftsansvarlig"
+          description: Liste over driftsansvarlige knyttet mot produksjonsplassen
+        arter:
+          type: array
+          items:
+            $ref: "#/components/schemas/Art"
+          description: Liste over arter som holdes på lokasjonen
+        aktivitet:
+          type: string
+          enum: [FJORFEHOLD, STORFEHOLD]
+          example: FJORFEHOLD
+          description: Beskrivelse av aktiviteten driftsansvarlig er ansvarlig for
+        naeringstype:
+          type: string
+          enum: [NARINGSRETTET, SMASKALA, HOBBY]
+          example: HOBBY
+          description: Næringstyper som beskrevet i Miroboardet Fjørfe verdikjeder
+    Art:
+      type: object
+      properties:
+        artstype:
+          type: string
+          enum: [HONS, AND, GJESS]
+          example: HONS
+          description: Kodeverk for hvilke arter som er tilatt.
+        antall:
+          type: integer
+          example: 23
+
+    Lokasjon:
+      type: object
+      properties:
+        kildeRef:
+          type: string
+          example: 124
+          description: En referanse til akkurat denne lokasjonen i kildesystemet
+        geom:
+          type: string
+          example: POINT(-71.064543 42.28787)
+          description: Koordinater som beskriver et polygon som beskriver lokasjonen
+    Driftsansvarlig:
+      type: object
+      properties:
+        matsTilsynsobjektId:
+          type: string
+          example: Z010101000000ABCDE_Tilsynsobjekt
+          description: En referanse til driftsansvarlig for aktiviteten i MATS
+
+
+  responses:
+    400Error:
+      description: Invalid request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+
+    500Error:
+      description: Internal server error
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
