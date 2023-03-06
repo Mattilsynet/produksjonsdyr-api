@@ -22,7 +22,7 @@ properties:
   masterID:
     type: string
     description: Kildens identitet på objektet
-  masterdataURL:
+  masterDataURL:
     type: string
     enum:
       - no.mattilsynet.mats.virksomhetsmappe.punkt
@@ -32,14 +32,18 @@ properties:
       - no.mattilsynet.fme.fkb_bygning
       - no.mattilsynet.fme.teig
     description: Et begrenset sett med kilder til stedsdefinisjon
+    x-stoplight:
+      id: p79t3bcphq18a
+  masterTidspunkt:
+    type: string
+    format: date-time
+    description: Kildens dato-tids stempel på endringen
+    x-stoplight:
+      id: 4qiq0o037zk9y
   hentetTidspunkt:
     type: string
     format: date-time
     description: Vår dato-tidsstempel for innlesing av endringen
-  kildeTidspunkt:
-    type: string
-    format: date-time
-    description: Kildens dato-tids stempel på endringen
   arkivert:
     type: boolean
     default: false
@@ -64,5 +68,5 @@ required:
   - stedID
   - geom
   - masterID
-  - masterdataURL
+  - masterDataURL
   - hentetTidspunkt
