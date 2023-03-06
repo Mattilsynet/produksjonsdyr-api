@@ -1,0 +1,36 @@
+title: Helsestatus
+x-stoplight:
+  id: uiatlq70d3imm
+type: object
+examples:
+  - helsestatusID: 0
+    harViDetBra: Det går likar no
+    stederRef:
+      - 0
+    aktiviteterRef:
+      - 0
+x-internal: false
+x-tags:
+  - Helsestatus
+properties:
+  helsestatusID:
+    type: integer
+    format: int64
+    minimum: 0
+  harViDetBra:
+    type: string
+    default: Det går likar no
+  stederRef:
+    type: array
+    items:
+      type: integer
+      format: int64
+      minimum: 0
+  aktiviteterRef:
+    type: array
+    items:
+      type: integer
+      format: int64
+      minimum: 0
+required:
+  - helsestatusID

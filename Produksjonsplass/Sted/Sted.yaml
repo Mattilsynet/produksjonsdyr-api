@@ -1,0 +1,65 @@
+title: Sted
+x-stoplight:
+  id: morx0jrcxj7st
+type: object
+examples:
+  - stedID: 0
+    geom: string
+    kildeID: string
+    kildeURL: no.mattilsynet.mats.virksomhetsmappe.punkt
+    hentetTidspunkt: '2019-08-24T14:15:22Z'
+    kildeTidspunkt: '2019-08-24T14:15:22Z'
+    arkivert: false
+x-tags:
+  - Sted
+properties:
+  stedID:
+    type: integer
+    format: int64
+    minimum: 0
+  geom:
+    type: string
+  masterID:
+    type: string
+    description: Kildens identitet på objektet
+  masterdataURL:
+    type: string
+    enum:
+      - no.mattilsynet.mats.virksomhetsmappe.punkt
+      - no.mattilsynet.mats.tilsynsobjekt.punkt
+      - no.kartverket.matrikkelen.teig
+      - no.kartverket.matrikkelen.fkb_bygning
+      - no.mattilsynet.fme.fkb_bygning
+      - no.mattilsynet.fme.teig
+    description: Et begrenset sett med kilder til stedsdefinisjon
+  hentetTidspunkt:
+    type: string
+    format: date-time
+    description: Vår dato-tidsstempel for innlesing av endringen
+  kildeTidspunkt:
+    type: string
+    format: date-time
+    description: Kildens dato-tids stempel på endringen
+  arkivert:
+    type: boolean
+    default: false
+  steddefinisjonkategori:
+    type: string
+    enum:
+      - senterpunkt
+      - omriss
+      - besøkspunkt
+      - ellernoelignende
+    description: Vi har behov for å beskrive stedet på forskjellige måter
+  kildesystem:
+    type: string
+    enum:
+      - mats
+      - fme
+    description: systemet som har tilordnet egenskapen
+required:
+  - stedID
+  - geom
+  - masterID
+  - masterdataURL
+  - hentetTidspunkt

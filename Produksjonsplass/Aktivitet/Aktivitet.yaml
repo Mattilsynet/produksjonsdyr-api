@@ -1,0 +1,55 @@
+title: Aktivitet
+x-stoplight:
+  id: 4yg1anlq7jkfg
+type: object
+description: Beskrivelse av en aktivitet som drives på produksjonsplassen
+examples:
+  - aktivitetID: 0
+    matsTilsynsobjektID: string
+    registreringsDatoAktivitet: '2019-08-24'
+    opphørsDatoAktivitet: '2019-08-24'
+    kategori:
+      kategori: FUGLER
+      aktivitetstype:
+        aktivitetstypeFugler: RUGEEGG
+      verdikjede:
+        verdikjedeFugler: KONSUMEGG
+    antallTilHensikt:
+      artsMengdeID: 0
+      fraDato: '2019-08-24'
+      tilDato: '2019-08-24'
+      mengde:
+        - dyreGruppering:
+            fugleArt: HONS
+          antall: 1
+    stedsRef:
+      - 0
+x-tags:
+  - Aktivitet
+properties:
+  aktivitetID:
+    type: integer
+    format: int64
+    minimum: 0
+  matsTilsynsobjektID:
+    type: string
+  registreringsDatoAktivitet:
+    type: string
+    format: date
+  opphørsDatoAktivitet:
+    type: string
+    format: date
+  kategori:
+    $ref: ./Kategori/Kategori.yaml
+  antallTilHensikt:
+    $ref: ./MengdeDyr/ArtsMengde.yaml
+  stedsRef:
+    type: array
+    items:
+      type: integer
+      format: int64
+      minimum: 0
+required:
+  - aktivitetID
+  - registreringsDatoAktivitet
+  - kategori

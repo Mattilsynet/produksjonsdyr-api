@@ -1,0 +1,14 @@
+title: HestedyrArter
+x-stoplight:
+  id: wmnqxfptbvlpe
+type: object
+description: Relevante arter i kategorien "Hestedyr"
+properties:
+  hestedyrArt:
+    type: string
+    enum:
+      - HEST
+examples:
+  - hestedyrArt: HEST
+x-tags:
+  - Art

@@ -1,0 +1,38 @@
+title: Kategori
+x-stoplight:
+  id: 1awzgw0y9hp4i
+type: object
+description: 'Anleggets kategori med under typene "aktivitetstype" og "verdikjede" som skal kunne beskrive hvordan '
+examples:
+  - kategori: FUGLER
+    aktivitetstype:
+      aktivitetstypeFugler: RUGEEGG
+    verdikjede:
+      verdikjedeFugler: KONSUMEGG
+x-tags:
+  - Aktivitet
+properties:
+  kategori:
+    type: string
+    enum:
+      - FUGLER
+      - SVIN
+      - SAU
+      - GEIT
+      - STORFE
+      - KAMELDYR
+      - HESTEDYR
+      - BIER
+      - HUMLER
+  aktivitetstype:
+    oneOf:
+      - $ref: ../Aktivitetstyper/AktivitetstypeFugler.yaml
+      - $ref: ../Aktivitetstyper/AktivitetstypeStorfe.yaml
+  verdikjede:
+    oneOf:
+      - $ref: ../Verdikjeder/verdikjederFugler.yaml
+      - $ref: ../Verdikjeder/verdikjederStorfe.yaml
+required:
+  - kategori
+  - aktivitetstype
+  - verdikjede

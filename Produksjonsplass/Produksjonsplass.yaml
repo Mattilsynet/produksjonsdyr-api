@@ -1,0 +1,117 @@
+title: Produksjonsplass
+x-stoplight:
+  id: 2kbtfhqicbasr
+type: object
+description: 'Det offisielle, og eksternt kommuniserte, nivået for anlegg med ID'
+examples:
+  - produksjonsplassID: 10000000
+    anleggsType: DYREHOLD
+    aktiv: true
+    aktiviteter:
+      - aktivitetID: 0
+        matsTilsynsobjektID: string
+        registreringsDatoAktivitet: '2019-08-24'
+        opphørsDatoAktivitet: '2019-08-24'
+        kategori:
+          kategori: FUGLER
+          aktivitetstype:
+            aktivitetstypeFugler: RUGEEGG
+          verdikjede:
+            verdikjedeFugler: KONSUMEGG
+        antallTilHensikt:
+          artsMengdeID: 0
+          fraDato: '2019-08-24'
+          tilDato: '2019-08-24'
+          mengde:
+            - dyreGruppering:
+                fugleArt: HONS
+              antall: 1
+        stedsRef:
+          - 0
+    steder:
+      - stedID: 0
+        geom: string
+        kildeID: string
+        kildeURL: no.mattilsynet.mats.virksomhetsmappe.punkt
+        hentetTidspunkt: '2019-08-24T14:15:22Z'
+        kildeTidspunkt: '2019-08-24T14:15:22Z'
+        arkivert: false
+    helsestatus:
+      - helsestatusID: 0
+        harViDetBra: Det går likar no
+        stederRef:
+          - 0
+        aktiviteterRef:
+          - 0
+    aktorer:
+      - aktorID: 0
+        produsentnummerP10: 1234567890
+        rolle: Driftsansvarlig
+        kanEditereGjeldendeAnlegg: true
+        matsPersonId: string
+        orgnummerVirksomhet: string
+        orgnummerForetak: string
+        aktiviteterRef:
+          - 0
+    anleggMetadata:
+      - kapasitet:
+          artsMengdeID: 0
+          fraDato: '2019-08-24'
+          tilDato: '2019-08-24'
+          mengde:
+            - dyreGruppering:
+                fugleArt: HONS
+              antall: 1
+        adresseTekst: string
+        adresseIdMatrikkel: string
+        beskrivelse: string
+        navn: string
+x-internal: false
+x-tags:
+  - Anlegg
+properties:
+  produksjonsplassID:
+    type: integer
+    description: 'Sekundær ID som tildeles alle anlegg i henhold til AHL. skal brukes ved merking av dyr når det brukes "anleggets unike nummer" EU 2016/429, og på transportdokumenter'
+    format: int64
+    minimum: 10000000
+    maximum: 99999999
+  anleggsType:
+    type: string
+    enum:
+      - DYREHOLD
+      - AVLSMATERIALE
+      - BIPRODUKTER
+      - UTSTILLING
+      - FORSØKSDYR
+      - SLAKTERI
+    description: Ett anlegg kan bare ha en type. Ved behov for flere typer må det opprettes nye anlegg som kan fysisk overlappe andre anlegg
+  aktiv:
+    type: boolean
+    description: 'Forretningsregelen er noe uklar, men vi må kunne representere anlegg som ikke lengre er operative'
+    default: true
+  aktiviteter:
+    type: array
+    items:
+      $ref: ./Aktivitet/Aktivitet.yaml
+  steder:
+    type: array
+    items:
+      $ref: ./Sted/Sted.yaml
+  helsestatus:
+    type: array
+    items:
+      $ref: ./Helsestatus/Helsestatus.yaml
+  aktorer:
+    type: array
+    items:
+      $ref: ./Aktor/Aktor.yaml
+  anleggMetadata:
+    type: array
+    items:
+      $ref: ./AnleggMetadata/AnleggMetadata.yaml
+required:
+  - produksjonsplassID
+  - anleggsType
+  - aktiv
+  - anleggMetadata
