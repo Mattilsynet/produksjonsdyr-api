@@ -51,12 +51,15 @@ properties:
       - besøkspunkt
       - ellernoelignende
     description: Vi har behov for å beskrive stedet på forskjellige måter
-  kildesystem:
+  behandlendeSystem:
     type: string
+    description: behandlendeSystem har tilordnet egenskapen til anlegget
+    x-stoplight:
+      id: 1jbwoxe9ahqow
     enum:
       - mats
       - fme
-    description: systemet som har tilordnet egenskapen
+      - skjema
 required:
   - stedID
   - geom
