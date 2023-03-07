@@ -4,7 +4,7 @@ info:
   description: API for å kunne sende endringer av produksjonsplasser inn i produksjonsplassregisteret.
   version: 0.0.2
 servers:
-  - url: http://localhost:8080
+  - url: {server}
     description: For å teste lokalt på maskinen din
 
 security:
