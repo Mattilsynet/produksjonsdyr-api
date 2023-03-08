@@ -9,7 +9,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
     - name: validate openapi-specs
-      uses: mbowman100/swagger-validator-action@2.0
+      uses: mbowman100/swagger-validator-action@master
       with:
         files: |
           openapi-endringsservice.json
