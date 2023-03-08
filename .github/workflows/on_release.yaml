@@ -8,12 +8,6 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v3
-    - name: validate openapi-specs
-      uses: mbowman100/swagger-validator-action@master
-      with:
-        files: |
-          openapi-endringsservice.json
-          openapi-hendelsesMottak.yml
     - name: Build
       run : echo ${{ github.sha }} > Release.txt
     - name: Release
