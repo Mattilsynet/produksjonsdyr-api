@@ -1,5 +1,4 @@
 name: Main
-description: Build and publish the release
 
 on: push
 
