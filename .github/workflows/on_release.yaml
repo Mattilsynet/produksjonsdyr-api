@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@3.3.0
     - name: validate openapi-specs
       uses: mbowman100/swagger-validator-action@v2.0
       with:
