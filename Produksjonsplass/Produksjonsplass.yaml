@@ -85,7 +85,7 @@ properties:
       - UTSTILLING
       - FORSØKSDYR
       - SLAKTERI
-      - SKYGGE      
+      - SKYGGE
     description: Ett anlegg kan bare ha en type. Ved behov for flere typer må det opprettes nye anlegg som kan fysisk overlappe andre anlegg
   aktiv:
     type: boolean
@@ -111,8 +111,3 @@ properties:
     type: array
     items:
       $ref: ./AnleggMetadata/AnleggMetadata.yaml
-required:
-  - produksjonsplassID
-  - anleggsType
-  - aktiv
-  - anleggMetadata

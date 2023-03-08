@@ -45,6 +45,7 @@ properties:
     $ref: ./MengdeDyr/ArtsMengde.yaml
   stedsRef:
     type: array
+    description: Skal referere til en stedID
     items:
       type: integer
       format: int64
