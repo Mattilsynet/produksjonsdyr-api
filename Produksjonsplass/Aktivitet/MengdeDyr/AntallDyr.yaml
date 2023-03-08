@@ -1,0 +1,29 @@
+title: AntallDyr
+x-stoplight:
+  id: niibv1k0husmo
+type: object
+x-tags:
+  - Art
+description: Beskrivelse av dyregruppe/art og antall
+examples:
+  - dyreGruppering:
+      fugleArt: HONS
+    antall: 1
+properties:
+  dyreGruppering:
+    oneOf:
+      - $ref: ./Arter/FugleArter.yaml
+      - $ref: ./Arter/SaueArter.yaml
+      - $ref: ./Arter/SvineArter.yaml
+      - $ref: ./Arter/GeiteArter.yaml
+      - $ref: ./Arter/StorfeArter.yaml
+      - $ref: ./Arter/KameldyrArter.yaml
+      - $ref: ./Arter/BierArter.yaml
+      - $ref: ./Arter/HumlerArter.yaml
+  antall:
+    type: integer
+    minimum: 1
+    maximum: 1000000
+required:
+  - dyreGruppering
+  - antall

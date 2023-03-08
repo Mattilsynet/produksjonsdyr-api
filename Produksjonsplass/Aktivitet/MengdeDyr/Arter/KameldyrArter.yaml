@@ -1,0 +1,14 @@
+title: KameldyrArter
+x-stoplight:
+  id: sj2zg5qfw7xdz
+type: object
+description: Relevante arter i kategorien "Kameldyr"
+properties:
+  kameldyrArt:
+    type: string
+    enum:
+      - KAMELDYR
+x-tags:
+  - Art
+examples:
+  - kameldyrArt: KAMELDYR

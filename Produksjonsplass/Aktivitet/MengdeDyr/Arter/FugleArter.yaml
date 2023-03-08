@@ -1,0 +1,26 @@
+title: FugleArter
+x-stoplight:
+  id: 64p8czox276id
+type: object
+description: Relevante arter i kategorien "Fugler"
+examples:
+  - fugleArt: HONS
+properties:
+  fugleArt:
+    type: string
+    enum:
+      - HONS
+      - KALKUN
+      - GJESS
+      - RAPPHONS
+      - VAKTLER
+      - FASANER
+      - PERLEHONS
+      - DUER
+      - STRUTSEFUGLER
+      - ENDER
+    example: HONS
+required:
+  - fugleArt
+x-tags:
+  - Art
