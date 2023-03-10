@@ -28,6 +28,7 @@ examples:
               antall: 1
         stedsRef:
           - 0
+          -
     steder:
       - stedID: 0
         geom: string
