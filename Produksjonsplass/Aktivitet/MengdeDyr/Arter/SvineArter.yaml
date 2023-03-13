@@ -3,12 +3,21 @@ x-stoplight:
   id: asauqkk1rlni3
 type: object
 description: Relevante arter i kategorien "Svin"
+examples:
+  - svinArt: SVIN
+    antall: 0
+x-tags:
+  - Art
 properties:
   svinArt:
     type: string
     enum:
       - SVIN
-examples:
-  - svinArt: SVIN
-x-tags:
-  - Art
+  antall:
+    type: integer
+    x-stoplight:
+      id: ib80e9qasjbud
+    format: int64
+required:
+  - svinArt
+  - antall

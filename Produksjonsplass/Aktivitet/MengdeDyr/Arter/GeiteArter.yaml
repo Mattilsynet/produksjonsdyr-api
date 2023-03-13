@@ -3,12 +3,21 @@ x-stoplight:
   id: ry72cqekdqql4
 type: object
 description: Relevante arter i kategorien "Geit"
+examples:
+  - geitArt: GEIT
+    antall: 0
+x-tags:
+  - Art
 properties:
   geitArt:
     type: string
     enum:
       - GEIT
-examples:
-  - geitArt: GEIT
-x-tags:
-  - Art
+  antall:
+    type: integer
+    x-stoplight:
+      id: rcwbuhcjg3knt
+    format: int64
+required:
+  - geitArt
+  - antall

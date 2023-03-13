@@ -1,0 +1,16 @@
+title: NullArter
+x-stoplight:
+  id: fzkgd6bz6bb5a
+x-tags:
+  - Art
+type: object
+description: Må benyttes når det skal angis ingen dyr
+properties:
+  id:
+    type: string
+    enum:
+      - IngenDyr
+required:
+  - id
+examples:
+  - id: IngenDyr

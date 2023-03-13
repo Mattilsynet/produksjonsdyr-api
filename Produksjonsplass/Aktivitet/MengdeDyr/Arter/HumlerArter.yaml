@@ -5,6 +5,7 @@ type: object
 description: Relevante arter i kategorien "Humler"
 examples:
   - humleArt: HUMLE
+    antall: 0
 x-tags:
   - Art
 properties:
@@ -12,3 +13,11 @@ properties:
     type: string
     enum:
       - HUMLE
+  antall:
+    type: integer
+    x-stoplight:
+      id: 9czbblxvc7p3q
+    format: int64
+required:
+  - humleArt
+  - antall

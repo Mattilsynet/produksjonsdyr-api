@@ -5,6 +5,7 @@ type: object
 description: Relevante arter i kategorien "Bier"
 examples:
   - bieArt: BIER
+    antall: 0
 x-tags:
   - Art
 properties:
@@ -12,3 +13,11 @@ properties:
     type: string
     enum:
       - BIER
+  antall:
+    type: integer
+    x-stoplight:
+      id: 505xqaz4hpmrg
+    format: int64
+required:
+  - bieArt
+  - antall

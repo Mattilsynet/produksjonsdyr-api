@@ -8,7 +8,7 @@ description: Beskrivelse av dyregruppe/art og antall
 examples:
   - dyreGruppering:
       fugleArt: HONS
-    antall: 1
+      antall: 2700
 properties:
   dyreGruppering:
     oneOf:
@@ -20,10 +20,8 @@ properties:
       - $ref: ./Arter/KameldyrArter.yaml
       - $ref: ./Arter/BierArter.yaml
       - $ref: ./Arter/HumlerArter.yaml
-  antall:
-    type: integer
-    minimum: 1
-    maximum: 1000000
+      - $ref: ./Arter/NullArter.yaml
+        x-stoplight:
+          id: udb4tognr99lo
 required:
   - dyreGruppering
-  - antall

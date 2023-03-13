@@ -3,12 +3,21 @@ x-stoplight:
   id: rtqryaif3syxc
 type: object
 description: Relevante arter i kategorien "Sau"
+examples:
+  - sauArt: SAU
+    antall: 0
+x-tags:
+  - Art
 properties:
   sauArt:
     type: string
     enum:
       - SAU
-examples:
-  - sauArt: SAU
-x-tags:
-  - Art
+  antall:
+    type: integer
+    x-stoplight:
+      id: fzvv37hny8wtm
+    format: int64
+required:
+  - sauArt
+  - antall

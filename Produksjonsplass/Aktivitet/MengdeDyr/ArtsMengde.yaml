@@ -12,7 +12,7 @@ examples:
     mengde:
       - dyreGruppering:
           fugleArt: HONS
-        antall: 1
+          antall: 2700
 properties:
   artsMengdeID:
     type: integer
@@ -33,3 +33,4 @@ properties:
 required:
   - artsMengdeID
   - fraDato
+  - mengde
