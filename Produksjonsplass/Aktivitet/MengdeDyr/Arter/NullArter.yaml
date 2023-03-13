@@ -5,12 +5,14 @@ x-tags:
   - Art
 type: object
 description: Må benyttes når det skal angis ingen dyr
+examples:
+  - id: IngenDyr
 properties:
-  id:
+  nullArt:
     type: string
     enum:
       - IngenDyr
+    x-stoplight:
+      id: 9d008b0qhz764
 required:
-  - id
-examples:
-  - id: IngenDyr
+  - nullArt
