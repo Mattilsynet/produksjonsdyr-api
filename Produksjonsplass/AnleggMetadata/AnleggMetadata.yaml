@@ -5,17 +5,6 @@ type: object
 x-tags:
   - Anlegg
 description: Mer stabile egenskaper ved anlegget. Kapasitet til eks
-properties:
-  kapasitet:
-    $ref: ../Aktivitet/MengdeDyr/ArtsMengde.yaml
-  adresseTekst:
-    type: string
-  adresseIdMatrikkel:
-    type: string
-  beskrivelse:
-    type: string
-  navn:
-    type: string
 examples:
   - kapasitet:
       artsMengdeID: 0
@@ -29,3 +18,14 @@ examples:
     adresseIdMatrikkel: string
     beskrivelse: string
     navn: string
+properties:
+  kapasitet:
+    $ref: ../Aktivitet/MengdeDyr/AntallTilHensikt.yaml
+  adresseTekst:
+    type: string
+  adresseIdMatrikkel:
+    type: string
+  beskrivelse:
+    type: string
+  navn:
+    type: string
