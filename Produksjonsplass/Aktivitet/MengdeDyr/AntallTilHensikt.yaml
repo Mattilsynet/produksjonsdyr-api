@@ -29,6 +29,9 @@ properties:
           - $ref: ./Arter/FugleArter.yaml
             x-stoplight:
               id: l2rb274nj1hcz
+          - $ref: ./Arter/SaueArter.yaml
+            x-stoplight:
+              id: azilko5jhb00v
       antall:
         type: integer
         x-stoplight:
