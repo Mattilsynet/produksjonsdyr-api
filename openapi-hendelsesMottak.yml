@@ -29,14 +29,14 @@ paths:
             text/plain:
               schema:
                 type: string
-                example: 12345
+                example: "12345"
         '204':
           description: Updated produksjonsplass successfully
           content:
             text/plain:
               schema:
                 type: string
-                example: 12345
+                example: "12345"
 
 
 components:
