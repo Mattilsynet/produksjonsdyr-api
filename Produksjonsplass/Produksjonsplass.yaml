@@ -28,6 +28,7 @@ examples:
               antall: 1
         stedsRef:
           - 0
+          -
     steder:
       - stedID: 0
         geom: string
@@ -111,8 +112,3 @@ properties:
     type: array
     items:
       $ref: ./AnleggMetadata/AnleggMetadata.yaml
-required:
-  - produksjonsplassID
-  - anleggsType
-  - aktiv
-  - anleggMetadata
