@@ -5,6 +5,9 @@ type: object
 description: Relevante arter i kategorien "Fugler"
 examples:
   - fugleArt: HONS
+    antall: 1700
+x-tags:
+  - Art
 properties:
   fugleArt:
     type: string
@@ -20,5 +23,12 @@ properties:
       - STRUTSEFUGLER
       - ENDER
     example: HONS
-x-tags:
-  - Art
+  antall:
+    type: integer
+    x-stoplight:
+      id: pw21bdakmfybx
+    format: int64
+    minimum: 1
+required:
+  - fugleArt
+  - antall

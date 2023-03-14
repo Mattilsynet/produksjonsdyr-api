@@ -30,8 +30,8 @@ properties:
       - $ref: ../Aktivitetstyper/AktivitetstypeStorfe.yaml
   verdikjede:
     oneOf:
-      - $ref: ../Verdikjeder/verdikjederFugler.yaml
-      - $ref: ../Verdikjeder/verdikjederStorfe.yaml
+      - $ref: ../Verdikjeder/VerdikjederFugler.yaml
+      - $ref: ../Verdikjeder/VerdikjederStorfe.yaml
 required:
   - kategori
   - aktivitetstype

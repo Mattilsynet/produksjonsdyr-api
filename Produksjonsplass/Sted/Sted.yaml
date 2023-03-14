@@ -22,7 +22,7 @@ properties:
   masterID:
     type: string
     description: Kildens identitet på objektet
-  masterDataURL:
+  masterSystem:
     type: string
     enum:
       - no.mattilsynet.mats.virksomhetsmappe.punkt
@@ -40,6 +40,11 @@ properties:
     description: Kildens dato-tids stempel på endringen
     x-stoplight:
       id: 4qiq0o037zk9y
+  masterDatatype:
+    type: string
+    x-stoplight:
+      id: p5hfkjgzv28h1
+    description: 'Beskrivelse av betydningen til et geom; teig, adressepunkttil eksempel'
   hentetTidspunkt:
     type: string
     format: date-time
@@ -68,5 +73,5 @@ required:
   - stedID
   - geom
   - masterID
-  - masterDataURL
+  - masterSystem
   - hentetTidspunkt
