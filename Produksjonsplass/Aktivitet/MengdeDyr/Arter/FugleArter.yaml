@@ -5,7 +5,7 @@ type: object
 description: Relevante arter i kategorien "Fugler"
 examples:
   - fugleArt: HONS
-    antall: 2700
+    antall: 1700
 x-tags:
   - Art
 properties:

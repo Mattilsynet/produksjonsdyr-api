@@ -8,11 +8,11 @@ description: Menden dyr fordelt på art fra en dato. Avsluttes med en hendelse s
 examples:
   - artsMengdeID: 0
     fraDato: '2019-08-24'
-    tilDato: '2019-08-24'
     mengde:
-      - dyreGruppering:
-          fugleArt: HONS
-          antall: 2700
+      - bieArt: BIER
+        antall: 1
+      - fugleArt: HONS
+        antall: 1700
 properties:
   artsMengdeID:
     type: integer
@@ -26,7 +26,39 @@ properties:
     minItems: 0
     maxItems: 100
     items:
-      $ref: ./AntallDyr.yaml
+      oneOf:
+        - $ref: ./Arter/BierArter.yaml
+          x-stoplight:
+            id: cabo3lggdd08l
+        - $ref: ./Arter/FugleArter.yaml
+          x-stoplight:
+            id: zqh6tgb8awbly
+        - $ref: ./Arter/GeiteArter.yaml
+          x-stoplight:
+            id: cp5mf4p2wqk5w
+        - $ref: ./Arter/HestedyrArter.yaml
+          x-stoplight:
+            id: nny8x88p1e8g2
+        - $ref: ./Arter/HumlerArter.yaml
+          x-stoplight:
+            id: v9bxve7t3yk22
+        - $ref: ./Arter/KameldyrArter.yaml
+          x-stoplight:
+            id: kbgcuj59vyi7n
+        - $ref: ./Arter/SaueArter.yaml
+          x-stoplight:
+            id: dd5a81qb93u59
+        - $ref: ./Arter/StorfeArter.yaml
+          x-stoplight:
+            id: je6yojnpgxkpj
+        - $ref: ./Arter/SvineArter.yaml
+          x-stoplight:
+            id: 6545ucsmroo0n
+        - type: string
+          x-stoplight:
+            id: dm4jugyfww4e6
+          enum:
+            - none
 required:
   - artsMengdeID
   - fraDato

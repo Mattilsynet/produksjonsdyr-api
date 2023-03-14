@@ -20,6 +20,9 @@ properties:
       - $ref: ./Arter/KameldyrArter.yaml
       - $ref: ./Arter/BierArter.yaml
       - $ref: ./Arter/HumlerArter.yaml
+      - $ref: ./Arter/HestedyrArter.yaml
+        x-stoplight:
+          id: hv5n1vg71tpwi
       - type: string
         x-stoplight:
           id: xhfu93581mqzk

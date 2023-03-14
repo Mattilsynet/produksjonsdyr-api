@@ -5,7 +5,7 @@ type: object
 description: Relevante arter i kategorien "Bier"
 examples:
   - bieArt: BIER
-    antall: 0
+    antall: 1
 x-tags:
   - Art
 properties:

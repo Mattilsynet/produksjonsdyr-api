@@ -5,7 +5,7 @@ type: object
 description: Relevante arter i kategorien "Humler"
 examples:
   - humleArt: HUMLE
-    antall: 0
+    antall: 1
 x-tags:
   - Art
 properties:

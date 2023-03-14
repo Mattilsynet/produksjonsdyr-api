@@ -5,7 +5,7 @@ type: object
 description: Relevante arter i kategorien "Geit"
 examples:
   - geitArt: GEIT
-    antall: 0
+    antall: 100
 x-tags:
   - Art
 properties:
