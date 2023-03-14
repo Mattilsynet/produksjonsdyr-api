@@ -4,7 +4,7 @@ x-stoplight:
 x-tags:
   - Art
 type: object
-description: Menden dyr fordelt på art i et tidsrom (hvordan representere ingen dyr?)
+description: Menden dyr fordelt på art fra en dato. Avsluttes med en hendelse som har senere dato
 examples:
   - artsMengdeID: 0
     fraDato: '2019-08-24'
