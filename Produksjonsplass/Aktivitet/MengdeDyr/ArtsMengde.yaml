@@ -9,10 +9,10 @@ examples:
   - artsMengdeID: 0
     fraDato: '2019-08-24'
     mengde:
-      - bieArt: BIER
-        antall: 1
+      - fugleArt: AND
+        antall: 5
       - fugleArt: HONS
-        antall: 1700
+        antall: 5
 properties:
   artsMengdeID:
     type: integer
