@@ -3,12 +3,6 @@ x-stoplight:
   id: 1awzgw0y9hp4i
 type: object
 description: 'Anleggets kategori med under typene "aktivitetstype" og "verdikjede" som skal kunne beskrive hvordan '
-examples:
-  - kategori: FUGLER
-    aktivitetstype:
-      aktivitetstypeFugler: RUGEEGG
-    verdikjede:
-      verdikjedeFugler: KONSUMEGG
 x-tags:
   - Aktivitet
 properties:

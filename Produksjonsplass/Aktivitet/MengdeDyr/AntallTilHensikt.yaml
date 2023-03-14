@@ -5,12 +5,6 @@ x-tags:
   - Art
 type: object
 description: Antall av en art man planlegger å putte på en aktivitet tilknyttet et anlegg
-examples:
-  - artsMengdeID: 0
-    fraDato: '2019-08-24'
-    tilDato: '2019-08-24'
-    artOgAntall: 0
-    fritekst: string
 properties:
   artsMengdeID:
     type: integer
