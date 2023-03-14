@@ -1,6 +1,11 @@
-$ref: ./Art.yaml
 x-stoplight:
   id: sj2zg5qfw7xdz
 description: Relevante arter i kategorien "Kameldyr"
 x-tags:
   - Art
+type: object
+properties:
+  navn:
+    type: string
+    x-stoplight:
+      id: o7cgy1a7i3wgq

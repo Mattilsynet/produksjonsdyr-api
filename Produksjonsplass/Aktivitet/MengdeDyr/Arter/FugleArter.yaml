@@ -1,6 +1,11 @@
-$ref: ./Art.yaml
 x-stoplight:
   id: 64p8czox276id
 description: Relevante arter i kategorien "Fugler"
 x-tags:
   - Art
+type: object
+properties:
+  navn:
+    type: string
+    x-stoplight:
+      id: 8wxmk7iuf2wp0

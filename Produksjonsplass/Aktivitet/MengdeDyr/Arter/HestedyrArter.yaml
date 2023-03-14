@@ -1,6 +1,11 @@
-$ref: ./Art.yaml
 x-stoplight:
   id: wmnqxfptbvlpe
 description: Relevante arter i kategorien "Hestedyr"
 x-tags:
   - Art
+type: object
+properties:
+  navn:
+    type: string
+    x-stoplight:
+      id: egh8szbb2721b

@@ -1,6 +1,11 @@
-$ref: ./Art.yaml
 x-stoplight:
   id: d23zdt3zkhoi1
 description: Relevante arter i kategorien "Storfe"
 x-tags:
   - Art
+type: object
+properties:
+  navn:
+    type: string
+    x-stoplight:
+      id: npnducca703k0
