@@ -1,0 +1,10 @@
+title: Art
+x-stoplight:
+  id: owuidrjvdaj7z
+type: object
+properties:
+  navn:
+    type: string
+    x-stoplight:
+      id: gcq4d8zxw7dmu
+description: Hvordan art skal beskrives på tvers av arter

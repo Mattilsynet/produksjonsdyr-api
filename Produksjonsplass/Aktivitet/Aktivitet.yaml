@@ -39,10 +39,12 @@ properties:
   opphørsDatoAktivitet:
     type: string
     format: date
+  antallTilHensikt:
+    $ref: ./MengdeDyr/AntallTilHensikt.yaml
+    x-stoplight:
+      id: fe6p8qy7jttj8
   kategori:
     $ref: ./Kategori/Kategori.yaml
-  antallTilHensikt:
-    $ref: ./MengdeDyr/ArtsMengde.yaml
   stedsRef:
     type: array
     description: Skal referere til en stedID

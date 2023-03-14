@@ -1,14 +1,6 @@
-title: HumlerArter
+$ref: ./Art.yaml
 x-stoplight:
   id: o1j6lx1bfyqkx
-type: object
 description: Relevante arter i kategorien "Humler"
-examples:
-  - humleArt: HUMLE
 x-tags:
   - Art
-properties:
-  humleArt:
-    type: string
-    enum:
-      - HUMLE

@@ -1,14 +1,6 @@
-title: SvineArter
+$ref: ./Art.yaml
 x-stoplight:
   id: asauqkk1rlni3
-type: object
 description: Relevante arter i kategorien "Svin"
-properties:
-  svinArt:
-    type: string
-    enum:
-      - SVIN
-examples:
-  - svinArt: SVIN
 x-tags:
   - Art

@@ -1,0 +1,41 @@
+title: AntallTilHensikt
+x-stoplight:
+  id: i3w9t5sub8gk3
+x-tags:
+  - Art
+type: object
+description: Antall av en art man planlegger å putte på en aktivitet tilknyttet et anlegg
+examples:
+  - artsMengdeID: 0
+    fraDato: '2019-08-24'
+    tilDato: '2019-08-24'
+    art:
+      navn: GEIT
+    antall: 2
+properties:
+  artsMengdeID:
+    type: integer
+    format: int64
+    minimum: 0
+  fraDato:
+    type: string
+    format: date
+  tilDato:
+    type: string
+    format: date
+  art:
+    $ref: ./Arter/Art.yaml
+    x-stoplight:
+      id: 3bbbk0nd4dsfv
+    description: 'En art, men kan være ingen'
+  antall:
+    type: integer
+    x-stoplight:
+      id: tyqcjcncnl63w
+    example: 2
+    exclusiveMinimum: 0
+    description: Hvor mange dyr har man på en gitt aktivitet
+    default: 0
+required:
+  - artsMengdeID
+  - fraDato
