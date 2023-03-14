@@ -20,7 +20,5 @@ properties:
       - STRUTSEFUGLER
       - ENDER
     example: HONS
-required:
-  - fugleArt
 x-tags:
   - Art
