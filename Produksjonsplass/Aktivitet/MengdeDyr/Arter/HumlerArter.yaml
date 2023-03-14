@@ -1,11 +1,6 @@
+$ref: ./Art.yaml
 x-stoplight:
   id: o1j6lx1bfyqkx
 description: Relevante arter i kategorien "Humler"
 x-tags:
   - Art
-type: object
-properties:
-  navn:
-    type: string
-    x-stoplight:
-      id: 1kbr3jpjurw27

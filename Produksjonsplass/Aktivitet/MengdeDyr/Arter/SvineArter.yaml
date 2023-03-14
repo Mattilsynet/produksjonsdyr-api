@@ -3,9 +3,5 @@ x-stoplight:
 description: Relevante arter i kategorien "Svin"
 x-tags:
   - Art
-type: object
-properties:
-  navn:
-    type: string
-    x-stoplight:
-      id: ul6jthxmo75ec
+allOf:
+  - $ref: ./Art.yaml

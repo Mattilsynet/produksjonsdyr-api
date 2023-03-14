@@ -2,29 +2,10 @@ title: Art
 x-stoplight:
   id: owuidrjvdaj7z
 description: Hvordan art skal beskrives på tvers av arter
-oneOf:
-  - $ref: ./FugleArter.yaml
-  - $ref: ./SaueArter.yaml
+examples: []
+type: object
+properties:
+  navn:
+    type: string
     x-stoplight:
-      id: 2e72cu3vi5pny
-  - $ref: ./SvineArter.yaml
-    x-stoplight:
-      id: r7a0au6kxg0nv
-  - $ref: ./BierArter.yaml
-    x-stoplight:
-      id: 06nosndpe5rbm
-  - $ref: ./StorfeArter.yaml
-    x-stoplight:
-      id: qghi7wry8u47o
-  - $ref: ./HumlerArter.yaml
-    x-stoplight:
-      id: 95muyfe06pk50
-  - $ref: ./GeiteArter.yaml
-    x-stoplight:
-      id: wzmn44yhj9ixo
-  - $ref: ./HestedyrArter.yaml
-    x-stoplight:
-      id: 0nlljy9rva2r3
-  - $ref: ./KameldyrArter.yaml
-    x-stoplight:
-      id: 8va0fh33ziz94
+      id: gs9mp3b0j4msa

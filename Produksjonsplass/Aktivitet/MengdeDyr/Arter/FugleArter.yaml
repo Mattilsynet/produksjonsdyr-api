@@ -3,9 +3,7 @@ x-stoplight:
 description: Relevante arter i kategorien "Fugler"
 x-tags:
   - Art
-type: object
-properties:
-  navn:
-    type: string
-    x-stoplight:
-      id: 8wxmk7iuf2wp0
+examples:
+  - navn: string
+allOf:
+  - $ref: ./Art.yaml

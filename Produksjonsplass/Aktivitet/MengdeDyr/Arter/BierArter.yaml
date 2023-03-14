@@ -6,9 +6,7 @@ x-tags:
 examples:
   - navn: Bie
 title: BieArt
-type: object
-properties:
-  navn:
-    type: string
+allOf:
+  - $ref: ./Art.yaml
     x-stoplight:
-      id: ikm7wcig5vnqo
+      id: y25mhb2iralk2

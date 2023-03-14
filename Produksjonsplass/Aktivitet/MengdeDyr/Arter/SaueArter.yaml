@@ -3,9 +3,5 @@ x-stoplight:
 description: Relevante arter i kategorien "Sau"
 x-tags:
   - Art
-type: object
-properties:
-  navn:
-    type: string
-    x-stoplight:
-      id: wfx7jy7ff5dea
+allOf:
+  - $ref: ./Art.yaml

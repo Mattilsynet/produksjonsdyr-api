@@ -3,9 +3,5 @@ x-stoplight:
 description: Relevante arter i kategorien "Geit"
 x-tags:
   - Art
-type: object
-properties:
-  navn:
-    type: string
-    x-stoplight:
-      id: 3kobfyutsi00v
+allOf:
+  - $ref: ./Art.yaml
