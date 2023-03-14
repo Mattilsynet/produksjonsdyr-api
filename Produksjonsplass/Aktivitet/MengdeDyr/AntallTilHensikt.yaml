@@ -25,7 +25,7 @@ properties:
       art:
         x-stoplight:
           id: 9tdu3c66t8mqq
-        oneOf:
+        anyOf:
           - $ref: ./Arter/FugleArter.yaml
             x-stoplight:
               id: l2rb274nj1hcz
