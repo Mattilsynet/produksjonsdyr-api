@@ -13,6 +13,9 @@ examples:
         antall: 5
       - fugleArt: HONS
         antall: 5
+  - artsMengdeID: 0
+    fraDato: '2019-08-24'
+    mengde: none
 properties:
   artsMengdeID:
     type: integer
@@ -22,43 +25,46 @@ properties:
     type: string
     format: date
   mengde:
-    type: array
-    minItems: 0
-    maxItems: 100
-    items:
-      oneOf:
-        - $ref: ./Arter/BierArter.yaml
-          x-stoplight:
-            id: cabo3lggdd08l
-        - $ref: ./Arter/FugleArter.yaml
-          x-stoplight:
-            id: zqh6tgb8awbly
-        - $ref: ./Arter/GeiteArter.yaml
-          x-stoplight:
-            id: cp5mf4p2wqk5w
-        - $ref: ./Arter/HestedyrArter.yaml
-          x-stoplight:
-            id: nny8x88p1e8g2
-        - $ref: ./Arter/HumlerArter.yaml
-          x-stoplight:
-            id: v9bxve7t3yk22
-        - $ref: ./Arter/KameldyrArter.yaml
-          x-stoplight:
-            id: kbgcuj59vyi7n
-        - $ref: ./Arter/SaueArter.yaml
-          x-stoplight:
-            id: dd5a81qb93u59
-        - $ref: ./Arter/StorfeArter.yaml
-          x-stoplight:
-            id: je6yojnpgxkpj
-        - $ref: ./Arter/SvineArter.yaml
-          x-stoplight:
-            id: 6545ucsmroo0n
-        - type: string
-          x-stoplight:
-            id: dm4jugyfww4e6
-          enum:
-            - none
+    oneOf:
+      - minItems: 0
+        maxItems: 100
+        type: array
+        items:
+          oneOf:
+            - $ref: ./Arter/BierArter.yaml
+              x-stoplight:
+                id: cabo3lggdd08l
+            - $ref: ./Arter/FugleArter.yaml
+              x-stoplight:
+                id: zqh6tgb8awbly
+            - $ref: ./Arter/GeiteArter.yaml
+              x-stoplight:
+                id: cp5mf4p2wqk5w
+            - $ref: ./Arter/HestedyrArter.yaml
+              x-stoplight:
+                id: nny8x88p1e8g2
+            - $ref: ./Arter/HumlerArter.yaml
+              x-stoplight:
+                id: v9bxve7t3yk22
+            - $ref: ./Arter/KameldyrArter.yaml
+              x-stoplight:
+                id: kbgcuj59vyi7n
+            - $ref: ./Arter/SaueArter.yaml
+              x-stoplight:
+                id: dd5a81qb93u59
+            - $ref: ./Arter/StorfeArter.yaml
+              x-stoplight:
+                id: je6yojnpgxkpj
+            - $ref: ./Arter/SvineArter.yaml
+              x-stoplight:
+                id: 6545ucsmroo0n
+      - type: string
+        x-stoplight:
+          id: r09wqvjaq364i
+        enum:
+          - none
+        default: none
+        example: none
 required:
   - artsMengdeID
   - fraDato

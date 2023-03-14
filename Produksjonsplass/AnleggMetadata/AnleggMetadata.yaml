@@ -20,11 +20,11 @@ examples:
   - kapasitet:
       artsMengdeID: 0
       fraDato: '2019-08-24'
-      tilDato: '2019-08-24'
       mengde:
-        - dyreGruppering:
-            fugleArt: HONS
-          antall: 1
+        - fugleArt: AND
+          antall: 5
+        - fugleArt: HONS
+          antall: 5
     adresseTekst: string
     adresseIdMatrikkel: string
     beskrivelse: string
