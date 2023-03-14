@@ -9,9 +9,8 @@ examples:
   - artsMengdeID: 0
     fraDato: '2019-08-24'
     tilDato: '2019-08-24'
-    art:
-      navn: GEIT
-    antall: 2
+    artOgAntall: 0
+    fritekst: string
 properties:
   artsMengdeID:
     type: integer
@@ -23,7 +22,7 @@ properties:
   tilDato:
     type: string
     format: date
-  artOgMengde:
+  artOgAntall:
     x-stoplight:
       id: 3bbbk0nd4dsfv
     description: 'En art, men kan være ingen'
@@ -41,4 +40,4 @@ properties:
 required:
   - artsMengdeID
   - fraDato
-  - artOgMengde
+  - artOgAntall
