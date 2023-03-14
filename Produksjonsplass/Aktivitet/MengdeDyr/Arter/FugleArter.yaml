@@ -6,4 +6,12 @@ x-tags:
 examples:
   - navn: string
 allOf:
+  - type: object
+    properties:
+      spesielt:
+        x-stoplight:
+          id: 8wxmk7iuf2wp0
+        type: string
   - $ref: ./Art.yaml
+    x-stoplight:
+      id: hs6bgib24y83o
