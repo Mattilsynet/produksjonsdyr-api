@@ -72,7 +72,7 @@ x-tags:
 properties:
   produksjonsplassID:
     type: integer
-    description: 'Sekundær ID som tildeles alle anlegg i henhold til AHL. skal brukes ved merking av dyr når det brukes "anleggets unike nummer" EU 2016/429, og på transportdokumenter'
+    description: 'ID som tildeles alle anlegg i henhold til AHL. skal brukes ved merking av dyr når det brukes "anleggets unike nummer" EU 2016/429, og på transportdokumenter'
     format: int64
     minimum: 10000000
     maximum: 99999999
@@ -85,7 +85,7 @@ properties:
       - UTSTILLING
       - FORSØKSDYR
       - SLAKTERI
-      - SKYGGE      
+      - SKYGGE
     description: Ett anlegg kan bare ha en type. Ved behov for flere typer må det opprettes nye anlegg som kan fysisk overlappe andre anlegg
   aktiv:
     type: boolean
