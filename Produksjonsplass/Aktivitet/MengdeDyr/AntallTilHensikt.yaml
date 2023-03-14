@@ -26,11 +26,16 @@ properties:
     x-stoplight:
       id: 3bbbk0nd4dsfv
     description: 'En art, men kan være ingen'
-    allOf:
-      - $ref: ./Arter/Art.yaml
-      - type: integer
+    type: object
+    properties:
+      art:
+        $ref: ./Arter/Art.yaml
         x-stoplight:
-          id: 773rhzdv90vy3
+          id: 9tdu3c66t8mqq
+      antall:
+        type: integer
+        x-stoplight:
+          id: plzs694vkxgji
         minimum: 0
   fritekst:
     type: string
