@@ -23,19 +23,22 @@ properties:
   tilDato:
     type: string
     format: date
-  art:
-    $ref: ./Arter/Art.yaml
+  artOgMengde:
     x-stoplight:
       id: 3bbbk0nd4dsfv
     description: 'En art, men kan være ingen'
-  antall:
-    type: integer
+    allOf:
+      - $ref: ./Arter/Art.yaml
+      - type: integer
+        x-stoplight:
+          id: 773rhzdv90vy3
+        minimum: 0
+  fritekst:
+    type: string
     x-stoplight:
-      id: tyqcjcncnl63w
-    example: 2
-    exclusiveMinimum: 0
-    description: Hvor mange dyr har man på en gitt aktivitet
-    default: 0
+      id: jl17tbpbkfgvj
+    description: Fritekst hvor driftsansvarlig kan si noe om aktiviteten
 required:
   - artsMengdeID
   - fraDato
+  - artOgMengde
