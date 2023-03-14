@@ -28,6 +28,7 @@ properties:
     x-stoplight:
       id: pw21bdakmfybx
     format: int64
+    minimum: 1
 required:
   - fugleArt
   - antall

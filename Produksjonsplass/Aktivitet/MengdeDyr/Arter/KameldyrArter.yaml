@@ -18,6 +18,7 @@ properties:
     x-stoplight:
       id: av2s29g1oh54a
     format: int64
+    minimum: 1
 required:
   - kameldyrArt
   - antall

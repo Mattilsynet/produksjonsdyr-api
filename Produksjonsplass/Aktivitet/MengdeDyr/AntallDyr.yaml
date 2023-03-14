@@ -20,8 +20,10 @@ properties:
       - $ref: ./Arter/KameldyrArter.yaml
       - $ref: ./Arter/BierArter.yaml
       - $ref: ./Arter/HumlerArter.yaml
-      - $ref: ./Arter/NullArter.yaml
+      - type: string
         x-stoplight:
-          id: udb4tognr99lo
+          id: xhfu93581mqzk
+        enum:
+          - none
 required:
   - dyreGruppering

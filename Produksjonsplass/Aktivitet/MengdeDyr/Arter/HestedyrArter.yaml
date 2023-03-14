@@ -18,6 +18,7 @@ properties:
     x-stoplight:
       id: 612qd65xfmw0x
     format: int64
+    minimum: 1
 required:
   - hestedyrArt
   - antall

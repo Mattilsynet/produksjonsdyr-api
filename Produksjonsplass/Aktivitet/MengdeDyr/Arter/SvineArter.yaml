@@ -18,6 +18,7 @@ properties:
     x-stoplight:
       id: ib80e9qasjbud
     format: int64
+    minimum: 1
 required:
   - svinArt
   - antall

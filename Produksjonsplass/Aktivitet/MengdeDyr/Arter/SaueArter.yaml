@@ -18,6 +18,7 @@ properties:
     x-stoplight:
       id: fzvv37hny8wtm
     format: int64
+    minimum: 1
 required:
   - sauArt
   - antall

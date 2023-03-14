@@ -18,6 +18,7 @@ properties:
     x-stoplight:
       id: 85tp9mj9kpy2s
     format: int64
+    minimum: 1
 required:
   - storfeArt
   - antall

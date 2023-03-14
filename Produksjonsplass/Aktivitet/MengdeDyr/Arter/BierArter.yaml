@@ -18,6 +18,7 @@ properties:
     x-stoplight:
       id: 505xqaz4hpmrg
     format: int64
+    minimum: 1
 required:
   - bieArt
   - antall

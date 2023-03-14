@@ -18,6 +18,7 @@ properties:
     x-stoplight:
       id: 9czbblxvc7p3q
     format: int64
+    minimum: 1
 required:
   - humleArt
   - antall

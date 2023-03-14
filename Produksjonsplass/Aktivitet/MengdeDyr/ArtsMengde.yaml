@@ -21,9 +21,6 @@ properties:
   fraDato:
     type: string
     format: date
-  tilDato:
-    type: string
-    format: date
   mengde:
     type: array
     minItems: 0

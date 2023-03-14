@@ -18,6 +18,7 @@ properties:
     x-stoplight:
       id: rcwbuhcjg3knt
     format: int64
+    minimum: 1
 required:
   - geitArt
   - antall
