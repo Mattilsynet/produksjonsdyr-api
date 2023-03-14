@@ -23,9 +23,12 @@ properties:
     type: object
     properties:
       art:
-        $ref: ./Arter/Art.yaml
         x-stoplight:
           id: 9tdu3c66t8mqq
+        oneOf:
+          - $ref: ./Arter/FugleArter.yaml
+            x-stoplight:
+              id: l2rb274nj1hcz
       antall:
         type: integer
         x-stoplight:
