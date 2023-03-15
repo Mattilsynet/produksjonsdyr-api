@@ -2,7 +2,7 @@ title: VerdikjederFugler
 x-stoplight:
   id: s0skw0dti5aum
 type: object
-description: Verdikjeder for dyrehold kategorien "Fugler"
+description: 'Verdikjeder for dyrehold kategorien "Fugler" https://lovdata.no/forskrift/2022-04-06-631/a4 punkt 9 og 10.'
 examples:
   - verdikjedeFugler: KONSUMEGG
 x-tags:
@@ -11,9 +11,9 @@ properties:
   verdikjedeFugler:
     type: string
     enum:
-      - KONSUMEGG
-      - SLAKTEKYLLING
-      - HOBBY
-    description: '"lokalmat" kan være et alternativ til hobby?'
+      - FJORFE_KONSUMEGG
+      - FJROFE_SLAKTEKYLLING
+      - FUGLER_I_FANGENSKAP
+    description: Beskriver hvilket regelverk som gjelder
 required:
   - verdikjedeFugler
