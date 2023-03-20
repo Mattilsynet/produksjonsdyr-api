@@ -7,7 +7,7 @@ x-tags:
 description: Mer stabile egenskaper ved anlegget. Kapasitet til eks
 properties:
   kapasitet:
-    $ref: ../Aktivitet/MengdeDyr/ArtsMengde.yaml
+    $ref: ../Aktivitet/AntallTilHensikt.yaml
   adresseTekst:
     type: string
   adresseIdMatrikkel:

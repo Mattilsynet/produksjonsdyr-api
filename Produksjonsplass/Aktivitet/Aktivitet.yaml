@@ -42,7 +42,7 @@ properties:
   kategori:
     $ref: ./Kategori/Kategori.yaml
   antallTilHensikt:
-    $ref: ./MengdeDyr/ArtsMengde.yaml
+    $ref: ./MengdeDyr/AntallTilHensikt.yaml
   stedsRef:
     type: array
     description: Skal referere til en stedID

@@ -1,0 +1,67 @@
+title: AntallTilHensikt
+x-stoplight:
+  id: i3w9t5sub8gk3
+x-tags:
+  - Art
+type: object
+description: Menden dyr fordelt på art i et tidsrom (hvordan representere ingen dyr?)
+properties:
+  artsMengdeID:
+    type: integer
+    format: int64
+    minimum: 0
+    x-stoplight:
+      id: i3w9t5sub8gk3
+  fraDato:
+    type: string
+    format: date
+    x-stoplight:
+      id: i3w9t5sub8gk3
+  tilDato:
+    type: string
+    format: date
+    x-stoplight:
+      id: i3w9t5sub8gk3
+  dyreGruppering:
+    x-stoplight:
+      id: i3w9t5sub8gk3
+    type: array
+    items:
+      x-stoplight:
+        id: i3w9t5sub8gk3
+      type: object
+      properties:
+        art:
+          type: string
+          x-stoplight:
+            id: i3w9t5sub8gk3
+          enum:
+            - BIER
+            - HONS
+            - KALKUN
+            - GJESS
+            - RAPPHONS
+            - VAKTLER
+            - FASANER
+            - PERLEHONS
+            - DUER
+            - STRUTSEFUGLER
+            - ENDER
+            - GEIT
+            - HEST
+            - HUMLE
+            - KAMELDYR
+            - SAU
+            - STORFE
+            - SVIN
+        antall:
+          type: integer
+          x-stoplight:
+            id: i3w9t5sub8gk3
+          minimum: 0
+      required:
+        - art
+        - antall
+required:
+  - artsMengdeID
+  - fraDato
