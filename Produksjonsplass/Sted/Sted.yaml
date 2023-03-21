@@ -19,6 +19,8 @@ properties:
     minimum: 0
   geom:
     type: string
+  koordinatsystem:
+    type: string
   masterID:
     type: string
     description: Kildens identitet på objektet
