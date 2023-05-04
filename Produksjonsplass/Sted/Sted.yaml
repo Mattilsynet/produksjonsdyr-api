@@ -3,25 +3,32 @@ x-stoplight:
   id: morx0jrcxj7st
 type: object
 examples:
-  - stedID: 0
+  - stedId: 0
     geom: string
-    kildeID: string
-    kildeURL: no.mattilsynet.mats.virksomhetsmappe.punkt
+    masterId: string
+    masterSystem: no.mattilsynet.mats.virksomhetsmappe.punkt
+    masterTidspunkt: '2019-08-24T14:15:22Z'
+    masterDatatype: string
     hentetTidspunkt: '2019-08-24T14:15:22Z'
-    kildeTidspunkt: '2019-08-24T14:15:22Z'
     arkivert: false
+    stedDefinisjonKategori: senterpunkt
 x-tags:
   - Sted
+description: Sted beskriver et geografisk område som er en del av en produksjonsplass. Stedet skal beskrives med en kartrefferanse (geom).
 properties:
-  stedID:
+  stedId:
     type: integer
     format: int64
     minimum: 0
+    x-stoplight:
+      id: ixs2rx6uvvz6q
   geom:
     type: string
-  masterID:
+  masterId:
     type: string
     description: Kildens identitet på objektet
+    x-stoplight:
+      id: pbs8goucd44z2
   masterSystem:
     type: string
     enum:
@@ -29,8 +36,6 @@ properties:
       - no.mattilsynet.mats.tilsynsobjekt.punkt
       - no.kartverket.matrikkelen.teig
       - no.kartverket.matrikkelen.fkb_bygning
-      - no.mattilsynet.fme.fkb_bygning
-      - no.mattilsynet.fme.teig
     description: Et begrenset sett med kilder til stedsdefinisjon
     x-stoplight:
       id: p79t3bcphq18a
@@ -52,26 +57,18 @@ properties:
   arkivert:
     type: boolean
     default: false
-  steddefinisjonkategori:
+  stedDefinisjonKategori:
     type: string
     enum:
       - senterpunkt
       - omriss
       - besøkspunkt
-      - ellernoelignende
     description: Vi har behov for å beskrive stedet på forskjellige måter
-  behandlendeSystem:
-    type: string
-    description: behandlendeSystem har tilordnet egenskapen til anlegget
     x-stoplight:
-      id: 1jbwoxe9ahqow
-    enum:
-      - mats
-      - fme
-      - skjema
+      id: 5xkk0w45snz6s
 required:
-  - stedID
+  - stedId
   - geom
-  - masterID
+  - masterId
   - masterSystem
   - hentetTidspunkt

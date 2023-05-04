@@ -4,7 +4,7 @@ x-stoplight:
 type: object
 description: Aktør på produksjonsenheten/plassen ofte "Driftsansvarlig"
 examples:
-  - aktorID: 0
+  - aktorId: 0
     produsentnummerP10: 1234567890
     rolle: Driftsansvarlig
     kanEditereGjeldendeAnlegg: true
@@ -13,6 +13,7 @@ examples:
     orgnummerForetak: string
     aktiviteterRef:
       - 0
+    dyreholdId: 0
 x-tags:
   - Aktør
 properties:
@@ -41,14 +42,20 @@ properties:
     type: string
   orgnummerForetak:
     type: string
-  aktiviteterRef:
+  ansvarId:
     type: array
     items:
       type: integer
       format: int64
       minimum: 0
+      x-stoplight:
+        id: ca5w7h5nqzd08
+  fodselsnummer:
+    type: string
+    x-stoplight:
+      id: ponunieit3yez
   dyreholdId:
-    type: integer
+    type: string
     x-stoplight:
       id: 5x4rh0r0bvyxz
 required:

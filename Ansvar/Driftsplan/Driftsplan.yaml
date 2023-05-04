@@ -5,6 +5,16 @@ type: object
 x-tags:
   - Driftsplan
 description: Driftsplan er en plan for hvilke dyr man planlegger å ha på en produksjonsplass og når man planlegger å ha dem der.
+examples:
+  - driftsplanId: 0
+    fraDato: string
+    tilDato: string
+    art:
+      fugleArt: HONS
+      antall: 1700
+    antallTilHensikt: 0
+    ansvarId: 0
+    produksjonsplassId: 0
 properties:
   driftsplanId:
     type: integer
@@ -24,9 +34,12 @@ properties:
     x-stoplight:
       id: mvaf1nwdm1clr
     oneOf:
-      - $ref: ./MengdeDyr/Arter/FugleArter.yaml
+      - $ref: ./Arter/FugleArter.yaml
         x-stoplight:
           id: 79f15mv2j7z3k
+      - $ref: ./Arter/StorfeArter.yaml
+        x-stoplight:
+          id: dkj5g5t0b5xo3
   antallTilHensikt:
     type: integer
     x-stoplight:

@@ -4,10 +4,10 @@ x-stoplight:
 type: object
 description: 'Det offisielle, og eksternt kommuniserte, nivået for anlegg med ID.'
 examples:
-  - produksjonsplassID: 10000000
+  - produksjonsplassId: 10000000
     anleggsType: DYREHOLD
     aktiv: true
-    aktiviteter:
+    fasilitet:
       - aktivitetID: 0
         matsTilsynsobjektID: string
         registreringsDatoAktivitet: '2019-08-24'
@@ -36,36 +36,10 @@ examples:
         hentetTidspunkt: '2019-08-24T14:15:22Z'
         kildeTidspunkt: '2019-08-24T14:15:22Z'
         arkivert: false
-    helsestatus:
-      - helsestatusID: 0
-        harViDetBra: Det går likar no
-        stederRef:
-          - 0
-        aktiviteterRef:
-          - 0
-    aktorer:
-      - aktorID: 0
-        produsentnummerP10: 1234567890
-        rolle: Driftsansvarlig
-        kanEditereGjeldendeAnlegg: true
-        matsPersonId: string
-        orgnummerVirksomhet: string
-        orgnummerForetak: string
-        aktiviteterRef:
-          - 0
-    anleggMetadata:
-      - kapasitet:
-          artsMengdeID: 0
-          fraDato: '2019-08-24'
-          mengde:
-            - fugleArt: AND
-              antall: 5
-            - fugleArt: HONS
-              antall: 5
-        adresseTekst: string
-        adresseIdMatrikkel: string
-        beskrivelse: string
-        navn: string
+    ansvarId:
+      - 0
+    beskrivelse: string
+    visningsNavn: string
 x-internal: false
 x-tags:
   - Anlegg

@@ -50,3 +50,13 @@ properties:
     type: integer
     x-stoplight:
       id: fb138g45fiaco
+examples:
+  - ansvarId: 0
+    matsTilsynsobjektRef: string
+    produksjonsplasser:
+      - 0
+    ansvarsDomene: string
+    ansvarsType: string
+    matsAktivitetsId: string
+    matsProduksjonsform: string
+    aktorRef: 0
