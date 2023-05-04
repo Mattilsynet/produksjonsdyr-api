@@ -2,7 +2,7 @@ title: Produksjonsplass
 x-stoplight:
   id: 2kbtfhqicbasr
 type: object
-description: 'Det offisielle, og eksternt kommuniserte, nivået for anlegg med ID'
+description: 'Det offisielle, og eksternt kommuniserte, nivået for anlegg med ID.'
 examples:
   - produksjonsplassID: 10000000
     anleggsType: DYREHOLD
