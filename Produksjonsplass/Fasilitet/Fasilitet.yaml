@@ -4,26 +4,19 @@ x-stoplight:
 type: object
 description: Beskriver hva produksjonsplassen er tilrettelangt for og hvilken utforming produksjonsplassen har
 examples:
-  - aktivitetID: 0
-    matsTilsynsobjektID: string
-    registreringsDatoAktivitet: '2019-08-24'
-    opphørsDatoAktivitet: '2019-08-24'
-    kategori:
-      kategori: FUGLER
-      aktivitetstype:
-        aktivitetstypeFugler: RUGEEGG
-      verdikjede:
-        verdikjedeFugler: KONSUMEGG
-    antallTilHensikt:
-      artsMengdeID: 0
-      fraDato: '2019-08-24'
-      mengde:
-        - fugleArt: AND
-          antall: 5
-        - fugleArt: HONS
-          antall: 5
-    stedsRef:
+  - fasilitetID: 0
+    registreringsDatoFasilitet: '2019-08-24'
+    opphørsDatoFasilitet: '2019-08-24'
+    stedsId:
       - 0
+    kapasitet: 0
+    kapasitetBenevning: antall
+    fasilitetBeskrivelse: Fuglene jeg holder i dyrerom A
+    kategori: FUGLER
+    aktivitetsType:
+      aktivitetstypeFugler: RUGEEGG
+    verdikjede:
+      verdikjedeFugler: KONSUMEGG
 x-tags:
   - Fasilitet
 properties:
