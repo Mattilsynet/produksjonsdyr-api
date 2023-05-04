@@ -16,10 +16,12 @@ examples:
 x-tags:
   - Aktør
 properties:
-  aktorID:
+  aktorId:
     type: integer
     format: int64
     minimum: 0
+    x-stoplight:
+      id: vnwba4wfbxofn
   produsentnummerP10:
     type: string
     default: 1234567890
@@ -45,7 +47,11 @@ properties:
       type: integer
       format: int64
       minimum: 0
+  dyreholdId:
+    type: integer
+    x-stoplight:
+      id: 5x4rh0r0bvyxz
 required:
-  - aktorID
+  - aktorId
   - rolle
   - kanEditereGjeldendeAnlegg

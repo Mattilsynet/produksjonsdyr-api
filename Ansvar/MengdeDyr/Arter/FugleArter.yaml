@@ -23,6 +23,8 @@ properties:
       - STRUTSEFUGLER
       - ENDER
     example: HONS
+    x-stoplight:
+      id: dm0r55xjp8eql
   antall:
     type: integer
     x-stoplight:

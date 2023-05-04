@@ -13,6 +13,8 @@ properties:
     type: string
     enum:
       - STORFE
+    x-stoplight:
+      id: ixyafpvvtnhd9
   antall:
     type: integer
     x-stoplight:

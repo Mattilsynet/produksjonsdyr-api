@@ -13,6 +13,8 @@ properties:
     type: string
     enum:
       - HEST
+    x-stoplight:
+      id: a02yd0eg3d22u
   antall:
     type: integer
     x-stoplight:

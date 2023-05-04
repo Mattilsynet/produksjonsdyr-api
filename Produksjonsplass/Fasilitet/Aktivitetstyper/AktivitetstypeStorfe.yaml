@@ -5,5 +5,9 @@ type: object
 properties:
   aktivitetstypeStorfe:
     type: string
+    x-stoplight:
+      id: ez25vgmejqr9o
 required:
   - aktivitetstypeStorfe
+x-tags:
+  - Fasilitet

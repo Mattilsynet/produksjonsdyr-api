@@ -1,0 +1,45 @@
+title: Driftsplan
+x-stoplight:
+  id: eiud65mox9zkb
+type: object
+x-tags:
+  - Driftsplan
+description: Driftsplan er en plan for hvilke dyr man planlegger å ha på en produksjonsplass og når man planlegger å ha dem der.
+properties:
+  driftsplanId:
+    type: integer
+    x-stoplight:
+      id: 5awdxj0vsn2ip
+    format: int64
+    minimum: 0
+  fraDato:
+    type: string
+    x-stoplight:
+      id: 793hz0cxssok4
+  tilDato:
+    type: string
+    x-stoplight:
+      id: l698a85zynu72
+  art:
+    x-stoplight:
+      id: mvaf1nwdm1clr
+    oneOf:
+      - $ref: ./MengdeDyr/Arter/FugleArter.yaml
+        x-stoplight:
+          id: 79f15mv2j7z3k
+  antallTilHensikt:
+    type: integer
+    x-stoplight:
+      id: pobkfezekr59d
+  ansvarId:
+    type: integer
+    x-stoplight:
+      id: 9b5br72eh25um
+    format: int64
+    minimum: 0
+  produksjonsplassId:
+    type: integer
+    x-stoplight:
+      id: xbirp10i2vs87
+    format: int64
+    minimum: 0

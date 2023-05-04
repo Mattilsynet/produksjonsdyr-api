@@ -13,6 +13,8 @@ properties:
     type: string
     enum:
       - SAU
+    x-stoplight:
+      id: egyr7hsvjok4y
   antall:
     type: integer
     x-stoplight:

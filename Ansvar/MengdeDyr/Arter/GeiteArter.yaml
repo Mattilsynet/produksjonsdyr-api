@@ -13,6 +13,8 @@ properties:
     type: string
     enum:
       - GEIT
+    x-stoplight:
+      id: 4zixcgdn6my1h
   antall:
     type: integer
     x-stoplight:

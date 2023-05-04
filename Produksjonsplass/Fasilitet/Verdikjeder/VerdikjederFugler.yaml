@@ -15,5 +15,7 @@ properties:
       - FJROFE_SLAKTEKYLLING
       - FUGLER_I_FANGENSKAP
     description: Beskriver hvilket regelverk som gjelder
+    x-stoplight:
+      id: 181m6f1xn5flt
 required:
   - verdikjedeFugler

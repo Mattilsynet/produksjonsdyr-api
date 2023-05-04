@@ -13,6 +13,8 @@ properties:
     type: string
     enum:
       - KAMELDYR
+    x-stoplight:
+      id: 4l0pxaf6p9ify
   antall:
     type: integer
     x-stoplight:

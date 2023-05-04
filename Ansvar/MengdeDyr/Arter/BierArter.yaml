@@ -1,24 +1,26 @@
-title: HumlerArter
+title: BierArter
 x-stoplight:
-  id: o1j6lx1bfyqkx
+  id: p1q4yo2vzuzvj
 type: object
-description: Relevante arter i kategorien "Humler"
+description: Relevante arter i kategorien "Bier"
 examples:
-  - humleArt: HUMLE
+  - bieArt: BIER
     antall: 1
 x-tags:
   - Art
 properties:
-  humleArt:
+  bieArt:
     type: string
     enum:
-      - HUMLE
+      - BIER
+    x-stoplight:
+      id: vspzts631y1gm
   antall:
     type: integer
     x-stoplight:
-      id: 9czbblxvc7p3q
+      id: 505xqaz4hpmrg
     format: int64
     minimum: 1
 required:
-  - humleArt
+  - bieArt
   - antall

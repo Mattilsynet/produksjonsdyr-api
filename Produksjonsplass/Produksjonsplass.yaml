@@ -70,12 +70,14 @@ x-internal: false
 x-tags:
   - Anlegg
 properties:
-  produksjonsplassID:
+  produksjonsplassId:
     type: integer
     description: 'ID som tildeles alle anlegg i henhold til AHL. skal brukes ved merking av dyr når det brukes "anleggets unike nummer" EU 2016/429, og på transportdokumenter'
     format: int64
     minimum: 10000000
     maximum: 99999999
+    x-stoplight:
+      id: mc3komkyxjtna
   anleggsType:
     type: string
     enum:
@@ -85,29 +87,33 @@ properties:
       - UTSTILLING
       - FORSØKSDYR
       - SLAKTERI
-      - SKYGGE
     description: Ett anlegg kan bare ha en type. Ved behov for flere typer må det opprettes nye anlegg som kan fysisk overlappe andre anlegg
   aktiv:
     type: boolean
     description: 'Forretningsregelen er noe uklar, men vi må kunne representere anlegg som ikke lengre er operative'
     default: true
-  aktiviteter:
+  fasilitet:
     type: array
     items:
-      $ref: ./Aktivitet/Aktivitet.yaml
+      $ref: ./Fasilitet/Fasilitet.yaml
+      x-stoplight:
+        id: jmw6d6qvfci39
   steder:
     type: array
     items:
       $ref: ./Sted/Sted.yaml
-  helsestatus:
+  ansvarId:
     type: array
     items:
-      $ref: ./Helsestatus/Helsestatus.yaml
-  aktorer:
-    type: array
-    items:
-      $ref: ./Aktor/Aktor.yaml
-  anleggMetadata:
-    type: array
-    items:
-      $ref: ./AnleggMetadata/AnleggMetadata.yaml
+      x-stoplight:
+        id: lc5e6zoowcnth
+      type: integer
+      format: int64
+  beskrivelse:
+    type: string
+    x-stoplight:
+      id: gi7nq38lq3s4u
+  visningsNavn:
+    type: string
+    x-stoplight:
+      id: re9on7d73pp0h

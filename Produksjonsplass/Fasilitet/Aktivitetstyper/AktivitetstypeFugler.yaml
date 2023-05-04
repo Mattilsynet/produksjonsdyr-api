@@ -5,8 +5,6 @@ type: object
 description: Klassifisering av aktiviteter som er relevant i kontekst "Fugler"
 examples:
   - aktivitetstypeFugler: RUGEEGG
-x-tags:
-  - Aktivitet
 properties:
   aktivitetstypeFugler:
     type: string
@@ -20,5 +18,9 @@ properties:
       - SALG_AV_KONSUMEGG
       - SALG_AV_FUGLER
       - SALG_AV_FJER
+    x-stoplight:
+      id: bcfi5vy406frl
 required:
   - aktivitetstypeFugler
+x-tags:
+  - Fasilitet

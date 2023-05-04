@@ -21,9 +21,13 @@ properties:
     type: integer
     format: int64
     minimum: 0
+    x-stoplight:
+      id: 787om6y02asw2
   fraDato:
     type: string
     format: date
+    x-stoplight:
+      id: g0pcufekei8pe
   mengde:
     oneOf:
       - minItems: 0
@@ -58,6 +62,10 @@ properties:
             - $ref: ./Arter/SvineArter.yaml
               x-stoplight:
                 id: 6545ucsmroo0n
+          x-stoplight:
+            id: vaephpfp6m4b9
+        x-stoplight:
+          id: we01szzj7dp4a
       - type: string
         x-stoplight:
           id: r09wqvjaq364i
@@ -65,6 +73,8 @@ properties:
           - none
         default: none
         example: none
+    x-stoplight:
+      id: k3r7in31z4lli
 required:
   - artsMengdeID
   - fraDato

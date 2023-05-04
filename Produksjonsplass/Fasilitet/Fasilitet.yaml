@@ -1,0 +1,110 @@
+title: Fasilitet
+x-stoplight:
+  id: 4yg1anlq7jkfg
+type: object
+description: Beskriver hva produksjonsplassen er tilrettelangt for og hvilken utforming produksjonsplassen har
+examples:
+  - aktivitetID: 0
+    matsTilsynsobjektID: string
+    registreringsDatoAktivitet: '2019-08-24'
+    opphørsDatoAktivitet: '2019-08-24'
+    kategori:
+      kategori: FUGLER
+      aktivitetstype:
+        aktivitetstypeFugler: RUGEEGG
+      verdikjede:
+        verdikjedeFugler: KONSUMEGG
+    antallTilHensikt:
+      artsMengdeID: 0
+      fraDato: '2019-08-24'
+      mengde:
+        - fugleArt: AND
+          antall: 5
+        - fugleArt: HONS
+          antall: 5
+    stedsRef:
+      - 0
+x-tags:
+  - Fasilitet
+properties:
+  fasilitetID:
+    type: integer
+    format: int64
+    minimum: 0
+    x-stoplight:
+      id: gb2qhwya7hrfi
+  registreringsDatoFasilitet:
+    type: string
+    format: date
+    x-stoplight:
+      id: 3q69gnwzotrgg
+  opphørsDatoFasilitet:
+    type: string
+    format: date
+    x-stoplight:
+      id: 5sqp2fo5czxp7
+  stedsId:
+    type: array
+    description: Skal referere til en stedID
+    x-stoplight:
+      id: 18scsp07sef5q
+    items:
+      type: integer
+      format: int64
+      minimum: 0
+      x-stoplight:
+        id: zbpe8a2q7co4s
+  kapasitet:
+    type: integer
+    x-stoplight:
+      id: pvgjtmlqhy40b
+    minimum: 0
+  kapasitetBenevning:
+    type: string
+    x-stoplight:
+      id: viun04oags1km
+    enum:
+      - antall
+      - kvadratmeter
+  fasilitetBeskrivelse:
+    type: string
+    x-stoplight:
+      id: y5x5fvdfc3415
+    example: Fuglene jeg holder i dyrerom A
+  kategori:
+    type: string
+    enum:
+      - FUGLER
+      - SVIN
+      - SAU
+      - GEIT
+      - STORFE
+      - KAMELDYR
+      - HESTEDYR
+      - BIER
+      - HUMLER
+    x-stoplight:
+      id: vhcdkozu0g0rr
+  aktivitetsType:
+    x-stoplight:
+      id: 9587kz2iw4o2q
+    oneOf:
+      - $ref: ./Aktivitetstyper/AktivitetstypeFugler.yaml
+        x-stoplight:
+          id: 9flktad5hec46
+      - $ref: ./Aktivitetstyper/AktivitetstypeStorfe.yaml
+        x-stoplight:
+          id: trklywbqsaub9
+  verdikjede:
+    x-stoplight:
+      id: 790t0k0vj92ba
+    oneOf:
+      - $ref: ./Verdikjeder/VerdikjederFugler.yaml
+        x-stoplight:
+          id: p3bc7b7rorg2u
+      - $ref: ./Verdikjeder/VerdikjederStorfe.yaml
+        x-stoplight:
+          id: czhwsfuellzs2
+required:
+  - fasilitetID
+  - registreringsDatoFasilitet

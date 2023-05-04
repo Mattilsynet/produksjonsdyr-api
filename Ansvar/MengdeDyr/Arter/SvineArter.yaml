@@ -13,6 +13,8 @@ properties:
     type: string
     enum:
       - SVIN
+    x-stoplight:
+      id: tugdp02yy5hgx
   antall:
     type: integer
     x-stoplight:

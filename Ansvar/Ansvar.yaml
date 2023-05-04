@@ -1,0 +1,52 @@
+title: Ansvar
+x-stoplight:
+  id: yo4wfcrtlyru8
+type: object
+description: Er koblingen til hvilke indvid og grupper av dyr den driftsansvarlige har ansvar for
+x-tags:
+  - Ansvar
+properties:
+  ansvarId:
+    type: integer
+    x-stoplight:
+      id: rtejkvt35zikr
+    minimum: 0
+    format: int64
+  matsTilsynsobjektRef:
+    type: string
+    x-stoplight:
+      id: e5amwlpbno41k
+    description: Usikker på om dette er nødvendig. Kanskje det er nok at Mats har ref til oss.
+  produksjonsplasser:
+    type: array
+    x-stoplight:
+      id: ud4qsdxx9io6m
+    description: Referanse til produksjonsplassene hvor ansvaret utøves
+    items:
+      x-stoplight:
+        id: 2juql2820mbs8
+      type: integer
+      format: int64
+      minimum: 0
+  ansvarsDomene:
+    type: string
+    x-stoplight:
+      id: hijd2886azby5
+    description: samme som anleggstype
+  ansvarsType:
+    type: string
+    x-stoplight:
+      id: bznfnvbxzrmkf
+    description: samme som kategori
+  matsAktivitetsId:
+    type: string
+    x-stoplight:
+      id: 9fw131vz4p50m
+  matsProduksjonsform:
+    type: string
+    x-stoplight:
+      id: wjw4q2qyuw1cd
+  aktorRef:
+    type: integer
+    x-stoplight:
+      id: fb138g45fiaco

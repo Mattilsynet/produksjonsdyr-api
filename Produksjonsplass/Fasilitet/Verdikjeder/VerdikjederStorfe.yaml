@@ -10,5 +10,7 @@ examples:
 properties:
   verdikjedeStorfe:
     type: string
+    x-stoplight:
+      id: agc23n6tl8um5
 required:
   - verdikjedeStorfe
