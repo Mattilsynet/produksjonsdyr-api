@@ -48,14 +48,6 @@ properties:
     x-stoplight:
       id: bznfnvbxzrmkf
     description: samme som kategori
-  matsAktivitetsId:
-    type: string
-    x-stoplight:
-      id: 9fw131vz4p50m
-  matsProduksjonsform:
-    type: string
-    x-stoplight:
-      id: wjw4q2qyuw1cd
   aktorId:
     type: integer
     x-stoplight:
