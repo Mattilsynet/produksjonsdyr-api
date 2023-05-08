@@ -5,8 +5,6 @@ type: object
 description: 'Verdikjeder for dyrehold kategorien "Fugler" https://lovdata.no/forskrift/2022-04-06-631/a4 punkt 9 og 10.'
 examples:
   - verdikjedeFugler: KONSUMEGG
-x-tags:
-  - Aktivitet
 properties:
   verdikjedeFugler:
     type: string
@@ -19,3 +17,5 @@ properties:
       id: 181m6f1xn5flt
 required:
   - verdikjedeFugler
+x-tags:
+  - Fasilitet

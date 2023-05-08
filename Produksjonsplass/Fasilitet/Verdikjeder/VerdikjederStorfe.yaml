@@ -3,8 +3,6 @@ x-stoplight:
   id: cxcw74ai07q2o
 type: object
 description: Verdikjeder for dyrehold kategorien "Storfe"
-x-tags:
-  - Aktivitet
 examples:
   - verdikjedeStorfe: string
 properties:
@@ -14,3 +12,5 @@ properties:
       id: agc23n6tl8um5
 required:
   - verdikjedeStorfe
+x-tags:
+  - Fasilitet
