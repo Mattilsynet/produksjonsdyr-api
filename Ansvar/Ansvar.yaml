@@ -5,6 +5,16 @@ type: object
 description: Er koblingen til hvilke indvid og grupper av dyr den driftsansvarlige har ansvar for
 x-tags:
   - Ansvar
+examples:
+  - ansvarId: 0
+    matsTilsynsobjektRef: string
+    produksjonsplasser:
+      - 0
+    ansvarsDomene: string
+    ansvarsType: string
+    matsAktivitetsId: string
+    matsProduksjonsform: string
+    aktorRef: 0
 properties:
   ansvarId:
     type: integer
@@ -46,17 +56,9 @@ properties:
     type: string
     x-stoplight:
       id: wjw4q2qyuw1cd
-  aktorRef:
+  aktorId:
     type: integer
     x-stoplight:
       id: fb138g45fiaco
-examples:
-  - ansvarId: 0
-    matsTilsynsobjektRef: string
-    produksjonsplasser:
-      - 0
-    ansvarsDomene: string
-    ansvarsType: string
-    matsAktivitetsId: string
-    matsProduksjonsform: string
-    aktorRef: 0
+    format: int64
+    minimum: 0
