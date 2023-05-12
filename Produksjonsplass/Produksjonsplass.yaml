@@ -61,6 +61,7 @@ properties:
       - UTSTILLING
       - FORSØKSDYR
       - SLAKTERI
+      - DYREHAGE
     description: Ett anlegg kan bare ha en type. Ved behov for flere typer må det opprettes nye anlegg som kan fysisk overlappe andre anlegg
   aktiv:
     type: boolean
