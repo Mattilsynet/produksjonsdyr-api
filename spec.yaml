@@ -1,0 +1,240 @@
+openapi: 3.0.3
+info:
+  title: Example API
+  description: Example API used to explore the OpenAPI spec
+  version: 1.0.0
+  license:
+    name: Apache 2.0
+    url: 'https://www.apache.org/licenses/LICENSE-2.0.html'
+servers:
+  - url: 'http://localhost:8080'
+    description: Local development server
+tags:
+  - name: User
+    description: Endpoints handling users
+paths:
+  /users:
+    get:
+      tags:
+        - User
+      summary: Returns a list of users.
+      description: Optional extended description in CommonMark or HTML.
+      operationId: getUsers
+      parameters:
+        - $ref: '#/components/parameters/LimitQueryParam'
+        - $ref: '#/components/parameters/OffsetQueryParam'
+      responses:
+        '200':
+          description: A JSON array of users
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetUsersResponse'
+              examples:
+                OnePerson:
+                  $ref: '#/components/examples/UserListOnePerson'
+                TwoPersons:
+                  $ref: '#/components/examples/UserListTwoPersons'
+    post:
+      tags:
+        - User
+      summary: Create a new user
+      description: Endpoint used to create a new user.
+      operationId: createUser
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostUserRequest'
+          application/v2+json:
+            schema:
+              $ref: '#/components/schemas/PostUserRequestv2'
+      responses:
+        '201':
+          description: User is successfully created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+  '/users/{userId}':
+    parameters:
+      - $ref: '#/components/parameters/UserIdPathParam'
+    get:
+      tags:
+        - User
+      summary: Get user by id
+      description: Gets a user by its id. Use accept header to control which response types you want to receive.
+      operationId: getUserById
+      responses:
+        '200':
+          description: Successfully retrieved user
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+              examples:
+                mrwhite:
+                  $ref: '#/components/examples/UserMrWhite'
+                mrbrown:
+                  $ref: '#/components/examples/UserMrBrown'
+            application/v2+json:
+              schema:
+                $ref: '#/components/schemas/Userv2'
+              examples:
+                mrwhite:
+                  $ref: '#/components/examples/Userv2MrWhite'
+                mrbrown:
+                  $ref: '#/components/examples/Userv2MrBrown'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Userv2'
+        '404':
+          description: Not Found
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        date_of_birth:
+          type: string
+          format: date
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+      required:
+        - id
+        - name
+    Userv2:
+      type: object
+      required:
+        - id
+        - name
+        - email
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        date_of_birth:
+          type: string
+          format: date
+        email:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+    GetUsersResponse:
+      type: array
+      items:
+        $ref: '#/components/schemas/User'
+      description: ''
+    PostUserRequest:
+      type: object
+      required:
+        - name
+      properties:
+        name:
+          type: string
+        date_of_birth:
+          type: string
+          format: date
+    PostUserRequestv2:
+      type: object
+      required:
+        - name
+        - email
+      properties:
+        name:
+          type: string
+        date_of_birth:
+          type: string
+          format: date
+        email:
+          type: string
+  parameters:
+    LimitQueryParam:
+      name: limit
+      description: 'Limit the query: How many items should be returned'
+      in: query
+      required: false
+      schema:
+        type: integer
+        format: int32
+        default: 50
+    OffsetQueryParam:
+      name: offset
+      description: 'Offset of the query: Where should the query start. Used in conjunction with limit'
+      in: query
+      required: false
+      schema:
+        type: integer
+        format: int64
+        default: 0
+    UserIdPathParam:
+      name: userId
+      description: id of user
+      in: path
+      required: true
+      schema:
+        type: string
+  examples:
+    UserMrWhite:
+      value:
+        id: '1'
+        name: Mr. White
+        date_of_birth: '1950-10-10'
+        created_at: '2019-08-24T14:15:22Z'
+        updated_at: '2019-08-24T14:15:22Z'
+    UserMrBrown:
+      value:
+        id: '2'
+        name: Mr. Brown
+        date_of_birth: '1955-03-01'
+        created_at: '2019-08-24T14:15:22Z'
+        updated_at: '2019-08-24T14:15:22Z'
+    Userv2MrWhite:
+      value:
+        id: '1'
+        name: Mr. White
+        date_of_birth: '1950-10-10'
+        email: white@reservoirdogs.com
+        created_at: '2019-08-24T14:15:22Z'
+        updated_at: '2019-08-24T14:15:22Z'
+    Userv2MrBrown:
+      value:
+        id: '2'
+        name: Mr. Brown
+        date_of_birth: '1955-03-01'
+        email: brown@reservoirdogs.com
+        created_at: '2019-08-24T14:15:22Z'
+        updated_at: '2019-08-24T14:15:22Z'
+    UserListOnePerson:
+      value:
+        - id: '1'
+          name: Mr. White
+          date_of_birth: '1950-10-10'
+          created_at: '2019-08-24T14:15:22Z'
+          updated_at: '2019-08-24T14:15:22Z'
+    UserListTwoPersons:
+      value:
+        - id: '1'
+          name: Mr. White
+          date_of_birth: '1950-10-10'
+          created_at: '2019-08-24T14:15:22Z'
+          updated_at: '2019-08-24T14:15:22Z'
+        - id: '2'
+          name: Mr. Brown
+          date_of_birth: '1955-03-01'
+          created_at: '2019-08-24T14:15:22Z'
+          updated_at: '2019-08-24T14:15:22Z'
