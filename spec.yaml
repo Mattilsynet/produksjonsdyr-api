@@ -6,7 +6,7 @@ info:
   version: '1.0'
   description: Tester ut dto objekt gjennom API
 servers:
-  - url: 'https://stoplight.io/mocks/mattilsynet/produksjonsdyr/185143964'
+  - url: 'https://stoplight.io/mocks/mattilsynet/produksjonsdyr-api/146360805'
     description: mock
 paths:
   /paabegyntskjema:
