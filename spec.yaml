@@ -9,6 +9,35 @@ servers:
   - url: 'https://stoplight.io/mocks/mattilsynet/produksjonsdyr-api/146360805'
     description: mock
 paths:
+  '/paabegyntskjema/{id}':
+    parameters:
+      - schema:
+          type: integer
+          format: int64
+        name: id
+        in: path
+        required: true
+        description: identen til påbegynt skjema som skal hentes opp
+    get:
+      summary: Henter ut et spesifikt påbegynt skjema
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaabegyntSkjema'
+              examples:
+                fjorfehold1:
+                  value:
+                    id: 1
+                    skjemanavn: fjorfehold
+                    endretdato: 30.05.2023 13.12
+                    datajson: '{"dyrehold":[{"id":1,"produksjonsform":"rugeegg"}]}'
+        '404':
+          description: Not Found
+      operationId: get-paabegyntskjema-id
   /paabegyntskjema:
     get:
       summary: Henter ut alle påbegynte skjema
@@ -71,35 +100,6 @@ paths:
                   endretdato: string
                   datajson: string
       description: ''
-  '/paabegyntskjema/{id}':
-    parameters:
-      - schema:
-          type: integer
-          format: int64
-        name: id
-        in: path
-        required: true
-        description: identen til påbegynt skjema som skal hentes opp
-    get:
-      summary: Henter ut et spesifikt påbegynt skjema
-      tags: []
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/PaabegyntSkjema'
-              examples:
-                fjorfehold1:
-                  value:
-                    id: 1
-                    skjemanavn: fjorfehold
-                    endretdato: 30.05.2023 13.12
-                    datajson: '{"dyrehold":[{"id":1,"produksjonsform":"rugeegg"}]}'
-        '404':
-          description: Not Found
-      operationId: get-paabegyntskjema-id
 components:
   schemas:
     PaabegyntSkjema:
