@@ -9,7 +9,6 @@ plugins {
 
 group = "no.mattilsynet"
 
-
 repositories {
     mavenCentral()
 }
@@ -31,6 +30,8 @@ openApiGenerate {
     ))
     sourceSets.getByName(SourceSet.MAIN_SOURCE_SET_NAME).kotlin.srcDir("$buildDir/generated/src/main/kotlin")
 }
+
+tasks.register("openApiGenerate-task"){ dependsOn("openApiGenerate") }
 
 tasks.getByName<Test>("test") {
     useJUnitPlatform()

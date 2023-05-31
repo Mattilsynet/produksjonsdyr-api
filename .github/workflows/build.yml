@@ -21,6 +21,6 @@ jobs:
           java-version: '17'
           cache: gradle
       - name: openApiGenerate
-        run: ./gradlew openApiGenerate
+        run: ./gradlew openApiGenerate-task
       - name: Build
         run: ./gradlew build
