@@ -2,7 +2,7 @@ openapi: 3.0.0
 x-stoplight:
   id: w3hr0yens1jtk
 info:
-  title: produksjonsdyr
+  title: produksjonsdyrene
   version: '1.0'
   description: Tester ut dto objekt gjennom API
 servers:
