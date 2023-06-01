@@ -125,9 +125,7 @@ components:
       x-stoplight:
         id: ie9sa0z3g8ode
       type: object
-      description: >-
-        Påbegynt skjema som bare viser nok informasjon for at brukeren skal
-        kunne velge fra en liste hva hen ønsker fortsette med.
+      description: Påbegynt skjema som bare viser nok informasjon for at brukeren skal kunne velge fra en liste hva hen ønsker fortsette med.
       x-examples:
         Fjorfehold 1:
           id: 1

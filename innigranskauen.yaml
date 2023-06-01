@@ -6,6 +6,9 @@ info:
   version: '1.0'
 servers:
   - url: 'http://localhost:3000'
+    description: local
+  - url: 'https://stoplight.io/mocks/mattilsynet/produksjonsdyr-api/146360805'
+    description: mock
 paths:
   '/paabegyntskjema/{id}':
     parameters:
@@ -36,7 +39,7 @@ paths:
         '404':
           description: Not Found
       operationId: get-paabegyntskjema-id
-      description: 'asefasdfg'
+      description: asefasdfg
   /paabegyntskjema:
     get:
       summary: Henter ut alle påbegynte skjema
@@ -98,7 +101,7 @@ paths:
                   skjemanavn: string
                   endretdato: string
                   datajson: string
-      description: 'asefasdfg'
+      description: asefasdfg
 components:
   schemas:
     PaabegyntSkjema:
@@ -124,9 +127,7 @@ components:
       x-stoplight:
         id: thworg4w8m589
       type: object
-      description: 
-        Påbegynt skjema som bare viser nok informasjon for at brukeren skal
-        kunne velge fra en liste hva hen ønsker fortsette med.
+      description: Påbegynt skjema som bare viser nok informasjon for at brukeren skal kunne velge fra en liste hva hen ønsker fortsette med.
       x-examples:
         Fjorfehold 1:
           id: 1
