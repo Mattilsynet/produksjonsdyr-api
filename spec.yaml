@@ -20,7 +20,7 @@ paths:
         required: true
         description: identen til påbegynt skjema som skal hentes opp
     get:
-      summary: Henter ut et spesifikt påbegynt skjema
+      summary: Henter påbegynt skjema
       tags: []
       responses:
         '200':
@@ -39,7 +39,7 @@ paths:
         '404':
           description: Not Found
       operationId: get-paabegyntskjema-id
-      description: asefasdfg
+      description: Henter ut spesifikt påbegynt skjema som har angitt id
   /paabegyntskjema:
     get:
       summary: Henter ut alle påbegynte skjema
@@ -101,7 +101,7 @@ paths:
                   skjemanavn: string
                   endretdato: string
                   datajson: string
-      description: asefasdfg
+      description: 'Lagrer skjemaet med alle opplysninger som sendes inn. '
 components:
   schemas:
     PaabegyntSkjema:
