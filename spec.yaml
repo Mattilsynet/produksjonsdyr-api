@@ -1,6 +1,6 @@
 openapi: 3.0.0
 x-stoplight:
-  id: wo0g0nr3sp5j5
+  id: 5rsqq5op2wjt7
 info:
   title: produksjonsdyr
   version: '1.0'
@@ -120,10 +120,12 @@ components:
           type: string
         datajson:
           type: string
+      x-stoplight:
+        id: g1r1l467zuphm
     PaabegyntSkjemaLite:
       title: PaabegyntSkjemaLite
       x-stoplight:
-        id: 6v3k9vqf9mccf
+        id: zd7hl7ymmzl12
       type: object
       description: Påbegynt skjema som bare viser nok informasjon for at brukeren skal kunne velge fra en liste hva hen ønsker fortsette med.
       x-examples:
