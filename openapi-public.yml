@@ -4,17 +4,14 @@ info:
   description: API for å kunne hente ut informasjon om produksjonsplasser og relatert informasjon.
   version: 0.1.0
 servers:
-  - url: http://localhost:8080
+  - url: 'http://localhost:8080'
     description: For å teste lokalt på maskinen din
-
 security:
-  - BasicAuth: [ ]
-
+  - BasicAuth: []
 paths:
-
-  /produksjonsplasser/getProduksjonsplassByProduksjonsplassId/{produksjonsplassid}:
+  '/produksjonsplasser/getProduksjonsplassByProduksjonsplassId/{produksjonsplassid}':
     get:
-      summary: Returnerer informasjon om produksjonsplass hvis den eksisterer.
+      summary: BOBeturnerer informasjon om produksjonsplass hvis den eksisterer.
       description: Produksjonsplass som matcher ProduksjonsplassIDen
       operationId: getProduksjonsplassByProduksjonsplassId
       parameters:
@@ -27,7 +24,7 @@ paths:
       tags:
         - Produksjonsplasser
       responses:
-        '200': # status code
+        '200':
           description: En produksjonsplass
           content:
             application/json:
@@ -38,7 +35,6 @@ paths:
         '500':
           $ref: '#/components/responses/500Error'
           description: Uforventet feil
-
   /produksjonsplasser/getAllProduksjonsplasser:
     get:
       summary: Returnerer alle aktive produksjonsplasser i registeret UTEN kontaktinformasjon
@@ -47,7 +43,7 @@ paths:
       tags:
         - Produksjonsplasser
       responses:
-        '200': # status code
+        '200':
           description: Liste over alle aktive produksjonsplasser
           content:
             application/json:
@@ -60,8 +56,7 @@ paths:
         '500':
           $ref: '#/components/responses/500Error'
           description: Uforventet feil
-
-  /produksjonsplasser/getProduksjonsplassByMatsKildeRefId/{kildeRefId}:
+  '/produksjonsplasser/getProduksjonsplassByMatsKildeRefId/{kildeRefId}':
     get:
       summary: Returnerer informasjon om produksjonsplass hvis den eksisterer.
       description: Produksjonsplass som matcher kildeRefId
@@ -76,19 +71,17 @@ paths:
       tags:
         - Produksjonsplasser
       responses:
-        '200': # status code
+        '200':
           description: En produksjonsplass
           content:
             application/json:
               schema:
-                  $ref: '#/components/schemas/Produksjonsplass'
+                $ref: '#/components/schemas/Produksjonsplass'
         '404':
           description: Finner ikke produksjonsplassen med denne id-en
         '500':
           $ref: '#/components/responses/500Error'
-
-
-  /produksjonsplasser/{produksjonsplassid}/sone/{radius}:
+  '/produksjonsplasser/{produksjonsplassid}/sone/{radius}':
     get:
       summary: Returnerer en liste over produksjonsplasser innenfor angitt radius til en produksjonsplass som er episenter.
       description: Liste over alle produksjonsplasser som finnes innenfor en gitt radius. Listen kan være tom.
@@ -109,7 +102,7 @@ paths:
       tags:
         - Produksjonsplasser
       responses:
-        '200': # status code
+        '200':
           description: En liste over produksjonsplasser
           content:
             application/json:
@@ -119,7 +112,6 @@ paths:
                   $ref: '#/components/schemas/Produksjonsplass'
         '500':
           $ref: '#/components/responses/500Error'
-
   /produksjonsplasser/getProduksjonsplasserISoneFraKoordinat:
     get:
       summary: Returnerer en liste over produksjonsplasser innenfor en angitt sone. Sonen blir generert av oppgitte GPS-koordinater og en radius.
@@ -148,7 +140,7 @@ paths:
       tags:
         - Produksjonsplasser
       responses:
-        '200': # status code
+        '200':
           description: En liste med produksjonsplasser som er innenfor sonen. Listen kan være tom.
           content:
             application/json:
@@ -156,10 +148,8 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Produksjonsplass'
-
         '500':
           $ref: '#/components/responses/500Error'
-
   /kontakt-info:
     get:
       summary: Returnerer kontaktinformasjon for for en liste med tilsynsobjektider
@@ -169,9 +159,9 @@ paths:
         - in: query
           name: tilsynsobjektIdList
           schema:
-              type: array
-              items:
-                type: string
+            type: array
+            items:
+              type: string
       responses:
         '200':
           description: En liste med driftsansvarlige med kontaktinfo. Listen kan være tom
@@ -180,11 +170,9 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: "#/components/schemas/Driftsansvarlig"
+                  $ref: '#/components/schemas/Driftsansvarlig'
         '500':
           $ref: '#/components/responses/500Error'
-
-
 components:
   securitySchemes:
     BasicAuth:
@@ -201,7 +189,7 @@ components:
         lokasjoner:
           type: array
           items:
-            $ref: "#/components/schemas/Lokasjon"
+            $ref: '#/components/schemas/Lokasjon'
           description: Liste over lokasjoner knyttet mot produksjonsplassen
         kategori:
           type: string
@@ -210,25 +198,26 @@ components:
         arter:
           type: array
           items:
-            $ref: "#/components/schemas/Art"
+            $ref: '#/components/schemas/Art'
           description: Liste over arter som holdes på lokasjonen
         adresse:
-          $ref: "#/components/schemas/Adresse"
+          $ref: '#/components/schemas/Adresse'
         driftsansvarlig:
-          $ref: "#/components/schemas/Driftsansvarlig"
-
+          $ref: '#/components/schemas/Driftsansvarlig'
     Art:
       type: object
       properties:
         artstype:
           type: string
-          enum: [HONS, AND, GJESS]
+          enum:
+            - HONS
+            - AND
+            - GJESS
           example: HONS
           description: Kodeverk for hvilke arter som er tilatt.
         antall:
           type: integer
           example: 23
-
     Driftsansvarlig:
       type: object
       properties:
@@ -248,7 +237,7 @@ components:
           example: 987654321
         foedselsnummer:
           type: string
-          example: 01037922334
+          example: 1037922334
     Adresse:
       type: object
       properties:
@@ -261,7 +250,6 @@ components:
         postnummer:
           type: string
           example: 2318
-
     Lokasjon:
       type: object
       properties:
@@ -273,7 +261,6 @@ components:
           type: string
           example: POINT(-71.064543 42.28787)
           description: Koordinater som beskriver et polygon som beskriver lokasjonen
-
   responses:
     400Error:
       description: Invalid request
@@ -284,7 +271,6 @@ components:
             properties:
               message:
                 type: string
-
     500Error:
       description: Internal server error
       content:
