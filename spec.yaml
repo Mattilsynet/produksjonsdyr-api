@@ -91,6 +91,18 @@ paths:
                   lastName: Baker
                   dateOfBirth: '1985-10-02'
         description: Patch user properties to update.
+    put:
+      summary: ''
+      operationId: put-users-userId
+      responses:
+        '200':
+          description: OK
+      description: saD*ølfk@asdøkf
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
   /user:
     post:
       summary: Create New User
