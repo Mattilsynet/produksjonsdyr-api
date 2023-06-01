@@ -36,6 +36,7 @@ paths:
         '404':
           description: Not Found
       operationId: get-paabegyntskjema-id
+      description: 'asefasdfg'
   /paabegyntskjema:
     get:
       summary: Henter ut alle påbegynte skjema
@@ -97,7 +98,7 @@ paths:
                   skjemanavn: string
                   endretdato: string
                   datajson: string
-      description: ''
+      description: 'asefasdfg'
 components:
   schemas:
     PaabegyntSkjema:
