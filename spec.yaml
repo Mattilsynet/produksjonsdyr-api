@@ -8,9 +8,6 @@ info:
 servers:
   - url: 'https://stoplight.io/mocks/mattilsynet/produksjonsdyr-api/146360805'
     description: mock
-tags:
-  - name: User
-    description: Endpoints handling users
 paths:
   '/paabegyntskjema/{id}':
     parameters:
