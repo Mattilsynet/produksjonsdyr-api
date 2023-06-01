@@ -2,11 +2,13 @@ openapi: 3.0.0
 x-stoplight:
   id: 5rsqq5op2wjt7
 info:
-  title: produksjonsplass
+  title: produksjonsdyr
   version: '1.0'
 servers:
   - url: 'http://localhost:3000'
     description: local
+  - url: 'https://stoplight.io/mocks/mattilsynet/produksjonsdyr-api/382663'
+    description: mock
 paths:
   '/paabegyntskjema/{id}':
     parameters:
@@ -125,9 +127,7 @@ components:
       x-stoplight:
         id: jg99ddm666fdl
       type: object
-      description: >-
-        Påbegynt skjema som bare viser nok informasjon for at brukeren skal
-        kunne velge fra en liste hva hen ønsker fortsette med.
+      description: Påbegynt skjema som bare viser nok informasjon for at brukeren skal kunne velge fra en liste hva hen ønsker fortsette med.
       x-examples:
         Fjorfehold 1:
           id: 1
