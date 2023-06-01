@@ -100,6 +100,24 @@ paths:
                   endretdato: string
                   datajson: string
       description: ''
+  /test/endepunkt:
+    get:
+      summary: kommer dette opp i api
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaabegyntSkjemaLite'
+              examples:
+                Example 1:
+                  value:
+                    id: 1
+                    skjemanavn: fjørfehold
+                    endretdato: '30.05.2023 10:22'
+      operationId: get-test-endepunkt
 components:
   schemas:
     PaabegyntSkjema:
