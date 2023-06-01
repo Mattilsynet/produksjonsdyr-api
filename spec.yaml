@@ -2,7 +2,7 @@ openapi: 3.0.0
 x-stoplight:
   id: 5rsqq5op2wjt7
 info:
-  title: test
+  title: tester
   version: '1.0'
 servers:
   - url: 'http://localhost:3000'

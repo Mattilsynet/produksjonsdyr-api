@@ -1,8 +1,8 @@
 openapi: 3.0.0
 x-stoplight:
-  id: w3hr0yens1jtk
+  id: 9xezn5muf8w3c
 info:
-  title: produksjonsdyr2
+  title: produksjonsdyr
   version: '1.0'
   description: Tester ut dto objekt gjennom API
 servers:
@@ -52,7 +52,7 @@ paths:
                 items:
                   $ref: '#/components/schemas/PaabegyntSkjemaLite'
                   x-stoplight:
-                    id: oj6u2grtv1vb3
+                    id: 8g34qejj4qwfz
               examples:
                 ReturnererAntall2:
                   value:
@@ -120,14 +120,14 @@ components:
           type: string
         datajson:
           type: string
+      x-stoplight:
+        id: in6rlwcmhxzg3
     PaabegyntSkjemaLite:
       title: PaabegyntSkjemaLite
       x-stoplight:
-        id: ie9sa0z3g8ode
+        id: b10518i4x3p5x
       type: object
-      description: >-
-        Påbegynt skjema som bare viser nok informasjon for at brukeren skal
-        kunne velge fra en liste hva hen ønsker fortsette med.
+      description: Påbegynt skjema som bare viser nok informasjon for at brukeren skal kunne velge fra en liste hva hen ønsker fortsette med.
       x-examples:
         Fjorfehold 1:
           id: 1
@@ -137,16 +137,16 @@ components:
         id:
           type: integer
           x-stoplight:
-            id: hxswlza4a8bv2
+            id: 1kke5nwf43cnx
           format: int64
           example: 1
         skjemanavn:
           type: string
           x-stoplight:
-            id: gwgdovhrfn77a
+            id: aps1vjnsv5yka
           example: fjørfehold
         endretdato:
           type: string
           x-stoplight:
-            id: ios8dh0cc9asi
+            id: vzueviji37afj
           example: '30.05.2023 10:22'
