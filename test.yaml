@@ -2,205 +2,151 @@ openapi: 3.0.0
 x-stoplight:
   id: w3hr0yens1jtk
 info:
-  title: test
+  title: produksjonsdyr
   version: '1.0'
+  description: Tester ut dto objekt gjennom API
 servers:
-  - url: 'http://localhost:3000'
+  - url: 'https://stoplight.io/mocks/mattilsynet/produksjonsdyr-api/146360805'
+    description: mock
 paths:
-  '/users/{userId}':
+  '/paabegyntskjema/{id}':
     parameters:
       - schema:
           type: integer
-        name: userId
+          format: int64
+        name: id
         in: path
         required: true
-        description: Id of an existing user.
+        description: identen til påbegynt skjema som skal hentes opp
     get:
-      summary: Get User Info by User ID
+      summary: Henter ut et spesifikt påbegynt skjema
       tags: []
       responses:
         '200':
-          description: User Found
+          description: OK
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/User'
+                $ref: '#/components/schemas/PaabegyntSkjema'
               examples:
-                Get User Alice Smith:
+                fjorfehold1:
                   value:
-                    id: 142
-                    firstName: Alice
-                    lastName: Smith
-                    email: alice.smith@gmail.com
-                    dateOfBirth: '1997-10-31'
-                    emailVerified: true
-                    signUpDate: '2019-08-24'
+                    id: 1
+                    skjemanavn: fjorfehold
+                    endretdato: 30.05.2023 13.12
+                    datajson: '{"dyrehold":[{"id":1,"produksjonsform":"rugeegg"}]}'
         '404':
-          description: User Not Found
-      operationId: get-users-userId
-      description: Retrieve the information of the user with the matching user ID.
-    patch:
-      summary: Update User Information
-      operationId: patch-users-userId
+          description: Not Found
+      operationId: get-paabegyntskjema-id
+  /paabegyntskjema:
+    get:
+      summary: Henter ut alle påbegynte skjema
+      tags: []
       responses:
         '200':
-          description: User Updated
+          description: OK
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/User'
+                type: array
+                items:
+                  $ref: '#/components/schemas/PaabegyntSkjemaLite'
+                  x-stoplight:
+                    id: oj6u2grtv1vb3
               examples:
-                Updated User Rebecca Baker:
+                ReturnererAntall2:
                   value:
-                    id: 13
-                    firstName: Rebecca
-                    lastName: Baker
-                    email: rebecca@gmail.com
-                    dateOfBirth: '1985-10-02'
-                    emailVerified: false
-                    createDate: '2019-08-24'
+                    - id: 1
+                      skjemanavn: fjørfehold
+                      endretdato: '30.05.2023 10:22'
+                    - id: 2
+                      skjemanavn: storfehold
+                      endretdato: '29.04.2023 11:22'
         '404':
-          description: User Not Found
-        '409':
-          description: Email Already Taken
-      description: Update the information of an existing user.
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                firstName:
-                  type: string
-                lastName:
-                  type: string
-                email:
-                  type: string
-                  description: 'If a new email is given, the user''s email verified property will be set to false.'
-                dateOfBirth:
-                  type: string
-            examples:
-              Update First Name:
-                value:
-                  firstName: Rebecca
-              Update Email:
-                value:
-                  email: rebecca@gmail.com
-              Update Last Name & Date of Birth:
-                value:
-                  lastName: Baker
-                  dateOfBirth: '1985-10-02'
-        description: Patch user properties to update.
-  /user:
+          description: Not Found
+      operationId: get-paabegyntskjema
+      description: Henter alle påbegynte skjema
     post:
-      summary: Create New User
-      operationId: post-user
+      summary: Lagrer nytt påbegynt skjema
+      operationId: post-paabegyntskjema
       responses:
         '200':
-          description: User Created
+          description: OK
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/User'
+                $ref: '#/components/schemas/PaabegyntSkjemaLite'
               examples:
-                New User Bob Fellow:
+                fjorfehold2:
                   value:
-                    id: 12
-                    firstName: Bob
-                    lastName: Fellow
-                    email: bob.fellow@gmail.com
-                    dateOfBirth: '1996-08-24'
-                    emailVerified: false
-                    createDate: '2020-11-18'
+                    id: 2
+                    skjemanavn: fjørfehold2
+                    endretdato: '31.05.2023 10:22'
         '400':
-          description: Missing Required Information
-        '409':
-          description: Email Already Taken
+          description: Bad Request
       requestBody:
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                firstName:
-                  type: string
-                lastName:
-                  type: string
-                email:
-                  type: string
-                dateOfBirth:
-                  type: string
-                  format: date
-              required:
-                - firstName
-                - lastName
-                - email
-                - dateOfBirth
+              $ref: '#/components/schemas/PaabegyntSkjema'
             examples:
-              Create User Bob Fellow:
+              NyttSkjema:
                 value:
-                  firstName: Bob
-                  lastName: Fellow
-                  email: bob.fellow@gmail.com
-                  dateOfBirth: '1996-08-24'
-        description: Post the necessary fields for the API to create a new user.
-      description: Create a new user.
+                  skjemanavn: fjorfehold2
+                  datajson: '{"dyrehold": [ {"produksjonsform": "slaktekylling" }]  }'
+              Example 1:
+                value:
+                  skjemanavn: string
+                  endretdato: string
+                  datajson: string
+      description: ''
 components:
   schemas:
-    User:
-      title: User
+    PaabegyntSkjema:
       type: object
-      description: ''
       x-examples:
-        Alice Smith:
-          id: 142
-          firstName: Alice
-          lastName: Smith
-          email: alice.smith@gmail.com
-          dateOfBirth: '1997-10-31'
-          emailVerified: true
-          signUpDate: '2019-08-24'
+        fjorfehold1:
+          id: 1
+          skjemanavn: fjorfehold
+          endretdato: 30.05.2023 13.12
+          datajson: '{"dyrehold":[{"id":1,"produksjonsform":"rugeegg"}]}'
       properties:
         id:
           type: integer
-          description: Unique identifier for the given user.
-          x-stoplight:
-            id: szu9k8d3obol3
-        firstName:
+          format: int64
+        skjemanavn:
           type: string
-          x-stoplight:
-            id: 6zdoo45sgewdf
-        lastName:
+        endretdato:
           type: string
-          x-stoplight:
-            id: sdegtelw0vh4l
-        email:
+        datajson:
           type: string
-          format: email
-          x-stoplight:
-            id: xc1mug0fzjr2q
-        dateOfBirth:
-          type: string
-          format: date
-          example: '1997-10-31'
-          x-stoplight:
-            id: kv7m7f4vjfzwb
-        emailVerified:
-          type: boolean
-          description: Set to true if the user's email has been verified.
-          x-stoplight:
-            id: bebnddbzhzoln
-        createDate:
-          type: string
-          format: date
-          description: The date that the user was created.
-          x-stoplight:
-            id: fyrgdeixes0uh
-      required:
-        - id
-        - firstName
-        - lastName
-        - email
-        - emailVerified
+    PaabegyntSkjemaLite:
+      title: PaabegyntSkjemaLite
       x-stoplight:
-        id: 4joi52wd2vgeg
+        id: ie9sa0z3g8ode
+      type: object
+      description: >-
+        Påbegynt skjema som bare viser nok informasjon for at brukeren skal
+        kunne velge fra en liste hva hen ønsker fortsette med.
+      x-examples:
+        Fjorfehold 1:
+          id: 1
+          dyrehold: fjørfehold
+          endretdato: '30.05.2023 10:22'
+      properties:
+        id:
+          type: integer
+          x-stoplight:
+            id: hxswlza4a8bv2
+          format: int64
+          example: 1
+        skjemanavn:
+          type: string
+          x-stoplight:
+            id: gwgdovhrfn77a
+          example: fjørfehold
+        endretdato:
+          type: string
+          x-stoplight:
+            id: ios8dh0cc9asi
+          example: '30.05.2023 10:22'
