@@ -54,8 +54,6 @@ tasks.getByName<Test>("test") {
 }
 
 tasks.jar {
-    archiveBaseName.set("pdyrapi-kotlin-spring")
-    archiveClassifier.set("")
     isEnabled = true
 }
 
@@ -71,7 +69,7 @@ publishing {
     repositories {
         maven {
             name = "MattilsynetGitHubPackages"
-            url = uri("https://maven.pkg.github.com/Mattilsynet/${project.name}")
+            url = uri("https://maven.pkg.github.com/Mattilsynet")
             credentials {
                 username = (project.findProperty("githubActor") ?: System.getenv("GITHUB_ACTOR")) as String?
                 password = (project.findProperty("githubToken") ?: System.getenv("GITHUB_TOKEN")) as String?
@@ -79,7 +77,7 @@ publishing {
         }
     }
     publications {
-        register("gpr", MavenPublication::class) {
+        register("pdyr", MavenPublication::class) {
             from(components["java"])
         }
     }
