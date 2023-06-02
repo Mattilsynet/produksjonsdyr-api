@@ -1,2 +1,2 @@
 rootProject.name = "produksjonsdyr-api"
-include("kotlin-spring")
+include("pdyrapi-kotlin-spring")
