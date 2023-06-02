@@ -1,0 +1,64 @@
+title: Aktor
+x-stoplight:
+  id: 89zg7sxme3ytg
+type: object
+description: Aktør på produksjonsenheten/plassen ofte "Driftsansvarlig"
+examples:
+  - aktorId: 0
+    produsentnummerP10: 1234567890
+    rolle: Driftsansvarlig
+    kanEditereGjeldendeAnlegg: true
+    matsPersonId: string
+    orgnummerVirksomhet: string
+    orgnummerForetak: string
+    aktiviteterRef:
+      - 0
+    dyreholdId: 0
+x-tags:
+  - Aktør
+properties:
+  aktorId:
+    type: integer
+    format: int64
+    minimum: 0
+    x-stoplight:
+      id: vnwba4wfbxofn
+  produsentnummerP10:
+    type: string
+    default: 1234567890
+  rolle:
+    type: string
+    enum:
+      - Driftsansvarlig
+      - Eier/Innehaver
+      - Tilknyttet
+    default: Driftsansvarlig
+  kanEditereGjeldendeAnlegg:
+    type: boolean
+    default: true
+  matsPersonId:
+    type: string
+  orgnummerVirksomhet:
+    type: string
+  orgnummerForetak:
+    type: string
+  ansvarId:
+    type: array
+    items:
+      type: integer
+      format: int64
+      minimum: 0
+      x-stoplight:
+        id: ca5w7h5nqzd08
+  fodselsnummer:
+    type: string
+    x-stoplight:
+      id: ponunieit3yez
+  dyreholdId:
+    type: string
+    x-stoplight:
+      id: 5x4rh0r0bvyxz
+required:
+  - aktorId
+  - rolle
+  - kanEditereGjeldendeAnlegg

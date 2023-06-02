@@ -1,0 +1,16 @@
+title: VerdikjederStorfe
+x-stoplight:
+  id: cxcw74ai07q2o
+type: object
+description: Verdikjeder for dyrehold kategorien "Storfe"
+examples:
+  - verdikjedeStorfe: string
+properties:
+  verdikjedeStorfe:
+    type: string
+    x-stoplight:
+      id: agc23n6tl8um5
+required:
+  - verdikjedeStorfe
+x-tags:
+  - Fasilitet

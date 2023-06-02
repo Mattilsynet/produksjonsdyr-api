@@ -1,0 +1,26 @@
+title: SaueArter
+x-stoplight:
+  id: rtqryaif3syxc
+type: object
+description: Relevante arter i kategorien "Sau"
+examples:
+  - sauArt: SAU
+    antall: 120
+x-tags:
+  - Art
+properties:
+  sauArt:
+    type: string
+    enum:
+      - SAU
+    x-stoplight:
+      id: egyr7hsvjok4y
+  antall:
+    type: integer
+    x-stoplight:
+      id: fzvv37hny8wtm
+    format: int64
+    minimum: 1
+required:
+  - sauArt
+  - antall

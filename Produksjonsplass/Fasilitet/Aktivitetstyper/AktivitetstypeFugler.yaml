@@ -1,0 +1,26 @@
+title: AktivitetstypeFugler
+x-stoplight:
+  id: ga2wsylfj27w3
+type: object
+description: Klassifisering av aktiviteter som er relevant i kontekst "Fugler"
+examples:
+  - aktivitetstypeFugler: RUGEEGG
+properties:
+  aktivitetstypeFugler:
+    type: string
+    enum:
+      - RUGEEGG
+      - RUGERI
+      - OPPAL
+      - KONSUMEGG
+      - SLAKTEKYLLING
+      - SALG_AV_RUGEEGG
+      - SALG_AV_KONSUMEGG
+      - SALG_AV_FUGLER
+      - SALG_AV_FJER
+    x-stoplight:
+      id: bcfi5vy406frl
+required:
+  - aktivitetstypeFugler
+x-tags:
+  - Fasilitet

@@ -1,0 +1,6 @@
+build/generated/settings.gradle
+build/generated/README.md
+build/generated/pom.xml
+build/generated/build.gradle.kts
+build/generated/.openapi-generator-ignore
+build/generated/.openapi-generator

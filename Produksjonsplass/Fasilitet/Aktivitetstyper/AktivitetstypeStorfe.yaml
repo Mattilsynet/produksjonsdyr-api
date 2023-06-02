@@ -1,0 +1,13 @@
+title: AktivitetstypeStorfe
+x-stoplight:
+  id: y3jv2eq0txf74
+type: object
+properties:
+  aktivitetstypeStorfe:
+    type: string
+    x-stoplight:
+      id: ez25vgmejqr9o
+required:
+  - aktivitetstypeStorfe
+x-tags:
+  - Fasilitet

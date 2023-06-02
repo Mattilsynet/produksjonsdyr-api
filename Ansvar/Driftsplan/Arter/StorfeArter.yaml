@@ -1,0 +1,26 @@
+title: StorfeArter
+x-stoplight:
+  id: d23zdt3zkhoi1
+type: object
+description: Relevante arter i kategorien "Storfe"
+examples:
+  - storfeArt: STORFE
+    antall: 1
+x-tags:
+  - Art
+properties:
+  storfeArt:
+    type: string
+    enum:
+      - STORFE
+    x-stoplight:
+      id: ixyafpvvtnhd9
+  antall:
+    type: integer
+    x-stoplight:
+      id: 85tp9mj9kpy2s
+    format: int64
+    minimum: 1
+required:
+  - storfeArt
+  - antall

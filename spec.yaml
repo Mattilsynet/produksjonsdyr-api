@@ -1,0 +1,152 @@
+openapi: 3.0.0
+x-stoplight:
+  id: 5rsqq5op2wjt7
+info:
+  title: produksjonsdyr
+  version: '1.0'
+servers:
+  - url: 'http://localhost:3000'
+    description: local
+  - url: 'https://stoplight.io/mocks/mattilsynet/produksjonsdyr-api/382663'
+    description: mock
+paths:
+  '/paabegyntskjema/{id}':
+    parameters:
+      - schema:
+          type: integer
+          format: int64
+        name: id
+        in: path
+        required: true
+        description: identen til påbegynt skjema som skal hentes opp
+    get:
+      summary: Henter påbegynt skjema
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaabegyntSkjema'
+              examples:
+                fjorfehold1:
+                  value:
+                    id: 1
+                    skjemanavn: fjorfehold
+                    endretdato: 30.05.2023 13.12
+                    datajson: '{"dyrehold":[{"id":1,"produksjonsform":"rugeegg"}]}'
+        '404':
+          description: Not Found
+      operationId: get-paabegyntskjema-id
+      description: Henter ut spesifikt påbegynt skjema som har angitt id
+  /paabegyntskjema:
+    get:
+      summary: Henter ut alle påbegynte skjema
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PaabegyntSkjemaLite'
+                  x-stoplight:
+                    id: 0t5183uosro9f
+              examples:
+                ReturnererAntall2:
+                  value:
+                    - id: 1
+                      skjemanavn: fjørfehold
+                      endretdato: '30.05.2023 10:22'
+                    - id: 2
+                      skjemanavn: storfehold
+                      endretdato: '29.04.2023 11:22'
+        '404':
+          description: Not Found
+      operationId: get-paabegyntskjema
+      description: Henter alle påbegynte skjema
+    post:
+      summary: Lagrer nytt påbegynt skjema
+      operationId: post-paabegyntskjema
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaabegyntSkjemaLite'
+              examples:
+                fjorfehold2:
+                  value:
+                    id: 2
+                    skjemanavn: fjørfehold2
+                    endretdato: '31.05.2023 10:22'
+        '400':
+          description: Bad Request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PaabegyntSkjema'
+            examples:
+              NyttSkjema:
+                value:
+                  skjemanavn: fjorfehold2
+                  datajson: '{"dyrehold": [ {"produksjonsform": "slaktekylling" }]  }'
+              Example 1:
+                value:
+                  skjemanavn: string
+                  endretdato: string
+                  datajson: string
+      description: 'Lagrer skjemaet med alle opplysninger som sendes inn. '
+components:
+  schemas:
+    PaabegyntSkjema:
+      type: object
+      x-examples:
+        fjorfehold1:
+          id: 1
+          skjemanavn: fjorfehold
+          endretdato: 30.05.2023 13.12
+          datajson: '{"dyrehold":[{"id":1,"produksjonsform":"rugeegg"}]}'
+      properties:
+        id:
+          type: integer
+          format: int64
+        skjemanavn:
+          type: string
+        endretdato:
+          type: string
+        datajson:
+          type: string
+    PaabegyntSkjemaLite:
+      title: PaabegyntSkjemaLite
+      x-stoplight:
+        id: jg99ddm666fdl
+      type: object
+      description: Påbegynt skjema som bare viser nok informasjon for at brukeren skal kunne velge fra en liste hva hen ønsker fortsette med.
+      x-examples:
+        Fjorfehold 1:
+          id: 1
+          dyrehold: fjørfehold
+          endretdato: '30.05.2023 10:22'
+      properties:
+        id:
+          type: integer
+          x-stoplight:
+            id: 9nk8vutid1mtf
+          format: int64
+          example: 1
+        skjemanavn:
+          type: string
+          x-stoplight:
+            id: woqh75nq0mrm9
+          example: fjørfehold
+        endretdato:
+          type: string
+          x-stoplight:
+            id: kp50ml30jvmoz
+          example: '30.05.2023 10:22'

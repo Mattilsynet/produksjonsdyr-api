@@ -1,9 +1,0 @@
-title: AktivitetstypeStorfe
-x-stoplight:
-  id: y3jv2eq0txf74
-type: object
-properties:
-  aktivitetstypeStorfe:
-    type: string
-required:
-  - aktivitetstypeStorfe
