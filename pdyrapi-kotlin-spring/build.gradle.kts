@@ -55,14 +55,21 @@ tasks.getByName<Test>("test") {
 
 tasks.jar {
     isEnabled = true
+    archiveClassifier.set("") //fjerner plain fra navnet til jar-filen
 }
 
 tasks.bootJar {
     isEnabled = false
 }
 
+
 if (project.hasProperty("releaseVersion")) {
     version = project.properties["releaseVersion"]!!
+}
+
+
+tasks.withType<PublishToMavenRepository>{
+    dependsOn("openApiGenerate")
 }
 
 publishing {
