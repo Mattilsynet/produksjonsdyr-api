@@ -58,17 +58,16 @@ tasks.jar {
     archiveClassifier.set("") //fjerner plain fra navnet til jar-filen
 }
 
-tasks.bootJar {
-    isEnabled = false
-}
-
-
 if (project.hasProperty("releaseVersion")) {
     version = project.properties["releaseVersion"]!!
 }
 
 
 tasks.withType<PublishToMavenRepository>{
+    dependsOn("openApiGenerate")
+}
+
+tasks.withType<PublishToMavenLocal>{
     dependsOn("openApiGenerate")
 }
 
@@ -84,7 +83,7 @@ publishing {
         }
     }
     publications {
-        register("pdyr", MavenPublication::class) {
+        create<MavenPublication>("maven") {
             from(components["java"])
         }
     }
