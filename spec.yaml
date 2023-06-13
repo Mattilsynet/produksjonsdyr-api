@@ -21,7 +21,8 @@ paths:
         description: identen til påbegynt skjema som skal hentes opp
     get:
       summary: Henter påbegynt skjema
-      tags: []
+      tags:
+        - paabegyntskjema
       responses:
         '200':
           description: OK
@@ -43,7 +44,8 @@ paths:
   /paabegyntskjema:
     get:
       summary: Henter ut alle påbegynte skjema
-      tags: []
+      tags:
+        - paabegyntskjema
       responses:
         '200':
           description: OK
@@ -102,6 +104,40 @@ paths:
                   endretdato: string
                   datajson: string
       description: 'Lagrer skjemaet med alle opplysninger som sendes inn. '
+  '/paabegyntskjema/byeier/{eierid}':
+    parameters:
+      - schema:
+          type: string
+        name: eierid
+        in: path
+        description: ident som sier hvem brukeren er
+        required: true
+    get:
+      summary: Henter alle skjema til angitt eier
+      tags:
+        - paabegyntskjema
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PaabegyntSkjemaLite'
+              examples:
+                Example 1:
+                  value:
+                    - id: 1
+                      skjemanavn: fjørfehold
+                      endretdato: '30.05.2023 10:22'
+                    - id: 2
+                      skjemanavn: fjørfehold2
+                      endretdato: '01.06.2023 10:22'
+        '404':
+          description: Not Found
+      operationId: get-paabegyntskjema-byeier-eierid
+      description: 'Henter ut en liste med skjema som er påbegynt av denne eieren (eierid). '
 components:
   schemas:
     PaabegyntSkjema:
@@ -112,6 +148,13 @@ components:
           skjemanavn: fjorfehold
           endretdato: 30.05.2023 13.12
           datajson: '{"dyrehold":[{"id":1,"produksjonsform":"rugeegg"}]}'
+          eierId: '09944737728'
+        Example 1:
+          id: -9223372036854776000
+          skjemanavn: string
+          endretdato: string
+          datajson: string
+          eierId: string
       properties:
         id:
           type: integer
@@ -122,6 +165,14 @@ components:
           type: string
         datajson:
           type: string
+        eierId:
+          type: string
+          x-stoplight:
+            id: d1oyqdhrnoa1d
+          description: Ident som er knyttet til eier/bruker.
+      description: Skjema som inneholder alle opplysninger i skjema. Eierid er knyttet til den som opprettet skjemaet for å kunne finne riktig skjema. Dette kan være organisasjonsnummer (evnt. virksomhetsmappe i MATS)
+      x-tags:
+        - paabegyntskjema
     PaabegyntSkjemaLite:
       title: PaabegyntSkjemaLite
       x-stoplight:
@@ -150,3 +201,5 @@ components:
           x-stoplight:
             id: kp50ml30jvmoz
           example: '30.05.2023 10:22'
+      x-tags:
+        - paabegyntskjema
