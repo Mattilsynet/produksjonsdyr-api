@@ -9,7 +9,7 @@ plugins {
 }
 
 group = "no.mattilsynet.produksjonsdyr"
-version = "0.0.1-SNAPSHOT"
+version = "0.0.5-SNAPSHOT"
 
 repositories {
     mavenCentral()
@@ -37,6 +37,7 @@ openApiGenerate {
     additionalProperties.set(mapOf("apiFirst" to "true"))
     apiPackage.set("no.mattilsynet.api")
     modelPackage.set("no.mattilsynet.model")
+    apiNameSuffix.set("Dto")
     configOptions.set(mapOf(
         "interfaceOnly" to "true",
         "serializableModel" to "true",
@@ -58,17 +59,12 @@ tasks.jar {
     archiveClassifier.set("") //fjerner plain fra navnet til jar-filen
 }
 
+tasks.bootJar {
+    isEnabled = false
+}
+
 if (project.hasProperty("releaseVersion")) {
     version = project.properties["releaseVersion"]!!
-}
-
-
-tasks.withType<PublishToMavenRepository>{
-    dependsOn("openApiGenerate")
-}
-
-tasks.withType<PublishToMavenLocal>{
-    dependsOn("openApiGenerate")
 }
 
 publishing {
