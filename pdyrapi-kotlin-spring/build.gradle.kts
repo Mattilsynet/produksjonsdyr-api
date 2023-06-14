@@ -6,6 +6,7 @@ plugins {
     id ("org.openapi.generator") version "6.4.0"
     id ("java-library")
     id("maven-publish")
+    id("org.sonarqube") version "4.2.1.3168"
 }
 
 group = "no.mattilsynet.produksjonsdyr"
@@ -27,6 +28,14 @@ dependencies {
     }
     implementation("javax.servlet:servlet-api:2.5")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+}
+
+sonarqube {
+    properties {
+        property("sonar.projectKey", "Mattilsynet_produksjonsdyr-api")
+        property("sonar.organization", "mattilsynet")
+        property("sonar.host.url", "https://sonarcloud.io")
+    }
 }
 
 openApiGenerate {
