@@ -30,14 +30,6 @@ dependencies {
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
-sonarqube {
-    properties {
-        property("sonar.projectKey", "Mattilsynet_produksjonsdyr-api")
-        property("sonar.organization", "mattilsynet")
-        property("sonar.host.url", "https://sonarcloud.io")
-    }
-}
-
 openApiGenerate {
     generatorName.set("kotlin-spring")
     outputDir.set("$buildDir/generated")
