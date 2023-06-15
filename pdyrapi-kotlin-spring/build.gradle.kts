@@ -38,7 +38,7 @@ openApiGenerate {
     additionalProperties.set(mapOf("apiFirst" to "true"))
     apiPackage.set("no.mattilsynet.api")
     modelPackage.set("no.mattilsynet.model")
-    apiNameSuffix.set("Dto")
+    modelNameSuffix.set("Dto")
     configOptions.set(mapOf(
         "interfaceOnly" to "true",
         "serializableModel" to "true",
