@@ -6,6 +6,7 @@ plugins {
     id ("org.openapi.generator") version "6.4.0"
     id ("java-library")
     id("maven-publish")
+    id("org.sonarqube") version "4.2.1.3168"
 }
 
 group = "no.mattilsynet.produksjonsdyr"
@@ -37,7 +38,7 @@ openApiGenerate {
     additionalProperties.set(mapOf("apiFirst" to "true"))
     apiPackage.set("no.mattilsynet.api")
     modelPackage.set("no.mattilsynet.model")
-    apiNameSuffix.set("Dto")
+    modelNameSuffix.set("Dto")
     configOptions.set(mapOf(
         "interfaceOnly" to "true",
         "serializableModel" to "true",
