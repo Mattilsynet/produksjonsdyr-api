@@ -25,7 +25,7 @@ jobs:
       - name: Build
         run: ./gradlew build
       - name: Run sonarcloud analysis
-        run: ./gradlew build sonarqube -Dsonar.projectKey=Mattilsynet_produksjonsdyr-api -Dsonar.organization=mattilsynet -Dsonar.host.url=https://sonarcloud.io --no-daemon
+        run: ./gradlew build sonar -Dsonar.projectKey=Mattilsynet_produksjonsdyr-api -Dsonar.organization=mattilsynet -Dsonar.host.url=https://sonarcloud.io --no-daemon
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.READ_ACTOR_PAT }}
