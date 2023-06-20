@@ -151,23 +151,7 @@ paths:
               type: object
               properties:
                 produksjonsplass:
-                  $ref: ./Produksjonsplass/Produksjonsplass.yaml
-          application/xml:
-            schema:
-              type: object
-              properties: {}
-          multipart/form-data:
-            schema:
-              type: object
-              properties: {}
-          text/html:
-            schema:
-              type: object
-              properties: {}
-          text/plain:
-            schema:
-              type: object
-              properties: {}
+                  $ref: ./models/Produksjonsplass/Produksjonsplass.yaml
         description: ''
     post:
       summary: produksjonsplass
@@ -178,10 +162,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: ./Produksjonsplass/Produksjonsplass.yaml
-          application/xml:
-            schema:
-              $ref: ./Produksjonsplass/Produksjonsplass.yaml
+              $ref: ./models/Produksjonsplass/Produksjonsplass.yaml
 components:
   schemas:
     PaabegyntSkjema:
