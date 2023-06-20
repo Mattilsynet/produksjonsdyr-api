@@ -44,7 +44,7 @@ properties:
       id: hijd2886azby5
     description: samme som anleggstype
   ansvarsType:
-    $ref: ../models/ansvarstype.yaml
+    $ref: ../models/Hovedkategori.yaml
     x-stoplight:
       id: bznfnvbxzrmkf
     description: samme som kategori

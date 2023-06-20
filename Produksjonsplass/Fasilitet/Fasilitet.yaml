@@ -77,10 +77,10 @@ properties:
     x-stoplight:
       id: 9587kz2iw4o2q
     oneOf:
-      - $ref: ./Aktivitetstyper/AktivitetstypeFugler.yaml
+      - $ref: .models/Aktivitetstyper/AktivitetstypeFugler.yaml
         x-stoplight:
           id: 9flktad5hec46
-      - $ref: ./Aktivitetstyper/AktivitetstypeStorfe.yaml
+      - $ref: .models/Aktivitetstyper/AktivitetstypeStorfe.yaml
         x-stoplight:
           id: trklywbqsaub9
     description: Synonymt med produksjonsform
