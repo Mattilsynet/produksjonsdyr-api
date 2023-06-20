@@ -138,6 +138,50 @@ paths:
           description: Not Found
       operationId: get-paabegyntskjema-byeier-eierid
       description: 'Henter ut en liste med skjema som er påbegynt av denne eieren (eierid). '
+  /produksjonsdyr:
+    get:
+      summary: produksjonsplass
+      tags: []
+      responses: {}
+      operationId: get-produksjonsplass
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                produksjonsplass:
+                  $ref: ./Produksjonsplass/Produksjonsplass.yaml
+          application/xml:
+            schema:
+              type: object
+              properties: {}
+          multipart/form-data:
+            schema:
+              type: object
+              properties: {}
+          text/html:
+            schema:
+              type: object
+              properties: {}
+          text/plain:
+            schema:
+              type: object
+              properties: {}
+        description: ''
+    post:
+      summary: produksjonsplass
+      tags: []
+      responses: {}
+      operationId: post-produksjonsplass
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ./Produksjonsplass/Produksjonsplass.yaml
+          application/xml:
+            schema:
+              $ref: ./Produksjonsplass/Produksjonsplass.yaml
 components:
   schemas:
     PaabegyntSkjema:
