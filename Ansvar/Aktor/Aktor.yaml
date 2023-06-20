@@ -1,8 +1,8 @@
-title: Aktor
+title: Driftsansvarlig
 x-stoplight:
   id: 89zg7sxme3ytg
 type: object
-description: Aktør på produksjonsenheten/plassen ofte "Driftsansvarlig"
+description: 'Driftsansvarlig er den som står rettslig til ansvar for dyr, både individer og grupper av dyr. Driftsansvarlig kan enten være et foretak (identifisert med organisasjonsnummer) eller en privatperson (identifisert med fødselsnummer). Driftsansvarlig samsvarer med dagens virksomhetsmappe i MATS.'
 examples:
   - aktorId: 0
     produsentnummerP10: 1234567890
@@ -17,7 +17,7 @@ examples:
 x-tags:
   - Aktør
 properties:
-  aktorId:
+  driftsansvarligId:
     type: integer
     format: int64
     minimum: 0
@@ -26,13 +26,7 @@ properties:
   produsentnummerP10:
     type: string
     default: 1234567890
-  rolle:
-    type: string
-    enum:
-      - Driftsansvarlig
-      - Eier/Innehaver
-      - Tilknyttet
-    default: Driftsansvarlig
+    description: En identifikator som brukes av bransjen til å identifisere en virksomhet som er koblet til en landbrukseiendom.
   kanEditereGjeldendeAnlegg:
     type: boolean
     default: true
@@ -58,7 +52,8 @@ properties:
     type: string
     x-stoplight:
       id: 5x4rh0r0bvyxz
+    description: |
+      Nummerserie som benyttes av driftsansvarlig for å merke dyr. Tildeles av Mattilsynet.
 required:
-  - aktorId
-  - rolle
+  - driftsansvarligId
   - kanEditereGjeldendeAnlegg

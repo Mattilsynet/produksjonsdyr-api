@@ -1,0 +1,21 @@
+title: Hovedkategori
+x-stoplight:
+  id: jjf97c8nmvpxi
+x-tags:
+  - ansvarstype
+  - anleggstype
+type: object
+properties:
+  id:
+    type: string
+    x-stoplight:
+      id: zo7wazx2vi93n
+    enum:
+      - DYREHOLD
+      - AVLSMATERIALE
+      - BIPRODUKTER
+      - UTSTILLING
+      - FORSØKSDYR
+      - SLAKTERI
+      - DYREHAGE
+description: En sett med verdier som beskriver hovedkategorier av ansvar og anlegg.

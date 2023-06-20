@@ -59,11 +59,6 @@ properties:
     enum:
       - antall
       - kvadratmeter
-  fasilitetBeskrivelse:
-    type: string
-    x-stoplight:
-      id: y5x5fvdfc3415
-    example: Fuglene jeg holder i dyrerom A
   kategori:
     type: string
     enum:
@@ -88,6 +83,7 @@ properties:
       - $ref: ./Aktivitetstyper/AktivitetstypeStorfe.yaml
         x-stoplight:
           id: trklywbqsaub9
+    description: Synonymt med produksjonsform
   verdikjede:
     x-stoplight:
       id: 790t0k0vj92ba
@@ -98,6 +94,30 @@ properties:
       - $ref: ./Verdikjeder/VerdikjederStorfe.yaml
         x-stoplight:
           id: czhwsfuellzs2
+  oppstalling:
+    type: string
+    x-stoplight:
+      id: oc07ymz8pk5qe
+    enum:
+      - losdrift
+      - aviar-losdrift
+      - innredde-bur
+  tilgangUteareal:
+    type: boolean
+    x-stoplight:
+      id: kwex8vik24dzc
+  stussMontert:
+    type: boolean
+    x-stoplight:
+      id: r090sygibdogu
+  planlagtAntallDyr:
+    type: string
+    x-stoplight:
+      id: e8q9wgoabnyj7
 required:
   - fasilitetID
   - registreringsDatoFasilitet
+  - kapasitet
+  - kapasitetBenevning
+  - kategori
+  - aktivitetsType

@@ -53,15 +53,7 @@ properties:
     x-stoplight:
       id: mc3komkyxjtna
   anleggsType:
-    type: string
-    enum:
-      - DYREHOLD
-      - AVLSMATERIALE
-      - BIPRODUKTER
-      - UTSTILLING
-      - FORSØKSDYR
-      - SLAKTERI
-      - DYREHAGE
+    $ref: ../models/ansvarstype.yaml
     description: Ett anlegg kan bare ha en type. Ved behov for flere typer må det opprettes nye anlegg som kan fysisk overlappe andre anlegg
   aktiv:
     type: boolean
@@ -84,11 +76,15 @@ properties:
         id: lc5e6zoowcnth
       type: integer
       format: int64
-  beskrivelse:
-    type: string
-    x-stoplight:
-      id: gi7nq38lq3s4u
   visningsNavn:
     type: string
     x-stoplight:
       id: re9on7d73pp0h
+  risikofaktorer:
+    x-stoplight:
+      id: jzmhs07xfk31v
+    type: array
+    items:
+      $ref: ./Risikofaktor.yaml
+      x-stoplight:
+        id: pd2oblcxlv9vj
