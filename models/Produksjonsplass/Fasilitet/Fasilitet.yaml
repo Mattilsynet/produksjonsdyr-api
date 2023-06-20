@@ -77,10 +77,10 @@ properties:
     x-stoplight:
       id: 9587kz2iw4o2q
     oneOf:
-      - $ref: .models/Aktivitetstyper/AktivitetstypeFugler.yaml
+      - $ref: ../../Aktivitetstyper/AktivitetstypeFugler.yaml
         x-stoplight:
           id: 9flktad5hec46
-      - $ref: .models/Aktivitetstyper/AktivitetstypeStorfe.yaml
+      - $ref: ../../Aktivitetstyper/AktivitetstypeStorfe.yaml
         x-stoplight:
           id: trklywbqsaub9
     description: Synonymt med produksjonsform
@@ -88,10 +88,10 @@ properties:
     x-stoplight:
       id: 790t0k0vj92ba
     oneOf:
-      - $ref: ./Verdikjeder/VerdikjederFugler.yaml
+      - $ref: ../../Verdikjeder/VerdikjederFugler.yaml
         x-stoplight:
           id: p3bc7b7rorg2u
-      - $ref: ./Verdikjeder/VerdikjederStorfe.yaml
+      - $ref: ../../Verdikjeder/VerdikjederStorfe.yaml
         x-stoplight:
           id: czhwsfuellzs2
   oppstalling:
