@@ -138,6 +138,68 @@ paths:
           description: Not Found
       operationId: get-paabegyntskjema-byeier-eierid
       description: 'Henter ut en liste med skjema som er påbegynt av denne eieren (eierid). '
+  '/eier/{eierid}/skjema/{skjemaid}/komponent/':
+    parameters:
+      - schema:
+          type: string
+        name: eierid
+        in: path
+        required: true
+        description: eierid til skjema som skal lagres eller utvides
+      - schema:
+          type: string
+        name: skjemaid
+        in: path
+        required: true
+        description: skjemaid til skjema som skal lagres eller utvides
+    post:
+      summary: Lager ny komponent under angitt skjema
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaabegyntSkjemaLite'
+        '400':
+          description: Bad Request
+      operationId: post-eier-eierid-skjema-skjemaid-komponent
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PaabegyntSkjema'
+            examples:
+              Example 1:
+                value:
+                  skjematype: fjørfehold
+                  endretdato: 21.01.2023
+                  datajson: '"{\"id\": 1, \"navn\": \"rugeegg\", \"verdikjede\": \"konsumegg\", \"art\": \"hons\", \"kunnskap\": {\"id\": 1, \"tekst\": \"kurs\"}}"'
+                  eierId: '23424'
+                  komponent: produksjonsform
+                  komponentid: 2323
+                  skjemaid: '22334'
+        description: Body til json strukturen som skal lagres under angitt komponent
+    get:
+      summary: Henter komponent under angitt skjema
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaabegyntSkjema'
+        '404':
+          description: Not Found
+      operationId: get-eier-eierid-skjema-skjemaid-komponent
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {}
 components:
   schemas:
     PaabegyntSkjema:
