@@ -138,7 +138,7 @@ paths:
           description: Not Found
       operationId: get-paabegyntskjema-byeier-eierid
       description: 'Henter ut en liste med skjema som er påbegynt av denne eieren (eierid). '
-  '/eier/{eierid}/skjema/{skjemaid}/komponent/':
+  '/paabegyntskjema/eier/{eierid}/skjema/{skjemaid}/komponent/':
     parameters:
       - schema:
           type: string
