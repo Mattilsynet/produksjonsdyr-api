@@ -247,7 +247,7 @@ components:
           example: 21.01.2023
         datajson:
           type: string
-          example: '"{\"id\": 1, \"navn\": \"rugeegg\", \"verdikjede\": \"konsumegg\", \"art\": \"hons\", \"kunnskap\": {\"id\": 1, \"tekst\": \"kurs\"}}"'
+          example: '{"id": 1, "navn": "rugeegg", "verdikjede": "konsumegg", "art": "hons", "kunnskap": {"id": 1, "tekst": "kurs"}}'
         eierId:
           type: string
           x-stoplight:
