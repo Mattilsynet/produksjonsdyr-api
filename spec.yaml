@@ -170,22 +170,31 @@ paths:
               type: object
         description: ''
       x-internal: false
-    post:
-      summary: produksjonsplass
-      tags: []
-      responses: {}
-      operationId: post-produksjonsplass
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: ./models/Produksjonsplass/Produksjonsplass.yaml
     parameters:
       - schema:
           type: string
         name: id
         in: path
         required: true
+  /produksjonsdyr/produksjonsplass:
+    post:
+      summary: PostProduksjonsplass
+      tags: []
+      responses:
+        '201':
+          description: Created
+        '400':
+          description: Bad Request
+      operationId: post-produksjonsdyr-produksjonsplass
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                '':
+                  $ref: ./models/Produksjonsplass/Produksjonsplass.yaml
+      description: Endepunkt for å opprette en produksjonsplass
 components:
   schemas:
     PaabegyntSkjema:
