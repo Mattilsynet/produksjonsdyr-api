@@ -152,7 +152,7 @@ paths:
               schema:
                 type: object
                 properties:
-                  '':
+                  produksjonsplass:
                     $ref: ./models/Produksjonsplass/Produksjonsplass.yaml
         '404':
           description: Not Found
@@ -180,8 +180,13 @@ paths:
           content:
             application/json:
               schema:
-                type: integer
-                format: int64
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    format: int64
+                    description: The user ID
+
         '400':
           description: Bad Request
       operationId: post-produksjonsdyr-produksjonsplass
@@ -191,7 +196,7 @@ paths:
             schema:
               type: object
               properties:
-                '':
+                produksjonsplass:
                   $ref: ./models/Produksjonsplass/Produksjonsplass.yaml
       description: Endepunkt for å opprette en produksjonsplass
 components:
