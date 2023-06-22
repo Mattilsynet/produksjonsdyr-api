@@ -53,7 +53,7 @@ properties:
     x-stoplight:
       id: mc3komkyxjtna
   anleggsType:
-    $ref: ../Hovedkategori.yaml
+    $ref: ../kodeverk/Hovedkategori.yaml
     description: Ett anlegg kan bare ha en type. Ved behov for flere typer må det opprettes nye anlegg som kan fysisk overlappe andre anlegg
   aktiv:
     type: boolean
@@ -62,13 +62,13 @@ properties:
   fasilitet:
     type: array
     items:
-      $ref: ./Fasilitet/Fasilitet.yaml
+      $ref: ./Fasilitet.yaml
       x-stoplight:
         id: jmw6d6qvfci39
   steder:
     type: array
     items:
-      $ref: ./Sted/Sted.yaml
+      $ref: ./Sted.yaml
   ansvarId:
     type: array
     items:
