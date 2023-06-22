@@ -27,9 +27,6 @@ properties:
     type: string
     default: 1234567890
     description: En identifikator som brukes av bransjen til å identifisere en virksomhet som er koblet til en landbrukseiendom.
-  kanEditereGjeldendeAnlegg:
-    type: boolean
-    default: true
   matsPersonId:
     type: string
   orgnummerVirksomhet:
@@ -56,4 +53,3 @@ properties:
       Nummerserie som benyttes av driftsansvarlig for å merke dyr. Tildeles av Mattilsynet.
 required:
   - driftsansvarligId
-  - kanEditereGjeldendeAnlegg

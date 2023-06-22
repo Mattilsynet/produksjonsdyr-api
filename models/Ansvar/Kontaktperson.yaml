@@ -26,6 +26,14 @@ properties:
     enum:
       - AVLØSER
       - ANNET
+  ansvarId:
+    type: array
+    items:
+      type: integer
+      format: int64
+      minimum: 0
+      x-stoplight:
+        id: ca5w7h5nqzd08
 required:
   - navn
   - telefonnummer
