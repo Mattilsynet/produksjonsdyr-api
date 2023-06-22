@@ -154,14 +154,6 @@ paths:
                     $ref: ./models/Produksjonsplass/Produksjonsplass.yaml
         '404':
           description: Not Found
-        '':
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  '':
-                    $ref: ./models/Produksjonsplass/Produksjonsplass.yaml
       operationId: get-produksjonsplass
       requestBody:
         content:
