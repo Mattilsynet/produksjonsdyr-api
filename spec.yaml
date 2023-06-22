@@ -22,7 +22,7 @@ paths:
     get:
       summary: Henter påbegynt skjema
       tags:
-        - paabegyntskjema
+        - Paabegyntskjema
       responses:
         '200':
           description: OK
@@ -45,7 +45,7 @@ paths:
     get:
       summary: Henter ut alle påbegynte skjema
       tags:
-        - paabegyntskjema
+        - Paabegyntskjema
       responses:
         '200':
           description: OK
@@ -72,6 +72,8 @@ paths:
       description: Henter alle påbegynte skjema
     post:
       summary: Lagrer nytt påbegynt skjema
+      tags:
+        - Paabegyntskjema
       operationId: post-paabegyntskjema
       responses:
         '200':
@@ -115,7 +117,7 @@ paths:
     get:
       summary: Henter alle skjema til angitt eier
       tags:
-        - paabegyntskjema
+        - Paabegyntskjema
       responses:
         '200':
           description: OK
@@ -138,6 +140,65 @@ paths:
           description: Not Found
       operationId: get-paabegyntskjema-byeier-eierid
       description: 'Henter ut en liste med skjema som er påbegynt av denne eieren (eierid). '
+  '/produksjonsdyr/produksjonsplass/{id}':
+    get:
+      summary: produksjonsplass
+      tags: [Produksjonsplass]
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  produksjonsplass:
+                    $ref: ./models/Produksjonsplass/Produksjonsplass.yaml
+        '404':
+          description: Not Found
+      operationId: get-produksjonsplass
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+        description: ''
+      x-internal: false
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+  /produksjonsdyr/produksjonsplass:
+    post:
+      summary: PostProduksjonsplass
+      tags: [Produksjonsplass]
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    format: int64
+                    description: The user ID
+
+        '400':
+          description: Bad Request
+      operationId: post-produksjonsdyr-produksjonsplass
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                produksjonsplass:
+                  $ref: ./models/Produksjonsplass/Produksjonsplass.yaml
+      description: Endepunkt for å opprette en produksjonsplass
 components:
   schemas:
     PaabegyntSkjema:
@@ -172,7 +233,7 @@ components:
           description: Ident som er knyttet til eier/bruker.
       description: Skjema som inneholder alle opplysninger i skjema. Eierid er knyttet til den som opprettet skjemaet for å kunne finne riktig skjema. Dette kan være organisasjonsnummer (evnt. virksomhetsmappe i MATS)
       x-tags:
-        - paabegyntskjema
+        - Paabegyntskjema
     PaabegyntSkjemaLite:
       title: PaabegyntSkjemaLite
       x-stoplight:
@@ -202,4 +263,4 @@ components:
             id: kp50ml30jvmoz
           example: '30.05.2023 10:22'
       x-tags:
-        - paabegyntskjema
+        - Paabegyntskjema

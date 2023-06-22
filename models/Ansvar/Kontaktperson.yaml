@@ -1,0 +1,40 @@
+title: Kontaktperson
+x-stoplight:
+  id: 2sgc2kkmvo2rj
+type: object
+properties:
+  id:
+    type: string
+    x-stoplight:
+      id: gcbvajxm4yz4j
+  navn:
+    type: string
+    x-stoplight:
+      id: ecbvlpvcpz263
+  telefonnummer:
+    type: string
+    x-stoplight:
+      id: 91pbkxbfsvpqi
+  epostadresse:
+    type: string
+    x-stoplight:
+      id: mxtim95kaeu7d
+  rolle:
+    type: string
+    x-stoplight:
+      id: vlcohoyragyer
+    enum:
+      - AVLØSER
+      - ANNET
+  ansvarId:
+    type: array
+    items:
+      type: integer
+      format: int64
+      minimum: 0
+      x-stoplight:
+        id: ca5w7h5nqzd08
+required:
+  - navn
+  - telefonnummer
+description: En kontaktperson som er tilknyttet ansvaret og som Mattilsynet kan kontakte.

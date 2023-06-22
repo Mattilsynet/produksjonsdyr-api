@@ -5,22 +5,21 @@ type: object
 description: Klassifisering av aktiviteter som er relevant i kontekst "Fugler"
 examples:
   - aktivitetstypeFugler: RUGEEGG
+x-tags:
+  - Fasilitet
 properties:
   aktivitetstypeFugler:
     type: string
     enum:
       - RUGEEGG
-      - RUGERI
-      - OPPAL
+      - RUGEEGG-BESTEFORELDREDYR
+      - RUGEEGG-FORELDREDYR
       - KONSUMEGG
-      - SLAKTEKYLLING
-      - SALG_AV_RUGEEGG
-      - SALG_AV_KONSUMEGG
-      - SALG_AV_FUGLER
-      - SALG_AV_FJER
+      - OPPAL-BESTFORELDREDYR
+      - OPPAL-FORELDREDYR
+      - OPPAL
+      - SLAKTEFJØRFE
     x-stoplight:
       id: bcfi5vy406frl
 required:
   - aktivitetstypeFugler
-x-tags:
-  - Fasilitet

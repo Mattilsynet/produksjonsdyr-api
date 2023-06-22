@@ -2,7 +2,7 @@ title: Produksjonsplass
 x-stoplight:
   id: 2kbtfhqicbasr
 type: object
-description: 'Det offisielle, og eksternt kommuniserte, nivået for anlegg med ID.'
+description: 'Produksjonsplass er et anlegg hvor man kan holde dyr. Produksjonsplass er vårt eget begrep for anlegg, som vi har valgt å bruke fordi det er enklere å ta eierskap til. En produksjonplass er alltid (impliserer) et anlegg. Et anlegg kan være en produksjonsplass, men det kan finnes andre definisjoner av anlegg i regelverk eller dagligtale som ikke er en produksjonsplass. Et anlegg må være registrert i Mattilsynets register for produksjonsplasser for å kvalifisere som en produksjonsplass.'
 examples:
   - produksjonsplassId: 10000000
     anleggsType: DYREHOLD
@@ -53,15 +53,7 @@ properties:
     x-stoplight:
       id: mc3komkyxjtna
   anleggsType:
-    type: string
-    enum:
-      - DYREHOLD
-      - AVLSMATERIALE
-      - BIPRODUKTER
-      - UTSTILLING
-      - FORSØKSDYR
-      - SLAKTERI
-      - DYREHAGE
+    $ref: ../kodeverk/Hovedkategori.yaml
     description: Ett anlegg kan bare ha en type. Ved behov for flere typer må det opprettes nye anlegg som kan fysisk overlappe andre anlegg
   aktiv:
     type: boolean
@@ -70,13 +62,13 @@ properties:
   fasilitet:
     type: array
     items:
-      $ref: ./Fasilitet/Fasilitet.yaml
+      $ref: ./Fasilitet.yaml
       x-stoplight:
         id: jmw6d6qvfci39
   steder:
     type: array
     items:
-      $ref: ./Sted/Sted.yaml
+      $ref: ./Sted.yaml
   ansvarId:
     type: array
     items:
@@ -84,11 +76,15 @@ properties:
         id: lc5e6zoowcnth
       type: integer
       format: int64
-  beskrivelse:
-    type: string
-    x-stoplight:
-      id: gi7nq38lq3s4u
   visningsNavn:
     type: string
     x-stoplight:
       id: re9on7d73pp0h
+  risikofaktorer:
+    x-stoplight:
+      id: jzmhs07xfk31v
+    type: array
+    items:
+      $ref: ./Risikofaktor.yaml
+      x-stoplight:
+        id: pd2oblcxlv9vj

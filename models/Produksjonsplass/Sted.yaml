@@ -24,16 +24,19 @@ properties:
       id: ixs2rx6uvvz6q
   geom:
     type: string
+  srid:
+    type: integer
+    x-stoplight:
+      id: lwgjj08ihbrnc
+    format: int64
   masterId:
     type: string
-    description: Kildens identitet på objektet
+    description: Kildens identitet på objektet. Ofte kalt objektid
     x-stoplight:
       id: pbs8goucd44z2
   masterSystem:
     type: string
     enum:
-      - no.mattilsynet.mats.virksomhetsmappe.punkt
-      - no.mattilsynet.mats.tilsynsobjekt.punkt
       - no.kartverket.matrikkelen.teig
       - no.kartverket.matrikkelen.fkb_bygning
     description: Et begrenset sett med kilder til stedsdefinisjon
@@ -45,11 +48,15 @@ properties:
     description: Kildens dato-tids stempel på endringen
     x-stoplight:
       id: 4qiq0o037zk9y
-  masterDatatype:
+  masterTypeId:
     type: string
     x-stoplight:
       id: p5hfkjgzv28h1
-    description: 'Beskrivelse av betydningen til et geom; teig, adressepunkttil eksempel'
+    enum:
+      - bygningsnummer
+      - teigid
+    description: Beskriver hvilket felt i mastersystemet verdien er hentet fra.
+    example: bygningsnummer teigid adresseid
   hentetTidspunkt:
     type: string
     format: date-time
@@ -57,6 +64,7 @@ properties:
   arkivert:
     type: boolean
     default: false
+
   stedDefinisjonKategori:
     type: string
     enum:
@@ -66,6 +74,14 @@ properties:
     description: Vi har behov for å beskrive stedet på forskjellige måter
     x-stoplight:
       id: 5xkk0w45snz6s
+  byggeår:
+    type: string
+    x-stoplight:
+      id: c3s6auofhc9uz
+  ombyggingsår:
+    type: string
+    x-stoplight:
+      id: keio1sms55q50
 required:
   - stedId
   - geom

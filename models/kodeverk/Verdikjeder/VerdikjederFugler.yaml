@@ -9,9 +9,10 @@ properties:
   verdikjedeFugler:
     type: string
     enum:
-      - FJORFE_KONSUMEGG
-      - FJROFE_SLAKTEKYLLING
-      - FUGLER_I_FANGENSKAP
+      - KONSUMEGG
+      - SLAKTEFJØRFE
+      - SMASKALA_OG_HOBBY
+      - GJENOPPBYGGE_FUGLEVILTBESTAND
     description: Beskriver hvilket regelverk som gjelder
     x-stoplight:
       id: 181m6f1xn5flt
