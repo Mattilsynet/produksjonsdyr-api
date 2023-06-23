@@ -5,7 +5,7 @@ type: object
 description: Relevante arter i kategorien "Kameldyr"
 x-tags:
   - Art
-examples:
+x-examples:
   - kameldyrArt: KAMELDYR
     antall: 1
 properties:

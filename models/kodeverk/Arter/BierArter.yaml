@@ -3,7 +3,7 @@ x-stoplight:
   id: p1q4yo2vzuzvj
 type: object
 description: Relevante arter i kategorien "Bier"
-examples:
+x-examples:
   - bieArt: BIER
     antall: 1
 x-tags:

@@ -3,7 +3,7 @@ x-stoplight:
   id: o1j6lx1bfyqkx
 type: object
 description: Relevante arter i kategorien "Humler"
-examples:
+x-examples:
   - humleArt: HUMLE
     antall: 1
 x-tags:

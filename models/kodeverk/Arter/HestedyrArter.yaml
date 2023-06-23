@@ -3,7 +3,7 @@ x-stoplight:
   id: wmnqxfptbvlpe
 type: object
 description: Relevante arter i kategorien "Hestedyr"
-examples:
+x-examples:
   - hestedyrArt: HEST
     antall: 5
 x-tags:

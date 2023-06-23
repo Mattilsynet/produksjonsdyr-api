@@ -3,7 +3,7 @@ x-stoplight:
   id: ga2wsylfj27w3
 type: object
 description: Klassifisering av aktiviteter som er relevant i kontekst "Fugler"
-examples:
+x-examples:
   - aktivitetstypeFugler: RUGEEGG
 x-tags:
   - Fasilitet

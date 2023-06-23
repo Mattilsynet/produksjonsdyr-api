@@ -3,20 +3,6 @@ x-stoplight:
   id: 4yg1anlq7jkfg
 type: object
 description: Beskriver hva produksjonsplassen er tilrettelangt for og hvilken utforming produksjonsplassen har
-x-examples:
-  - fasilitetID: 0
-    registreringsDatoFasilitet: '2019-08-24'
-    opphørsDatoFasilitet: '2019-08-24'
-    stedsId:
-      - 0
-    kapasitet: 0
-    kapasitetBenevning: antall
-    fasilitetBeskrivelse: Fuglene jeg holder i dyrerom A
-    kategori: FUGLER
-    aktivitetsType:
-      aktivitetstypeFugler: RUGEEGG
-    verdikjede:
-      verdikjedeFugler: KONSUMEGG
 x-tags:
   - Fasilitet
 properties:

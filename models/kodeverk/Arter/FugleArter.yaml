@@ -3,7 +3,7 @@ x-stoplight:
   id: 64p8czox276id
 type: object
 description: Relevante arter i kategorien "Fugler"
-examples:
+x-examples:
   - fugleArt: HONS
     antall: 1700
 x-tags:

@@ -3,7 +3,7 @@ x-stoplight:
   id: asauqkk1rlni3
 type: object
 description: Relevante arter i kategorien "Svin"
-examples:
+x-examples:
   - svinArt: SVIN
     antall: 90
 x-tags:

@@ -3,7 +3,7 @@ x-stoplight:
   id: d23zdt3zkhoi1
 type: object
 description: Relevante arter i kategorien "Storfe"
-examples:
+x-examples:
   - storfeArt: STORFE
     antall: 1
 x-tags:

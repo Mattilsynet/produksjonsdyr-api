@@ -3,7 +3,7 @@ x-stoplight:
   id: ry72cqekdqql4
 type: object
 description: Relevante arter i kategorien "Geit"
-examples:
+x-examples:
   - geitArt: GEIT
     antall: 100
 x-tags:

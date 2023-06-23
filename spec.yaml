@@ -153,42 +153,6 @@ paths:
               schema:
                 type: object
                 $ref: ./models/Produksjonsplass/Produksjonsplass.yaml
-              examples:
-                Example 1:
-                  value:
-                    produksjonsplassId: 10000000
-                    anleggsType:
-                      id: DYREHOLD
-                    aktiv: true
-                    fasilitet:
-                      - fasilitetID: 0
-                        registreringsDatoFasilitet: '2019-08-24'
-                        opphørsDatoFasilitet: '2019-08-24'
-                        stedsId:
-                          - 0
-                        kapasitet: 0
-                        kapasitetBenevning: antall
-                        fasilitetBeskrivelse: Fuglene jeg holder i dyrerom A
-                        kategori: FUGLER
-                        aktivitetsType:
-                          aktivitetstypeFugler: RUGEEGG
-                        verdikjede:
-                          verdikjedeFugler: KONSUMEGG
-                    steder:
-                      - stedId: 0
-                        geom: string
-                        masterId: string
-                        masterSystem: no.mattilsynet.mats.virksomhetsmappe.punkt
-                        masterTidspunkt: '2019-08-24T14:15:22Z'
-                        masterDatatype: string
-                        hentetTidspunkt: '2019-08-24T14:15:22Z'
-                        arkivert: false
-                        stedDefinisjonKategori: senterpunkt
-                    ansvarId:
-                      - 0
-                    visningsNavn: string
-                    risikofaktorer:
-                      - type: SALG_RUGEEGG
             application/xml:
               schema:
                 type: object
@@ -226,7 +190,6 @@ paths:
                     type: integer
                     format: int64
                     description: The user ID
-              examples: {}
         '400':
           description: Bad Request
       operationId: post-produksjonsdyr-produksjonsplass
@@ -235,7 +198,8 @@ paths:
           application/json:
             schema:
               type: object
-            examples: {}
+              $ref: ./models/Produksjonsplass/Produksjonsplass.yaml
+        description: ''
       description: Endepunkt for å opprette en produksjonsplass
   /skjemakomponent:
     post:

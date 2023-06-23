@@ -3,7 +3,7 @@ x-stoplight:
   id: rtqryaif3syxc
 type: object
 description: Relevante arter i kategorien "Sau"
-examples:
+x-examples:
   - sauArt: SAU
     antall: 120
 x-tags:
