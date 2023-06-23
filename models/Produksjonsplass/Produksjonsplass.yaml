@@ -3,7 +3,7 @@ x-stoplight:
   id: 2kbtfhqicbasr
 type: object
 description: 'Produksjonsplass er et anlegg hvor man kan holde dyr. Produksjonsplass er vårt eget begrep for anlegg, som vi har valgt å bruke fordi det er enklere å ta eierskap til. En produksjonplass er alltid (impliserer) et anlegg. Et anlegg kan være en produksjonsplass, men det kan finnes andre definisjoner av anlegg i regelverk eller dagligtale som ikke er en produksjonsplass. Et anlegg må være registrert i Mattilsynets register for produksjonsplasser for å kvalifisere som en produksjonsplass.'
-examples:
+x-examples:
   - produksjonsplassId: 10000000
     anleggsType: DYREHOLD
     aktiv: true
