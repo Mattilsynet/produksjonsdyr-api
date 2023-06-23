@@ -1,0 +1,56 @@
+title: SkjemaKomponent.yml
+x-stoplight:
+  id: 0g4ppl1vy4p3t
+type: object
+description: 'Dette objektet benyttes for å kunne bygge opp et skjema, bestående av ulike, ukjente komponenter generisk. For å kunne knytte de ulike komponentdelene (Eks: Produksjonsform, Kontaktperson) sammen til et skjema benyttes lik eierid, skjemaid og skjematype.'
+x-examples:
+  - id: 4234234
+    eierid: org342434
+    skjemaid: skj3243
+    skjematype: fjørfehold
+    komponent: produksjonsform
+    komponentid: komp2342
+    endretdato: 12.11.2023
+    datajson: '[{"id": 1, "navn": "rugeegg", "verdikjede": "konsumegg", "art": "hons", "kunnskap": {"id": 1, "tekst": "kurs"}]'
+properties:
+  id:
+    type: integer
+    x-stoplight:
+      id: h7qiomrcepl8j
+    format: int64
+    example: 4234234
+  eierid:
+    type: string
+    x-stoplight:
+      id: p0cuqt1jkmond
+    example: org342434
+  skjemaid:
+    type: string
+    x-stoplight:
+      id: mr4h3a60wgr4r
+    example: skj3243
+  skjematype:
+    type: string
+    x-stoplight:
+      id: t8qcvcgk2uahy
+    example: fjørfehold
+  komponent:
+    type: string
+    x-stoplight:
+      id: jjn078ww9o541
+    example: produksjonsform
+  komponentid:
+    type: string
+    x-stoplight:
+      id: kowsz9328oerg
+    example: komp2342
+  endretdato:
+    type: string
+    x-stoplight:
+      id: 8tr7i0ttv0lh0
+    example: 12.11.2023
+  datajson:
+    type: string
+    x-stoplight:
+      id: el5oeas97rbtc
+    example: '[{"id": 1, "navn": "rugeegg", "verdikjede": "konsumegg", "art": "hons", "kunnskap": {"id": 1, "tekst": "kurs"}]'

@@ -143,7 +143,8 @@ paths:
   '/produksjonsdyr/produksjonsplass/{id}':
     get:
       summary: produksjonsplass
-      tags: [Produksjonsplass]
+      tags:
+        - Produksjonsplass
       responses:
         '200':
           description: OK
@@ -151,9 +152,6 @@ paths:
             application/json:
               schema:
                 type: object
-                properties:
-                  produksjonsplass:
-                    $ref: ./models/Produksjonsplass/Produksjonsplass.yaml
         '404':
           description: Not Found
       operationId: get-produksjonsplass
@@ -173,7 +171,8 @@ paths:
   /produksjonsdyr/produksjonsplass:
     post:
       summary: PostProduksjonsplass
-      tags: [Produksjonsplass]
+      tags:
+        - Produksjonsplass
       responses:
         '201':
           description: Created
@@ -186,7 +185,7 @@ paths:
                     type: integer
                     format: int64
                     description: The user ID
-
+              examples: {}
         '400':
           description: Bad Request
       operationId: post-produksjonsdyr-produksjonsplass
@@ -195,10 +194,197 @@ paths:
           application/json:
             schema:
               type: object
-              properties:
-                produksjonsplass:
-                  $ref: ./models/Produksjonsplass/Produksjonsplass.yaml
+            examples: {}
       description: Endepunkt for å opprette en produksjonsplass
+  /skjemakomponent:
+    post:
+      summary: Lagrer komponent til angitt eier og skjema
+      tags: []
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: ./models/Produksjonsplass/Skjemakomponent/SkjemaKomponent.yaml
+        '400':
+          description: Bad Request
+      operationId: post-skjemakomponent
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ./models/Produksjonsplass/Skjemakomponent/SkjemaKomponent.yaml
+        description: Sender inn skjemakomponent som skal lagres
+    get:
+      summary: Henter alle skjemakomponenter
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ./models/Produksjonsplass/Skjemakomponent/SkjemaKomponent.yaml
+              examples:
+                Example 1:
+                  value:
+                    - id: 4234234
+                      eierid: org342434
+                      skjemaid: skj3243
+                      skjematype: fjørfehold
+                      komponent: produksjonsform
+                      komponentid: komp2342
+                      endretdato: 12.11.2023
+                      datajson: '[{"id": 1, "navn": "rugeegg", "verdikjede": "konsumegg", "art": "hons", "kunnskap": {"id": 1, "tekst": "kurs"}]'
+      operationId: get-skjemakomponent
+  '/skjemakomponent/eier/{eierid}':
+    parameters:
+      - schema:
+          type: string
+        name: eierid
+        in: path
+        required: true
+    get:
+      summary: Henter alle komponenter til angitt eier
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ./models/Produksjonsplass/Skjemakomponent/SkjemaKomponent.yaml
+              examples:
+                Example 1:
+                  value:
+                    - id: 4234234
+                      eierid: org342434
+                      skjemaid: skj3243
+                      skjematype: fjørfehold
+                      komponent: produksjonsform
+                      komponentid: komp2342
+                      endretdato: 12.11.2023
+                      datajson: '[{"id": 1, "navn": "rugeegg", "verdikjede": "konsumegg", "art": "hons", "kunnskap": {"id": 1, "tekst": "kurs"}]'
+        '404':
+          description: Not Found
+      operationId: get-skjemakomponent-eier-eierid
+      description: 'Henter ut alle komponenter som er reigstrert på denne eieren uavhengig av typeskjema, skjemaid'
+  '/skjemakomponent/eier/{eierid}/skjema/{skjemaid}':
+    parameters:
+      - schema:
+          type: string
+        name: eierid
+        in: path
+        required: true
+      - schema:
+          type: string
+        name: skjemaid
+        in: path
+        required: true
+    get:
+      summary: Henter alle komponenter til angitt skjema
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ./models/Produksjonsplass/Skjemakomponent/SkjemaKomponent.yaml
+        '404':
+          description: Not Found
+      operationId: get-skjemakomponent-eier-eierid-skjema-skjemaid
+      description: Henter ut alle komponenter som er registrert på angitt eierid og skjemaid
+  '/skjemakomponent/eier/{eierid}/skjema/{skjemaid}/komponent/{komponentblokk}':
+    parameters:
+      - schema:
+          type: string
+        name: eierid
+        in: path
+        required: true
+      - schema:
+          type: string
+        name: skjemaid
+        in: path
+        required: true
+      - schema:
+          type: string
+        name: komponentblokk
+        in: path
+        required: true
+    get:
+      summary: Henter alle komponenter til angitt komponentblokk
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ./models/Produksjonsplass/Skjemakomponent/SkjemaKomponent.yaml
+              examples:
+                Example 1:
+                  value:
+                    - id: 4234234
+                      eierid: org342434
+                      skjemaid: skj3243
+                      skjematype: fjørfehold
+                      komponent: produksjonsform
+                      komponentid: komp2342
+                      endretdato: 12.11.2023
+                      datajson: '[{"id": 1, "navn": "rugeegg", "verdikjede": "konsumegg", "art": "hons", "kunnskap": {"id": 1, "tekst": "kurs"}]'
+        '404':
+          description: Not Found
+      operationId: get-skjemakomponent-eier-eierid-skjema-skjemaid-komponent-komponentblokk
+      description: 'Henter ut alle komponenter som er registrert på angitt eierid,skjemaid og komponentblokk. Komponentblokk er taggen som json strukturen til komponenten ligger under.'
+  '/skjemakomponent/eier/{eierid}/skjematype/{skjematype}':
+    parameters:
+      - schema:
+          type: string
+        name: eierid
+        in: path
+        required: true
+      - schema:
+          type: string
+        name: skjematype
+        in: path
+        required: true
+    get:
+      summary: Henter alle komponenter av angitt type
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ./models/Produksjonsplass/Skjemakomponent/SkjemaKomponent.yaml
+              examples:
+                Example 1:
+                  value:
+                    - id: 4234234
+                      eierid: org342434
+                      skjemaid: skj3243
+                      skjematype: fjørfehold
+                      komponent: produksjonsform
+                      komponentid: komp2342
+                      endretdato: 12.11.2023
+                      datajson: '[{"id": 1, "navn": "rugeegg", "verdikjede": "konsumegg", "art": "hons", "kunnskap": {"id": 1, "tekst": "kurs"}]'
+        '404':
+          description: Not Found
+      operationId: get-skjemakomponent-eier-eierid-skjematype-skjematype
+      description: Henter ut alle komponenter som er registrert på angitt eierid og er av angitt skjematype
 components:
   schemas:
     PaabegyntSkjema:
