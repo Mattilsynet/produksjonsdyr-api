@@ -2,7 +2,7 @@ title: Sted
 x-stoplight:
   id: morx0jrcxj7st
 type: object
-examples:
+x-examples:
   - stedId: 0
     geom: string
     masterId: string
