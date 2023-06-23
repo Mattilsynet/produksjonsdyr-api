@@ -219,7 +219,7 @@ paths:
     get:
       summary: Henter alle skjemakomponenter
       tags:
-        - skjemakomponent
+        - Skjemakomponent
       responses:
         '200':
           description: OK
@@ -251,7 +251,7 @@ paths:
     get:
       summary: Henter alle komponenter til angitt eier
       tags:
-        - skjemakomponent
+        - Skjemakomponent
       responses:
         '200':
           description: OK
@@ -291,7 +291,7 @@ paths:
     get:
       summary: Henter alle komponenter til angitt skjema
       tags:
-        - skjemakomponent
+        - Skjemakomponent
       responses:
         '200':
           description: OK
@@ -325,7 +325,7 @@ paths:
     get:
       summary: Henter alle komponenter til angitt komponentblokk
       tags:
-        - skjemakomponent
+        - Skjemakomponent
       responses:
         '200':
           description: OK
@@ -365,7 +365,7 @@ paths:
     get:
       summary: Henter alle komponenter av angitt type
       tags:
-        - skjemakomponent
+        - Skjemakomponent
       responses:
         '200':
           description: OK
