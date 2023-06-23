@@ -199,7 +199,8 @@ paths:
   /skjemakomponent:
     post:
       summary: Lagrer komponent til angitt eier og skjema
-      tags: []
+      tags:
+        - Skjemakomponent
       responses:
         '201':
           description: Created
