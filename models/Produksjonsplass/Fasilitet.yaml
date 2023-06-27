@@ -90,6 +90,7 @@ properties:
     type: integer
     x-stoplight:
       id: e8q9wgoabnyj7
+    format: int64
 required:
   - kapasitet
   - kapasitetBenevning
