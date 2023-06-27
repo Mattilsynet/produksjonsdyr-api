@@ -1,0 +1,19 @@
+title: Kategori
+x-stoplight:
+  id: 9e7nixefnghnb
+type: object
+properties:
+  kategori:
+    type: string
+    x-stoplight:
+      id: dsgcvw39mohwm
+    enum:
+      - FUGLER
+      - SVIN
+      - SAU
+      - GEIT
+      - STORFE
+      - KAMELDYR
+      - HESTEDYR
+      - BIER
+      - HUMLER

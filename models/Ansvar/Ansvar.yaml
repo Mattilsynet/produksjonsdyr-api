@@ -39,7 +39,7 @@ properties:
       format: int64
       minimum: 0
   ansvarsDomene:
-    type: string
+    $ref: ../kodeverk/Kategori.yaml
     x-stoplight:
       id: hijd2886azby5
     description: samme som anleggstype

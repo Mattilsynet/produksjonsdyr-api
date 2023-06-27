@@ -46,17 +46,7 @@ properties:
       - antall
       - kvadratmeter
   kategori:
-    type: string
-    enum:
-      - FUGLER
-      - SVIN
-      - SAU
-      - GEIT
-      - STORFE
-      - KAMELDYR
-      - HESTEDYR
-      - BIER
-      - HUMLER
+    $ref: ../kodeverk/Kategori.yaml
     x-stoplight:
       id: vhcdkozu0g0rr
   aktivitetsType:
@@ -97,13 +87,13 @@ properties:
     x-stoplight:
       id: r090sygibdogu
   planlagtAntallDyr:
-    type: string
+    type: integer
     x-stoplight:
       id: e8q9wgoabnyj7
 required:
-  - fasilitetID
-  - registreringsDatoFasilitet
   - kapasitet
   - kapasitetBenevning
   - kategori
-  - aktivitetsType
+  - oppstalling
+  - tilgangUteareal
+  - stussMontert
