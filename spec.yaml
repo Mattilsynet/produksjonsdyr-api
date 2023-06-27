@@ -160,12 +160,6 @@ paths:
         '404':
           description: Not Found
       operationId: get-produksjonsplass
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-        description: ''
       x-internal: false
     parameters:
       - schema:
