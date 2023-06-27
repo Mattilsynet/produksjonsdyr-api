@@ -35,6 +35,7 @@ properties:
         id: zbpe8a2q7co4s
   kapasitet:
     type: integer
+    format: int64
     x-stoplight:
       id: pvgjtmlqhy40b
     minimum: 0
