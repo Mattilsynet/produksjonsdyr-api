@@ -278,9 +278,15 @@ paths:
         in: path
         required: true
     get:
-      summary: Your GET endpoint
+      summary: ''
       tags: []
-      responses: {}
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: string
       operationId: get-skjemakomponent-eier-eierid-skjema-skjemaid-komponent-komponentblokk-data
 components:
   schemas: {}
