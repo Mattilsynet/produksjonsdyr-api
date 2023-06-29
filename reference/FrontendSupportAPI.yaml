@@ -278,7 +278,7 @@ paths:
         in: path
         required: true
     get:
-      summary: ''
+      summary: Henter kun datajson fra en komponentblokk
       tags: []
       responses:
         '200':
@@ -288,5 +288,6 @@ paths:
               schema:
                 type: string
       operationId: get-skjemakomponent-eier-eierid-skjema-skjemaid-komponent-komponentblokk-data
+      description: Brukes dersom man har stål kontroll på metadata og bare vil ha innholdet i en gitt komponent
 components:
   schemas: {}
