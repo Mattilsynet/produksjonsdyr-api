@@ -1,0 +1,27 @@
+title: SkjemaMetadata
+x-stoplight:
+  id: 90ql9wqzcosg2
+type: object
+description: Brukes av endepunkt som lister ut eksisterende skjema for en eier
+properties:
+  eierid:
+    type: string
+    x-stoplight:
+      id: 2r298wg4n3i51
+    description: eier av skjema
+  skjemaid:
+    type: string
+    x-stoplight:
+      id: vgbwnjoklj86x
+    description: 'unik '
+  skjematype:
+    type: string
+    x-stoplight:
+      id: 2qx33z7tylm0v
+    description: |
+      Hva slags skjema. E.g. fjorfehold, storfehold osv
+  endretdato:
+    type: string
+    x-stoplight:
+      id: 34hd69vsfzsbd
+    description: dato for siste oppdatering av et relatert element
