@@ -25,3 +25,5 @@ properties:
     x-stoplight:
       id: 34hd69vsfzsbd
     description: dato for siste oppdatering av et relatert element
+x-tags:
+  - Skjemakomponent
