@@ -9,7 +9,7 @@ on:
       release_tag:
         description: 'Hva skal vi kalle denne releasen?'
         required: true
-        default: ${{ github.ref_name }}
+        default: "${{ GITHUB_REF_NAME }}"
 
 jobs:
   release:
