@@ -1,13 +1,7 @@
-title: FugleArter
+title: Art
 x-stoplight:
-  id: 64p8czox276id
+  id: 3hu11pxzmtrdj
 type: object
-description: Relevante arter i kategorien "Fugler"
-x-examples:
-  - fugleArt: HONS
-    antall: 1700
-x-tags:
-  - Art
 properties:
   fugleArt:
     type: string
@@ -25,12 +19,4 @@ properties:
     example: HONS
     x-stoplight:
       id: dm0r55xjp8eql
-  antall:
-    type: integer
-    x-stoplight:
-      id: pw21bdakmfybx
-    format: int64
-    minimum: 1
-required:
-  - fugleArt
-  - antall
+description: Art er en finere inndeling innenfor en aktivitetstype. Man kan kun sende inn for en aktivitetstype av gangen. Kombinasjon av to vil feile.

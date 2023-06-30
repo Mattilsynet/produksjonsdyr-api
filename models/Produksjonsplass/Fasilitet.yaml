@@ -38,7 +38,7 @@ properties:
     x-stoplight:
       id: vhcdkozu0g0rr
   aktivitetstype:
-    $ref: ../kodeverk/Aktivitetstyper/Aktivitetstype.yaml
+    $ref: ../kodeverk/Aktivitetstype.yaml
     x-stoplight:
       id: rsossdekzamjz
   kapasitet:
@@ -48,7 +48,7 @@ properties:
       id: pvgjtmlqhy40b
     minimum: 0
   verdikjede:
-    $ref: ../kodeverk/Verdikjeder/Verdikjede.yaml
+    $ref: ../kodeverk/Verdikjede.yaml
     x-stoplight:
       id: 7pne81dqlrekg
   kapasitetBenevning:
