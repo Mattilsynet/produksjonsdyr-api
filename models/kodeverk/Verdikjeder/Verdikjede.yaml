@@ -1,0 +1,14 @@
+title: Verdikjede
+x-stoplight:
+  id: 7w1ndfzeu3m4k
+type: object
+properties:
+  fugl:
+    $ref: ./VerdikjederFugler.yaml
+    x-stoplight:
+      id: bn5ktruzb1veo
+  storfe:
+    $ref: ./VerdikjederStorfe.yaml
+    x-stoplight:
+      id: l1qaoj3pihvb5
+description: 'Verdikjede brukes om prosessen fra råvare og fram til det ferdige produktet som selges til sluttbrukeren. Dette er ikke en behov fra lovverket, men vil f.eks kunne bidra til mer effektiv smittesporing ved en hendelse. Man kan kun velge en verdikjede om gangen. Kombinasjon av flere vil feile.'

@@ -33,12 +33,24 @@ properties:
       minimum: 0
       x-stoplight:
         id: zbpe8a2q7co4s
+  kategori:
+    $ref: ../kodeverk/Kategori.yaml
+    x-stoplight:
+      id: vhcdkozu0g0rr
+  aktivitetstype:
+    $ref: ../kodeverk/Aktivitetstyper/Aktivitetstype.yaml
+    x-stoplight:
+      id: rsossdekzamjz
   kapasitet:
     type: integer
     format: int64
     x-stoplight:
       id: pvgjtmlqhy40b
     minimum: 0
+  verdikjede:
+    $ref: ../kodeverk/Verdikjeder/Verdikjede.yaml
+    x-stoplight:
+      id: 7pne81dqlrekg
   kapasitetBenevning:
     type: string
     x-stoplight:
@@ -46,31 +58,6 @@ properties:
     enum:
       - antall
       - kvadratmeter
-  kategori:
-    $ref: ../kodeverk/Kategori.yaml
-    x-stoplight:
-      id: vhcdkozu0g0rr
-  aktivitetsType:
-    x-stoplight:
-      id: 9587kz2iw4o2q
-    oneOf:
-      - $ref: ../kodeverk/Aktivitetstyper/AktivitetstypeFugler.yaml
-        x-stoplight:
-          id: 9flktad5hec46
-      - $ref: ../kodeverk/Aktivitetstyper/AktivitetstypeStorfe.yaml
-        x-stoplight:
-          id: trklywbqsaub9
-    description: Synonymt med produksjonsform
-  verdikjede:
-    x-stoplight:
-      id: 790t0k0vj92ba
-    oneOf:
-      - $ref: ../kodeverk/Verdikjeder/VerdikjederFugler.yaml
-        x-stoplight:
-          id: p3bc7b7rorg2u
-      - $ref: ../kodeverk/Verdikjeder/VerdikjederStorfe.yaml
-        x-stoplight:
-          id: czhwsfuellzs2
   oppstalling:
     type: string
     x-stoplight:
@@ -93,9 +80,11 @@ properties:
       id: e8q9wgoabnyj7
     format: int64
 required:
-  - kapasitet
-  - kapasitetBenevning
   - kategori
+  - aktivitetstype
+  - kapasitet
+  - verdikjede
+  - kapasitetBenevning
   - oppstalling
   - tilgangUteareal
   - stussMontert

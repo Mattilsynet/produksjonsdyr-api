@@ -1,0 +1,14 @@
+title: Aktivitetstype
+x-stoplight:
+  id: ktntjfwtws3xj
+type: object
+properties:
+  fugler:
+    $ref: ./AktivitetstypeFugler.yaml
+    x-stoplight:
+      id: johtcoilbse3g
+  storfe:
+    $ref: ./AktivitetstypeStorfe.yaml
+    x-stoplight:
+      id: wwg0uclzo706f
+description: Beskriver hva slags produksjon som utøves for et dyrehold. Man kan kun sende inn for en type dyrehold av gangen. Kombinasjon av fler vil feile.
