@@ -46,8 +46,8 @@ openapiSpecs.forEach {
 		additionalProperties.set(mapOf("apiFirst" to "true"))
 		inputSpec.set("$rootDir/${it.value}")
 		outputDir.set("$buildDir/generated")
-		apiPackage.set("no.mattilsynet.api")//${it.key}
-		modelPackage.set("no.mattilsynet.model")//${it.key}
+		apiPackage.set("no.mattilsynet.api")
+		modelPackage.set("no.mattilsynet.model")
 		modelNameSuffix.set("Dto")
 		configOptions.set(mapOf(
 			"interfaceOnly" to "true",
