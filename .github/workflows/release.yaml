@@ -4,7 +4,12 @@ on:
   push:
     branches:
       - master
-  workflow_dispatch: ~
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: 'Hva skal vi kalle denne releasen?'
+        required: true
+        default: ${{ github.ref_name }}
 
 jobs:
   release:
@@ -56,6 +61,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag: ${{ steps.create_version.outputs.new_tag }}
-          name: Release ${{ steps.create_version.outputs.new_tag }}
-          body: ${{ steps.create_version.outputs.changelog }}
+	  if [ "${{ github.event.inputs.release_tag }}" == "" ]; then
+	    tag: ${{ steps.create_version.outputs.new_tag }}
+            name: Release ${{ steps.create_version.outputs.new_tag }}
+            body: ${{ steps.create_version.outputs.changelog }}
+          else
+	    tag: ${{ github.event.inputs.release_tag }}
+            name: Release ${{ github.event.inputs.release_tag }}
+            body: ${{ github.event.inputs.release_tag }}
+          fi
