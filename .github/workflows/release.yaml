@@ -57,7 +57,7 @@ jobs:
           ./gradlew publish -PreleaseVersion=${{ steps.create_version.outputs.new_version }}
 
       - name: Create a GitHub release from master
-        if: "${{ github.event.inputs.level == '' }}" then
+        if: "${{ github.event.inputs.level == '' }}"
 	uses: ncipollo/release-action@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -67,7 +67,7 @@ jobs:
           body: ${{ steps.create_version.outputs.changelog }}
 
       - name: Create a GitHub release from branch
-        if: "${{ github.event.inputs.level != '' }}" then
+        if: "${{ github.event.inputs.level != '' }}"
         uses: ncipollo/release-action@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
