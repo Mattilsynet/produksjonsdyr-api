@@ -3,7 +3,7 @@ x-stoplight:
   id: 9e7nixefnghnb
 type: object
 properties:
-  kategori:
+  dyreholdskategori:
     type: string
     x-stoplight:
       id: dsgcvw39mohwm
@@ -17,4 +17,4 @@ properties:
       - HESTEDYR
       - BIER
       - HUMLER
-description: Type dyrehold som utøves
+description: Hva som utøves på et ansvar eller produksjonsplass. Foreløpig kun dyreholdskategorier her, men kan på sikt utvides til å holde andre kategorityper gitt av Hovedtype.

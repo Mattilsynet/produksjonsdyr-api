@@ -6,7 +6,7 @@ x-tags:
   - anleggstype
 type: object
 properties:
-  id:
+  hovedtype:
     type: string
     x-stoplight:
       id: zo7wazx2vi93n
