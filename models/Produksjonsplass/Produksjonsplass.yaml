@@ -16,7 +16,7 @@ properties:
     x-stoplight:
       id: mc3komkyxjtna
   anleggsType:
-    $ref: ../kodeverk/Hovedkategori.yaml
+    $ref: ../kodeverk/Hovedtype.yaml
     description: Ett anlegg kan bare ha en type. Ved behov for flere typer må det opprettes nye anlegg som kan fysisk overlappe andre anlegg
   aktiv:
     type: boolean
