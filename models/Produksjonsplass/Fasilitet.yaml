@@ -34,7 +34,7 @@ properties:
       x-stoplight:
         id: zbpe8a2q7co4s
   kategori:
-    $ref: ../kodeverk/Kategori.yaml
+    $ref: ../kodeverk/Dyreholdskategori.yaml
     x-stoplight:
       id: vhcdkozu0g0rr
   aktivitetstype:
