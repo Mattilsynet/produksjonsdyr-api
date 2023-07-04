@@ -1,0 +1,20 @@
+title: Kategori
+x-stoplight:
+  id: 9e7nixefnghnb
+type: object
+properties:
+  dyreholdskategori:
+    type: string
+    x-stoplight:
+      id: dsgcvw39mohwm
+    enum:
+      - FUGLER
+      - SVIN
+      - SAU
+      - GEIT
+      - STORFE
+      - KAMELDYR
+      - HESTEDYR
+      - BIER
+      - HUMLER
+description: Hva som utøves på et ansvar eller produksjonsplass. Foreløpig kun dyreholdskategorier her, men kan på sikt utvides til å holde andre kategorityper gitt av Hovedtype.

@@ -2,16 +2,6 @@ title: Sted
 x-stoplight:
   id: morx0jrcxj7st
 type: object
-examples:
-  - stedId: 0
-    geom: string
-    masterId: string
-    masterSystem: no.mattilsynet.mats.virksomhetsmappe.punkt
-    masterTidspunkt: '2019-08-24T14:15:22Z'
-    masterDatatype: string
-    hentetTidspunkt: '2019-08-24T14:15:22Z'
-    arkivert: false
-    stedDefinisjonKategori: senterpunkt
 x-tags:
   - Sted
 description: Sted beskriver et geografisk område som er en del av en produksjonsplass. Stedet skal beskrives med en kartrefferanse (geom).
@@ -28,7 +18,6 @@ properties:
     type: integer
     x-stoplight:
       id: lwgjj08ihbrnc
-    format: int64
   masterId:
     type: string
     description: Kildens identitet på objektet. Ofte kalt objektid
@@ -56,7 +45,6 @@ properties:
       - bygningsnummer
       - teigid
     description: Beskriver hvilket felt i mastersystemet verdien er hentet fra.
-    example: bygningsnummer teigid adresseid
   hentetTidspunkt:
     type: string
     format: date-time
@@ -64,7 +52,6 @@ properties:
   arkivert:
     type: boolean
     default: false
-
   stedDefinisjonKategori:
     type: string
     enum:
@@ -75,16 +62,19 @@ properties:
     x-stoplight:
       id: 5xkk0w45snz6s
   byggeår:
-    type: string
+    type: integer
+    format: int64
     x-stoplight:
       id: c3s6auofhc9uz
   ombyggingsår:
-    type: string
+    type: integer
+    format: int64
     x-stoplight:
       id: keio1sms55q50
 required:
   - stedId
   - geom
+  - srid
   - masterId
   - masterSystem
   - hentetTidspunkt

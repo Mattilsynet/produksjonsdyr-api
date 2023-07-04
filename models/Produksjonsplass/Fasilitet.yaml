@@ -3,20 +3,6 @@ x-stoplight:
   id: 4yg1anlq7jkfg
 type: object
 description: Beskriver hva produksjonsplassen er tilrettelangt for og hvilken utforming produksjonsplassen har
-examples:
-  - fasilitetID: 0
-    registreringsDatoFasilitet: '2019-08-24'
-    opphørsDatoFasilitet: '2019-08-24'
-    stedsId:
-      - 0
-    kapasitet: 0
-    kapasitetBenevning: antall
-    fasilitetBeskrivelse: Fuglene jeg holder i dyrerom A
-    kategori: FUGLER
-    aktivitetsType:
-      aktivitetstypeFugler: RUGEEGG
-    verdikjede:
-      verdikjedeFugler: KONSUMEGG
 x-tags:
   - Fasilitet
 properties:
@@ -47,11 +33,24 @@ properties:
       minimum: 0
       x-stoplight:
         id: zbpe8a2q7co4s
+  kategori:
+    $ref: ../kodeverk/Kategori.yaml
+    x-stoplight:
+      id: vhcdkozu0g0rr
+  aktivitetstype:
+    $ref: ../kodeverk/Aktivitetstype.yaml
+    x-stoplight:
+      id: rsossdekzamjz
   kapasitet:
     type: integer
+    format: int64
     x-stoplight:
       id: pvgjtmlqhy40b
     minimum: 0
+  verdikjede:
+    $ref: ../kodeverk/Verdikjede.yaml
+    x-stoplight:
+      id: 7pne81dqlrekg
   kapasitetBenevning:
     type: string
     x-stoplight:
@@ -59,41 +58,6 @@ properties:
     enum:
       - antall
       - kvadratmeter
-  kategori:
-    type: string
-    enum:
-      - FUGLER
-      - SVIN
-      - SAU
-      - GEIT
-      - STORFE
-      - KAMELDYR
-      - HESTEDYR
-      - BIER
-      - HUMLER
-    x-stoplight:
-      id: vhcdkozu0g0rr
-  aktivitetsType:
-    x-stoplight:
-      id: 9587kz2iw4o2q
-    oneOf:
-      - $ref: ../kodeverk/Aktivitetstyper/AktivitetstypeFugler.yaml
-        x-stoplight:
-          id: 9flktad5hec46
-      - $ref: ../kodeverk/Aktivitetstyper/AktivitetstypeStorfe.yaml
-        x-stoplight:
-          id: trklywbqsaub9
-    description: Synonymt med produksjonsform
-  verdikjede:
-    x-stoplight:
-      id: 790t0k0vj92ba
-    oneOf:
-      - $ref: ../kodeverk/Verdikjeder/VerdikjederFugler.yaml
-        x-stoplight:
-          id: p3bc7b7rorg2u
-      - $ref: ../kodeverk/Verdikjeder/VerdikjederStorfe.yaml
-        x-stoplight:
-          id: czhwsfuellzs2
   oppstalling:
     type: string
     x-stoplight:
@@ -111,13 +75,16 @@ properties:
     x-stoplight:
       id: r090sygibdogu
   planlagtAntallDyr:
-    type: string
+    type: integer
     x-stoplight:
       id: e8q9wgoabnyj7
+    format: int64
 required:
-  - fasilitetID
-  - registreringsDatoFasilitet
-  - kapasitet
-  - kapasitetBenevning
   - kategori
-  - aktivitetsType
+  - aktivitetstype
+  - kapasitet
+  - verdikjede
+  - kapasitetBenevning
+  - oppstalling
+  - tilgangUteareal
+  - stussMontert

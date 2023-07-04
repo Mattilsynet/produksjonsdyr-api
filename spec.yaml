@@ -152,15 +152,14 @@ paths:
             application/json:
               schema:
                 type: object
+                $ref: ./models/Produksjonsplass/Produksjonsplass.yaml
+            application/xml:
+              schema:
+                type: object
+                properties: {}
         '404':
           description: Not Found
       operationId: get-produksjonsplass
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-        description: ''
       x-internal: false
     parameters:
       - schema:
@@ -185,7 +184,6 @@ paths:
                     type: integer
                     format: int64
                     description: The user ID
-              examples: {}
         '400':
           description: Bad Request
       operationId: post-produksjonsdyr-produksjonsplass
@@ -194,7 +192,8 @@ paths:
           application/json:
             schema:
               type: object
-            examples: {}
+              $ref: ./models/Produksjonsplass/Produksjonsplass.yaml
+        description: ''
       description: Endepunkt for å opprette en produksjonsplass
   /skjemakomponent:
     post:

@@ -3,43 +3,6 @@ x-stoplight:
   id: 2kbtfhqicbasr
 type: object
 description: 'Produksjonsplass er et anlegg hvor man kan holde dyr. Produksjonsplass er vårt eget begrep for anlegg, som vi har valgt å bruke fordi det er enklere å ta eierskap til. En produksjonplass er alltid (impliserer) et anlegg. Et anlegg kan være en produksjonsplass, men det kan finnes andre definisjoner av anlegg i regelverk eller dagligtale som ikke er en produksjonsplass. Et anlegg må være registrert i Mattilsynets register for produksjonsplasser for å kvalifisere som en produksjonsplass.'
-x-examples:
-  - produksjonsplassId: 10000000
-    anleggsType: DYREHOLD
-    aktiv: true
-    fasilitet:
-      - aktivitetID: 0
-        matsTilsynsobjektID: string
-        registreringsDatoAktivitet: '2019-08-24'
-        opphørsDatoAktivitet: '2019-08-24'
-        kategori:
-          kategori: FUGLER
-          aktivitetstype:
-            aktivitetstypeFugler: RUGEEGG
-          verdikjede:
-            verdikjedeFugler: KONSUMEGG
-        antallTilHensikt:
-          artsMengdeID: 0
-          fraDato: '2019-08-24'
-          mengde:
-            - fugleArt: AND
-              antall: 5
-            - fugleArt: HONS
-              antall: 5
-        stedsRef:
-          - 0
-    steder:
-      - stedID: 0
-        geom: string
-        kildeID: string
-        kildeURL: no.mattilsynet.mats.virksomhetsmappe.punkt
-        hentetTidspunkt: '2019-08-24T14:15:22Z'
-        kildeTidspunkt: '2019-08-24T14:15:22Z'
-        arkivert: false
-    ansvarId:
-      - 0
-    beskrivelse: string
-    visningsNavn: string
 x-internal: false
 x-tags:
   - Anlegg
@@ -53,7 +16,7 @@ properties:
     x-stoplight:
       id: mc3komkyxjtna
   anleggsType:
-    $ref: ../kodeverk/Hovedkategori.yaml
+    $ref: ../kodeverk/Hovedtype.yaml
     description: Ett anlegg kan bare ha en type. Ved behov for flere typer må det opprettes nye anlegg som kan fysisk overlappe andre anlegg
   aktiv:
     type: boolean

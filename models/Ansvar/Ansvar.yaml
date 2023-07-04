@@ -39,12 +39,12 @@ properties:
       format: int64
       minimum: 0
   ansvarsDomene:
-    type: string
+    $ref: ../kodeverk/Kategori.yaml
     x-stoplight:
       id: hijd2886azby5
-    description: samme som anleggstype
+    description: Angir hvilket type dyrehold driftsansvarlig har ansvar for
   ansvarsType:
-    $ref: ../kodeverk/Hovedkategori.yaml
+    $ref: ../kodeverk/Hovedtype.yaml
     x-stoplight:
       id: bznfnvbxzrmkf
     description: samme som kategori
