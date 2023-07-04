@@ -54,3 +54,5 @@ properties:
     x-stoplight:
       id: el5oeas97rbtc
     example: '[{"id": 1, "navn": "rugeegg", "verdikjede": "konsumegg", "art": "hons", "kunnskap": {"id": 1, "tekst": "kurs"}]'
+x-tags:
+  - Skjemakomponent

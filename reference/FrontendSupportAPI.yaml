@@ -1,0 +1,389 @@
+openapi: 3.0.0
+x-stoplight:
+  id: sqerwwxc1cxui
+info:
+  title: FrontendSupportAPI
+  version: '1.0'
+  description: Api som understøtter frontend
+servers:
+  - url: 'http://localhost:3000'
+  - url: 'https://stoplight.io/mocks/mattilsynet/produksjonsdyr-api/382663'
+    description: mock
+paths:
+  /skjemakomponent:
+    post:
+      summary: Lagrer komponent til angitt eier og skjema
+      tags:
+        - Skjemakomponent
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: ../models/Skjemakomponent/SkjemaKomponent.yaml
+        '400':
+          description: Bad Request
+      operationId: post-skjemakomponent
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/Skjemakomponent/SkjemaKomponent.yaml
+        description: Sender inn skjemakomponent som skal lagres
+    get:
+      summary: Henter alle skjemakomponenter
+      tags:
+        - Skjemakomponent
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ../models/Skjemakomponent/SkjemaKomponent.yaml
+              examples:
+                Example 1:
+                  value:
+                    - id: 4234234
+                      eierid: org342434
+                      skjemaid: skj3243
+                      skjematype: fjørfehold
+                      komponent: produksjonsform
+                      komponentid: komp2342
+                      endretdato: 12.11.2023
+                      datajson: '[{"id": 1, "navn": "rugeegg", "verdikjede": "konsumegg", "art": "hons", "kunnskap": {"id": 1, "tekst": "kurs"}]'
+      operationId: get-skjemakomponent
+  '/skjemakomponent/eier/{eierid}':
+    parameters:
+      - schema:
+          type: string
+        name: eierid
+        in: path
+        required: true
+    get:
+      summary: Henter alle komponenter til angitt eier
+      tags:
+        - Skjemakomponent
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ../models/Skjemakomponent/SkjemaKomponent.yaml
+              examples:
+                Example 1:
+                  value:
+                    - id: 4234234
+                      eierid: org342434
+                      skjemaid: skj3243
+                      skjematype: fjørfehold
+                      komponent: produksjonsform
+                      komponentid: komp2342
+                      endretdato: 12.11.2023
+                      datajson: '[{"id": 1, "navn": "rugeegg", "verdikjede": "konsumegg", "art": "hons", "kunnskap": {"id": 1, "tekst": "kurs"}]'
+        '404':
+          description: Not Found
+      operationId: get-skjemakomponent-eier-eierid
+      description: 'Henter ut alle komponenter som er reigstrert på denne eieren uavhengig av typeskjema, skjemaid'
+    delete:
+      summary: Slett eier
+      tags:
+        - Skjemakomponent
+      operationId: delete-skjemakomponent-eier-eierid
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: string
+      description: Sletter alle skjema med tilhørende komponenter som er knyttet til eierid
+  '/skjemakomponent/eier/{eierid}/skjema/{skjemaid}':
+    parameters:
+      - schema:
+          type: string
+        name: eierid
+        in: path
+        required: true
+      - schema:
+          type: string
+        name: skjemaid
+        in: path
+        required: true
+    get:
+      summary: Henter alle komponenter til angitt skjema
+      tags:
+        - Skjemakomponent
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ../models/Skjemakomponent/SkjemaKomponent.yaml
+        '404':
+          description: Not Found
+      operationId: get-skjemakomponent-eier-eierid-skjema-skjemaid
+      description: Henter ut alle komponenter som er registrert på angitt eierid og skjemaid
+    put:
+      summary: Opprett eller oppdater skjema-metadata
+      tags:
+        - Skjemakomponent
+      operationId: put-skjemakomponent-eier-eierid-skjema-skjemaid
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../models/Skjemakomponent/SkjemaKomponent.yaml
+      description: 'Oppretter et skjema eller oppdaterer et skjema, ved å lagre en "spesial" komponent angitt av skjematype'
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: skjematype
+          description: Angir hva slags skjema som lagres
+          required: true
+    delete:
+      summary: Slett ett skjema
+      tags:
+        - Skjemakomponent
+      operationId: delete-skjemakomponent-eier-eierid-skjema-skjemaid
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: string
+      description: Sletter alle komponenter på et skjema
+  '/skjemakomponent/eier/{eierid}/skjema/{skjemaid}/komponent/{komponentblokk}':
+    parameters:
+      - schema:
+          type: string
+        name: eierid
+        in: path
+        required: true
+      - schema:
+          type: string
+        name: skjemaid
+        in: path
+        required: true
+      - schema:
+          type: string
+        name: komponentblokk
+        in: path
+        required: true
+    get:
+      summary: Henter alle komponenter til angitt komponentblokk
+      tags:
+        - Skjemakomponent
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ../models/Skjemakomponent/SkjemaKomponent.yaml
+              examples:
+                Example 1:
+                  value:
+                    - id: 4234234
+                      eierid: org342434
+                      skjemaid: skj3243
+                      skjematype: fjørfehold
+                      komponent: produksjonsform
+                      komponentid: komp2342
+                      endretdato: 12.11.2023
+                      datajson: '[{"id": 1, "navn": "rugeegg", "verdikjede": "konsumegg", "art": "hons", "kunnskap": {"id": 1, "tekst": "kurs"}]'
+        '404':
+          description: Not Found
+      operationId: get-skjemakomponent-eier-eierid-skjema-skjemaid-komponent-komponentblokk
+      description: 'Henter ut komponenten som er registrert på angitt eierid,skjemaid og komponentblokk. Komponentblokk er taggen som json strukturen til komponenten ligger under. I dette tilfellet er id = komponentblokk'
+    put:
+      summary: Opprett eller oppdater en skjemakomponent
+      tags:
+        - Skjemakomponent
+      operationId: put-skjemakomponent-eier-eierid-skjema-skjemaid-komponent-komponentblokk
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../models/Skjemakomponent/SkjemaKomponent.yaml
+      description: 'Lager en komponenten som er registrert på angitt eierid,skjemaid og komponentblokk. Komponentblokk er taggen som json strukturen til komponenten ligger under. I dette tilfellet er id = komponentblokk'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+        description: ''
+    delete:
+      summary: Slett komponent blokk
+      tags:
+        - Skjemakomponent
+      operationId: delete-skjemakomponent-eier-eierid-skjema-skjemaid-komponent-komponentblokk
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: string
+      description: Sletter en komponentblokk
+  '/skjemakomponent/eier/{eierid}/skjema/{skjemaid}/komponent/{komponentblokk}/id/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: eierid
+        in: path
+        required: true
+      - schema:
+          type: string
+        name: skjemaid
+        in: path
+        required: true
+      - schema:
+          type: string
+        name: komponentblokk
+        in: path
+        required: true
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+    get:
+      summary: Henter alle en komponent med id av type komponentblokk
+      tags:
+        - Skjemakomponent
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ../models/Skjemakomponent/SkjemaKomponent.yaml
+              examples:
+                Example 1:
+                  value:
+                    - id: 4234234
+                      eierid: org342434
+                      skjemaid: skj3243
+                      skjematype: fjørfehold
+                      komponent: produksjonsform
+                      komponentid: komp2342
+                      endretdato: 12.11.2023
+                      datajson: '[{"id": 1, "navn": "rugeegg", "verdikjede": "konsumegg", "art": "hons", "kunnskap": {"id": 1, "tekst": "kurs"}]'
+        '404':
+          description: Not Found
+      operationId: get-skjemakomponent-eier-eierid-skjema-skjemaid-komponent-komponentblokk-id-id
+      description: 'Henter ut komponent av en gitt type som er registrert på angitt eierid,skjemaid og komponentblokk og id. Når du bruker dette endepunktet så er komponentblokk en slags kategori av komponenter. id er taggen som json strukturen til komponenten ligger under.'
+    put:
+      summary: Opprett eller oppdater en skjemakomponent
+      tags:
+        - Skjemakomponent
+      operationId: put-skjemakomponent-eier-eierid-skjema-skjemaid-komponent-komponentblokk-id-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../models/Skjemakomponent/SkjemaKomponent.yaml
+      description: 'Lagrer en komponent av en gitt type som er registrert på angitt eierid,skjemaid og komponentblokk og id. Når du bruker dette endepunktet så er komponentblokk en slags kategori av komponenter. id er taggen som json strukturen til komponenten ligger under.'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+        description: ''
+    delete:
+      summary: Slett komponent blokk
+      tags:
+        - Skjemakomponent
+      operationId: delete-skjemakomponent-eier-eierid-skjema-skjemaid-komponent-komponentblokk-id-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: string
+      description: Sletter en komponent under en kompnentblokk
+  '/skjemakomponent/eier/{eier}/skjema':
+    parameters:
+      - schema:
+          type: string
+        name: eier
+        in: path
+        required: true
+    get:
+      summary: Hent alle skjema-metadata for eier
+      tags:
+        - Skjemakomponent
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ../models/Skjemakomponent/SkjemaMetadata.yaml
+      operationId: get-skjemakomponent-eier-eier-skjema
+      description: 'Henter ut liste med alle skjema på en eier, evt. filtrert på skjematype'
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: skjematype
+          description: angi en skjematype
+  '/skjemakomponent/eier/{eierid}/skjema/{skjemaid}/komponent/{komponentblokk}/data':
+    parameters:
+      - schema:
+          type: string
+        name: eierid
+        in: path
+        required: true
+      - schema:
+          type: string
+        name: skjemaid
+        in: path
+        required: true
+      - schema:
+          type: string
+        name: komponentblokk
+        in: path
+        required: true
+    get:
+      summary: Henter kun datajson fra en komponentblokk
+      tags:
+        - Skjemakomponent
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: string
+      operationId: get-skjemakomponent-eier-eierid-skjema-skjemaid-komponent-komponentblokk-data
+      description: Brukes dersom man har stål kontroll på metadata og bare vil ha innholdet i en gitt komponent
+components:
+  schemas: {}
+tags:
+  - name: Skjemakomponent
