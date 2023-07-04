@@ -260,6 +260,11 @@ paths:
         name: komponentblokk
         in: path
         required: true
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
     get:
       summary: Henter alle en komponent med id av type komponentblokk
       tags:
@@ -286,13 +291,13 @@ paths:
                       datajson: '[{"id": 1, "navn": "rugeegg", "verdikjede": "konsumegg", "art": "hons", "kunnskap": {"id": 1, "tekst": "kurs"}]'
         '404':
           description: Not Found
-      operationId: get-skjemakomponent-eier-eierid-skjema-skjemaid-komponent-komponentblokk
+      operationId: get-skjemakomponent-eier-eierid-skjema-skjemaid-komponent-komponentblokk-id-id
       description: 'Henter ut komponent av en gitt type som er registrert på angitt eierid,skjemaid og komponentblokk og id. Når du bruker dette endepunktet så er komponentblokk en slags kategori av komponenter. id er taggen som json strukturen til komponenten ligger under.'
     put:
       summary: Opprett eller oppdater en skjemakomponent
       tags:
         - Skjemakomponent
-      operationId: put-skjemakomponent-eier-eierid-skjema-skjemaid-komponent-komponentblokk
+      operationId: put-skjemakomponent-eier-eierid-skjema-skjemaid-komponent-komponentblokk-id-id
       responses:
         '200':
           description: OK
@@ -311,7 +316,7 @@ paths:
       summary: Slett komponent blokk
       tags:
         - Skjemakomponent
-      operationId: delete-skjemakomponent-eier-eierid-skjema-skjemaid-komponent-komponentblokk
+      operationId: delete-skjemakomponent-eier-eierid-skjema-skjemaid-komponent-komponentblokk-id-id
       responses:
         '200':
           description: OK
