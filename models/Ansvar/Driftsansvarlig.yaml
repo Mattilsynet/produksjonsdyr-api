@@ -14,7 +14,6 @@ properties:
       id: vnwba4wfbxofn
   produsentnummerP10:
     type: string
-    default: 1234567890
     description: En identifikator som brukes av bransjen til å identifisere en virksomhet som er koblet til en landbrukseiendom.
   virksomhetsmappeId:
     type: string
@@ -42,5 +41,4 @@ properties:
       id: 5x4rh0r0bvyxz
     description: |
       Nummerserie som benyttes av driftsansvarlig for å merke dyr. Tildeles av Mattilsynet.
-required:
 
