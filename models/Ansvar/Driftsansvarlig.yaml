@@ -27,7 +27,7 @@ properties:
     type: string
     default: 1234567890
     description: En identifikator som brukes av bransjen til å identifisere en virksomhet som er koblet til en landbrukseiendom.
-  virksomhetsmappId:
+  virksomhetsmappeId:
     type: string
     x-stoplight:
       id: x5fkix1bbgysq
@@ -54,4 +54,4 @@ properties:
     description: |
       Nummerserie som benyttes av driftsansvarlig for å merke dyr. Tildeles av Mattilsynet.
 required:
-  - driftsansvarligId
+
