@@ -167,6 +167,29 @@ paths:
         name: id
         in: path
         required: true
+  '/produksjonsplass/driftsansvarlig/{id}':
+    get:
+      summary: GetDriftsansvarlig
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  driftsansvarlig:
+                    $ref: ./models/Ansvar/Driftsansvarlig.yaml
+        '404':
+          description: Not Found
+      operationId: get-produksjonsplass-driftsansvarlig
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
   /produksjonsdyr/produksjonsplass:
     post:
       summary: PostProduksjonsplass
@@ -195,6 +218,23 @@ paths:
               $ref: ./models/Produksjonsplass/Produksjonsplass.yaml
         description: ''
       description: Endepunkt for å opprette en produksjonsplass
+  /produksjonsdyr/driftsansvarlig:
+    post:
+      summary: PostDriftsansvarlig
+      operationId: post-produksjonsdyr-driftsansvarlig
+      responses:
+        '201':
+          description: Created
+        '400':
+          description: Bad Request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                '':
+                  $ref: ./models/Ansvar/Driftsansvarlig.yaml
 components:
   schemas:
     PaabegyntSkjema:
