@@ -2,6 +2,7 @@ title: Kontaktperson
 x-stoplight:
   id: 2sgc2kkmvo2rj
 type: object
+description: En kontaktperson som er tilknyttet ansvaret og som Mattilsynet kan kontakte.
 properties:
   id:
     type: string
@@ -26,15 +27,6 @@ properties:
     enum:
       - AVLØSER
       - ANNET
-  ansvarId:
-    type: array
-    items:
-      type: integer
-      format: int64
-      minimum: 0
-      x-stoplight:
-        id: ca5w7h5nqzd08
 required:
   - navn
   - telefonnummer
-description: En kontaktperson som er tilknyttet ansvaret og som Mattilsynet kan kontakte.
