@@ -38,7 +38,7 @@ properties:
       type: integer
       format: int64
       minimum: 0
-  ansvarsdomene:
+  ansvarskategori:
     $ref: ../kodeverk/Kategori.yaml
     x-stoplight:
       id: hijd2886azby5
