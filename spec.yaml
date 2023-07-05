@@ -167,7 +167,7 @@ paths:
         name: id
         in: path
         required: true
-  '/produksjonsplass/driftsansvarlig/{id}':
+  '/ansvar/driftsansvarlig/{id}':
     get:
       summary: GetDriftsansvarlig
       tags: []
@@ -218,7 +218,7 @@ paths:
               $ref: ./models/Produksjonsplass/Produksjonsplass.yaml
         description: ''
       description: Endepunkt for å opprette en produksjonsplass
-  /produksjonsdyr/driftsansvarlig:
+  /ansvar/driftsansvarlig:
     post:
       summary: PostDriftsansvarlig
       operationId: post-produksjonsdyr-driftsansvarlig
@@ -235,6 +235,7 @@ paths:
               properties:
                 '':
                   $ref: ./models/Ansvar/Driftsansvarlig.yaml
+    parameters: []
 components:
   schemas:
     PaabegyntSkjema:
