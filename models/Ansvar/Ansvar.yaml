@@ -22,7 +22,7 @@ properties:
       id: rtejkvt35zikr
     minimum: 0
     format: int64
-  matsTilsynsobjektRef:
+  matsTilsynsobjektId:
     type: string
     x-stoplight:
       id: e5amwlpbno41k
@@ -38,12 +38,12 @@ properties:
       type: integer
       format: int64
       minimum: 0
-  ansvarsDomene:
+  ansvarskategori:
     $ref: ../kodeverk/Kategori.yaml
     x-stoplight:
       id: hijd2886azby5
     description: Angir hvilket type dyrehold driftsansvarlig har ansvar for
-  ansvarsType:
+  ansvarstype:
     $ref: ../kodeverk/Hovedtype.yaml
     x-stoplight:
       id: bznfnvbxzrmkf
@@ -54,3 +54,23 @@ properties:
       id: fb138g45fiaco
     format: int64
     minimum: 0
+  kunnskapsnivaa:
+    type: array
+    x-stoplight:
+      id: tflc27djk26ad
+    items:
+      x-stoplight:
+        id: vyvkxjbfk52lz
+      enum:
+        - relevant_utdanning
+        - relevant_kurs
+        - relevant_erfaring
+        - annet
+  kontaktpersoner:
+    x-stoplight:
+      id: z7g2kehlxd2v5
+    type: array
+    items:
+      $ref: ./Kontaktperson.yaml
+      x-stoplight:
+        id: xnwq0tbfm8uzf
