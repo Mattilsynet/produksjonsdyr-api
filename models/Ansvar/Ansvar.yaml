@@ -5,16 +5,6 @@ type: object
 description: Beskriver ansvaret en driftsansvarlig har for dyr. Dyrehold er et eksempel på et ansvar som gjelder landdyr (i motsetning til havbruk)
 x-tags:
   - Ansvar
-examples:
-  - ansvarId: 0
-    matsTilsynsobjektRef: string
-    produksjonsplasser:
-      - 0
-    ansvarsDomene: string
-    ansvarsType: string
-    matsAktivitetsId: string
-    matsProduksjonsform: string
-    aktorRef: 0
 properties:
   ansvarId:
     type: integer

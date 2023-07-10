@@ -33,28 +33,6 @@ paths:
         name: id
         in: path
         required: true
-  '/ansvar/driftsansvarlig/{id}':
-    get:
-      summary: GetDriftsansvarlig
-      tags:
-        - Driftsansvarlig
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                type: object
-                $ref: ./models/Ansvar/Driftsansvarlig.yaml
-        '404':
-          description: Not Found
-      operationId: get-produksjonsplass-driftsansvarlig
-    parameters:
-      - schema:
-          type: string
-        name: id
-        in: path
-        required: true
   /produksjonsdyr/produksjonsplass:
     post:
       summary: PostProduksjonsplass
@@ -83,6 +61,28 @@ paths:
               $ref: ./models/Produksjonsplass/Produksjonsplass.yaml
         description: ''
       description: Endepunkt for å opprette en produksjonsplass
+  '/ansvar/driftsansvarlig/{id}':
+    get:
+      summary: GetDriftsansvarlig
+      tags:
+        - Driftsansvarlig
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: ./models/Ansvar/Driftsansvarlig.yaml
+        '404':
+          description: Not Found
+      operationId: get-produksjonsplass-driftsansvarlig
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
   /ansvar/driftsansvarlig:
     post:
       summary: PostDriftsansvarlig
@@ -107,4 +107,25 @@ paths:
             schema:
               type: object
               $ref: ./models/Ansvar/Driftsansvarlig.yaml
-
+  '/ansvar/driftsansvarlig/{id}/ansvar':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+    put:
+      summary: ''
+      operationId: put-ansvar-driftsansvarlig-id-ansvar
+      responses:
+        '200':
+          description: OK
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ansvar:
+                  $ref: ./models/Ansvar/Ansvar.yaml
+      description: Legger til et ansvar på en eksisterende driftsansvarlig
