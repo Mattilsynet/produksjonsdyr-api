@@ -24,7 +24,11 @@ properties:
   orgnummerForetak:
     type: string
   ansvar:
-    $ref: ./Ansvar.yaml
+    type: array
+    items:
+      $ref: ./Ansvar.yaml
+      x-stoplight:
+        id: ca5w7h5nqzd08
   fodselsnummer:
     type: string
     x-stoplight:
