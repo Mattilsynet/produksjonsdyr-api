@@ -23,14 +23,8 @@ properties:
     type: string
   orgnummerForetak:
     type: string
-  ansvarId:
-    type: array
-    items:
-      type: integer
-      format: int64
-      minimum: 0
-      x-stoplight:
-        id: ca5w7h5nqzd08
+  ansvar:
+    $ref: ./Ansvar.yaml
   fodselsnummer:
     type: string
     x-stoplight:
@@ -41,4 +35,3 @@ properties:
       id: 5x4rh0r0bvyxz
     description: |
       Nummerserie som benyttes av driftsansvarlig for å merke dyr. Tildeles av Mattilsynet.
-
