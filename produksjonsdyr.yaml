@@ -21,7 +21,6 @@ paths:
           content:
             application/json:
               schema:
-                type: object
                 $ref: ./models/Produksjonsplass/Produksjonsplass.yaml
         '404':
           description: Not Found
@@ -29,7 +28,8 @@ paths:
       x-internal: false
     parameters:
       - schema:
-          type: string
+          type: integer
+          format: int64
         name: id
         in: path
         required: true
@@ -57,7 +57,6 @@ paths:
         content:
           application/json:
             schema:
-              type: object
               $ref: ./models/Produksjonsplass/Produksjonsplass.yaml
         description: ''
       description: Endepunkt for å opprette en produksjonsplass
@@ -72,14 +71,14 @@ paths:
           content:
             application/json:
               schema:
-                type: object
                 $ref: ./models/Ansvar/Driftsansvarlig.yaml
         '404':
           description: Not Found
       operationId: get-produksjonsplass-driftsansvarlig
     parameters:
       - schema:
-          type: string
+          type: integer
+          format: int64
         name: id
         in: path
         required: true
@@ -105,12 +104,12 @@ paths:
         content:
           application/json:
             schema:
-              type: object
               $ref: ./models/Ansvar/Driftsansvarlig.yaml
   '/ansvar/driftsansvarlig/{id}/ansvar':
     parameters:
       - schema:
-          type: string
+          type: integer
+          format: int64
         name: id
         in: path
         required: true
@@ -124,8 +123,5 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                ansvar:
-                  $ref: ./models/Ansvar/Ansvar.yaml
+              $ref: ./models/Ansvar/Ansvar.yaml
       description: Legger til et ansvar på en eksisterende driftsansvarlig
