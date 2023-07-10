@@ -28,7 +28,8 @@ paths:
       x-internal: false
     parameters:
       - schema:
-          type: string
+          type: integer
+          format: int64
         name: id
         in: path
         required: true
@@ -76,7 +77,8 @@ paths:
       operationId: get-produksjonsplass-driftsansvarlig
     parameters:
       - schema:
-          type: string
+          type: integer
+          format: int64
         name: id
         in: path
         required: true
@@ -106,7 +108,8 @@ paths:
   '/ansvar/driftsansvarlig/{id}/ansvar':
     parameters:
       - schema:
-          type: string
+          type: integer
+          format: int64
         name: id
         in: path
         required: true
