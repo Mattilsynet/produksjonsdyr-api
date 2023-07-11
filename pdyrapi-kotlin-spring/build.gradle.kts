@@ -31,12 +31,10 @@ dependencies {
 }
 
 val frontendsupportapi = "frontendsupportapi"
-val spec = "spec"
 val produksjonsdyrapi = "produksjonsdyr"
 
 
 val openapiSpecs = mapOf(
-	spec to "spec.yaml",
 	frontendsupportapi to "reference/FrontendSupportAPI.yaml",
     produksjonsdyrapi to "produksjonsdyr.yaml"
 )
