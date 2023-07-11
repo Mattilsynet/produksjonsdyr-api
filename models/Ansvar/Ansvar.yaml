@@ -64,3 +64,11 @@ properties:
       $ref: ./Kontaktperson.yaml
       x-stoplight:
         id: xnwq0tbfm8uzf
+  aktiviteter:
+    type: array
+    x-stoplight:
+      id: v0y7o1vf6259v
+    items:
+      $ref: ./Aktivitet.yaml
+      x-stoplight:
+        id: ucyz7o96u7pzd
