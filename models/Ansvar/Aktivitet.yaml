@@ -1,0 +1,23 @@
+title: Aktivitet
+x-stoplight:
+  id: oi1fo2dejxg48
+type: object
+properties:
+  id:
+    type: integer
+    x-stoplight:
+      id: t2z00u2yhdjfi
+    format: int64
+  aktivitetstype:
+    $ref: ../kodeverk/Aktivitetstype.yaml
+    x-stoplight:
+      id: isqhc9mpgv0fq
+  verdikjede:
+    $ref: ../kodeverk/Verdikjede.yaml
+    x-stoplight:
+      id: o10989jwewmfg
+  art:
+    $ref: ../kodeverk/Art.yaml
+    x-stoplight:
+      id: o18h8nk9vafw8
+description: Aktivitet beskriver mer detaljert hva man har ansvar for og hva det skal brukes til
