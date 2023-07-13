@@ -6,7 +6,7 @@ info:
   version: '1.0'
   description: 'API som benyttes for å hente informasjon som er nyttig for produksjonsdyr, men som ikke eies av mattilsynet'
 servers:
-  - url: 'http://localhost:3000' 
+  - url: 'http://localhost:3000'
 paths:
   '/bygning/masterid/{masterid}':
     get:
@@ -31,63 +31,6 @@ paths:
         in: path
         required: true
 components:
-  schemas:
-    User:
-      title: User
-      type: object
-      description: ''
-      x-examples:
-        Alice Smith:
-          id: 142
-          firstName: Alice
-          lastName: Smith
-          email: alice.smith@gmail.com
-          dateOfBirth: '1997-10-31'
-          emailVerified: true
-          signUpDate: '2019-08-24'
-      properties:
-        id:
-          type: integer
-          description: Unique identifier for the given user.
-          x-stoplight:
-            id: uqnudfralsq6v
-        firstName:
-          type: string
-          x-stoplight:
-            id: lglb2e3ictwk2
-        lastName:
-          type: string
-          x-stoplight:
-            id: abpp0uy5rlejq
-        email:
-          type: string
-          format: email
-          x-stoplight:
-            id: zu66pa7u2fst2
-        dateOfBirth:
-          type: string
-          format: date
-          example: '1997-10-31'
-          x-stoplight:
-            id: twgknjb2xasvd
-        emailVerified:
-          type: boolean
-          description: Set to true if the user's email has been verified.
-          x-stoplight:
-            id: bjh618sqvqstt
-        createDate:
-          type: string
-          format: date
-          description: The date that the user was created.
-          x-stoplight:
-            id: lbe8adjxo2v0w
-      required:
-        - id
-        - firstName
-        - lastName
-        - email
-        - emailVerified
-      x-stoplight:
-        id: s57nvqth6aiv9
+  schemas: {}
 tags:
   - name: berikelse
