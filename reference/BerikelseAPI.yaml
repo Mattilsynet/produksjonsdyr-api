@@ -1,0 +1,36 @@
+openapi: 3.0.0
+x-stoplight:
+  id: bspqaldw4k34q
+info:
+  title: BerikelseAPI
+  version: '1.0'
+  description: 'API som benyttes for å hente informasjon som er nyttig for produksjonsdyr, men som ikke eies av mattilsynet'
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  '/bygning/masterid/{masterid}':
+    get:
+      summary: Henter en bygning med gitt masterid
+      tags:
+        - berikelse
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../models/Produksjonsplass/Sted.yaml
+        '404':
+          description: Not Found
+      operationId: get-bygning
+      description: Henter ut bygning med gitt id i master system
+    parameters:
+      - schema:
+          type: string
+        name: masterid
+        in: path
+        required: true
+components:
+  schemas: {}
+tags:
+  - name: berikelse
