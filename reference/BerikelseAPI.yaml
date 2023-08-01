@@ -33,7 +33,8 @@ paths:
   '/bygning/rektangel/{minLat}/{maxLat}/{minLng}/{maxLng}/{srid}':
     get:
       summary: Henter bygninger innenfor rektangel
-      tags: []
+      tags:
+        - berikelse
       responses:
         '200':
           description: OK
