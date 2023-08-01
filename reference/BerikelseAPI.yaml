@@ -51,22 +51,26 @@ paths:
       description: Henter ut alle bygninger som ligger innenfor angitt rektangel
     parameters:
       - schema:
-          type: number
+          type: integer
+          format: int64
         name: minLat
         in: path
         required: true
       - schema:
-          type: number
+          type: integer
+          format: int64
         name: maxLat
         in: path
         required: true
       - schema:
-          type: number
+          type: integer
+          format: int64
         name: minLng
         in: path
         required: true
       - schema:
-          type: number
+          type: integer
+          format: int64
         name: maxLng
         in: path
         required: true
