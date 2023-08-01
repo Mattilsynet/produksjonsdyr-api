@@ -30,6 +30,58 @@ paths:
         name: masterid
         in: path
         required: true
+  '/bygning/rektangel/{minLat}/{maxLat}/{minLng}/{maxLng}/{srid}':
+    get:
+      summary: Henter bygninger innenfor rektangel
+      tags:
+        - berikelse
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ../models/Produksjonsplass/Sted.yaml
+        '404':
+          description: Not Found
+      operationId: get-bygning-rektangel
+      x-stoplight:
+        id: suaag2d1kgsft
+      description: Henter ut alle bygninger som ligger innenfor angitt rektangel
+    parameters:
+      - schema:
+          type: integer
+          format: int64
+        name: minLat
+        in: path
+        required: true
+      - schema:
+          type: integer
+          format: int64
+        name: maxLat
+        in: path
+        required: true
+      - schema:
+          type: integer
+          format: int64
+        name: minLng
+        in: path
+        required: true
+      - schema:
+          type: integer
+          format: int64
+        name: maxLng
+        in: path
+        required: true
+      - schema:
+          type: integer
+          format: int32
+        name: srid
+        in: path
+        required: true
+        description: srid/koordinatsystemet som koord er oppgitt i
 components:
   schemas: {}
 tags:
