@@ -30,7 +30,7 @@ paths:
         name: masterid
         in: path
         required: true
-  '/bygning/rektangel/{minLat}/{maxLat}/{minLng}/{maxLng}':
+  '/bygning/rektangel/{minLat}/{maxLat}/{minLng}/{maxLng}/{srid}':
     get:
       summary: Henter bygninger innenfor rektangel
       tags: []
@@ -74,6 +74,13 @@ paths:
         name: maxLng
         in: path
         required: true
+      - schema:
+          type: integer
+          format: int32
+        name: srid
+        in: path
+        required: true
+        description: srid/koordinatsystemet som koord er oppgitt i
 components:
   schemas: {}
 tags:
