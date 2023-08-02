@@ -1,0 +1,26 @@
+title: Omrade
+x-stoplight:
+  id: wznkjcsk0nfye
+type: object
+examples: []
+description: 'Omrade er en enkel definisjon av et geografisk bestemt område som kan vises i kart. Dette er en modell som er tilpasset frontend, og områdene er i srid EPGS_3857'
+x-tags:
+  - berikelse
+properties:
+  id:
+    type: string
+    x-stoplight:
+      id: 0525rv7m8gyl1
+    description: masterid til kilden som området er hentet ifra
+  typeomr:
+    x-stoplight:
+      id: 2lp822dw0ye4h
+    description: 'hvilket type område dette er f.eks bygning, teig'
+    enum:
+      - no.kartverket.matrikkelen.teig
+      - no.kartverket.matrikkelen.fkb_bygning
+  geom:
+    type: string
+    x-stoplight:
+      id: q48gdsbu65tsk
+    description: WKT som beskriver området f.eks POLYGON. Srid er 3857
