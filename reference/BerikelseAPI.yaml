@@ -82,7 +82,59 @@ paths:
         in: path
         required: true
         description: srid/koordinatsystemet som koord er oppgitt i
-components:
-  schemas: {}
+  '/omrade/rektangel/{bunnvenstre}/{toppvenstre}/{bunnhoyre}/{topphoyre}':
+    get:
+      summary: Henter geografiske områder innenfor rektangel
+      tags:
+        - berikelse
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ../models/Berikelse/Omrade.yaml
+              examples:
+                Example 1:
+                  value:
+                    - id: '152505566'
+                      typeomr: no.kartverket.matrikkelen.fkb_bygning
+                      geom: 'POLYGON ((1222964.740419269 8562431.953856101, 1223025.209885426 8562416.158561183, 1223022.9931145231 8562407.639415963, 1223020.8214517299 8562399.262018237, 1222960.3521149573 8562415.057239233, 1222962.5237135927 8562423.434673572, 1222964.740419269 8562431.953856101))'
+        '404':
+          description: Not Found
+      operationId: get-omrade-rektangel
+      x-stoplight:
+        id: 67ivd1ttq78ys
+      description: |-
+        Henter ut geografiske områder som berører angitt rektangel. Områdene er typisk bygninger eller eiendommer. 
+        Områdene er i srid/koordinatsystem EPSG_3857. 
+        Metoden er tilpasset frontend.
+    parameters:
+      - schema:
+          type: integer
+          format: int64
+        name: bunnvenstre
+        in: path
+        required: true
+      - schema:
+          type: integer
+          format: int64
+        name: toppvenstre
+        in: path
+        required: true
+      - schema:
+          type: integer
+          format: int64
+        name: bunnhoyre
+        in: path
+        required: true
+      - schema:
+          type: integer
+          format: int64
+        name: topphoyre
+        in: path
+        required: true
 tags:
   - name: berikelse
