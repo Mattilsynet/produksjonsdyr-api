@@ -136,5 +136,29 @@ paths:
         name: topphoyre
         in: path
         required: true
+  '/teig/{teigid}':
+    parameters:
+      - schema:
+          type: string
+        name: teigid
+        in: path
+        required: true
+    get:
+      summary: Henter ut teig med gitt id i master system
+      tags:
+        - berikelse
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../models/Produksjonsplass/Sted.yaml
+        '404':
+          description: Not Found
+      operationId: get-teig
+      x-stoplight:
+        id: 1h9c8aea8sobm
+      description: Henter ut teigen med angitt teigid fra mastersystem
 tags:
   - name: berikelse
