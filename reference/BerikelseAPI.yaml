@@ -52,26 +52,26 @@ paths:
       description: Henter ut alle bygninger som ligger innenfor angitt rektangel
     parameters:
       - schema:
-          type: integer
-          format: int64
+          type: number
+          format: double
         name: minLat
         in: path
         required: true
       - schema:
-          type: integer
-          format: int64
+          type: number
+          format: double
         name: maxLat
         in: path
         required: true
       - schema:
-          type: integer
-          format: int64
+          type: number
+          format: double
         name: minLng
         in: path
         required: true
       - schema:
-          type: integer
-          format: int64
+          type: number
+          format: double
         name: maxLng
         in: path
         required: true
@@ -160,22 +160,74 @@ paths:
       x-stoplight:
         id: 1h9c8aea8sobm
       description: Henter ut teigen med angitt teigid fra mastersystem
-  '/teig/{nord}/{ost}':
+  '/teig/{nord}/{ost}/{srid}/{radius}':
     parameters:
       - schema:
-          type: string
+          type: number
+          format: double
         name: nord
         in: path
         required: true
         description: koordinat i nordlig retning
       - schema:
-          type: string
+          type: number
+          format: double
+        name: ost
+        in: path
+        required: true
+        description: koordinat i østlig retning
+      - schema:
+          type: integer
+          format: int32
+        name: srid
+        in: path
+        required: true
+        description: koordinatsystem(EPSG) feks 3857
+      - schema:
+          type: integer
+          format: int32
+        name: radius
+        in: path
+        required: true
+        description: radius i ant meter som søket leter etter eiendommer innenfor
+    get:
+      summary: Henter eiendommer som ligger nært angitt punkt
+      tags:
+        - berikelse
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ../models/Produksjonsplass/Sted.yaml
+        '404':
+          description: Not Found
+      operationId: get-teig-nord-ost-srid-radius
+      x-stoplight:
+        id: hjtftbv2epjmg
+      description: |-
+        Gjør et geografisk søk etter de nærmeste eiendommene, dvs deres teiger eller anleggsprojeksjonsflate registrert i matrikkelsystemet.
+  '/omrade/{nord}/{ost}':
+    parameters:
+      - schema:
+          type: integer
+          format: int64
+        name: nord
+        in: path
+        required: true
+        description: koordinat i nordlig retning
+      - schema:
+          type: integer
+          format: int64
         name: ost
         in: path
         required: true
         description: koordinat i østlig retning
     get:
-      summary: Henter eiendommer som ligger nært angitt punkt
+      summary: Henter geografiske områder som ligger nært angitt punkt
       tags:
         - berikelse
       responses:
@@ -189,7 +241,7 @@ paths:
                   $ref: ../models/Berikelse/Omrade.yaml
         '404':
           description: Not Found
-      operationId: get-teig-nord-ost
+      operationId: get-omrade-nord-ost
       x-stoplight:
         id: hjtftbv2epjmg
       description: |-
