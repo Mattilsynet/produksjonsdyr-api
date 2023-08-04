@@ -82,6 +82,130 @@ paths:
         in: path
         required: true
         description: srid/koordinatsystemet som koord er oppgitt i
+  '/bygning/{nord}/{ost}/{srid}/{radius}':
+    parameters:
+      - schema:
+          type: number
+          format: double
+        name: nord
+        in: path
+        required: true
+        description: koordinat i nordlig retning
+      - schema:
+          type: number
+          format: double
+        name: ost
+        in: path
+        required: true
+        description: koordinat i østlig retning
+      - schema:
+          type: integer
+          format: int32
+        name: srid
+        in: path
+        required: true
+        description: koordinatsystem(EPSG) feks 3857
+      - schema:
+          type: integer
+          format: int32
+        name: radius
+        in: path
+        required: true
+        description: radius i ant meter som søket leter etter eiendommer innenfor
+    get:
+      summary: Henter eiendommer som ligger nært angitt punkt
+      tags:
+        - berikelse
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ../models/Produksjonsplass/Sted.yaml
+        '404':
+          description: Not Found
+      operationId: get-bygg-punkt-srid-radius
+      x-stoplight:
+        id: h6gn4in0h1zcd
+      description: >-
+        Gjør et geografisk søk etter de nærmeste eiendommene, dvs deres teiger
+        eller anleggsprojeksjonsflate registrert i matrikkelsystemet.
+  '/teig/{teigid}':
+    parameters:
+      - schema:
+          type: string
+        name: teigid
+        in: path
+        required: true
+    get:
+      summary: Henter ut teig med gitt id i master system
+      tags:
+        - berikelse
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../models/Produksjonsplass/Sted.yaml
+        '404':
+          description: Not Found
+      operationId: get-teig
+      x-stoplight:
+        id: 1h9c8aea8sobm
+      description: Henter ut teigen med angitt teigid fra mastersystem
+  '/teig/{nord}/{ost}/{srid}/{radius}':
+    parameters:
+      - schema:
+          type: number
+          format: double
+        name: nord
+        in: path
+        required: true
+        description: koordinat i nordlig retning
+      - schema:
+          type: number
+          format: double
+        name: ost
+        in: path
+        required: true
+        description: koordinat i østlig retning
+      - schema:
+          type: integer
+          format: int32
+        name: srid
+        in: path
+        required: true
+        description: koordinatsystem(EPSG) feks 3857
+      - schema:
+          type: integer
+          format: int32
+        name: radius
+        in: path
+        required: true
+        description: radius i ant meter som søket leter etter eiendommer innenfor
+    get:
+      summary: Henter eiendommer som ligger nært angitt punkt
+      tags:
+        - berikelse
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ../models/Produksjonsplass/Sted.yaml
+        '404':
+          description: Not Found
+      operationId: get-teig-punkt-srid-radius
+      x-stoplight:
+        id: hjtftbv2epjmg
+      description: 'Gjør et geografisk søk etter de nærmeste eiendommene, dvs deres teiger eller anleggsprojeksjonsflate registrert i matrikkelsystemet.'
   '/omrade/rektangel/{bunnvenstre}/{toppvenstre}/{bunnhoyre}/{topphoyre}':
     get:
       summary: Henter geografiske områder innenfor rektangel
@@ -256,130 +380,6 @@ paths:
         name: topphoyre
         in: path
         required: true
-  '/teig/{teigid}':
-    parameters:
-      - schema:
-          type: string
-        name: teigid
-        in: path
-        required: true
-    get:
-      summary: Henter ut teig med gitt id i master system
-      tags:
-        - berikelse
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: ../models/Produksjonsplass/Sted.yaml
-        '404':
-          description: Not Found
-      operationId: get-teig
-      x-stoplight:
-        id: 1h9c8aea8sobm
-      description: Henter ut teigen med angitt teigid fra mastersystem
-  '/teig/{nord}/{ost}/{srid}/{radius}':
-    parameters:
-      - schema:
-          type: number
-          format: double
-        name: nord
-        in: path
-        required: true
-        description: koordinat i nordlig retning
-      - schema:
-          type: number
-          format: double
-        name: ost
-        in: path
-        required: true
-        description: koordinat i østlig retning
-      - schema:
-          type: integer
-          format: int32
-        name: srid
-        in: path
-        required: true
-        description: koordinatsystem(EPSG) feks 3857
-      - schema:
-          type: integer
-          format: int32
-        name: radius
-        in: path
-        required: true
-        description: radius i ant meter som søket leter etter eiendommer innenfor
-    get:
-      summary: Henter eiendommer som ligger nært angitt punkt
-      tags:
-        - berikelse
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: ../models/Produksjonsplass/Sted.yaml
-        '404':
-          description: Not Found
-      operationId: get-teig-punkt-srid-radius
-      x-stoplight:
-        id: hjtftbv2epjmg
-      description: 'Gjør et geografisk søk etter de nærmeste eiendommene, dvs deres teiger eller anleggsprojeksjonsflate registrert i matrikkelsystemet.'
-  '/bygning/{nord}/{ost}/{srid}/{radius}':
-    parameters:
-      - schema:
-          type: number
-          format: double
-        name: nord
-        in: path
-        required: true
-        description: koordinat i nordlig retning
-      - schema:
-          type: number
-          format: double
-        name: ost
-        in: path
-        required: true
-        description: koordinat i østlig retning
-      - schema:
-          type: integer
-          format: int32
-        name: srid
-        in: path
-        required: true
-        description: koordinatsystem(EPSG) feks 3857
-      - schema:
-          type: integer
-          format: int32
-        name: radius
-        in: path
-        required: true
-        description: radius i ant meter som søket leter etter eiendommer innenfor
-    get:
-      summary: Henter eiendommer som ligger nært angitt punkt
-      tags:
-        - berikelse
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: ../models/Produksjonsplass/Sted.yaml
-        '404':
-          description: Not Found
-      operationId: get-bygg-punkt-srid-radius
-      x-stoplight:
-        id: h6gn4in0h1zcd
-      description: >-
-        Gjør et geografisk søk etter de nærmeste eiendommene, dvs deres teiger
-        eller anleggsprojeksjonsflate registrert i matrikkelsystemet.
   '/omrade/punkt/{nord}/{ost}':
     parameters:
       - schema:
