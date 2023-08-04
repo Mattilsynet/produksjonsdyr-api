@@ -157,6 +157,58 @@ paths:
       x-stoplight:
         id: 1h9c8aea8sobm
       description: Henter ut teigen med angitt teigid fra mastersystem
+  '/teig/rektangel/{minLat}/{maxLat}/{minLng}/{maxLng}/{srid}':
+    get:
+      summary: Henter eiendomsteiger innenfor rektangel
+      tags:
+        - berikelse
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ../models/Produksjonsplass/Sted.yaml
+        '404':
+          description: Not Found
+      operationId: get-teig-rektangel
+      x-stoplight:
+        id: suaag2d1kgsft
+      description: Henter ut alle eiendomsteiger som ligger innenfor angitt rektangel
+    parameters:
+      - schema:
+          type: number
+          format: double
+        name: minLat
+        in: path
+        required: true
+      - schema:
+          type: number
+          format: double
+        name: maxLat
+        in: path
+        required: true
+      - schema:
+          type: number
+          format: double
+        name: minLng
+        in: path
+        required: true
+      - schema:
+          type: number
+          format: double
+        name: maxLng
+        in: path
+        required: true
+      - schema:
+          type: integer
+          format: int32
+        name: srid
+        in: path
+        required: true
+        description: srid/koordinatsystemet som koord er oppgitt i
   '/teig/{nord}/{ost}/{srid}/{radius}':
     parameters:
       - schema:
