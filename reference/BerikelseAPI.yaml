@@ -136,6 +136,126 @@ paths:
         name: topphoyre
         in: path
         required: true
+  '/omrade/rektangel/teig/{bunnvenstre}/{toppvenstre}/{bunnhoyre}/{topphoyre}':
+    get:
+      summary: Henter ut teiger som områder innenfor rektangel
+      tags:
+        - berikelse
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ../models/Berikelse/Omrade.yaml
+              examples:
+                Example 1:
+                  value:
+                    - id: '152505566'
+                      typeomr: no.kartverket.matrikkelen.fkb_bygning
+                      geom: >-
+                        POLYGON ((1222964.740419269 8562431.953856101,
+                        1223025.209885426 8562416.158561183, 1223022.9931145231
+                        8562407.639415963, 1223020.8214517299 8562399.262018237,
+                        1222960.3521149573 8562415.057239233, 1222962.5237135927
+                        8562423.434673572, 1222964.740419269 8562431.953856101))
+        '404':
+          description: Not Found
+      operationId: get-omrade-rektangel-teig
+      x-stoplight:
+        id: df1rer7v1edf5
+      description: >-
+        Henter ut teiger som berører angitt rektangel. Områdene er
+        eiendommersteiger fra matrikkelen.
+        Områdene er i srid/koordinatsystem EPSG_3857. 
+        Metoden er tilpasset frontend.
+    parameters:
+      - schema:
+          type: integer
+          format: int64
+        name: bunnvenstre
+        in: path
+        required: true
+      - schema:
+          type: integer
+          format: int64
+        name: toppvenstre
+        in: path
+        required: true
+      - schema:
+          type: integer
+          format: int64
+        name: bunnhoyre
+        in: path
+        required: true
+      - schema:
+          type: integer
+          format: int64
+        name: topphoyre
+        in: path
+        required: true
+  '/omrade/rektangel/bygg/{bunnvenstre}/{toppvenstre}/{bunnhoyre}/{topphoyre}':
+    get:
+      summary: Henter ut bygniger som områder innenfor rektangel
+      tags:
+        - berikelse
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ../models/Berikelse/Omrade.yaml
+              examples:
+                Example 1:
+                  value:
+                    - id: '152505566'
+                      typeomr: no.kartverket.matrikkelen.fkb_bygning
+                      geom: >-
+                        POLYGON ((1222964.740419269 8562431.953856101,
+                        1223025.209885426 8562416.158561183, 1223022.9931145231
+                        8562407.639415963, 1223020.8214517299 8562399.262018237,
+                        1222960.3521149573 8562415.057239233, 1222962.5237135927
+                        8562423.434673572, 1222964.740419269 8562431.953856101))
+        '404':
+          description: Not Found
+      operationId: get-omrade-rektangel-bygg
+      x-stoplight:
+        id: 8zqkv401c2mjw
+      description: >-
+        Henter ut bygninger som berører angitt rektangel. Områdene er
+        bygniger hentet fra FKB_Bygning. 
+        Områdene er i srid/koordinatsystem
+        EPSG_3857.  Metoden er tilpasset frontend.
+    parameters:
+      - schema:
+          type: integer
+          format: int64
+        name: bunnvenstre
+        in: path
+        required: true
+      - schema:
+          type: integer
+          format: int64
+        name: toppvenstre
+        in: path
+        required: true
+      - schema:
+          type: integer
+          format: int64
+        name: bunnhoyre
+        in: path
+        required: true
+      - schema:
+          type: integer
+          format: int64
+        name: topphoyre
+        in: path
+        required: true
   '/teig/{teigid}':
     parameters:
       - schema:
@@ -205,12 +325,62 @@ paths:
                   $ref: ../models/Produksjonsplass/Sted.yaml
         '404':
           description: Not Found
-      operationId: get-teig-nord-ost-srid-radius
+      operationId: get-teig-punkt-srid-radius
       x-stoplight:
         id: hjtftbv2epjmg
-      description: |-
-        Gjør et geografisk søk etter de nærmeste eiendommene, dvs deres teiger eller anleggsprojeksjonsflate registrert i matrikkelsystemet.
-  '/omrade/{nord}/{ost}':
+      description: 'Gjør et geografisk søk etter de nærmeste eiendommene, dvs deres teiger eller anleggsprojeksjonsflate registrert i matrikkelsystemet.'
+  '/bygning/{nord}/{ost}/{srid}/{radius}':
+    parameters:
+      - schema:
+          type: number
+          format: double
+        name: nord
+        in: path
+        required: true
+        description: koordinat i nordlig retning
+      - schema:
+          type: number
+          format: double
+        name: ost
+        in: path
+        required: true
+        description: koordinat i østlig retning
+      - schema:
+          type: integer
+          format: int32
+        name: srid
+        in: path
+        required: true
+        description: koordinatsystem(EPSG) feks 3857
+      - schema:
+          type: integer
+          format: int32
+        name: radius
+        in: path
+        required: true
+        description: radius i ant meter som søket leter etter eiendommer innenfor
+    get:
+      summary: Henter eiendommer som ligger nært angitt punkt
+      tags:
+        - berikelse
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ../models/Produksjonsplass/Sted.yaml
+        '404':
+          description: Not Found
+      operationId: get-bygg-punkt-srid-radius
+      x-stoplight:
+        id: h6gn4in0h1zcd
+      description: >-
+        Gjør et geografisk søk etter de nærmeste eiendommene, dvs deres teiger
+        eller anleggsprojeksjonsflate registrert i matrikkelsystemet.
+  '/omrade/punkt/{nord}/{ost}':
     parameters:
       - schema:
           type: integer
@@ -241,12 +411,88 @@ paths:
                   $ref: ../models/Berikelse/Omrade.yaml
         '404':
           description: Not Found
-      operationId: get-omrade-nord-ost
+      operationId: get-omrade-punkt
       x-stoplight:
         id: hjtftbv2epjmg
       description: |-
-        Gjør et geografisk søk etter de nærmeste eiendommene, dvs deres teiger eller anleggsprojeksjonsflate registrert i matrikkelsystemet.
+        Gjør et geografisk søk etter de nærmeste områdene, dvs bygninger eller teiger registrert i matrikkelsystemet.
         Områdene er i srid/koordinatsystem EPSG_3857. 
         Metoden er tilpasset frontend.
+  '/omrade/punkt/teig/{nord}/{ost}':
+    parameters:
+      - schema:
+          type: integer
+          format: int64
+        name: nord
+        in: path
+        required: true
+        description: koordinat i nordlig retning
+      - schema:
+          type: integer
+          format: int64
+        name: ost
+        in: path
+        required: true
+        description: koordinat i østlig retning
+    get:
+      summary: Henter teiger som geografiske områder som ligger nært angitt punkt
+      tags:
+        - berikelse
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ../models/Berikelse/Omrade.yaml
+        '404':
+          description: Not Found
+      operationId: get-omrade-punkt-teig
+      x-stoplight:
+        id: 2eppj30tz7ogy
+      description: >-
+        Gjør et geografisk søk etter de nærmeste teiger registrert i matrikkelsystemet.
+        Områdene er i srid/koordinatsystem EPSG_3857. 
+        Metoden er tilpasset frontend.
+  '/omrade/punkt/bygg/{nord}/{ost}':
+      parameters:
+        - schema:
+            type: integer
+            format: int64
+          name: nord
+          in: path
+          required: true
+          description: koordinat i nordlig retning
+        - schema:
+            type: integer
+            format: int64
+          name: ost
+          in: path
+          required: true
+          description: koordinat i østlig retning
+      get:
+        summary: Henter bygninger som geografiske områder som ligger nært angitt punkt
+        tags:
+          - berikelse
+        responses:
+          '200':
+            description: OK
+            content:
+              application/json:
+                schema:
+                  type: array
+                  items:
+                    $ref: ../models/Berikelse/Omrade.yaml
+          '404':
+            description: Not Found
+        operationId: get-omrade-punkt-bygg
+        x-stoplight:
+          id: zlgqzx4q1xntt
+        description: >-
+          Gjør et geografisk søk etter de nærmeste bygninger registrert i
+          FKB_Bygning. Områdene er i srid/koordinatsystem EPSG_3857.
+          Metoden er tilpasset frontend.
 tags:
   - name: berikelse
