@@ -160,5 +160,54 @@ paths:
       x-stoplight:
         id: 1h9c8aea8sobm
       description: Henter ut teigen med angitt teigid fra mastersystem
+  '/teig/{nord}/{ost}/{srid}/{radius}':
+    parameters:
+      - schema:
+          type: string
+        name: nord
+        in: path
+        required: true
+        description: koordinat i nordlig retning
+      - schema:
+          type: string
+        name: ost
+        in: path
+        required: true
+        description: koordinat i østlig retning
+      - schema:
+          type: integer
+          format: int32
+          default: 3857
+        name: srid
+        in: path
+        description: Koordinatsystemet (EPSG) til koordinatene du søker med. (default = 3557)
+        required: true
+      - schema:
+          type: integer
+          format: int64
+          default: 10
+        name: radius
+        in: path
+        description: 'radius i antall meter rundt punktet som det søkes i '
+        required: true
+    get:
+      summary: Henter eiendommer som ligger nært angitt punkt
+      tags:
+        - berikelse
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ../models/Berikelse/Omrade.yaml
+        '404':
+          description: Not Found
+      operationId: get-teig-nord-ost-srid-radius
+      x-stoplight:
+        id: hjtftbv2epjmg
+      description: 'Gjør et geografisk søk etter de nærmeste eiendommene, dvs deres teiger eller anleggsprojeksjonsflate registrert i matrikkelsystemet.'
 tags:
   - name: berikelse
