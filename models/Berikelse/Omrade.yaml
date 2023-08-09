@@ -12,7 +12,7 @@ properties:
     x-stoplight:
       id: 0525rv7m8gyl1
     description: masterid til kilden som området er hentet ifra
-  typeomr:
+  masterSystem:
     x-stoplight:
       id: 2lp822dw0ye4h
     description: 'hvilket type område dette er f.eks bygning, teig'
@@ -24,3 +24,11 @@ properties:
     x-stoplight:
       id: q48gdsbu65tsk
     description: WKT som beskriver området f.eks POLYGON. Srid er 3857
+  masterTypeId:
+    x-stoplight:
+      id: rivg16c9c9cjy
+    enum:
+      - bygningsnummer
+      - teigid
+      - lokalid
+    description: id typen som er benyttet fra mastersystem. Eks. dersom bygningsnummer mangler er lokalid benyttet
