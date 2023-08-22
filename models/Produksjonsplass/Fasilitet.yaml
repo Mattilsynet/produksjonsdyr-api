@@ -22,17 +22,6 @@ properties:
     format: date
     x-stoplight:
       id: 5sqp2fo5czxp7
-  stedsId:
-    type: array
-    description: Skal referere til en stedID
-    x-stoplight:
-      id: 18scsp07sef5q
-    items:
-      type: integer
-      format: int64
-      minimum: 0
-      x-stoplight:
-        id: zbpe8a2q7co4s
   kategori:
     $ref: ../kodeverk/Kategori.yaml
     x-stoplight:
@@ -78,6 +67,11 @@ properties:
     type: integer
     x-stoplight:
       id: e8q9wgoabnyj7
+    format: int64
+  sted_id:
+    x-stoplight:
+      id: sw2hskomesk39
+    type: integer
     format: int64
 required:
   - kategori
