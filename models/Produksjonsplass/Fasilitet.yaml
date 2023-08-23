@@ -68,11 +68,16 @@ properties:
     x-stoplight:
       id: e8q9wgoabnyj7
     format: int64
-  sted_id:
+  aktivitetIDs:
+    type: array
     x-stoplight:
-      id: sw2hskomesk39
-    type: integer
-    format: int64
+      id: edwmdp010bl1w
+    description: Liste med identer til aktiviteter som utføres
+    items:
+      x-stoplight:
+        id: wzck3m68ynjb0
+      type: integer
+      format: int64
 required:
   - kategori
   - aktivitetstype
