@@ -130,8 +130,7 @@ paths:
       operationId: get-bygg-punkt
       x-stoplight:
         id: h6gn4in0h1zcd
-      description: >-
-        Gjør et geografisk søk etter de nærmeste bygningen
+      description: Gjør et geografisk søk etter de nærmeste bygningen
   '/teig/{teigid}':
     parameters:
       - schema:
@@ -330,22 +329,13 @@ paths:
                   value:
                     - id: '152505566'
                       typeomr: no.kartverket.matrikkelen.fkb_bygning
-                      geom: >-
-                        POLYGON ((1222964.740419269 8562431.953856101,
-                        1223025.209885426 8562416.158561183, 1223022.9931145231
-                        8562407.639415963, 1223020.8214517299 8562399.262018237,
-                        1222960.3521149573 8562415.057239233, 1222962.5237135927
-                        8562423.434673572, 1222964.740419269 8562431.953856101))
+                      geom: 'POLYGON ((1222964.740419269 8562431.953856101, 1223025.209885426 8562416.158561183, 1223022.9931145231 8562407.639415963, 1223020.8214517299 8562399.262018237, 1222960.3521149573 8562415.057239233, 1222962.5237135927 8562423.434673572, 1222964.740419269 8562431.953856101))'
         '404':
           description: Not Found
       operationId: get-omrade-rektangel-teig
       x-stoplight:
         id: df1rer7v1edf5
-      description: >-
-        Henter ut teiger som berører angitt rektangel. Områdene er
-        eiendommersteiger fra matrikkelen.
-        Områdene er i srid/koordinatsystem EPSG_3857. 
-        Metoden er tilpasset frontend.
+      description: Henter ut teiger som berører angitt rektangel. Områdene er eiendommersteiger fra matrikkelen. Områdene er i srid/koordinatsystem EPSG_3857.  Metoden er tilpasset frontend.
     parameters:
       - schema:
           type: integer
@@ -390,22 +380,13 @@ paths:
                   value:
                     - id: '152505566'
                       typeomr: no.kartverket.matrikkelen.fkb_bygning
-                      geom: >-
-                        POLYGON ((1222964.740419269 8562431.953856101,
-                        1223025.209885426 8562416.158561183, 1223022.9931145231
-                        8562407.639415963, 1223020.8214517299 8562399.262018237,
-                        1222960.3521149573 8562415.057239233, 1222962.5237135927
-                        8562423.434673572, 1222964.740419269 8562431.953856101))
+                      geom: 'POLYGON ((1222964.740419269 8562431.953856101, 1223025.209885426 8562416.158561183, 1223022.9931145231 8562407.639415963, 1223020.8214517299 8562399.262018237, 1222960.3521149573 8562415.057239233, 1222962.5237135927 8562423.434673572, 1222964.740419269 8562431.953856101))'
         '404':
           description: Not Found
       operationId: get-omrade-rektangel-bygg
       x-stoplight:
         id: 8zqkv401c2mjw
-      description: >-
-        Henter ut bygninger som berører angitt rektangel. Områdene er
-        bygniger hentet fra FKB_Bygning. 
-        Områdene er i srid/koordinatsystem
-        EPSG_3857.  Metoden er tilpasset frontend.
+      description: Henter ut bygninger som berører angitt rektangel. Områdene er bygniger hentet fra FKB_Bygning.  Områdene er i srid/koordinatsystem EPSG_3857.  Metoden er tilpasset frontend.
     parameters:
       - schema:
           type: integer
@@ -503,47 +484,41 @@ paths:
       operationId: get-omrade-punkt-teig
       x-stoplight:
         id: 2eppj30tz7ogy
-      description: >-
-        Gjør et geografisk søk etter de nærmeste teiger registrert i matrikkelsystemet.
-        Områdene er i srid/koordinatsystem EPSG_3857. 
-        Metoden er tilpasset frontend.
+      description: Gjør et geografisk søk etter de nærmeste teiger registrert i matrikkelsystemet. Områdene er i srid/koordinatsystem EPSG_3857.  Metoden er tilpasset frontend.
   '/omrade/punkt/bygg/{nord}/{ost}':
-      parameters:
-        - schema:
-            type: integer
-            format: int64
-          name: nord
-          in: path
-          required: true
-          description: koordinat i nordlig retning
-        - schema:
-            type: integer
-            format: int64
-          name: ost
-          in: path
-          required: true
-          description: koordinat i østlig retning
-      get:
-        summary: Henter bygninger som geografiske områder som ligger nært angitt punkt
-        tags:
-          - berikelse
-        responses:
-          '200':
-            description: OK
-            content:
-              application/json:
-                schema:
-                  type: array
-                  items:
-                    $ref: ../models/Berikelse/Omrade.yaml
-          '404':
-            description: Not Found
-        operationId: get-omrade-punkt-bygg
-        x-stoplight:
-          id: zlgqzx4q1xntt
-        description: >-
-          Gjør et geografisk søk etter de nærmeste bygninger registrert i
-          FKB_Bygning. Områdene er i srid/koordinatsystem EPSG_3857.
-          Metoden er tilpasset frontend.
+    parameters:
+      - schema:
+          type: integer
+          format: int64
+        name: nord
+        in: path
+        required: true
+        description: koordinat i nordlig retning
+      - schema:
+          type: integer
+          format: int64
+        name: ost
+        in: path
+        required: true
+        description: koordinat i østlig retning
+    get:
+      summary: Henter bygninger som geografiske områder som ligger nært angitt punkt
+      tags:
+        - berikelse
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ../models/Berikelse/Omrade.yaml
+        '404':
+          description: Not Found
+      operationId: get-omrade-punkt-bygg
+      x-stoplight:
+        id: zlgqzx4q1xntt
+      description: Gjør et geografisk søk etter de nærmeste bygninger registrert i FKB_Bygning. Områdene er i srid/koordinatsystem EPSG_3857. Metoden er tilpasset frontend.
 tags:
   - name: berikelse

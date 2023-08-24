@@ -21,11 +21,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ./models/Produksjonsplass/Produksjonsplass.yaml
+                $ref: ../models/Produksjonsplass/Produksjonsplass.yaml
         '404':
           description: Not Found
       operationId: get-produksjonsplass
       x-internal: false
+      x-stoplight:
+        id: 8cz64lnp6gasp
     parameters:
       - schema:
           type: integer
@@ -57,9 +59,11 @@ paths:
         content:
           application/json:
             schema:
-              $ref: ./models/Produksjonsplass/Produksjonsplass.yaml
+              $ref: ../models/Produksjonsplass/Produksjonsplass.yaml
         description: ''
       description: Endepunkt for å opprette en produksjonsplass
+      x-stoplight:
+        id: tr6zlbr2gq1v4
   '/ansvar/driftsansvarlig/{id}':
     get:
       summary: GetDriftsansvarlig
@@ -71,10 +75,12 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ./models/Ansvar/Driftsansvarlig.yaml
+                $ref: ../models/Ansvar/Driftsansvarlig.yaml
         '404':
           description: Not Found
       operationId: get-produksjonsplass-driftsansvarlig
+      x-stoplight:
+        id: pomlyr4q0070c
     parameters:
       - schema:
           type: integer
@@ -104,7 +110,9 @@ paths:
         content:
           application/json:
             schema:
-              $ref: ./models/Ansvar/Driftsansvarlig.yaml
+              $ref: ../models/Ansvar/Driftsansvarlig.yaml
+      x-stoplight:
+        id: yt5wf3fprkwtp
   '/ansvar/driftsansvarlig/{id}/ansvar':
     parameters:
       - schema:
@@ -123,5 +131,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: ./models/Ansvar/Ansvar.yaml
+              $ref: ../models/Ansvar/Ansvar.yaml
       description: Legger til et ansvar på en eksisterende driftsansvarlig
+      x-stoplight:
+        id: ns3bxpui2nx6u

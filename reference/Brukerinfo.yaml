@@ -1,0 +1,33 @@
+openapi: 3.0.0
+x-stoplight:
+  id: m820exvi1g2cu
+info:
+  title: Brukerinfo
+  version: '1.0'
+  description: Funksjonalitet for å hente ut informasjon gitt innlogget bruker
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  /brukerinfo/avgivere:
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          headers: {}
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ../models/Brukerinfo/Avgiver.yaml
+                  x-stoplight: null
+      operationId: get-brukerinfo-avgivere
+      x-stoplight: null
+      description: Endepunkt for å hente de foretak eller personer innlogget bruker kan opptre på vegne av.
+      parameters:
+        - schema:
+            type: string
+          in: header
+          name: Authorization
