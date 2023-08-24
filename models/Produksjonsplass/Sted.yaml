@@ -72,7 +72,7 @@ properties:
     format: int64
     x-stoplight:
       id: keio1sms55q50
-  fasilitets:
+  fasiliteter:
     x-stoplight:
       id: pg51oyo9jyh47
     type: array
