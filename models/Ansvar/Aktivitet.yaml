@@ -21,7 +21,3 @@ properties:
     $ref: ../kodeverk/Art.yaml
     x-stoplight:
       id: o18h8nk9vafw8
-  fasilitet:
-    $ref: ../Produksjonsplass/Fasilitet.yaml
-    x-stoplight:
-      id: 30qy3l9qpi61j

@@ -55,29 +55,27 @@ properties:
       - losdrift
       - aviar-losdrift
       - innredde-bur
-  tilgangUteareal:
-    type: boolean
-    x-stoplight:
-      id: kwex8vik24dzc
   stussMontert:
     type: boolean
     x-stoplight:
       id: r090sygibdogu
+  tilgangUteareal:
+    type: boolean
+    x-stoplight:
+      id: kwex8vik24dzc
   planlagtAntallDyr:
     type: integer
     x-stoplight:
       id: e8q9wgoabnyj7
     format: int64
-  aktivitetIDs:
+  aktiviteter:
     type: array
     x-stoplight:
-      id: edwmdp010bl1w
-    description: Liste med identer til aktiviteter som utføres
+      id: yvu313f377o1h
     items:
+      $ref: ../Ansvar/Aktivitet.yaml
       x-stoplight:
-        id: wzck3m68ynjb0
-      type: integer
-      format: int64
+        id: 8641o8c3wo799
 required:
   - kategori
   - aktivitetstype
@@ -85,5 +83,5 @@ required:
   - verdikjede
   - kapasitetBenevning
   - oppstalling
-  - tilgangUteareal
   - stussMontert
+  - tilgangUteareal
