@@ -72,6 +72,14 @@ properties:
     format: int64
     x-stoplight:
       id: keio1sms55q50
+  fasiliteter:
+    x-stoplight:
+      id: pg51oyo9jyh47
+    type: array
+    items:
+      $ref: ./Fasilitet.yaml
+      x-stoplight:
+        id: d86a8hb90bdk3
 required:
   - stedId
   - geom

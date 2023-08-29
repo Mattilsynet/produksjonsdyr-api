@@ -22,23 +22,10 @@ properties:
     type: boolean
     description: 'Forretningsregelen er noe uklar, men vi må kunne representere anlegg som ikke lengre er operative'
     default: true
-  fasilitet:
-    type: array
-    items:
-      $ref: ./Fasilitet.yaml
-      x-stoplight:
-        id: jmw6d6qvfci39
   steder:
     type: array
     items:
       $ref: ./Sted.yaml
-  ansvarId:
-    type: array
-    items:
-      x-stoplight:
-        id: lc5e6zoowcnth
-      type: integer
-      format: int64
   visningsNavn:
     type: string
     x-stoplight:

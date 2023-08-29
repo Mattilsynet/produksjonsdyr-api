@@ -2,6 +2,7 @@ title: Aktivitet
 x-stoplight:
   id: oi1fo2dejxg48
 type: object
+description: Aktivitet beskriver mer detaljert hva man har ansvar for og hva det skal brukes til
 properties:
   id:
     type: integer
@@ -20,4 +21,3 @@ properties:
     $ref: ../kodeverk/Art.yaml
     x-stoplight:
       id: o18h8nk9vafw8
-description: Aktivitet beskriver mer detaljert hva man har ansvar for og hva det skal brukes til
