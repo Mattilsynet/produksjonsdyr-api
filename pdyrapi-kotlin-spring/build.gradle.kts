@@ -30,15 +30,12 @@ dependencies {
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
-val berikelseapi = "berikelseapi"
-val frontendsupportapi = "frontendsupportapi"
-val produksjonsdyrapi = "produksjonsdyr"
-
 
 val openapiSpecs = mapOf(
-    berikelseapi to "reference/BerikelseAPI.yaml",
-	frontendsupportapi to "reference/FrontendSupportAPI.yaml",
-    produksjonsdyrapi to "produksjonsdyr.yaml"
+    "berikelseapi" to "reference/BerikelseAPI.yaml",
+    "frontendsupportapi" to "reference/FrontendSupportAPI.yaml",
+    "produksjonsdyr" to "reference/Produksjonsdyr.yaml",
+    "brukerinfoapi" to "reference/Brukerinfo.yaml"
 )
 
 openapiSpecs.forEach {
