@@ -1,0 +1,37 @@
+title: Adresse
+x-stoplight:
+  id: zp31vcsmifday
+type: object
+description: 'Adresse er en angivelse av hvor en person, institusjon, bedrift, eller lignende, holder til'
+properties:
+  adresseListe:
+    type: array
+    x-stoplight:
+      id: m2ndzjkldr1m7
+    items:
+      x-stoplight:
+        id: h9tpuoqtodpre
+      type: string
+  postnummer:
+    type: string
+    x-stoplight:
+      id: 5ouvwud3rzpeb
+  poststed:
+    type: string
+    x-stoplight:
+      id: u8fyemyla2iud
+  land:
+    type: string
+    x-stoplight:
+      id: pbjl5o16alf5j
+  geom:
+    x-stoplight:
+      id: xtyplxxavvkay
+    type: string
+examples:
+  - adresseListe:
+      - Pannekakeveien 123
+    postnummer: '2318'
+    poststed: Hamar
+    land: Norge
+    geom: POINT(1 2)
