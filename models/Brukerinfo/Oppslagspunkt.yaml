@@ -1,8 +1,8 @@
-title: Adresse
+title: Oppslagspunkt
 x-stoplight:
   id: zp31vcsmifday
 type: object
-description: 'Adresse er en angivelse av hvor en person, institusjon, bedrift, eller lignende, holder til'
+description: 'Opplagspunkt er en angivelse av hvor en person, institusjon, bedrift, eller lignende, holder til. Vil typisk inneholde adresseinformasjon og kartreferanse'
 properties:
   adresseListe:
     type: array

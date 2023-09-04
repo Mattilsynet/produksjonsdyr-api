@@ -38,7 +38,7 @@ properties:
     type: string
     x-stoplight:
       id: 17hrvdccckz1t
-  adresse:
-    $ref: ./Adresse.yaml
+  oppslagspunkt:
+    $ref: ./Oppslagspunkt.yaml
     x-stoplight:
       id: lon3yavg8im0b
