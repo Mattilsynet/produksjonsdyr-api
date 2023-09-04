@@ -8,7 +8,7 @@ info:
 servers:
   - url: 'http://localhost:3000'
 paths:
-  '/bygning/masterid/{masterid}':
+  '/berikelse/bygning/masterid/{masterid}':
     get:
       summary: Henter en bygning med gitt masterid
       tags:
@@ -30,7 +30,7 @@ paths:
         name: masterid
         in: path
         required: true
-  '/bygning/rektangel/{bunnvenstre}/{toppvenstre}/{bunnhoyre}/{topphoyre}/{srid}':
+  '/berikelse/bygning/rektangel/{bunnvenstre}/{toppvenstre}/{bunnhoyre}/{topphoyre}/{srid}':
     get:
       summary: Henter bygninger innenfor rektangel
       tags:
@@ -82,7 +82,7 @@ paths:
         in: path
         required: true
         description: srid/koordinatsystemet som koord er oppgitt i
-  '/bygning/{nord}/{ost}/{srid}/{radius}':
+  '/berikelse/bygning/{nord}/{ost}/{srid}/{radius}':
     parameters:
       - schema:
           type: number
@@ -130,8 +130,8 @@ paths:
       operationId: get-bygg-punkt
       x-stoplight:
         id: h6gn4in0h1zcd
-      description: Gjør et geografisk søk etter de nærmeste bygningen
-  '/teig/{teigid}':
+      description: Gjør et geografisk søk etter de nærmeste bygningene
+  '/berikelse/teig/{teigid}':
     parameters:
       - schema:
           type: string
@@ -155,7 +155,7 @@ paths:
       x-stoplight:
         id: 1h9c8aea8sobm
       description: Henter ut teigen med angitt teigid fra mastersystem
-  '/teig/rektangel/{bunnvenstre}/{toppvenstre}/{bunnhoyre}/{topphoyre}/{srid}':
+  '/berikelse/teig/rektangel/{bunnvenstre}/{toppvenstre}/{bunnhoyre}/{topphoyre}/{srid}':
     get:
       summary: Henter eiendomsteiger innenfor rektangel
       tags:
@@ -207,7 +207,7 @@ paths:
         in: path
         required: true
         description: srid/koordinatsystemet som koord er oppgitt i
-  '/teig/{nord}/{ost}/{srid}/{radius}':
+  '/berikelse/teig/{nord}/{ost}/{srid}/{radius}':
     parameters:
       - schema:
           type: number
@@ -256,7 +256,7 @@ paths:
       x-stoplight:
         id: hjtftbv2epjmg
       description: 'Gjør et geografisk søk etter de nærmeste eiendommene, dvs deres teiger eller anleggsprojeksjonsflate registrert i matrikkelsystemet.'
-  '/omrade/rektangel/{bunnvenstre}/{toppvenstre}/{bunnhoyre}/{topphoyre}':
+  '/berikelse/omrade/rektangel/{bunnvenstre}/{toppvenstre}/{bunnhoyre}/{topphoyre}':
     get:
       summary: Henter geografiske områder innenfor rektangel
       tags:
@@ -310,7 +310,7 @@ paths:
         name: topphoyre
         in: path
         required: true
-  '/omrade/rektangel/teig/{bunnvenstre}/{toppvenstre}/{bunnhoyre}/{topphoyre}':
+  '/berikelse/omrade/rektangel/teig/{bunnvenstre}/{toppvenstre}/{bunnhoyre}/{topphoyre}':
     get:
       summary: Henter ut teiger som områder innenfor rektangel
       tags:
@@ -361,7 +361,7 @@ paths:
         name: topphoyre
         in: path
         required: true
-  '/omrade/rektangel/bygg/{bunnvenstre}/{toppvenstre}/{bunnhoyre}/{topphoyre}':
+  '/berikelse/omrade/rektangel/bygg/{bunnvenstre}/{toppvenstre}/{bunnhoyre}/{topphoyre}':
     get:
       summary: Henter ut bygniger som områder innenfor rektangel
       tags:
@@ -412,7 +412,7 @@ paths:
         name: topphoyre
         in: path
         required: true
-  '/omrade/punkt/{nord}/{ost}':
+  '/berikelse/omrade/punkt/{nord}/{ost}':
     parameters:
       - schema:
           type: integer
@@ -450,7 +450,7 @@ paths:
         Gjør et geografisk søk etter de nærmeste områdene, dvs bygninger eller teiger registrert i matrikkelsystemet.
         Områdene er i srid/koordinatsystem EPSG_3857. 
         Metoden er tilpasset frontend.
-  '/omrade/punkt/teig/{nord}/{ost}':
+  '/berikelse/omrade/punkt/teig/{nord}/{ost}':
     parameters:
       - schema:
           type: integer
@@ -485,7 +485,7 @@ paths:
       x-stoplight:
         id: 2eppj30tz7ogy
       description: Gjør et geografisk søk etter de nærmeste teiger registrert i matrikkelsystemet. Områdene er i srid/koordinatsystem EPSG_3857.  Metoden er tilpasset frontend.
-  '/omrade/punkt/bygg/{nord}/{ost}':
+  '/berikelse/omrade/punkt/bygg/{nord}/{ost}':
     parameters:
       - schema:
           type: integer
