@@ -10,191 +10,202 @@ servers:
   - url: 'http://localhost:3000'
 paths:
   '/enhetsregisteret/api/enheter/{orgnummer}':
-    get:
-      summary: Enhetsregisteret
-      tags: []
-      responses: {}
-      operationId: get-enhetsregisteret-api-enheter
-      x-stoplight:
-        id: d3d7jf5ope3wk
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                organisasjonsnummer:
-                  type: string
-                navn:
-                  type: string
-                organisasjonsform:
-                  type: object
-                  properties:
-                    kode:
-                      type: string
-                    beskrivelse:
-                      type: string
-                    _links:
-                      type: object
-                      properties:
-                        self:
-                          type: object
-                          properties:
-                            href:
-                              type: string
-                registreringsdatoEnhetsregisteret:
-                  type: string
-                registrertIMvaregisteret:
-                  type: boolean
-                naeringskode1:
-                  type: object
-                  properties:
-                    beskrivelse:
-                      type: string
-                    kode:
-                      type: string
-                antallAnsatte:
-                  type: integer
-                forretningsadresse:
-                  type: object
-                  properties:
-                    land:
-                      type: string
-                    landkode:
-                      type: string
-                    postnummer:
-                      type: string
-                    poststed:
-                      type: string
-                    adresse:
-                      type: array
-                      items:
-                        type: string
-                    kommune:
-                      type: string
-                    kommunenummer:
-                      type: string
-                stiftelsesdato:
-                  type: string
-                institusjonellSektorkode:
-                  type: object
-                  properties:
-                    kode:
-                      type: string
-                    beskrivelse:
-                      type: string
-                registrertIForetaksregisteret:
-                  type: boolean
-                registrertIStiftelsesregisteret:
-                  type: boolean
-                registrertIFrivillighetsregisteret:
-                  type: boolean
-                sisteInnsendteAarsregnskap:
-                  type: string
-                konkurs:
-                  type: boolean
-                underAvvikling:
-                  type: boolean
-                underTvangsavviklingEllerTvangsopplosning:
-                  type: boolean
-                maalform:
-                  type: string
-                _links:
-                  type: object
-                  properties:
-                    self:
-                      type: object
-                      properties:
-                        href:
-                          type: string
-              x-examples:
-                Example 1:
-                  organisasjonsnummer: '928551725'
-                  navn: MAWEN AS
-                  organisasjonsform:
-                    kode: AS
-                    beskrivelse: Aksjeselskap
-                    _links:
-                      self:
-                        href: 'https://data.brreg.no/enhetsregisteret/api/organisasjonsformer/AS'
-                  registreringsdatoEnhetsregisteret: '2022-01-20'
-                  registrertIMvaregisteret: false
-                  naeringskode1:
-                    beskrivelse: Konsulentvirksomhet tilknyttet informasjonsteknologi
-                    kode: '62.020'
-                  antallAnsatte: 0
-                  forretningsadresse:
-                    land: Norge
-                    landkode: 'NO'
-                    postnummer: '2318'
-                    poststed: HAMAR
-                    adresse:
-                      - Holsetgata 62
-                    kommune: HAMAR
-                    kommunenummer: '3403'
-                  stiftelsesdato: '2021-10-25'
-                  institusjonellSektorkode:
-                    kode: '2100'
-                    beskrivelse: Private aksjeselskaper mv.
-                  registrertIForetaksregisteret: true
-                  registrertIStiftelsesregisteret: false
-                  registrertIFrivillighetsregisteret: false
-                  sisteInnsendteAarsregnskap: '2022'
-                  konkurs: false
-                  underAvvikling: false
-                  underTvangsavviklingEllerTvangsopplosning: false
-                  maalform: Bokmål
-                  _links:
-                    self:
-                      href: 'https://data.brreg.no/enhetsregisteret/api/enheter/928551725'
-            examples:
-              Example 1:
-                value:
-                  organisasjonsnummer: '311929399'
-                  navn: Hovelsrud gård
-                  organisasjonsform:
-                    kode: AS
-                    beskrivelse: Aksjeselskap
-                    _links:
-                      self:
-                        href: 'https://data.brreg.no/enhetsregisteret/api/organisasjonsformer/AS'
-                  registreringsdatoEnhetsregisteret: '2022-01-20'
-                  registrertIMvaregisteret: false
-                  naeringskode1:
-                    beskrivelse: 'Engroshandel med kjøtt og kjøttvarer'
-                    kode: '62.020'
-                  antallAnsatte: 0
-                  forretningsadresse:
-                    land: Norge
-                    landkode: 'NO'
-                    postnummer: '2318'
-                    poststed: 'NES PÅ HEDMARKEN'
-                    adresse:
-                      - 'Helgøyvegen 960'
-                    kommune: 'RINGSAKER'
-                    kommunenummer: '3411'
-                  stiftelsesdato: '2021-10-25'
-                  institusjonellSektorkode:
-                    kode: '2100'
-                    beskrivelse: Private aksjeselskaper mv.
-                  registrertIForetaksregisteret: true
-                  registrertIStiftelsesregisteret: false
-                  registrertIFrivillighetsregisteret: false
-                  sisteInnsendteAarsregnskap: '2022'
-                  konkurs: false
-                  underAvvikling: false
-                  underTvangsavviklingEllerTvangsopplosning: false
-                  maalform: Bokmål
-                  _links:
-                    self:
-                      href: 'https://data.brreg.no/enhetsregisteret/api/enheter/311929399'
-      x-internal: false
     parameters:
       - schema:
           type: string
         name: orgnummer
         in: path
         required: true
-        description: Organisasjonsnummeret til enheten man ønsker å hente informasjon om
+        description: Nummer som unikt identifiserer organisasjonen
+    get:
+      summary: Stub for å simulerer enhetsregisteret hent enhet
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  organisasjonsnummer:
+                    type: string
+                  navn:
+                    type: string
+                  organisasjonsform:
+                    type: object
+                    properties:
+                      kode:
+                        type: string
+                      beskrivelse:
+                        type: string
+                      _links:
+                        type: object
+                        properties:
+                          self:
+                            type: object
+                            properties:
+                              href:
+                                type: string
+                  hjemmeside:
+                    type: string
+                  registreringsdatoEnhetsregisteret:
+                    type: string
+                  registrertIMvaregisteret:
+                    type: boolean
+                  naeringskode1:
+                    type: object
+                    properties:
+                      beskrivelse:
+                        type: string
+                      kode:
+                        type: string
+                  antallAnsatte:
+                    type: integer
+                  forretningsadresse:
+                    type: object
+                    properties:
+                      land:
+                        type: string
+                      landkode:
+                        type: string
+                      postnummer:
+                        type: string
+                      poststed:
+                        type: string
+                      adresse:
+                        type: array
+                        items:
+                          type: string
+                      kommune:
+                        type: string
+                      kommunenummer:
+                        type: string
+                  stiftelsesdato:
+                    type: string
+                  institusjonellSektorkode:
+                    type: object
+                    properties:
+                      kode:
+                        type: string
+                      beskrivelse:
+                        type: string
+                  registrertIForetaksregisteret:
+                    type: boolean
+                  registrertIStiftelsesregisteret:
+                    type: boolean
+                  registrertIFrivillighetsregisteret:
+                    type: boolean
+                  sisteInnsendteAarsregnskap:
+                    type: string
+                  konkurs:
+                    type: boolean
+                  underAvvikling:
+                    type: boolean
+                  underTvangsavviklingEllerTvangsopplosning:
+                    type: boolean
+                  maalform:
+                    type: string
+                  _links:
+                    type: object
+                    properties:
+                      self:
+                        type: object
+                        properties:
+                          href:
+                            type: string
+                x-examples:
+                  Example 1:
+                    organisasjonsnummer: '911873621'
+                    navn: HOVELSRUDHAGEN AS
+                    organisasjonsform:
+                      kode: AS
+                      beskrivelse: Aksjeselskap
+                      _links:
+                        self:
+                          href: 'https://data.brreg.no/enhetsregisteret/api/organisasjonsformer/AS'
+                    hjemmeside: www.hovelsrudhagen.no
+                    registreringsdatoEnhetsregisteret: '2013-04-27'
+                    registrertIMvaregisteret: true
+                    naeringskode1:
+                      beskrivelse: Engroshandel med kjøtt og kjøttvarer
+                      kode: '46.320'
+                    antallAnsatte: 1
+                    forretningsadresse:
+                      land: Norge
+                      landkode: 'NO'
+                      postnummer: '2350'
+                      poststed: NES PÅ HEDMARKEN
+                      adresse:
+                        - Helgøyvegen 960
+                      kommune: RINGSAKER
+                      kommunenummer: '3411'
+                    stiftelsesdato: '2013-04-12'
+                    institusjonellSektorkode:
+                      kode: '2100'
+                      beskrivelse: Private aksjeselskaper mv.
+                    registrertIForetaksregisteret: true
+                    registrertIStiftelsesregisteret: false
+                    registrertIFrivillighetsregisteret: false
+                    sisteInnsendteAarsregnskap: '2022'
+                    konkurs: false
+                    underAvvikling: false
+                    underTvangsavviklingEllerTvangsopplosning: false
+                    maalform: Bokmål
+                    _links:
+                      self:
+                        href: 'https://data.brreg.no/enhetsregisteret/api/enheter/911873621'
+              examples:
+                Example 1:
+                  value:
+                    organisasjonsnummer: '311929399'
+                    navn: Kyllingrud AS
+                    organisasjonsform:
+                      kode: AS
+                      beskrivelse: Aksjeselskap
+                      _links:
+                        self:
+                          href: 'https://data.brreg.no/enhetsregisteret/api/organisasjonsformer/AS'
+                    hjemmeside: www.kyllingrud.no
+                    registreringsdatoEnhetsregisteret: '2013-04-27'
+                    registrertIMvaregisteret: true
+                    naeringskode1:
+                      beskrivelse: Engroshandel med kjøtt og kjøttvarer
+                      kode: '46.320'
+                    antallAnsatte: 1
+                    forretningsadresse:
+                      land: Norge
+                      landkode: 'NO'
+                      postnummer: '2350'
+                      poststed: NES PÅ HEDMARKEN
+                      adresse:
+                        - Helgøyvegen 960
+                      kommune: RINGSAKER
+                      kommunenummer: '3411'
+                    stiftelsesdato: '2013-04-12'
+                    institusjonellSektorkode:
+                      kode: '2100'
+                      beskrivelse: Private aksjeselskaper mv.
+                    registrertIForetaksregisteret: true
+                    registrertIStiftelsesregisteret: false
+                    registrertIFrivillighetsregisteret: false
+                    sisteInnsendteAarsregnskap: '2022'
+                    konkurs: false
+                    underAvvikling: false
+                    underTvangsavviklingEllerTvangsopplosning: false
+                    maalform: Bokmål
+                    _links:
+                      self:
+                        href: 'https://data.brreg.no/enhetsregisteret/api/enheter/311929399'
+      operationId: get-enhetsregisteret-api-enheter-orgnummer
+      x-stoplight:
+        id: yg167yapzme1s
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {}
+      description: ''
 components:
   schemas: {}
