@@ -3,15 +3,16 @@ x-stoplight:
   id: zp31vcsmifday
 type: object
 description: 'Opplagspunkt er en angivelse av hvor en person, institusjon, bedrift, eller lignende, holder til. Vil typisk inneholde adresseinformasjon og kartreferanse'
+examples:
+  - adresse: Pannekakeveien 123
+    postnummer: '2318'
+    poststed: Hamar
+    geom: POINT(1 2)
 properties:
-  adresseListe:
-    type: array
+  adresse:
+    type: string
     x-stoplight:
       id: m2ndzjkldr1m7
-    items:
-      x-stoplight:
-        id: h9tpuoqtodpre
-      type: string
   postnummer:
     type: string
     x-stoplight:
@@ -20,18 +21,7 @@ properties:
     type: string
     x-stoplight:
       id: u8fyemyla2iud
-  land:
-    type: string
-    x-stoplight:
-      id: pbjl5o16alf5j
   geom:
     x-stoplight:
       id: xtyplxxavvkay
     type: string
-examples:
-  - adresseListe:
-      - Pannekakeveien 123
-    postnummer: '2318'
-    poststed: Hamar
-    land: Norge
-    geom: POINT(1 2)
