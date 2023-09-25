@@ -19,10 +19,10 @@ properties:
     type: string
     x-stoplight:
       id: x5fkix1bbgysq
-  orgnummerVirksomhet:
+  orgnummerHovedenhet:
     type: string
-  orgnummerForetak:
-    type: string
+    x-stoplight:
+      id: n0uwg1q4u5lgy
   ansvar:
     type: array
     items:

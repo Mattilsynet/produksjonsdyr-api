@@ -72,3 +72,7 @@ properties:
       $ref: ./Aktivitet.yaml
       x-stoplight:
         id: ucyz7o96u7pzd
+  orgnummerUnderenhet:
+    type: string
+    x-stoplight:
+      id: xf21pi0be4p78
