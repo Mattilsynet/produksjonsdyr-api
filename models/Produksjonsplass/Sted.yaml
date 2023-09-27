@@ -77,9 +77,10 @@ properties:
       id: pg51oyo9jyh47
     type: array
     items:
-      $ref: ./Fasilitet.yaml
       x-stoplight:
         id: d86a8hb90bdk3
+      type: integer
+      format: int64
 required:
   - stedId
   - geom
