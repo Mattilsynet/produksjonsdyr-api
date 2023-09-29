@@ -2,7 +2,7 @@ title: Fasilitet
 x-stoplight:
   id: 4yg1anlq7jkfg
 type: object
-description: Beskriver hva produksjonsplassen er tilrettelangt for og hvilken utforming produksjonsplassen har
+description: Beskriver hva produksjonsplassen er tilrettelangt for og hvilken utforming produksjonsplassen har. Ofte representert som et dyrerom eller innsiden på et bygg
 x-tags:
   - Fasilitet
 properties:
@@ -73,9 +73,9 @@ properties:
     x-stoplight:
       id: yvu313f377o1h
     items:
-      $ref: ../Ansvar/Aktivitet.yaml
       x-stoplight:
         id: 8641o8c3wo799
+      type: integer
 required:
   - kategori
   - aktivitetstype

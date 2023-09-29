@@ -17,6 +17,10 @@ properties:
     x-stoplight:
       id: e5amwlpbno41k
     description: Usikker på om dette er nødvendig. Kanskje det er nok at Mats har ref til oss.
+  orgnummerUnderenhet:
+    type: string
+    x-stoplight:
+      id: xf21pi0be4p78
   produksjonsplasser:
     type: array
     x-stoplight:
@@ -61,18 +65,16 @@ properties:
       id: z7g2kehlxd2v5
     type: array
     items:
-      $ref: ./Kontaktperson.yaml
       x-stoplight:
         id: xnwq0tbfm8uzf
+      type: integer
+      format: int64
   aktiviteter:
     type: array
     x-stoplight:
       id: v0y7o1vf6259v
     items:
-      $ref: ./Aktivitet.yaml
       x-stoplight:
         id: ucyz7o96u7pzd
-  orgnummerUnderenhet:
-    type: string
-    x-stoplight:
-      id: xf21pi0be4p78
+      type: integer
+      format: int64

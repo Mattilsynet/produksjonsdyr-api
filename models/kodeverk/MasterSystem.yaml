@@ -1,0 +1,15 @@
+title: MasterSystem
+x-stoplight:
+  id: s3lplisw8y56g
+type: object
+properties:
+  masterSystem:
+    masterSystem: null
+    type: string
+    enum:
+      - no.kartverket.matrikkelen.teig
+      - no.kartverket.matrikkelen.fkb_bygning
+      - annet
+    x-stoplight:
+      id: pc2jdzr83l3c5
+description: ''

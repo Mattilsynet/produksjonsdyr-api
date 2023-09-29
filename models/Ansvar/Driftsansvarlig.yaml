@@ -26,9 +26,10 @@ properties:
   ansvar:
     type: array
     items:
-      $ref: ./Ansvar.yaml
       x-stoplight:
         id: ca5w7h5nqzd08
+      type: integer
+      format: int64
   fodselsnummer:
     type: string
     x-stoplight:

@@ -1,0 +1,14 @@
+title: ProduksjonsplassRequest
+x-stoplight:
+  id: w7ul5acd4hl46
+type: object
+properties:
+  visningsnavn:
+    type: string
+    x-stoplight:
+      id: ejmpsqed6ke4i
+  steder:
+    $ref: ./StedRequest.yaml
+    x-stoplight:
+      id: 09pmkeqml5qht
+description: Requestobjekt for å opprette en produksjonsplass

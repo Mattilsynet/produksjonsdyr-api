@@ -25,8 +25,7 @@ properties:
   steder:
     type: array
     items:
-      type: integer
-      format: int64
+      $ref: ./Sted.yaml
   visningsNavn:
     type: string
     x-stoplight:

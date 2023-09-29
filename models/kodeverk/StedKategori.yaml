@@ -1,0 +1,12 @@
+title: StedKategori
+x-stoplight:
+  id: 88s0fgzgwlxzu
+type: object
+properties:
+  stedKategori:
+    type: string
+    enum:
+      - senterpunkt
+      - omriss
+      - besøkspunkt
+description: Flere detaljer om sted som er angitt av den som registrerer anlegget

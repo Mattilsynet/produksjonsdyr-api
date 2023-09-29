@@ -1,0 +1,15 @@
+title: MasterTypeId
+x-stoplight:
+  id: u1t2ims5uyoek
+type: object
+properties:
+  masterTypeId:
+    type: string
+    x-stoplight:
+      id: n669cl40l6hic
+    enum:
+      - bygningsnummer
+      - teigid
+      - lokalid
+    description: Beskriver hvilket felt i mastersystemet verdien er hentet fra.
+description: Beskriver hvilket felt i mastersystemet verdien er hentet fra.

@@ -28,6 +28,7 @@ properties:
     enum:
       - no.kartverket.matrikkelen.teig
       - no.kartverket.matrikkelen.fkb_bygning
+      - annet
     description: Et begrenset sett med kilder til stedsdefinisjon
     x-stoplight:
       id: p79t3bcphq18a
@@ -77,10 +78,9 @@ properties:
       id: pg51oyo9jyh47
     type: array
     items:
+      $ref: ./Fasilitet.yaml
       x-stoplight:
         id: d86a8hb90bdk3
-      type: integer
-      format: int64
 required:
   - stedId
   - geom

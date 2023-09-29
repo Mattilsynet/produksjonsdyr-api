@@ -1,0 +1,15 @@
+title: Oppstalling
+x-stoplight:
+  id: nci4p4tulzgcw
+type: object
+properties:
+  oppstallingFjoerfe:
+    x-stoplight:
+      id: bf0857kns9e6r
+    enum:
+      - LOESDRIFT_MED_UTEAREAL
+      - LOESDRIFT_UTEN_UTEAREAL
+      - INNREDEDE_BUR
+      - OEKOLOGISK
+      - ANNET
+description: Beskriver funksjonell utforming av lokalene hvor dyrene er

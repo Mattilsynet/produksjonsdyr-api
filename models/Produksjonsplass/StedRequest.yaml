@@ -1,0 +1,50 @@
+title: StedRequest
+x-stoplight:
+  id: 3ow1wz5ioj6j4
+type: object
+description: Requestobjekt for å opprette et sted på et anlegg.
+properties:
+  geom:
+    type: string
+    x-stoplight:
+      id: 5x2pb52dx9exk
+  srid:
+    type: integer
+    x-stoplight:
+      id: io8fq0nknw4hs
+  masterId:
+    type: string
+    x-stoplight:
+      id: fwy45w9677nxi
+  masterSystem:
+    $ref: ../kodeverk/MasterSystem.yaml
+    x-stoplight:
+      id: mns44ppmgnqj2
+  masterTidspunkt:
+    type: string
+    x-stoplight:
+      id: 41fyh7h1vuukk
+    format: date-time
+  masterTypeId:
+    $ref: ../kodeverk/MasterTypeId.yaml
+    x-stoplight:
+      id: c9vad4xzc9qry
+  stedKategori:
+    $ref: ../kodeverk/StedKategori.yaml
+    x-stoplight:
+      id: gkze6pjlqe39z
+  byggeaar:
+    type: integer
+    x-stoplight:
+      id: kbnskj11uvgua
+  fasiliteter:
+    type: string
+    x-stoplight:
+      id: 9p1zupgsu07js
+required:
+  - geom
+  - srid
+  - masterId
+  - masterSystem
+  - masterTidspunkt
+  - masterTypeId
