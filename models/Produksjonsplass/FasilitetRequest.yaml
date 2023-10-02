@@ -40,9 +40,10 @@ properties:
     x-stoplight:
       id: ziqwf9b4c5220
   planlagtAntallDyr:
-    type: string
+    type: integer
     x-stoplight:
       id: l1999rc8lq0w8
+    format: int64
   aktiviteter:
     type: array
     x-stoplight:

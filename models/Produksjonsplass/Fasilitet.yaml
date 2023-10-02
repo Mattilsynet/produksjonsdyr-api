@@ -41,20 +41,13 @@ properties:
     x-stoplight:
       id: 7pne81dqlrekg
   kapasitetBenevning:
-    type: string
+    $ref: ../kodeverk/MengdeBenevning.yaml
     x-stoplight:
       id: viun04oags1km
-    enum:
-      - antall
-      - kvadratmeter
   oppstalling:
-    type: string
+    $ref: ../kodeverk/Oppstalling.yaml
     x-stoplight:
       id: oc07ymz8pk5qe
-    enum:
-      - losdrift
-      - aviar-losdrift
-      - innredde-bur
   stussMontert:
     type: boolean
     x-stoplight:

@@ -5,6 +5,7 @@ x-tags:
   - ansvarstype
   - anleggstype
 type: object
+description: En sett med verdier som beskriver hovedtyper av ansvar og anlegg.
 properties:
   hovedtype:
     type: string
@@ -18,4 +19,5 @@ properties:
       - FORSØKSDYR
       - SLAKTERI
       - DYREHAGE
-description: En sett med verdier som beskriver hovedtyper av ansvar og anlegg.
+required:
+  - hovedtype

@@ -2,6 +2,7 @@ title: MasterTypeId
 x-stoplight:
   id: u1t2ims5uyoek
 type: object
+description: Beskriver hvilket felt i mastersystemet verdien er hentet fra.
 properties:
   masterTypeId:
     type: string
@@ -12,4 +13,5 @@ properties:
       - teigid
       - lokalid
     description: Beskriver hvilket felt i mastersystemet verdien er hentet fra.
-description: Beskriver hvilket felt i mastersystemet verdien er hentet fra.
+required:
+  - masterTypeId

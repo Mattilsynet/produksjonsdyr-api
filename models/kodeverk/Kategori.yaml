@@ -2,6 +2,7 @@ title: Kategori
 x-stoplight:
   id: 9e7nixefnghnb
 type: object
+description: 'Hva som utøves på et ansvar eller produksjonsplass. Foreløpig kun dyreholdskategorier her, men kan på sikt utvides til å holde andre kategorityper gitt av Hovedtype.'
 properties:
   dyreholdskategori:
     type: string
@@ -17,4 +18,5 @@ properties:
       - HESTEDYR
       - BIER
       - HUMLER
-description: Hva som utøves på et ansvar eller produksjonsplass. Foreløpig kun dyreholdskategorier her, men kan på sikt utvides til å holde andre kategorityper gitt av Hovedtype.
+required:
+  - dyreholdskategori

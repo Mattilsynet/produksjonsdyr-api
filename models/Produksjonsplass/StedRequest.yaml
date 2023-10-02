@@ -1,46 +1,57 @@
 title: StedRequest
 x-stoplight:
-  id: 3ow1wz5ioj6j4
+  id: 2hrghoy7ta979
 type: object
-description: Requestobjekt for å opprette et sted på et anlegg.
 properties:
   geom:
     type: string
-    x-stoplight:
-      id: 5x2pb52dx9exk
   srid:
     type: integer
     x-stoplight:
-      id: io8fq0nknw4hs
+      id: jy74ogy8lf4wf
   masterId:
     type: string
+    description: Kildens identitet på objektet. Ofte kalt objektid
     x-stoplight:
-      id: fwy45w9677nxi
+      id: 3dzcr2ke5q2x9
   masterSystem:
     $ref: ../kodeverk/MasterSystem.yaml
+    description: Et begrenset sett med kilder til stedsdefinisjon
     x-stoplight:
-      id: mns44ppmgnqj2
+      id: jugqd7oef9bxv
   masterTidspunkt:
     type: string
-    x-stoplight:
-      id: 41fyh7h1vuukk
     format: date-time
+    description: Kildens dato-tids stempel på endringen
+    x-stoplight:
+      id: pxtl39byak16n
   masterTypeId:
     $ref: ../kodeverk/MasterTypeId.yaml
     x-stoplight:
-      id: c9vad4xzc9qry
-  stedKategori:
-    $ref: ../kodeverk/StedKategori.yaml
-    x-stoplight:
-      id: gkze6pjlqe39z
-  byggeaar:
-    type: integer
-    x-stoplight:
-      id: kbnskj11uvgua
-  fasiliteter:
+      id: rxvhnysdpbwax
+    description: Beskriver hvilket felt i mastersystemet verdien er hentet fra.
+  hentetTidspunkt:
     type: string
+    format: date-time
+    description: Vår dato-tidsstempel for innlesing av endringen
+  stedDefinisjonKategori:
+    $ref: ../kodeverk/StedKategori.yaml
+    description: Vi har behov for å beskrive stedet på forskjellige måter
     x-stoplight:
-      id: 9p1zupgsu07js
+      id: 7si5g88v2i5bp
+  byggeår:
+    type: integer
+    format: int64
+    x-stoplight:
+      id: 607600unjzejc
+  fasiliteter:
+    x-stoplight:
+      id: bytvyht8s18di
+    type: array
+    items:
+      $ref: ./FasilitetRequest.yaml
+      x-stoplight:
+        id: 6zgm6qr3xcc3l
 required:
   - geom
   - srid
@@ -48,3 +59,5 @@ required:
   - masterSystem
   - masterTidspunkt
   - masterTypeId
+  - hentetTidspunkt
+  - fasiliteter

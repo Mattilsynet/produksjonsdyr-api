@@ -24,11 +24,7 @@ properties:
     x-stoplight:
       id: pbs8goucd44z2
   masterSystem:
-    type: string
-    enum:
-      - no.kartverket.matrikkelen.teig
-      - no.kartverket.matrikkelen.fkb_bygning
-      - annet
+    $ref: ../kodeverk/MasterSystem.yaml
     description: Et begrenset sett med kilder til stedsdefinisjon
     x-stoplight:
       id: p79t3bcphq18a
@@ -39,13 +35,9 @@ properties:
     x-stoplight:
       id: 4qiq0o037zk9y
   masterTypeId:
-    type: string
+    $ref: ../kodeverk/MasterTypeId.yaml
     x-stoplight:
       id: p5hfkjgzv28h1
-    enum:
-      - bygningsnummer
-      - teigid
-      - lokalid
     description: Beskriver hvilket felt i mastersystemet verdien er hentet fra.
   hentetTidspunkt:
     type: string
@@ -55,11 +47,7 @@ properties:
     type: boolean
     default: false
   stedDefinisjonKategori:
-    type: string
-    enum:
-      - senterpunkt
-      - omriss
-      - besøkspunkt
+    $ref: ../kodeverk/StedKategori.yaml
     description: Vi har behov for å beskrive stedet på forskjellige måter
     x-stoplight:
       id: 5xkk0w45snz6s
@@ -88,3 +76,4 @@ required:
   - masterId
   - masterSystem
   - hentetTidspunkt
+  - fasiliteter

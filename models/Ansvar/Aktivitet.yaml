@@ -21,3 +21,32 @@ properties:
     $ref: ../kodeverk/Art.yaml
     x-stoplight:
       id: o18h8nk9vafw8
+  kunnskap:
+    type: array
+    x-stoplight:
+      id: muyanj7p3canl
+    items:
+      $ref: ../kodeverk/Kunnskap.yaml
+      x-stoplight:
+        id: c75ff7ha97ygh
+  kunnskapAnnen:
+    type: string
+    x-stoplight:
+      id: sdhl3phnnk7jo
+  antallAarsErfaing:
+    type: integer
+    x-stoplight:
+      id: 8djtg5agfeqr0
+  kurs:
+    type: array
+    x-stoplight:
+      id: ilidj4t3eg34m
+    items:
+      $ref: ../kodeverk/Kurs.yaml
+      x-stoplight:
+        id: rkohhyo81jxpd
+required:
+  - aktivitetstype
+  - verdikjede
+  - art
+  - antallAarsErfaing

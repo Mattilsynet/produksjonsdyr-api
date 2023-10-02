@@ -2,6 +2,7 @@ title: StedKategori
 x-stoplight:
   id: 88s0fgzgwlxzu
 type: object
+description: Flere detaljer om sted som er angitt av den som registrerer anlegget
 properties:
   stedKategori:
     type: string
@@ -9,4 +10,5 @@ properties:
       - senterpunkt
       - omriss
       - besøkspunkt
-description: Flere detaljer om sted som er angitt av den som registrerer anlegget
+required:
+  - stedKategori

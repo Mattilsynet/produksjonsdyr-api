@@ -2,6 +2,7 @@ title: Dyretetthet
 x-stoplight:
   id: je25b0ylp3fsh
 type: object
+description: Beskriver hvor mange kg pr kvadratmeter fasiliteten er tilpasset for
 properties:
   dyretetthet:
     x-stoplight:
@@ -9,4 +10,5 @@ properties:
     enum:
       - OVER_33_KG_M2
       - UNDER_33_KG_M2
-description: Beskriver hvor mange kg pr kvadratmeter fasiliteten er tilpasset for
+required:
+  - dyretetthet

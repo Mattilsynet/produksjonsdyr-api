@@ -1,0 +1,17 @@
+title: Kurs
+x-stoplight:
+  id: e93ouemx5s5zh
+type: object
+properties:
+  kurs:
+    x-stoplight:
+      id: 1jrhpcior35uf
+    enum:
+      - FJOERFEPRODUKSJON
+      - DYREVELFERD_FOR_FJOERFE
+      - AVLIVNING
+      - SMITTEVERN
+      - NORTURAS_FJOERFESKOLE
+      - KOMPETANSESKOLE_KLF
+      - MANGLER
+description: Kurs som bonden har gjennomført som er relevant for sitt dyrehold
