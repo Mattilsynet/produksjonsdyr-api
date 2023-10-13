@@ -1,0 +1,207 @@
+openapi: 3.0.0
+x-stoplight:
+  id: o94nyvd1d94mk
+info:
+  title: Anlegg
+  version: '1.0'
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  /anlegg:
+    post:
+      summary: Opprett anlegg
+      operationId: post-anlegg
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../models/Produksjonsplass/Anlegg.yaml
+      x-stoplight:
+        id: f5imxrkvk4mht
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                anleggstype:
+                  $ref: ../models/kodeverk/Hovedtype.yaml
+                visningsnavn:
+                  type: string
+                  x-stoplight:
+                    id: nd681ixi328dl
+                risikofaktorer:
+                  x-stoplight:
+                    id: 74pcjsebwlh49
+                  type: array
+                  items:
+                    $ref: ../models/kodeverk/Risikofaktor.yaml
+                steder:
+                  type: array
+                  x-stoplight:
+                    id: u1akmq26f2y8h
+                  items:
+                    $ref: ../models/Produksjonsplass/StedRequest.yaml
+              required:
+                - anleggstype
+                - steder
+  '/anlegg/{anleggid}/sted':
+    parameters:
+      - schema:
+          type: string
+        name: anleggid
+        in: path
+        required: true
+    post:
+      summary: Opprett sted
+      operationId: post-anlegg-anleggsid-sted
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../models/Produksjonsplass/AnleggSted.yaml
+      x-stoplight:
+        id: 5mqb4g6rpdzfy
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                geom:
+                  type: string
+                  x-stoplight:
+                    id: rl77a3nx4gzzt
+                srid:
+                  type: string
+                  x-stoplight:
+                    id: hf8j1bnzr0uhf
+                masterId:
+                  type: string
+                  x-stoplight:
+                    id: b4ryjpzo3tepo
+                masterTidspunkt:
+                  type: string
+                  x-stoplight:
+                    id: 4xxak9cq7gsqe
+                  format: date
+                masterTypeid:
+                  $ref: ../models/kodeverk/DatasettMastersystem.yaml
+                masterSystem:
+                  $ref: ../models/kodeverk/MasterSystem.yaml
+                stedDefinisjonKategori:
+                  $ref: ../models/Produksjonsplass/StedDefinisjon.yaml
+                byggeaar:
+                  type: integer
+                  x-stoplight:
+                    id: p0gm0v8u6zykg
+      description: ''
+  '/anlegg/{anleggid}/sted/{stedid}/fasilitet':
+    parameters:
+      - schema:
+          type: integer
+          format: int64
+        name: stedid
+        in: path
+        required: true
+      - schema:
+          type: integer
+          format: int64
+        name: anleggid
+        in: path
+        required: true
+    get:
+      summary: Opprett fasilitet
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../models/Produksjonsplass/Fasilitet.yaml
+      operationId: get-anlegg-(anleggid)-sted-stedid-fasilitet
+      x-stoplight:
+        id: h5fg4unwv6nr9
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                kategori:
+                  $ref: ../models/kodeverk/Kategori.yaml
+                aktivitetstype:
+                  $ref: ../models/kodeverk/Aktivitetstype.yaml
+                verdikjede:
+                  $ref: ../models/kodeverk/Verdikjede.yaml
+                kapasitet:
+                  type: integer
+                  x-stoplight:
+                    id: 1waw53t3fz57e
+                  format: int64
+                kapasitetsbenevning:
+                  $ref: ../models/kodeverk/MengdeBenevning.yaml
+                oppstalling:
+                  $ref: ../models/kodeverk/Oppstalling.yaml
+                stussMontert:
+                  type: boolean
+                  x-stoplight:
+                    id: jxjtnycq5y4qj
+                planlagtAntallDyr:
+                  type: integer
+                  x-stoplight:
+                    id: rd1yhw4hgzx0y
+                  format: int64
+    post:
+      summary: ''
+      operationId: post-anlegg-(anleggid)-sted-stedid-fasilitet
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../models/Produksjonsplass/Fasilitet.yaml
+      x-stoplight:
+        id: ic58hj9ivxw6q
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                kategori:
+                  $ref: ../models/kodeverk/Kategori.yaml
+                aktivitetstype:
+                  $ref: ../models/kodeverk/Aktivitetstype.yaml
+                verdikjede:
+                  $ref: ../models/kodeverk/Verdikjede.yaml
+                kapasitet:
+                  type: integer
+                  x-stoplight:
+                    id: distp43gspgq3
+                  format: int64
+                kapasitetBenevning:
+                  $ref: ../models/kodeverk/MengdeBenevning.yaml
+                oppstalling:
+                  $ref: ../models/kodeverk/Oppstalling.yaml
+                stussMontert:
+                  type: boolean
+                  x-stoplight:
+                    id: 6csaybbvqlvq3
+                tilgangUteareal:
+                  type: boolean
+                  x-stoplight:
+                    id: f41trlk1obaov
+                planlagtAntallDyr:
+                  type: integer
+                  x-stoplight:
+                    id: acw6yluc4ulsa
+                  format: int32
+components:
+  schemas: {}

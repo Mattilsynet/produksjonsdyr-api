@@ -135,3 +135,97 @@ paths:
       description: Legger til et ansvar på en eksisterende driftsansvarlig
       x-stoplight:
         id: ns3bxpui2nx6u
+  '/driftsansvarlig/{id}':
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  '':
+                    type: string
+                    x-stoplight:
+                      id: 5bpjhf8fb5lwq
+            application/xml:
+              schema:
+                $ref: ../models/Ansvar/Driftsansvarlig.yaml
+          headers: {}
+      operationId: get-driftsansvarlig
+      x-stoplight:
+        id: sc5ldijav3vjy
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {}
+          application/xml:
+            schema:
+              type: object
+              properties: {}
+        description: ''
+      description: ''
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+  /privDriftsansvarlig:
+    post:
+      summary: ''
+      operationId: post-privDriftsansvarlig
+      responses:
+        '200':
+          description: OK
+      x-stoplight:
+        id: 3dhrurri0hs7r
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                foedselsnummer:
+                  type: string
+                  x-stoplight:
+                    id: u2yrbfi8tsnb2
+              required:
+                - foedselsnummer
+          application/xml:
+            schema:
+              type: object
+              properties:
+                foedselsnummer:
+                  type: string
+                  x-stoplight:
+                    id: 22y8ey9wv238z
+              required:
+                - foedselsnummer
+        description: ''
+  /orgDriftsansvarlig:
+    post:
+      summary: ''
+      operationId: post-orgDriftsansvarlig
+      responses:
+        '200':
+          description: OK
+      x-stoplight:
+        id: ydfzr6pg6ga26
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                organisasjonsnummerHovedenhet:
+                  type: string
+                  x-stoplight:
+                    id: 7ki71ad4nn5cp
+              required:
+                - organisasjonsnummerHovedenhet

@@ -10,7 +10,7 @@ plugins {
 }
 
 group = "no.mattilsynet.produksjonsdyr"
-version = "0.0.14-SNAPSHOT"
+version = "0.0.55-SNAPSHOT"
 
 repositories {
     mavenCentral()
@@ -34,8 +34,9 @@ dependencies {
 val openapiSpecs = mapOf(
     "berikelseapi" to "reference/BerikelseAPI.yaml",
     "frontendsupportapi" to "reference/FrontendSupportAPI.yaml",
-    "produksjonsdyr" to "reference/Produksjonsdyr.yaml",
-    "brukerinfoapi" to "reference/Brukerinfo.yaml"
+    "brukerinfoapi" to "reference/Brukerinfo.yaml",
+    "ansvarapi" to "reference/ansvar.yaml",
+    "anleggapi" to "reference/Anlegg.yaml"
 )
 
 openapiSpecs.forEach {

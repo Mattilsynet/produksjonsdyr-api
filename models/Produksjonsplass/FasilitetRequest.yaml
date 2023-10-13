@@ -1,0 +1,81 @@
+title: FasilitetRequest
+x-stoplight:
+  id: 2mpskwaor0br6
+type: object
+description: Request for å opprette en fasilitet på et sted
+properties:
+  kategori:
+    $ref: ../kodeverk/Kategori.yaml
+    x-stoplight:
+      id: tjnrpzvyrfe9v
+  aktivitetstype:
+    $ref: ../kodeverk/Aktivitetstype.yaml
+    x-stoplight:
+      id: pcbs4l0kghocm
+  verdikjede:
+    $ref: ../kodeverk/Verdikjede.yaml
+    x-stoplight:
+      id: 9y4q7wofg4rst
+  kapasitet:
+    type: integer
+    x-stoplight:
+      id: 2tsuwq43m5ilk
+    format: int64
+  kapasitetsbenevning:
+    x-stoplight:
+      id: ns067aybwl52e
+    enum:
+      - antall
+      - kvadratmeter
+  oppstalling:
+    $ref: ../kodeverk/Oppstalling.yaml
+    x-stoplight:
+      id: 9o56bw6i9zmhy
+  oppstallingAnnet:
+    type: string
+    x-stoplight:
+      id: t5o7lv9x1xkgd
+  stussMontert:
+    type: boolean
+    x-stoplight:
+      id: ziqwf9b4c5220
+  planlagtAntallDyr:
+    type: integer
+    x-stoplight:
+      id: l1999rc8lq0w8
+    format: int64
+  aktiviteter:
+    type: array
+    x-stoplight:
+      id: kwks8w5dj3ost
+    items:
+      x-stoplight:
+        id: c1mi86d0dzr4j
+      type: integer
+      format: int64
+  kontinuerligDrift:
+    type: boolean
+    x-stoplight:
+      id: 7ygydl3mctve5
+  driftsperiodeStart:
+    type: string
+    x-stoplight:
+      id: fgm1n559w03qw
+    format: date
+  driftsperiodeSlutt:
+    type: string
+    x-stoplight:
+      id: mv4lc1ebu8i9r
+    format: date
+  maksimalDyretetthet:
+    $ref: ../kodeverk/Dyretetthet.yaml
+    x-stoplight:
+      id: t9mbywlbm66l1
+required:
+  - kategori
+  - aktivitetstype
+  - verdikjede
+  - kapasitet
+  - kapasitetsbenevning
+  - oppstalling
+  - kontinuerligDrift

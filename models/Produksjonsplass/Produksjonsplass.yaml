@@ -35,6 +35,8 @@ properties:
       id: jzmhs07xfk31v
     type: array
     items:
-      $ref: ./Risikofaktor.yaml
+      $ref: ../kodeverk/Risikofaktor.yaml
       x-stoplight:
         id: pd2oblcxlv9vj
+required:
+  - steder

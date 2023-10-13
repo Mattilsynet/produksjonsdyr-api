@@ -1,0 +1,17 @@
+title: Risikofaktor
+x-stoplight:
+  id: 4q9u4y7erhoks
+type: object
+description: Risikofaktor er tilleggsinformasjon til et anlegg som beskriver noe som kan påvirke f.eks. risiko for smitte
+properties:
+  type:
+    x-stoplight:
+      id: mgnu59bupc74b
+    enum:
+      - SALG_RUGEEGG
+      - SALG_KONSUMEGG
+      - SALG_LEVENDE_FUGLER
+      - SALG_KJOETT
+      - SALG_FJAER
+required:
+  - type

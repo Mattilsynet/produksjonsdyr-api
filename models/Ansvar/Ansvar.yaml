@@ -17,6 +17,10 @@ properties:
     x-stoplight:
       id: e5amwlpbno41k
     description: Usikker på om dette er nødvendig. Kanskje det er nok at Mats har ref til oss.
+  orgnummerUnderenhet:
+    type: string
+    x-stoplight:
+      id: xf21pi0be4p78
   produksjonsplasser:
     type: array
     x-stoplight:
@@ -44,18 +48,6 @@ properties:
       id: fb138g45fiaco
     format: int64
     minimum: 0
-  kunnskapsnivaa:
-    type: array
-    x-stoplight:
-      id: tflc27djk26ad
-    items:
-      x-stoplight:
-        id: vyvkxjbfk52lz
-      enum:
-        - relevant_utdanning
-        - relevant_kurs
-        - relevant_erfaring
-        - annet
   kontaktpersoner:
     x-stoplight:
       id: z7g2kehlxd2v5
@@ -65,14 +57,10 @@ properties:
       x-stoplight:
         id: xnwq0tbfm8uzf
   aktiviteter:
-    type: array
     x-stoplight:
       id: v0y7o1vf6259v
+    type: array
     items:
       $ref: ./Aktivitet.yaml
       x-stoplight:
         id: ucyz7o96u7pzd
-  orgnummerUnderenhet:
-    type: string
-    x-stoplight:
-      id: xf21pi0be4p78

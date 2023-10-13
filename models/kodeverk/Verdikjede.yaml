@@ -2,6 +2,7 @@ title: Verdikjede
 x-stoplight:
   id: 7w1ndfzeu3m4k
 type: object
+description: 'Verdikjede brukes om prosessen fra råvare og fram til det ferdige produktet som selges til sluttbrukeren. Dette er ikke en behov fra lovverket, men vil f.eks kunne bidra til mer effektiv smittesporing ved en hendelse. Man kan kun velge en verdikjede om gangen. Kombinasjon av flere vil feile.'
 properties:
   verdikjedeFugler:
     type: string
@@ -13,4 +14,3 @@ properties:
     description: Beskriver hvilket regelverk som gjelder
     x-stoplight:
       id: 181m6f1xn5flt
-description: 'Verdikjede brukes om prosessen fra råvare og fram til det ferdige produktet som selges til sluttbrukeren. Dette er ikke en behov fra lovverket, men vil f.eks kunne bidra til mer effektiv smittesporing ved en hendelse. Man kan kun velge en verdikjede om gangen. Kombinasjon av flere vil feile.'

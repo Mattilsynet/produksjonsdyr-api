@@ -1,0 +1,15 @@
+title: Roller
+x-stoplight:
+  id: okz5p5nw88pde
+type: object
+properties:
+  roller:
+    x-stoplight:
+      id: af1sgpjcy24q0
+    enum:
+      - EIER
+      - DAGLIG_LEDER
+      - KONTAKTPERSON
+required:
+  - roller
+description: Roller for en kontaktperson.

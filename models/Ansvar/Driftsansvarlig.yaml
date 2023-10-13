@@ -39,3 +39,20 @@ properties:
       id: 5x4rh0r0bvyxz
     description: |
       Nummerserie som benyttes av driftsansvarlig for å merke dyr. Tildeles av Mattilsynet.
+  validert:
+    type: boolean
+    x-stoplight:
+      id: bpl1komruygsf
+  createdAt:
+    type: string
+    x-stoplight:
+      id: n9i26bfadl1fo
+    format: date
+  kontaktpersoner:
+    type: array
+    x-stoplight:
+      id: s6ntgx36w82yg
+    items:
+      $ref: ./Kontaktperson.yaml
+      x-stoplight:
+        id: 2l91wsxezfzok

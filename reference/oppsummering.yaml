@@ -1,0 +1,38 @@
+openapi: 3.0.0
+x-stoplight:
+  id: n49edvl9kto7n
+info:
+  title: oppsummering
+  version: '1.0'
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  /sendinn:
+    post:
+      summary: ''
+      operationId: post-sendinn
+      responses:
+        '200':
+          description: OK
+      x-stoplight:
+        id: lgv8ozvzqyjl8
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                anlegg:
+                  x-stoplight:
+                    id: gi82o20b4n1aw
+                  type: array
+                  items:
+                    type: integer
+                ansvar:
+                  x-stoplight:
+                    id: gkvlzp1blvxhd
+                  type: array
+                  items:
+                    type: integer
+components:
+  schemas: {}
