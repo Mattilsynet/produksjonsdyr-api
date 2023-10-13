@@ -114,49 +114,6 @@ paths:
         name: anleggid
         in: path
         required: true
-    get:
-      summary: Opprett fasilitet
-      tags: []
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: ../models/Produksjonsplass/Fasilitet.yaml
-      operationId: get-anlegg-(anleggid)-sted-stedid-fasilitet
-      x-stoplight:
-        id: h5fg4unwv6nr9
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                kategori:
-                  $ref: ../models/kodeverk/Kategori.yaml
-                aktivitetstype:
-                  $ref: ../models/kodeverk/Aktivitetstype.yaml
-                verdikjede:
-                  $ref: ../models/kodeverk/Verdikjede.yaml
-                kapasitet:
-                  type: integer
-                  x-stoplight:
-                    id: 1waw53t3fz57e
-                  format: int64
-                kapasitetsbenevning:
-                  $ref: ../models/kodeverk/MengdeBenevning.yaml
-                oppstalling:
-                  $ref: ../models/kodeverk/Oppstalling.yaml
-                stussMontert:
-                  type: boolean
-                  x-stoplight:
-                    id: jxjtnycq5y4qj
-                planlagtAntallDyr:
-                  type: integer
-                  x-stoplight:
-                    id: rd1yhw4hgzx0y
-                  format: int64
     post:
       summary: ''
       operationId: post-anlegg-(anleggid)-sted-stedid-fasilitet
@@ -203,5 +160,52 @@ paths:
                   x-stoplight:
                     id: acw6yluc4ulsa
                   format: int32
+  '/anlegg/{anleggid}':
+    parameters:
+      - schema:
+          type: string
+        name: anleggid
+        in: path
+        required: true
+    get:
+      summary: Hent anlegg
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../models/Produksjonsplass/Anlegg.yaml
+      operationId: get-anlegg-anleggid
+      x-stoplight:
+        id: lmdmze0vrlhj1
+      description: Henter ut et anlegg gitt ressursid til anlegg
+  /anleggForAnsvar:
+    post:
+      summary: ''
+      operationId: post-anleggForAnsvar
+      responses:
+        '200':
+          description: OK
+      x-stoplight:
+        id: hqfsje45l1wix
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                anleggFasilitetId:
+                  type: integer
+                  x-stoplight:
+                    id: 0wm6rhmm0h2xo
+                  format: int64
+                ansvarAktivitetId:
+                  type: integer
+                  x-stoplight:
+                    id: pz7rbfny5651m
+                  format: int64
+      description: Kobler sammen et anlegg med driftsansvar. Dette gjøres på nivået aktivitet og fasilitet fordi en aktivitet knyttes mot dyrerommet aktiviteten foregår i.
 components:
   schemas: {}
