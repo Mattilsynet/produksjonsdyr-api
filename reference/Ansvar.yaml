@@ -76,6 +76,14 @@ paths:
                   $ref: ../models/kodeverk/Hovedtype.yaml
               required:
                 - organisasjonsnummerUnderenhet
+            examples:
+              Example 1:
+                value:
+                  organisasjonsnummerUnderenhet: string
+                  kategori:
+                    dyreholdskategori: FUGLER
+                  ansvarstype:
+                    hovedtype: DYREHOLD
         description: ''
       description: 'I kontekst av dyrehold er ansvar den dyregruppen du har ansvar for. F.eks storfe, eller fjørfe'
   /driftsansvar/organisasjon:
@@ -236,5 +244,32 @@ paths:
                 - art
                 - antallAarErfaring
       description: Oppretter aktivitet for et ansvar.
+  '/driftsansvar/{driftsansvarid}/ansvar/{ansvarid}':
+    parameters:
+      - schema:
+          type: integer
+          format: int64
+        name: driftsansvarid
+        in: path
+        required: true
+      - schema:
+          type: integer
+          format: int64
+        name: ansvarid
+        in: path
+        required: true
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../models/Ansvar/Ansvar.yaml
+      operationId: get-driftsansvar-driftsansvarid-ansvar-ansvarid
+      x-stoplight:
+        id: 6rti7091gj4w9
 components:
   schemas: {}
