@@ -7,10 +7,10 @@ info:
 servers:
   - url: 'http://localhost:3000'
 paths:
-  '/sendinn/driftsansvar/{driftsansvarid}':
+  '/innsending/driftsansvar/{driftsansvarid}':
     post:
       summary: Send inn driftsansvar
-      operationId: post-sendinn
+      operationId: post-innsending
       responses:
         '200':
           description: OK
@@ -25,16 +25,15 @@ paths:
                     $ref: ../models/Produksjonsplass/Anlegg.yaml
       x-stoplight:
         id: lgv8ozvzqyjl8
-      requestBody:
-        content: {}
       description: Endepunkt som bekrefter innsending av driftsansvar og tilhørende anlegg og informasjon. Sender også ut kvittering.
     parameters:
       - schema:
-          type: string
+          type: integer
+          format: int64
         name: driftsansvarid
         in: path
         required: true
-  '/sendinn/anlegg/{anleggsid}':
+  '/innsending/anlegg/{anleggsid}':
     parameters:
       - schema:
           type: integer
@@ -44,7 +43,7 @@ paths:
         required: true
     post:
       summary: Send inn anlegg
-      operationId: post-sendinn-anlegg-anleggsid
+      operationId: post-innsending-anlegg-anleggsid
       responses:
         '200':
           description: OK
