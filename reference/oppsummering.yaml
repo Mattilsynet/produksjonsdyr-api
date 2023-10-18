@@ -7,32 +7,53 @@ info:
 servers:
   - url: 'http://localhost:3000'
 paths:
-  /sendinn:
+  '/sendinn/driftsansvar/{driftsansvarid}':
     post:
-      summary: ''
+      summary: Send inn driftsansvar
       operationId: post-sendinn
       responses:
         '200':
           description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  driftsansvar:
+                    $ref: ../models/Ansvar/Driftsansvarlig.yaml
+                  anlegg:
+                    $ref: ../models/Produksjonsplass/Anlegg.yaml
       x-stoplight:
         id: lgv8ozvzqyjl8
       requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                anlegg:
-                  x-stoplight:
-                    id: gi82o20b4n1aw
-                  type: array
-                  items:
-                    type: integer
-                ansvar:
-                  x-stoplight:
-                    id: gkvlzp1blvxhd
-                  type: array
-                  items:
-                    type: integer
+        content: {}
+      description: Endepunkt som bekrefter innsending av driftsansvar og tilhørende anlegg og informasjon. Sender også ut kvittering.
+    parameters:
+      - schema:
+          type: string
+        name: driftsansvarid
+        in: path
+        required: true
+  '/sendinn/anlegg/{anleggsid}':
+    parameters:
+      - schema:
+          type: integer
+          format: int64
+        name: anleggsid
+        in: path
+        required: true
+    post:
+      summary: Send inn anlegg
+      operationId: post-sendinn-anlegg-anleggsid
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../models/Produksjonsplass/Anlegg.yaml
+      x-stoplight:
+        id: frte4r9f8sgvl
+      description: 'Endepunkt for å bekrefte innsending av anlegg, samt sender ut kvittering.'
 components:
   schemas: {}
