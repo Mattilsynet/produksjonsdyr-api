@@ -243,6 +243,22 @@ paths:
                 - verdikjede
                 - art
                 - antallAarErfaring
+            examples:
+              Example 1:
+                value:
+                  aktivitetstype:
+                    aktivitetstypeFugler: RUGEEGG
+                    aktivitetstypeStorfe: MELKEKYR
+                  verdikjede:
+                    verdikjedeFugler: KONSUMEGG
+                  art:
+                    fugleArt: HONS
+                  kunnskap:
+                    - kunnskap: UTDANNING
+                  antallAarErfaring: -2147483648
+                  kunnskapAnnen: string
+                  kurs:
+                    - kurs: FJOERFEPRODUKSJON
       description: Oppretter aktivitet for et ansvar.
   '/driftsansvar/{driftsansvarid}/ansvar/{ansvarid}':
     parameters:
@@ -271,5 +287,44 @@ paths:
       operationId: get-driftsansvar-driftsansvarid-ansvar-ansvarid
       x-stoplight:
         id: 6rti7091gj4w9
+  '/driftsansvar/{driftsansvarid}/ansvar/{ansvarid}/aktivitet/{aktivitetid}':
+    parameters:
+      - schema:
+          type: integer
+          format: int64
+        name: driftsansvarid
+        in: path
+        required: true
+      - schema:
+          type: integer
+          format: int64
+        name: ansvarid
+        in: path
+        required: true
+      - schema:
+          type: integer
+          format: int64
+        name: aktivitetid
+        in: path
+        required: true
+    get:
+      summary: GET Aktivitet
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../models/Ansvar/Ansvar.yaml
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: ../models/Ansvar/Aktivitet.yaml
+      operationId: get-driftsansvar-driftsansvarid-ansvar-ansvarid
+      x-stoplight:
+        id: 8zk7ud56oumwt
 components:
   schemas: {}
