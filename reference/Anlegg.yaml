@@ -47,6 +47,7 @@ paths:
               required:
                 - anleggstype
                 - steder
+            examples: {}
   '/anlegg/{anleggid}/sted':
     parameters:
       - schema:
@@ -70,35 +71,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                geom:
-                  type: string
-                  x-stoplight:
-                    id: rl77a3nx4gzzt
-                srid:
-                  type: string
-                  x-stoplight:
-                    id: hf8j1bnzr0uhf
-                masterId:
-                  type: string
-                  x-stoplight:
-                    id: b4ryjpzo3tepo
-                masterTidspunkt:
-                  type: string
-                  x-stoplight:
-                    id: 4xxak9cq7gsqe
-                  format: date
-                masterTypeid:
-                  $ref: ../models/kodeverk/DatasettMastersystem.yaml
-                masterSystem:
-                  $ref: ../models/kodeverk/MasterSystem.yaml
-                stedDefinisjonKategori:
-                  $ref: ../models/Produksjonsplass/StedDefinisjon.yaml
-                byggeaar:
-                  type: integer
-                  x-stoplight:
-                    id: p0gm0v8u6zykg
+              $ref: ../models/Produksjonsplass/StedRequest.yaml
       description: ''
   '/anlegg/{anleggid}/sted/{stedid}/fasilitet':
     parameters:
@@ -130,36 +103,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                kategori:
-                  $ref: ../models/kodeverk/Kategori.yaml
-                aktivitetstype:
-                  $ref: ../models/kodeverk/Aktivitetstype.yaml
-                verdikjede:
-                  $ref: ../models/kodeverk/Verdikjede.yaml
-                kapasitet:
-                  type: integer
-                  x-stoplight:
-                    id: distp43gspgq3
-                  format: int64
-                kapasitetBenevning:
-                  $ref: ../models/kodeverk/MengdeBenevning.yaml
-                oppstalling:
-                  $ref: ../models/kodeverk/Oppstalling.yaml
-                stussMontert:
-                  type: boolean
-                  x-stoplight:
-                    id: 6csaybbvqlvq3
-                tilgangUteareal:
-                  type: boolean
-                  x-stoplight:
-                    id: f41trlk1obaov
-                planlagtAntallDyr:
-                  type: integer
-                  x-stoplight:
-                    id: acw6yluc4ulsa
-                  format: int32
+              $ref: ../models/Produksjonsplass/FasilitetRequest.yaml
   '/anlegg/{anleggid}':
     parameters:
       - schema:
