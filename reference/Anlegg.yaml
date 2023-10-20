@@ -51,7 +51,8 @@ paths:
   '/anlegg/{anleggid}/sted':
     parameters:
       - schema:
-          type: string
+          type: integer
+          format: int64
         name: anleggid
         in: path
         required: true
@@ -73,6 +74,32 @@ paths:
             schema:
               $ref: ../models/Produksjonsplass/StedRequest.yaml
       description: ''
+  '/anlegg/{anleggid}/sted/{stedid}':
+    parameters:
+      - schema:
+          type: integer
+          format: int64
+        name: anleggid
+        in: path
+        required: true
+      - schema:
+          type: integer
+          format: int64
+        name: stedid
+        in: path
+        required: true
+    get:
+      summary: ''
+      operationId: get-anlegg-anleggid-sted---copy
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../models/Produksjonsplass/Sted.yaml
+      x-stoplight:
+        id: ex3cp7gnmn81g
   '/anlegg/{anleggid}/sted/{stedid}/fasilitet':
     parameters:
       - schema:
@@ -88,7 +115,7 @@ paths:
         in: path
         required: true
     post:
-      summary: ''
+      summary: Opprett fasilitet på et anlegg
       operationId: post-anlegg-(anleggid)-sted-stedid-fasilitet
       responses:
         '200':
@@ -104,10 +131,43 @@ paths:
           application/json:
             schema:
               $ref: ../models/Produksjonsplass/FasilitetRequest.yaml
+  '/anlegg/{anleggid}/sted/{stedid}/fasilitet/{fasilitetid}':
+    parameters:
+      - schema:
+          type: integer
+          format: int64
+        name: stedid
+        in: path
+        required: true
+      - schema:
+          type: integer
+          format: int64
+        name: anleggid
+        in: path
+        required: true
+      - schema:
+          type: integer
+          format: int64
+        name: fasilitetid
+        in: path
+        required: true
+    get:
+      summary: Hent fasilitet
+      operationId: get-anlegg-anleggid-sted-stedid-fasilitet-fasilitetid
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../models/Produksjonsplass/Fasilitet.yaml
+      x-stoplight:
+        id: evk0z67nfokir
   '/anlegg/{anleggid}':
     parameters:
       - schema:
-          type: string
+          type: integer
+          format: int64
         name: anleggid
         in: path
         required: true
