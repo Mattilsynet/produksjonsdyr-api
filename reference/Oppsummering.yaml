@@ -54,5 +54,41 @@ paths:
       x-stoplight:
         id: frte4r9f8sgvl
       description: 'Endepunkt for å bekrefte innsending av anlegg, samt sender ut kvittering.'
+  '/innsending/ansvarForAnlegg':
+    post:
+      summary: Send inn ansvarForAnlegg
+      tags: [ ]
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  driftsansvar:
+                    $ref: ../models/Ansvar/Driftsansvarlig.yaml
+                  anlegg:
+                    $ref: ../models/Produksjonsplass/Anlegg.yaml
+      operationId: post-innsending-ansvarForAnlegg
+      x-stoplight:
+        id: 5jj6zkv08vpkg
+      description: Endepunkt for å bekrefte innsending av ansvar for tilhørende anlegg
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ansvarDriftsansvarId:
+                  type: integer
+                  x-stoplight:
+                    id: 3se30nqptfiwz
+                  format: int64
+                anleggAnleggsId:
+                  type: integer
+                  x-stoplight:
+                    id: zd682z2polf5m
+                  format: int64
 components:
   schemas: {}
