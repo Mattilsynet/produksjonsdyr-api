@@ -64,3 +64,37 @@ properties:
       $ref: ./Aktivitet.yaml
       x-stoplight:
         id: ucyz7o96u7pzd
+examples:
+  - ansvarId: 0
+    matsTilsynsobjektId: string
+    orgnummerUnderenhet: string
+    produksjonsplasser:
+      - 0
+    ansvarskategori:
+      dyreholdskategori: FUGLER
+    ansvarstype:
+      hovedtype: DYREHOLD
+    aktorId: 0
+    kontaktpersoner:
+      - id: 0
+        fornavn: Per
+        etternavn: Fuglerud
+        telefonnummer: '99887766'
+        epostadresse: per@fuglerud.no
+        rolle:
+          - roller: EIER
+    aktiviteter:
+      - id: 0
+        aktivitetstype:
+          aktivitetstypeFugler: RUGEEGG
+          aktivitetstypeStorfe: MELKEKYR
+        verdikjede:
+          verdikjedeFugler: KONSUMEGG
+        art:
+          fugleArt: HONS
+        kunnskap:
+          - kunnskap: UTDANNING
+        kunnskapAnnen: string
+        antallAarsErfaing: 0
+        kurs:
+          - kurs: FJOERFEPRODUKSJON
