@@ -22,11 +22,9 @@ properties:
       id: 2tsuwq43m5ilk
     format: int64
   kapasitetsbenevning:
+    $ref: ../kodeverk/MengdeBenevning.yaml
     x-stoplight:
       id: ns067aybwl52e
-    enum:
-      - antall
-      - kvadratmeter
   oppstalling:
     $ref: ../kodeverk/Oppstalling.yaml
     x-stoplight:
