@@ -46,7 +46,6 @@ paths:
                     $ref: ../models/Produksjonsplass/StedRequest.yaml
               required:
                 - anleggstype
-                - steder
             examples: {}
   '/anlegg/{anleggid}/sted':
     parameters:
