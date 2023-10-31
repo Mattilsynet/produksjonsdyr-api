@@ -34,9 +34,13 @@ properties:
     x-stoplight:
       id: x72ktttxx4g5s
   kurs:
-    $ref: ../kodeverk/Kurs.yaml
     x-stoplight:
       id: u4ovq7zi1bfnf
+    type: array
+    items:
+      $ref: ../kodeverk/Kurs.yaml
+      x-stoplight:
+        id: msobne99fbmbk
 required:
   - aktivitetstype
   - verdikjede
