@@ -93,7 +93,7 @@ paths:
   /innsending:
     post:
       summary: Innsending av driftsansvar og anlegg
-      operationId: post-innsending
+      operationId: post-innsending-ansvar-anlegg
       responses:
         '200':
           description: OK
