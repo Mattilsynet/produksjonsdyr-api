@@ -1,0 +1,34 @@
+title: KontaktpersonRequest
+x-stoplight:
+  id: x4m7i2z3rw4nu
+type: object
+properties:
+  fornavn:
+    type: string
+    x-stoplight:
+      id: emrgzfp4w8s88
+  etternavn:
+    type: string
+    x-stoplight:
+      id: kjren9iyqrpk2
+  telefonnummer:
+    type: string
+    x-stoplight:
+      id: ipmyujza1em7u
+  epostadresse:
+    type: string
+    x-stoplight:
+      id: fybis5en8wzbu
+  rolle:
+    type: array
+    x-stoplight:
+      id: 5ev059fqp1xyq
+    items:
+      $ref: ../kodeverk/Roller.yaml
+      x-stoplight:
+        id: 0qkk08ok4wlwv
+required:
+  - fornavn
+  - etternavn
+  - telefonnummer
+description: Requestobjekt for å opprette en kontaktperson
