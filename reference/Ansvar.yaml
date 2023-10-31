@@ -7,6 +7,21 @@ info:
 servers:
   - url: 'http://localhost:3000'
 paths:
+  /driftsansvar:
+    post:
+      summary: Opprett driftsansvar
+      operationId: post-driftsansvar
+      responses:
+        '201':
+          description: Created
+          content: {}
+      x-stoplight:
+        id: 1kuli5i1sycrh
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/Ansvar/DriftsansvarRequest.yaml
   /driftsansvar/person:
     post:
       summary: Opprett driftsansvarlig for person
@@ -34,6 +49,68 @@ paths:
                 - foedselsnummer
       description: 'Den som har juridisk ansvar for dyr, ofte eieren, men ikke alltid.'
     parameters: []
+  /driftsansvar/organisasjon:
+    post:
+      summary: Opprett driftsansvarlig for foretak
+      operationId: post-driftsansvarligorg
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../models/Ansvar/Driftsansvarlig.yaml
+      x-stoplight:
+        id: 0iwuev36xrij9
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                orgnummerHovedenhet:
+                  type: string
+                  x-stoplight:
+                    id: 759ior5z46xcn
+              required:
+                - orgnummerHovedenhet
+      description: 'Den som har juridisk ansvar for dyr, ofte eieren, men ikke alltid.'
+    parameters: []
+  '/driftsansvar/{driftsansvarid}/kontaktperson':
+    post:
+      summary: Opprett kontaktperson
+      operationId: post-driftsansvarlig-kontaktperson
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../models/Ansvar/Kontaktperson.yaml
+      x-stoplight:
+        id: 7af52j9zw3pa6
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/Ansvar/KontaktpersonRequest.yaml
+            examples:
+              Example 1:
+                value:
+                  fornavn: string
+                  etternavn: string
+                  telefonnummer: string
+                  epost: string
+                  roller:
+                    - roller: EIER
+      description: Oppretter kontaktperson for et gitt driftsansvar. F.eks den som kan konktaktes ved tilsyn
+    parameters:
+      - schema:
+          type: integer
+          format: int64
+        name: driftsansvarid
+        in: path
+        required: true
   '/driftsansvar/{driftansvarid}/ansvar':
     parameters:
       - schema:
@@ -64,110 +141,9 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                organisasjonsnummerUnderenhet:
-                  type: string
-                  x-stoplight:
-                    id: cwjzzy29vahqm
-                kategori:
-                  $ref: ../models/kodeverk/Kategori.yaml
-                ansvarstype:
-                  $ref: ../models/kodeverk/Hovedtype.yaml
-              required:
-                - organisasjonsnummerUnderenhet
+              $ref: ../models/Ansvar/AnsvarRequest.yaml
         description: ''
       description: 'I kontekst av dyrehold er ansvar den dyregruppen du har ansvar for. F.eks storfe, eller fjørfe'
-  /driftsansvar/organisasjon:
-    post:
-      summary: Opprett driftsansvarlig for foretak
-      operationId: post-driftsansvarligorg
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: ../models/Ansvar/Driftsansvarlig.yaml
-      x-stoplight:
-        id: 0iwuev36xrij9
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                orgnummerHovedenhet:
-                  type: string
-                  x-stoplight:
-                    id: 759ior5z46xcn
-              required:
-                - orgnummerHovedenhet
-      description: 'Den som har juridisk ansvar for dyr, ofte eieren, men ikke alltid.'
-    parameters: []
-  '/driftsansvar/{driftsansvarid}/kontaktperson':
-    parameters:
-      - schema:
-          type: integer
-          format: int64
-        name: driftsansvarid
-        in: path
-        required: true
-    post:
-      summary: Opprett kontaktperson
-      operationId: post-driftsansvarlig-kontaktperson
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: ../models/Ansvar/Kontaktperson.yaml
-      x-stoplight:
-        id: 7af52j9zw3pa6
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                fornavn:
-                  type: string
-                  x-stoplight:
-                    id: ukrzk6pkdeozu
-                etternavn:
-                  type: string
-                  x-stoplight:
-                    id: 2cn4x1e7i66ts
-                telefonnummer:
-                  type: string
-                  x-stoplight:
-                    id: 5nwhtwfvuk5q8
-                epost:
-                  type: string
-                  x-stoplight:
-                    id: 82h96sayz0fi6
-                roller:
-                  x-stoplight:
-                    id: b5779i6j3oujb
-                  type: array
-                  items:
-                    $ref: ../models/kodeverk/Roller.yaml
-              required:
-                - fornavn
-                - etternavn
-                - telefonnummer
-                - roller
-            examples:
-              Example 1:
-                value:
-                  fornavn: string
-                  etternavn: string
-                  telefonnummer: string
-                  epost: string
-                  roller:
-                    - roller: EIER
-      description: Oppretter kontaktperson for et gitt driftsansvar. F.eks den som kan konktaktes ved tilsyn
   '/driftsansvar/{driftansvarid}/ansvar/{ansvarid}/aktivitet':
     parameters:
       - schema:
@@ -191,50 +167,14 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  aktivitet:
-                    $ref: ../models/Ansvar/Aktivitet.yaml
+                $ref: ../models/Ansvar/Aktivitet.yaml
       x-stoplight:
         id: 8nc4li9ujbmic
       requestBody:
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                aktivitetstype:
-                  $ref: ../models/kodeverk/Aktivitetstype.yaml
-                verdikjede:
-                  $ref: ../models/kodeverk/Verdikjede.yaml
-                art:
-                  $ref: ../models/kodeverk/Art.yaml
-                kunnskap:
-                  x-stoplight:
-                    id: ewp9oj7z1a13x
-                  type: array
-                  items:
-                    $ref: ../models/kodeverk/Kunnskap.yaml
-                antallAarErfaring:
-                  type: integer
-                  x-stoplight:
-                    id: 59k5gqtrsqh60
-                  format: int32
-                kunnskapAnnen:
-                  type: string
-                  x-stoplight:
-                    id: n1i5mq0sm9csw
-                kurs:
-                  x-stoplight:
-                    id: umfs9ypg8bbcp
-                  type: array
-                  items:
-                    $ref: ../models/kodeverk/Kurs.yaml
-              required:
-                - aktivitetstype
-                - verdikjede
-                - art
-                - antallAarErfaring
+              $ref: ../models/Ansvar/AktivitetRequest.yaml
             examples:
               Example 1:
                 value:
@@ -267,7 +207,7 @@ paths:
         in: path
         required: true
     get:
-      summary: Your GET endpoint
+      summary: Hent ut ansvar for en driftsansvarlig
       tags: []
       responses:
         '200':
