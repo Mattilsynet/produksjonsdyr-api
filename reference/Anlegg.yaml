@@ -68,7 +68,7 @@ paths:
         required: true
     get:
       summary: ''
-      operationId: get-anlegg-anleggid-sted---copy
+      operationId: get-anlegg-anleggid-sted
       responses:
         '200':
           description: OK

@@ -10,7 +10,7 @@ plugins {
 }
 
 group = "no.mattilsynet.produksjonsdyr"
-version = "0.0.56-SNAPSHOT"
+version = "0.0.61-SNAPSHOT"
 
 repositories {
     mavenCentral()
