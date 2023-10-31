@@ -75,5 +75,7 @@ required:
   - srid
   - masterId
   - masterSystem
+  - masterTidspunkt
+  - masterTypeId
   - hentetTidspunkt
   - fasiliteter
