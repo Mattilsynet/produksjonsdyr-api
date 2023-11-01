@@ -2,6 +2,7 @@ title: Oppstalling
 x-stoplight:
   id: nci4p4tulzgcw
 type: object
+description: Beskriver funksjonell utforming av lokalene hvor dyrene er
 properties:
   oppstallingFjoerfe:
     x-stoplight:
@@ -12,4 +13,7 @@ properties:
       - INNREDEDE_BUR
       - OEKOLOGISK
       - ANNET
-description: Beskriver funksjonell utforming av lokalene hvor dyrene er
+  annenOppstalling:
+    type: string
+    x-stoplight:
+      id: cyeqwug1s4dcu
