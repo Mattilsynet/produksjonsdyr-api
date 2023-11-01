@@ -2,6 +2,7 @@ title: KontaktpersonRequest
 x-stoplight:
   id: x4m7i2z3rw4nu
 type: object
+description: Requestobjekt for å opprette en kontaktperson
 properties:
   fornavn:
     type: string
@@ -31,4 +32,5 @@ required:
   - fornavn
   - etternavn
   - telefonnummer
-description: Requestobjekt for å opprette en kontaktperson
+  - epostadresse
+  - rolle

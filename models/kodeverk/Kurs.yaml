@@ -2,6 +2,7 @@ title: Kurs
 x-stoplight:
   id: e93ouemx5s5zh
 type: object
+description: Kurs som bonden har gjennomført som er relevant for sitt dyrehold
 properties:
   kurs:
     x-stoplight:
@@ -13,5 +14,4 @@ properties:
       - SMITTEVERN
       - NORTURAS_FJOERFESKOLE
       - KOMPETANSESKOLE_KLF
-      - MANGLER
-description: Kurs som bonden har gjennomført som er relevant for sitt dyrehold
+      - PLANLAGT_KURS

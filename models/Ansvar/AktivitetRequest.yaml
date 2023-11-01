@@ -24,7 +24,7 @@ properties:
       $ref: ../kodeverk/Kunnskap.yaml
       x-stoplight:
         id: wilqdbd8095we
-  antallArrErfaring:
+  antallAarErfaring:
     type: integer
     x-stoplight:
       id: 9h4yugvm5vftz
@@ -45,4 +45,3 @@ required:
   - aktivitetstype
   - verdikjede
   - art
-  - antallArrErfaring

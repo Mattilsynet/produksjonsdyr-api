@@ -21,7 +21,7 @@ properties:
       id: cxx1suxbw3lgz
     type: array
     items:
-      $ref: ./Kontaktperson.yaml
+      $ref: ./KontaktpersonRequest.yaml
       x-stoplight:
         id: bomukzfaryo7p
   ansvar:
