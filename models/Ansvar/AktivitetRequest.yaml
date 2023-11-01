@@ -1,0 +1,48 @@
+title: AktivitetRequest
+x-stoplight:
+  id: 0aii9qyw5guig
+type: object
+description: Requestobjekt for å opprette en aktivitet
+properties:
+  aktivitetstype:
+    $ref: ../kodeverk/Aktivitetstype.yaml
+    x-stoplight:
+      id: lg8z2plb2ok2v
+  verdikjede:
+    $ref: ../kodeverk/Verdikjede.yaml
+    x-stoplight:
+      id: vvz6sqqxqerso
+  art:
+    $ref: ../kodeverk/Art.yaml
+    x-stoplight:
+      id: 8pm4xhd7joyis
+  kunnskap:
+    type: array
+    x-stoplight:
+      id: kay05wf3exp3t
+    items:
+      $ref: ../kodeverk/Kunnskap.yaml
+      x-stoplight:
+        id: wilqdbd8095we
+  antallArrErfaring:
+    type: integer
+    x-stoplight:
+      id: 9h4yugvm5vftz
+    format: int32
+  kunnskapAnnen:
+    type: string
+    x-stoplight:
+      id: x72ktttxx4g5s
+  kurs:
+    x-stoplight:
+      id: u4ovq7zi1bfnf
+    type: array
+    items:
+      $ref: ../kodeverk/Kurs.yaml
+      x-stoplight:
+        id: msobne99fbmbk
+required:
+  - aktivitetstype
+  - verdikjede
+  - art
+  - antallArrErfaring

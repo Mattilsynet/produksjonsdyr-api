@@ -24,28 +24,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                anleggstype:
-                  $ref: ../models/kodeverk/Hovedtype.yaml
-                visningsnavn:
-                  type: string
-                  x-stoplight:
-                    id: nd681ixi328dl
-                risikofaktorer:
-                  x-stoplight:
-                    id: 74pcjsebwlh49
-                  type: array
-                  items:
-                    $ref: ../models/kodeverk/Risikofaktor.yaml
-                steder:
-                  type: array
-                  x-stoplight:
-                    id: u1akmq26f2y8h
-                  items:
-                    $ref: ../models/Produksjonsplass/StedRequest.yaml
-              required:
-                - anleggstype
+              $ref: ../models/Produksjonsplass/AnleggRequest.yaml
             examples: {}
   '/anlegg/{anleggid}/sted':
     parameters:
@@ -89,7 +68,7 @@ paths:
         required: true
     get:
       summary: ''
-      operationId: get-anlegg-anleggid-sted---copy
+      operationId: get-anlegg-anleggid-sted
       responses:
         '200':
           description: OK

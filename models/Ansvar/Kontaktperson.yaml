@@ -17,14 +17,10 @@ properties:
     x-stoplight:
       id: gcbvajxm4yz4j
     format: int64
-  fornavn:
+  navn:
     type: string
     x-stoplight:
       id: ecbvlpvcpz263
-  etternavn:
-    type: string
-    x-stoplight:
-      id: gqcpq2rhogmwk
   telefonnummer:
     type: string
     x-stoplight:
@@ -42,6 +38,5 @@ properties:
       x-stoplight:
         id: v1587inp0s1m0
 required:
-  - fornavn
-  - etternavn
+  - navn
   - telefonnummer

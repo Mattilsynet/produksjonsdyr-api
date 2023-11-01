@@ -1,0 +1,21 @@
+title: AnleggRequest
+x-stoplight:
+  id: npugvwu6qu3gq
+type: object
+description: Requestobjekt for å opprette et anlegg
+properties:
+  anleggstype:
+    $ref: ../kodeverk/Hovedtype.yaml
+    x-stoplight:
+      id: iezqgizqvxttu
+  steder:
+    type: array
+    x-stoplight:
+      id: uonck1wwz31sd
+    items:
+      $ref: ./StedRequest.yaml
+      x-stoplight:
+        id: 44qdrk7jc4h1s
+required:
+  - anleggstype
+  - steder
