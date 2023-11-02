@@ -12,16 +12,6 @@ properties:
     minimum: 0
     x-stoplight:
       id: gb2qhwya7hrfi
-  registreringsDatoFasilitet:
-    type: string
-    format: date
-    x-stoplight:
-      id: 3q69gnwzotrgg
-  opphørsDatoFasilitet:
-    type: string
-    format: date
-    x-stoplight:
-      id: 5sqp2fo5czxp7
   kategori:
     $ref: ../kodeverk/Kategori.yaml
     x-stoplight:
@@ -30,10 +20,6 @@ properties:
     $ref: ../kodeverk/Aktivitetstype.yaml
     x-stoplight:
       id: rsossdekzamjz
-  kapasitet:
-    $ref: ../kodeverk/Kapasitet.yaml
-    x-stoplight:
-      id: pvgjtmlqhy40b
   verdikjede:
     $ref: ../kodeverk/Verdikjede.yaml
     x-stoplight:
@@ -42,18 +28,26 @@ properties:
     $ref: ../kodeverk/Oppstalling.yaml
     x-stoplight:
       id: oc07ymz8pk5qe
+  kapasitet:
+    $ref: ../kodeverk/Kapasitet.yaml
+    x-stoplight:
+      id: pvgjtmlqhy40b
   stussMontert:
     type: boolean
     x-stoplight:
       id: r090sygibdogu
-  tilgangUteareal:
-    type: boolean
-    x-stoplight:
-      id: kwex8vik24dzc
   planlagtAntallDyr:
     $ref: ../kodeverk/PlanlagtAntall.yaml
     x-stoplight:
       id: e8q9wgoabnyj7
+  planlagtDrift:
+    $ref: ../kodeverk/Driftsperiode.yaml
+    x-stoplight:
+      id: 4ccog1nwvybyf
+  tilgangUteareal:
+    type: boolean
+    x-stoplight:
+      id: kwex8vik24dzc
   aktiviteter:
     type: array
     x-stoplight:
@@ -69,8 +63,8 @@ properties:
 required:
   - kategori
   - aktivitetstype
-  - kapasitet
   - verdikjede
   - oppstalling
+  - kapasitet
   - stussMontert
   - tilgangUteareal

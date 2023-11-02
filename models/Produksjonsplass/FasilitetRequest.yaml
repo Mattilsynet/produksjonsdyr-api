@@ -32,20 +32,10 @@ properties:
     $ref: ../kodeverk/PlanlagtAntall.yaml
     x-stoplight:
       id: l1999rc8lq0w8
-  kontinuerligDrift:
+  planlagtDrift:
     type: boolean
     x-stoplight:
       id: 7ygydl3mctve5
-  driftsperiodeStart:
-    type: string
-    x-stoplight:
-      id: fgm1n559w03qw
-    format: date
-  driftsperiodeSlutt:
-    type: string
-    x-stoplight:
-      id: mv4lc1ebu8i9r
-    format: date
   maksimalDyretetthet:
     $ref: ../kodeverk/Dyretetthet.yaml
     x-stoplight:
@@ -61,5 +51,5 @@ required:
   - verdikjede
   - oppstalling
   - kapasitet
-  - kontinuerligDrift
+  - planlagtDrift
   - aktivitetReferanseId

@@ -1,0 +1,22 @@
+title: Driftsperiode
+x-stoplight:
+  id: goafi90vrl2n1
+type: object
+properties:
+  driftsperiodeStart:
+    type: string
+    x-stoplight:
+      id: 0m77wg7etgn6h
+    format: date
+  driftsperiodeStop:
+    type: string
+    x-stoplight:
+      id: w3rt0hlw1744b
+    format: date
+  kontinuerligDrift:
+    type: boolean
+    x-stoplight:
+      id: 7w02685q6pz8f
+required:
+  - kontinuerligDrift
+description: 'Angir om det er kontinuerlig drift hele året. Hvis ikke, angis start og stop dato'
