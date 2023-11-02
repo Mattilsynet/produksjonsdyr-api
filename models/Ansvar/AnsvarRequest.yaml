@@ -19,6 +19,13 @@ properties:
       id: wdu73wuhuo01w
     description: samme som kategori
   aktiviteter:
-    $ref: ./AktivitetRequest.yaml
     x-stoplight:
       id: zhn6p8grk44bz
+    type: array
+    items:
+      $ref: ./AktivitetRequest.yaml
+      x-stoplight:
+        id: m6icf1urupvqu
+required:
+  - ansvarskategori
+  - ansvarstype

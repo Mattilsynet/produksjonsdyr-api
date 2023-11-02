@@ -12,16 +12,6 @@ properties:
     minimum: 0
     x-stoplight:
       id: gb2qhwya7hrfi
-  registreringsDatoFasilitet:
-    type: string
-    format: date
-    x-stoplight:
-      id: 3q69gnwzotrgg
-  opphørsDatoFasilitet:
-    type: string
-    format: date
-    x-stoplight:
-      id: 5sqp2fo5czxp7
   kategori:
     $ref: ../kodeverk/Kategori.yaml
     x-stoplight:
@@ -30,37 +20,34 @@ properties:
     $ref: ../kodeverk/Aktivitetstype.yaml
     x-stoplight:
       id: rsossdekzamjz
-  kapasitet:
-    type: integer
-    format: int64
-    x-stoplight:
-      id: pvgjtmlqhy40b
-    minimum: 0
   verdikjede:
     $ref: ../kodeverk/Verdikjede.yaml
     x-stoplight:
       id: 7pne81dqlrekg
-  kapasitetBenevning:
-    $ref: ../kodeverk/MengdeBenevning.yaml
-    x-stoplight:
-      id: viun04oags1km
   oppstalling:
     $ref: ../kodeverk/Oppstalling.yaml
     x-stoplight:
       id: oc07ymz8pk5qe
+  kapasitet:
+    $ref: ../kodeverk/Kapasitet.yaml
+    x-stoplight:
+      id: pvgjtmlqhy40b
   stussMontert:
     type: boolean
     x-stoplight:
       id: r090sygibdogu
+  planlagtAntallDyr:
+    $ref: ../kodeverk/PlanlagtAntall.yaml
+    x-stoplight:
+      id: e8q9wgoabnyj7
+  planlagtDrift:
+    $ref: ../kodeverk/Driftsperiode.yaml
+    x-stoplight:
+      id: 4ccog1nwvybyf
   tilgangUteareal:
     type: boolean
     x-stoplight:
       id: kwex8vik24dzc
-  planlagtAntallDyr:
-    type: integer
-    x-stoplight:
-      id: e8q9wgoabnyj7
-    format: int64
   aktiviteter:
     type: array
     x-stoplight:
@@ -69,12 +56,15 @@ properties:
       x-stoplight:
         id: 8641o8c3wo799
       type: integer
+  maksimalDyretetthet:
+    type: string
+    x-stoplight:
+      id: gdtt71dji0dlq
 required:
   - kategori
   - aktivitetstype
-  - kapasitet
   - verdikjede
-  - kapasitetBenevning
   - oppstalling
+  - kapasitet
   - stussMontert
   - tilgangUteareal

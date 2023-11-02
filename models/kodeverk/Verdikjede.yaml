@@ -8,7 +8,7 @@ properties:
     type: string
     enum:
       - KONSUMEGG
-      - SLAKTEFJØRFE
+      - SLAKTEFJORFE
       - SMASKALA_OG_HOBBY
       - GJENOPPBYGGE_FUGLEVILTBESTAND
     description: Beskriver hvilket regelverk som gjelder

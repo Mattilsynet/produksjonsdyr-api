@@ -1,0 +1,19 @@
+title: PlanlagtAntall
+x-stoplight:
+  id: 6u8niu6sa9rbu
+type: object
+properties:
+  benevning:
+    x-stoplight:
+      id: 1umfpanpodwrf
+    enum:
+      - ANTALL_DYR
+      - ANTALL_RUGEEGG
+  antall:
+    type: integer
+    x-stoplight:
+      id: 4e7yr4rc10fd5
+    format: int64
+required:
+  - benevning
+  - antall

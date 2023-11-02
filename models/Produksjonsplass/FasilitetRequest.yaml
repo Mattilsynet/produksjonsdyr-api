@@ -16,70 +16,40 @@ properties:
     $ref: ../kodeverk/Verdikjede.yaml
     x-stoplight:
       id: 9y4q7wofg4rst
-  art:
-    $ref: ../kodeverk/Art.yaml
-    x-stoplight:
-      id: 3ikz1l1i6ur0d
-    description: 'Art lagres ikke på en fasislitet, men brukes for å avklare hvilken aktivitet fasisliteten er knyttet mot'
-  kapasitet:
-    type: integer
-    x-stoplight:
-      id: 2tsuwq43m5ilk
-    format: int64
-  kapasitetsbenevning:
-    $ref: ../kodeverk/MengdeBenevning.yaml
-    x-stoplight:
-      id: ns067aybwl52e
   oppstalling:
     $ref: ../kodeverk/Oppstalling.yaml
     x-stoplight:
       id: 9o56bw6i9zmhy
-  oppstallingAnnet:
-    type: string
+  kapasitet:
+    $ref: ../kodeverk/Kapasitet.yaml
     x-stoplight:
-      id: t5o7lv9x1xkgd
+      id: 8xue6zuab07lm
   stussMontert:
     type: boolean
     x-stoplight:
       id: ziqwf9b4c5220
   planlagtAntallDyr:
-    type: integer
+    $ref: ../kodeverk/PlanlagtAntall.yaml
     x-stoplight:
       id: l1999rc8lq0w8
-    format: int64
-  aktiviteter:
-    type: array
-    x-stoplight:
-      id: kwks8w5dj3ost
-    items:
-      x-stoplight:
-        id: c1mi86d0dzr4j
-      type: integer
-      format: int64
-  kontinuerligDrift:
-    type: boolean
+  planlagtDrift:
+    $ref: ../kodeverk/Driftsperiode.yaml
     x-stoplight:
       id: 7ygydl3mctve5
-  driftsperiodeStart:
-    type: string
-    x-stoplight:
-      id: fgm1n559w03qw
-    format: date
-  driftsperiodeSlutt:
-    type: string
-    x-stoplight:
-      id: mv4lc1ebu8i9r
-    format: date
   maksimalDyretetthet:
     $ref: ../kodeverk/Dyretetthet.yaml
     x-stoplight:
       id: t9mbywlbm66l1
+  aktivitetReferanseId:
+    type: string
+    x-stoplight:
+      id: 01acwlvjqg3hx
+    description: Referanse til aktiviteten som skjer på denne fasiliteten. Denne id-en er ikke persistent.
 required:
   - kategori
   - aktivitetstype
   - verdikjede
-  - art
-  - kapasitet
-  - kapasitetsbenevning
   - oppstalling
-  - kontinuerligDrift
+  - kapasitet
+  - planlagtDrift
+  - aktivitetReferanseId

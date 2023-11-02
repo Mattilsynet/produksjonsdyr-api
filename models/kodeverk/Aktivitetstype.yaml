@@ -2,11 +2,12 @@ title: Aktivitetstype
 x-stoplight:
   id: ktntjfwtws3xj
 type: object
+description: Beskriver hva slags produksjon som utøves for et dyrehold. Man kan kun sende inn for en type dyrehold av gangen. Kombinasjon av fler vil feile.
 properties:
   aktivitetstypeFugler:
     type: string
     enum:
-      - RUGEEGG
+      - RUGERI
       - RUGEEGG-BESTEFORELDREDYR
       - RUGEEGG-FORELDREDYR
       - KONSUMEGG
@@ -22,4 +23,3 @@ properties:
       - MELKEKYR
     x-stoplight:
       id: ez25vgmejqr9o
-description: Beskriver hva slags produksjon som utøves for et dyrehold. Man kan kun sende inn for en type dyrehold av gangen. Kombinasjon av fler vil feile.
