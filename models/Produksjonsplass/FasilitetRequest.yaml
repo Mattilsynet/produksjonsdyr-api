@@ -33,7 +33,7 @@ properties:
     x-stoplight:
       id: l1999rc8lq0w8
   planlagtDrift:
-    type: boolean
+    $ref: ../kodeverk/Driftsperiode.yaml
     x-stoplight:
       id: 7ygydl3mctve5
   maksimalDyretetthet:
