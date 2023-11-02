@@ -4,14 +4,10 @@ x-stoplight:
 type: object
 description: Requestobjekt for å opprette en kontaktperson
 properties:
-  fornavn:
+  navn:
     type: string
     x-stoplight:
       id: emrgzfp4w8s88
-  etternavn:
-    type: string
-    x-stoplight:
-      id: kjren9iyqrpk2
   telefonnummer:
     type: string
     x-stoplight:
@@ -29,8 +25,7 @@ properties:
       x-stoplight:
         id: 0qkk08ok4wlwv
 required:
-  - fornavn
-  - etternavn
+  - navn
   - telefonnummer
   - epostadresse
   - rolle
