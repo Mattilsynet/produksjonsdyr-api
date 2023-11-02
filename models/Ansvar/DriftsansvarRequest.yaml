@@ -35,5 +35,3 @@ properties:
 required:
   - eksternId
   - typeEksternId
-  - kontaktpersoner
-  - ansvar

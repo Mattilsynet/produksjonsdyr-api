@@ -29,4 +29,3 @@ properties:
 required:
   - ansvarskategori
   - ansvarstype
-  - aktiviteter
