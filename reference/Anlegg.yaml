@@ -189,5 +189,29 @@ paths:
                     id: pz7rbfny5651m
                   format: int64
       description: Kobler sammen et anlegg med driftsansvar. Dette gjøres på nivået aktivitet og fasilitet fordi en aktivitet knyttes mot dyrerommet aktiviteten foregår i.
+  '/anlegg/{tilsynsobjektid}':
+    parameters:
+      - schema:
+          type: string
+        name: tilsynsobjektid
+        in: path
+        required: true
+        description: referanse til tilsynsobjektet i MATS
+    get:
+      summary: Hent anlegg for tilsynsobjekt
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../models/Produksjonsplass/Anlegg.yaml
+        '404':
+          description: Not Found
+      operationId: get-anlegg-tilsynsobjektid
+      x-stoplight:
+        id: mjumj33ruegb1
+      description: 'Henter anlegg som er knyttet til angitt tilsynsobjektid. Dette er en referanse til MATS. '
 components:
   schemas: {}
