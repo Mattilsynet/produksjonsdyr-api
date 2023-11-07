@@ -189,7 +189,7 @@ paths:
                     id: pz7rbfny5651m
                   format: int64
       description: Kobler sammen et anlegg med driftsansvar. Dette gjøres på nivået aktivitet og fasilitet fordi en aktivitet knyttes mot dyrerommet aktiviteten foregår i.
-  '/anlegg/{tilsynsobjektid}':
+  '/anlegg/tilsynsobjekt/{tilsynsobjektid}':
     parameters:
       - schema:
           type: string
@@ -206,7 +206,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../models/Produksjonsplass/Anlegg.yaml
+                type: array
+                items:
+                  $ref: ../models/Produksjonsplass/Anlegg.yaml
         '404':
           description: Not Found
       operationId: get-anlegg-tilsynsobjektid

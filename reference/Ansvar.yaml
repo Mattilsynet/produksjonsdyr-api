@@ -255,7 +255,7 @@ paths:
             application/json:
               schema:
                 $ref: ../models/Ansvar/Aktivitet.yaml
-  '/driftsansvar/ansvar/{tilsynsobjektid}':
+  '/driftsansvar/ansvar/tilsynsobjekt/{tilsynsobjektid}':
     parameters:
       - schema:
           type: string
