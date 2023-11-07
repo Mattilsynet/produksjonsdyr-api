@@ -97,6 +97,21 @@ paths:
       responses:
         '200':
           description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  driftsansvarId:
+                    type: integer
+                    x-stoplight:
+                      id: mtasesm1ng5li
+                    format: int64
+                  anleggId:
+                    type: integer
+                    x-stoplight:
+                      id: nugyawfk3anwb
+                    format: int64
       x-stoplight:
         id: 7uvkr44wr4d4v
       requestBody:
