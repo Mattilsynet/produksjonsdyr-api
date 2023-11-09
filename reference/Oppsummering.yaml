@@ -128,5 +128,10 @@ paths:
                 - driftsansvar
                 - anlegg
       description: ''
+      parameters:
+        - schema:
+            type: string
+          in: header
+          name: Authorization
 components:
   schemas: {}
