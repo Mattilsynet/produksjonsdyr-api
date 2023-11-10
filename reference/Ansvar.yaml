@@ -275,12 +275,6 @@ paths:
                 $ref: ../models/Ansvar/Driftsansvarlig.yaml
         '404':
           description: Not Found
-        '':
-          content:
-            application/json:
-              schema:
-                type: object
-                properties: {}
       operationId: get-driftsansvar-tilsynsobjektid
       x-stoplight:
         id: iqu4ok9cmt8s5
