@@ -255,7 +255,7 @@ paths:
             application/json:
               schema:
                 $ref: ../models/Ansvar/Aktivitet.yaml
-  '/driftsansvar/ansvar/tilsynsobjekt/{tilsynsobjektid}':
+  '/driftsansvar/tilsynsobjekt/{tilsynsobjektid}':
     parameters:
       - schema:
           type: string
@@ -264,7 +264,7 @@ paths:
         required: true
         description: tilsynsobjektid i MATS
     get:
-      summary: Hent ansvar for tilsynsobjekt
+      summary: Hent driftsansvarlig for tilsynsobjekt
       tags: []
       responses:
         '200':
@@ -272,12 +272,12 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../models/Ansvar/Ansvar.yaml
+                $ref: ../models/Ansvar/Driftsansvarlig.yaml
         '404':
           description: Not Found
-      operationId: get-driftsansvar-ansvar-tilsynsobjektid
+      operationId: get-driftsansvar-tilsynsobjektid
       x-stoplight:
         id: iqu4ok9cmt8s5
-      description: Henter ut ansvar for angitt tilsynsobjekt. Tilsynsobjekt er knytningen mot MATS
+      description: Henter ut driftsansvarlig for angitt tilsynsobjekt. Tilsynsobjekt er knytningen mot MATS
 components:
   schemas: {}
