@@ -9,6 +9,6 @@ properties:
     enum:
       - senterpunkt
       - omriss
-      - besøkspunkt
+      - besokspunkt
 required:
   - stedKategori
