@@ -14,3 +14,10 @@ properties:
     description: Beskriver hvilket regelverk som gjelder
     x-stoplight:
       id: 181m6f1xn5flt
+  verdikjedeSvin:
+    x-stoplight:
+      id: n9td6fs2ir4vp
+    enum:
+      - Slaktegris
+      - Hobbygris
+      - Annet

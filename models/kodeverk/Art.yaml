@@ -20,5 +20,12 @@ properties:
     example: HONS
     x-stoplight:
       id: dm0r55xjp8eql
+  svinArt:
+    x-stoplight:
+      id: 3ia7qaeivcpgu
+    enum:
+      - BACONGRIS
+      - KOSEGRIS
+      - RIBBEDYR
 required:
   - fugleArt

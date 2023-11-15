@@ -23,3 +23,10 @@ properties:
       - MELKEKYR
     x-stoplight:
       id: ez25vgmejqr9o
+  aktivitetstypeSvin:
+    x-stoplight:
+      id: y7xobea4y1pgo
+    enum:
+      - SVIN-SMAGRIS
+      - SVIN-SLAKTEGRIS
+      - SVIN-ANNET
