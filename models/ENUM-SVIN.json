@@ -1,0 +1,46 @@
+{
+  "title": "ENUM-SVIN",
+  "x-stoplight": {
+    "id": "laiz6wxj4l9ac"
+  },
+  "type": "object",
+  "minProperties": 0,
+  "properties": {
+    "id": {
+      "x-stoplight": {
+        "id": "q63390wa1mkhl"
+      },
+      "enum": [
+        "SVIN-SMAAGRIS",
+        "SVIN-SLAKTEGRIS",
+        "SVIN-HOBBY"
+      ]
+    },
+    "egenskaper": {
+      "x-stoplight": {
+        "id": "mu01my3xtwchz"
+      },
+      "type": "object",
+      "properties": {
+        "pretty": {
+          "type": "string",
+          "x-stoplight": {
+            "id": "c5j4ptft20p6v"
+          }
+        },
+        "hjelpetekst": {
+          "type": "string",
+          "x-stoplight": {
+            "id": "uyxm50faervll"
+          }
+        },
+        "id": {
+          "type": "string",
+          "x-stoplight": {
+            "id": "2pp5wo3a7lw8x"
+          }
+        }
+      }
+    }
+  }
+}
