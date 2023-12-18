@@ -46,6 +46,14 @@ properties:
     x-stoplight:
       id: hjs51qpxzpzop
     description: Ikke persistent referanse som benyttes av fasilitetRequest til å knytte disse objektene sammen
+  salgTilPrivate:
+    type: array
+    x-stoplight:
+      id: zh9xpdh9urfnk
+    items:
+      $ref: ../kodeverk/Privatesalg.yaml
+      x-stoplight:
+        id: 8n0f62ojf7lnu
 required:
   - aktivitetstype
   - verdikjede
