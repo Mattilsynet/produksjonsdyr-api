@@ -45,7 +45,7 @@ properties:
       $ref: ../kodeverk/Kurs.yaml
       x-stoplight:
         id: rkohhyo81jxpd
-  salgTilPrivat:
+  salgTilPrivate:
     type: array
     x-stoplight:
       id: 1xx0zhyntjvwy
