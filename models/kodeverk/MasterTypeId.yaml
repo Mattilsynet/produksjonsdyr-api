@@ -9,9 +9,9 @@ properties:
     x-stoplight:
       id: n669cl40l6hic
     enum:
-      - bygningsnummer
-      - teigid
-      - lokalid
+      - BYGNINGSNUMMER
+      - TEIGID
+      - LOKALID
     description: Beskriver hvilket felt i mastersystemet verdien er hentet fra.
 required:
   - masterTypeId
