@@ -7,8 +7,8 @@ properties:
   stedKategori:
     type: string
     enum:
-      - senterpunkt
-      - omriss
-      - besokspunkt
+      - SENTERPUNKT
+      - OMRISS
+      - BESOKSPUNKT
 required:
   - stedKategori
