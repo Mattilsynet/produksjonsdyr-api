@@ -1,8 +1,8 @@
-title: Risikofaktor
+title: Privatsalg
 x-stoplight:
   id: 4q9u4y7erhoks
 type: object
-description: Risikofaktor er tilleggsinformasjon til et anlegg som beskriver noe som kan påvirke f.eks. risiko for smitte
+description: Faktorer som Mattilsynet er interessert i
 properties:
   type:
     x-stoplight:

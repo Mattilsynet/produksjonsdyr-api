@@ -45,6 +45,14 @@ properties:
       $ref: ../kodeverk/Kurs.yaml
       x-stoplight:
         id: rkohhyo81jxpd
+  salgTilPrivate:
+    type: array
+    x-stoplight:
+      id: 1xx0zhyntjvwy
+    items:
+      $ref: ../kodeverk/PrivatSalg.yaml
+      x-stoplight:
+        id: xppvilwfykab7
 required:
   - aktivitetstype
   - verdikjede
