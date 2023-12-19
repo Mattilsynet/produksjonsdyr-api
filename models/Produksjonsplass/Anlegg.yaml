@@ -21,14 +21,6 @@ properties:
     type: string
     x-stoplight:
       id: aqmj9x368p5hm
-  risikofaktorer:
-    x-stoplight:
-      id: nkrxfvgqjhlb3
-    type: array
-    items:
-      $ref: ../kodeverk/Risikofaktor.yaml
-      x-stoplight:
-        id: cag5szvbsu89q
   steder:
     x-stoplight:
       id: v2ywv03pld0i6

@@ -51,7 +51,7 @@ properties:
     x-stoplight:
       id: zh9xpdh9urfnk
     items:
-      $ref: ../kodeverk/Privatesalg.yaml
+      $ref: ../kodeverk/PrivatSalg.yaml
       x-stoplight:
         id: 8n0f62ojf7lnu
 required:
