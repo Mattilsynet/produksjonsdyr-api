@@ -12,6 +12,8 @@ x-examples:
     komponentid: komp2342
     endretdato: 12.11.2023
     datajson: '[{"id": 1, "navn": "rugeegg", "verdikjede": "konsumegg", "art": "hons", "kunnskap": {"id": 1, "tekst": "kurs"}]'
+x-tags:
+  - Skjemakomponent
 properties:
   id:
     type: integer
@@ -49,10 +51,23 @@ properties:
     x-stoplight:
       id: 8tr7i0ttv0lh0
     example: 12.11.2023
+    description: Dato for siste endring av skjemaet
+  endretnavn:
+    type: string
+    x-stoplight:
+      id: r54kjclfbtoco
+    description: Navn på person som gjorde siste endringer på skjema
+  status:
+    x-stoplight:
+      id: eb63s5tgz1ht6
+    enum:
+      - Påbegynt
+      - Innsendt
+      - Slettet
+    description: Status som kan brukes av frontend for å avgjøre som skjemaet skal vises eller ikke
   datajson:
     type: string
     x-stoplight:
       id: el5oeas97rbtc
     example: '[{"id": 1, "navn": "rugeegg", "verdikjede": "konsumegg", "art": "hons", "kunnskap": {"id": 1, "tekst": "kurs"}]'
-x-tags:
-  - Skjemakomponent
+    description: JSON struktur som inneholder data frontend bruker til å holde data for skjemaet
