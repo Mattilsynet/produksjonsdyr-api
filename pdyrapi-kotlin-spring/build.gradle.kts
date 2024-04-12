@@ -44,7 +44,8 @@ openapiSpecs.forEach {
 	tasks.create("openApiGenerate-${it.key}", org.openapitools.generator.gradle.plugin.tasks.GenerateTask::class) {
 		ignoreFileOverride.set("$rootDir/.openapi-generator-ignore")
 		generatorName.set("kotlin-spring")
-		additionalProperties.set(mapOf("apiFirst" to "true"))
+		additionalProperties.set(mapOf("apiFirst" to "true",
+                "removeEnumValuePrefix" to "false"))
 		inputSpec.set("$rootDir/${it.value}")
 		outputDir.set("$buildDir/generated")
 		apiPackage.set("no.mattilsynet.api")
