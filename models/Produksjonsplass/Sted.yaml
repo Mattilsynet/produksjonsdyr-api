@@ -6,10 +6,9 @@ x-tags:
   - Sted
 description: Sted beskriver et geografisk område som er en del av en produksjonsplass. Stedet skal beskrives med en kartrefferanse (geom).
 properties:
-  stedId:
-    type: integer
-    format: int64
-    minimum: 0
+  id:
+    type: string
+    format: uuid
     x-stoplight:
       id: ixs2rx6uvvz6q
   geom:
@@ -70,7 +69,6 @@ properties:
       x-stoplight:
         id: d86a8hb90bdk3
 required:
-  - stedId
   - geom
   - srid
   - masterId

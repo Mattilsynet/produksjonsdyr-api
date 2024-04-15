@@ -7,8 +7,8 @@ x-tags:
   - Aktør
 properties:
   driftsansvarligId:
-    type: integer
-    format: int64
+    type: string
+    format: uuid
     minimum: 0
     x-stoplight:
       id: vnwba4wfbxofn

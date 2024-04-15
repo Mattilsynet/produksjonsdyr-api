@@ -6,7 +6,7 @@ description: Beskriver ansvaret en driftsansvarlig har for dyr. Dyrehold er et e
 x-tags:
   - Ansvar
 examples:
-  - ansvarId: 0
+  - ansvarId: '11da5016-5b01-4952-8092-71ad76abd550'
     matsTilsynsobjektId: string
     orgnummerUnderenhet: string
     produksjonsplasser:
@@ -41,11 +41,11 @@ examples:
           - kurs: FJOERFEPRODUKSJON
 properties:
   ansvarId:
-    type: integer
+    type: string
     x-stoplight:
       id: rtejkvt35zikr
     minimum: 0
-    format: int64
+    format: uuid
   matsTilsynsobjektId:
     type: string
     x-stoplight:
