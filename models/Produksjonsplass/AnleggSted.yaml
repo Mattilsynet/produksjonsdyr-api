@@ -5,7 +5,8 @@ type: object
 description: Requestobjekt for å opprette et sted på et anlegg.
 properties:
   id:
-    type: integer
+    type: string
+    format: uuid
     x-stoplight:
       id: ndf4ucb2727h7
   geom:
@@ -53,8 +54,7 @@ properties:
     items:
       x-stoplight:
         id: l99k8vytn2y5v
-      type: integer
-      format: int64
+      $ref: ./Fasilitet.yaml
 required:
   - geom
   - srid

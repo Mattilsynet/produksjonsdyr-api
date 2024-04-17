@@ -4,7 +4,7 @@ x-stoplight:
 type: object
 description: En kontaktperson som er tilknyttet ansvaret og som Mattilsynet kan kontakte.
 examples:
-  - id: 0
+  - id: '11da5016-5b01-4952-8092-71ad76abd550'
     fornavn: Per
     etternavn: Fuglerud
     telefonnummer: '99887766'
@@ -13,10 +13,10 @@ examples:
       - roller: EIER
 properties:
   id:
-    type: integer
+    type: string
     x-stoplight:
       id: gcbvajxm4yz4j
-    format: int64
+    format: uuid
   navn:
     type: string
     x-stoplight:

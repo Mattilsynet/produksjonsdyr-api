@@ -28,7 +28,7 @@ properties:
     type: boolean
     x-stoplight:
       id: ziqwf9b4c5220
-  planlagtAntallDyr:
+  planlagtAntall:
     $ref: ../kodeverk/PlanlagtAntall.yaml
     x-stoplight:
       id: l1999rc8lq0w8

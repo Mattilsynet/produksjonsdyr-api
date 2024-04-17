@@ -6,10 +6,9 @@ description: Beskriver hva produksjonsplassen er tilrettelangt for og hvilken ut
 x-tags:
   - Fasilitet
 properties:
-  fasilitetID:
-    type: integer
-    format: int64
-    minimum: 0
+  id:
+    type: string
+    format: uuid
     x-stoplight:
       id: gb2qhwya7hrfi
   kategori:
@@ -36,7 +35,7 @@ properties:
     type: boolean
     x-stoplight:
       id: r090sygibdogu
-  planlagtAntallDyr:
+  planlagtAntall:
     $ref: ../kodeverk/PlanlagtAntall.yaml
     x-stoplight:
       id: e8q9wgoabnyj7
@@ -44,10 +43,6 @@ properties:
     $ref: ../kodeverk/Driftsperiode.yaml
     x-stoplight:
       id: 4ccog1nwvybyf
-  tilgangUteareal:
-    type: boolean
-    x-stoplight:
-      id: kwex8vik24dzc
   aktiviteter:
     type: array
     x-stoplight:
@@ -55,11 +50,7 @@ properties:
     items:
       x-stoplight:
         id: 8641o8c3wo799
-      type: integer
-  maksimalDyretetthet:
-    type: string
-    x-stoplight:
-      id: gdtt71dji0dlq
+      type: string
 required:
   - kategori
   - aktivitetstype
@@ -67,4 +58,3 @@ required:
   - oppstalling
   - kapasitet
   - stussMontert
-  - tilgangUteareal
