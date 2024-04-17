@@ -10,7 +10,7 @@ properties:
     enum:
       - ANTALL_DYR
       - KVADRATMETER
-      - ANTALL_RUGEEGG
+      - ANTALL_RUGEEGG_PER_AAR
   antall:
     type: integer
     x-stoplight:
