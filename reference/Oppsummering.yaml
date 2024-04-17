@@ -133,5 +133,37 @@ paths:
             type: string
           in: header
           name: Authorization
+  /innsending/retryFraLogg:
+    post:
+      summary: Retry innsending av driftsansvar og anlegg(intern)
+      operationId: post-innsending-retry-fra-logg
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  driftsansvarId:
+                    type: integer
+                    format: int64
+                  anleggId:
+                    type: integer
+                    format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                driftsansvar:
+                  $ref: ../models/Ansvar/DriftsansvarRequest.yaml
+                anlegg:
+                  $ref: ../models/Produksjonsplass/AnleggRequest.yaml
+              required:
+                - driftsansvar
+                - anlegg
+      description: ''
 components:
   schemas: {}
