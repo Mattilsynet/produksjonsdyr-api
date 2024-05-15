@@ -18,5 +18,6 @@ properties:
       - HESTEDYR
       - BIER
       - HUMLER
+      - VILTOPPDRETT
 required:
   - dyreholdskategori
