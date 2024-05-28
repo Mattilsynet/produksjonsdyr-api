@@ -133,6 +133,24 @@ paths:
             type: string
           in: header
           name: Authorization
+  /innsending/avsluttdyrehold:
+    post:
+        summary: Avslutt eksisterende dyrehold
+        operationId: post-innsending-avsluttdyrehold
+        responses:
+          '200':
+            description: OK
+        requestBody:
+          content:
+            application/json:
+              schema:
+                  type: object
+                  properties:
+                    avsluttetDyrehold:
+                      $ref: ../models/Produksjonsplass/AvsluttDyreholdRequest.yaml
+                  required:
+                    - avsluttetDyrehold
+        description: 'Avslutter eksisterende dyrehold. Dyreholdet kan være overført til noen andre'
   /innsending/retryFraLogg:
     post:
       summary: Retry innsending av driftsansvar og anlegg(intern)
