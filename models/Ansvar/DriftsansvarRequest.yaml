@@ -1,37 +1,26 @@
 title: DriftsansvarRequest
-x-stoplight:
-  id: 438frbqgmfb3u
 type: object
 description: 'Requestobjekt for å opprette et driftsansvar for privatperson eller organisasjon med tilhørende ansvar, kontaktpersoner og aktiviteter'
 properties:
+  id:
+    type: string
+    format: uuid
   eksternId:
     type: string
-    x-stoplight:
-      id: grak6nslqufwe
     description: |
       Ekstern id er peronnummer hvis driftsansvarlig er en person. Hvis driftsansvarlig er en organisasjons er erkternId et organisasjonsnummer for hovedenheten.
   typeEksternId:
-    x-stoplight:
-      id: i388g2cpnkna4
     enum:
       - PERSONNUMMER
       - ORGANISASJONSNUMMER_HOVEDENHET
   kontaktpersoner:
-    x-stoplight:
-      id: cxx1suxbw3lgz
     type: array
     items:
       $ref: ./KontaktpersonRequest.yaml
-      x-stoplight:
-        id: bomukzfaryo7p
   ansvar:
-    x-stoplight:
-      id: uarem8zfvbb6y
     type: array
     items:
       $ref: ./AnsvarRequest.yaml
-      x-stoplight:
-        id: mlec5v3pltvf7
 required:
   - eksternId
   - typeEksternId

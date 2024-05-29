@@ -1,31 +1,22 @@
 title: AnsvarRequest
-x-stoplight:
-  id: 2pgldv4an2yfg
 type: object
 description: Requestobjekt for å opprette ansvarsområde for et driftsansvar
 properties:
+  id:
+    type: string
+    format: uuid
   orgnummerUnderenhet:
     type: string
-    x-stoplight:
-      id: g9u8h7ff435k9
   ansvarskategori:
     $ref: ../kodeverk/Kategori.yaml
-    x-stoplight:
-      id: r7yrmcvlz9b71
     description: Angir hvilket type dyrehold driftsansvarlig har ansvar for
   ansvarstype:
     $ref: ../kodeverk/Hovedtype.yaml
-    x-stoplight:
-      id: wdu73wuhuo01w
     description: samme som kategori
   aktiviteter:
-    x-stoplight:
-      id: zhn6p8grk44bz
     type: array
     items:
       $ref: ./AktivitetRequest.yaml
-      x-stoplight:
-        id: m6icf1urupvqu
 required:
   - ansvarskategori
   - ansvarstype

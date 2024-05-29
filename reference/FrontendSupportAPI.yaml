@@ -104,6 +104,46 @@ paths:
               schema:
                 type: string
       description: Sletter alle skjema med tilhørende komponenter som er knyttet til eierid
+  '/skjemakomponent/eier/{eierid}/orgnummer/{orgnummer}':
+    parameters:
+      - schema:
+          type: string
+        name: eierid
+        in: path
+        required: true
+      - schema:
+          type: string
+        name: orgnummer
+        in: path
+        required: true
+    get:
+      summary: Henter alle komponenter til angitt eier og orgnummer
+      tags:
+        - Skjemakomponent
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ../models/Skjemakomponent/SkjemaKomponent.yaml
+              examples:
+                Example 1:
+                  value:
+                    - id: 4234234
+                      eierid: org342434
+                      skjemaid: skj3243
+                      skjematype: fjørfehold
+                      komponent: produksjonsform
+                      komponentid: komp2342
+                      endretdato: 12.11.2023
+                      datajson: '[{"id": 1, "navn": "rugeegg", "verdikjede": "konsumegg", "art": "hons", "kunnskap": {"id": 1, "tekst": "kurs"}]'
+        '404':
+          description: Not Found
+      operationId: get-skjemakomponent-eier-eierid-orgnummer-orgnummer
+      description: 'Henter ut alle komponenter som er reigstrert på denne eieren og organisasjonen uavhengig av typeskjema, skjemaid'
   '/skjemakomponent/eier/{eierid}/skjema/{skjemaid}':
     parameters:
       - schema:

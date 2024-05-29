@@ -1,0 +1,17 @@
+title: AvsluttDyreholdRequest
+type: object
+description: Requestobjekt for å avslutte et dyrehold
+properties:
+  anleggstype:
+    $ref: ../kodeverk/Hovedtype.yaml
+  avsluttetAar:
+    type: integer
+    format: int64
+  avsluttetMnd:
+    type: integer
+    format: int64
+  overdratt:
+    type: boolean
+required:
+  - anleggstype
+  - avsluttetAar
