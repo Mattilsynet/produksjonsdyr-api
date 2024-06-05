@@ -8,6 +8,7 @@ properties:
       - GODKJENT_EIER
       - HENTET_FRA_MATS
       - HENTET_FRA_PRODUKSJONSTILSKUDD
+      - BLANDET
     example: HENTET_FRA_MATS
 required:
   - status
