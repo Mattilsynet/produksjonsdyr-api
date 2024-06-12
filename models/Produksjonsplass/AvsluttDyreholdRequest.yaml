@@ -3,7 +3,7 @@ type: object
 description: Requestobjekt for å avslutte et dyrehold
 properties:
   anleggstype:
-    $ref: ../kodeverk/Hovedtype.yaml
+    $ref: ../kodeverk/Kategori.yaml
   avsluttetAar:
     type: integer
     format: int64
@@ -15,3 +15,5 @@ properties:
 required:
   - anleggstype
   - avsluttetAar
+  - avsluttetMnd
+  - overdratt

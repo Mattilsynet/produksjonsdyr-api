@@ -159,6 +159,14 @@ paths:
         responses:
           '200':
             description: OK
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    anleggsnummer:
+                      type: integer
+                      format: int64
         requestBody:
           content:
             application/json:
@@ -167,8 +175,16 @@ paths:
                   properties:
                     avsluttetDyrehold:
                       $ref: ../models/Produksjonsplass/AvsluttDyreholdRequest.yaml
+                    driftsansvar:
+                      $ref: ../models/Ansvar/DriftsansvarRequest.yaml
                   required:
                     - avsluttetDyrehold
+                    - driftsansvar
+        parameters:
+          - schema:
+              type: string
+            in: header
+            name: Authorization
         description: 'Avslutter eksisterende dyrehold. Dyreholdet kan være overført til noen andre'
   /innsending/oppdaterfasilitet:
     post:
