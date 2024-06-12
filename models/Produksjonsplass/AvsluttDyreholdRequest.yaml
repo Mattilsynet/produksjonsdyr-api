@@ -2,6 +2,8 @@ title: AvsluttDyreholdRequest
 type: object
 description: Requestobjekt for å avslutte et dyrehold
 properties:
+  orgnummerUnderenhetFoedselsnummer:
+    type: string
   anleggstype:
     $ref: ../kodeverk/Kategori.yaml
   avsluttetAar:
@@ -16,4 +18,5 @@ required:
   - anleggstype
   - avsluttetAar
   - avsluttetMnd
+  - orgnummerUnderenhetFoedselsnummer
   - overdratt
