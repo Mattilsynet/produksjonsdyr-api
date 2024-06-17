@@ -193,6 +193,14 @@ paths:
       responses:
         '200':
           description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  anleggsnummer:
+                    type: integer
+                    format: int64
       requestBody:
         content:
           application/json:
@@ -201,8 +209,16 @@ paths:
               properties:
                 fasilitet:
                   $ref: ../models/Produksjonsplass/FasilitetRequest.yaml
+                driftsansvar:
+                  $ref: ../models/Ansvar/DriftsansvarRequest.yaml
               required:
                 - fasilitet
+                - driftsansvar
+      parameters:
+        - schema:
+            type: string
+          in: header
+          name: Authorization
       description: 'Oppdaterer fasilitet på eksisterende anlegg'
   /innsending/retryFraLogg:
     post:
