@@ -366,7 +366,7 @@ paths:
         in: path
         required: true
     get:
-      summary: Hent alle skjema-metadata for eier eller orgnummer
+      summary: Hent alle skjema-metadata for orgnummer hvor det finnes et eksisterende anlegg
       tags:
         - Skjemakomponent
       responses:
@@ -379,7 +379,7 @@ paths:
                 items:
                   $ref: ../models/Skjemakomponent/SkjemaMetadata.yaml
       operationId: get-skjemakomponent-eier-eier-orgnummer-orgnummer-skjema
-      description: 'Henter ut liste med alle skjema på en eier, gitt eierid eller organisasjon, evt. filtrert på skjematype'
+      description: 'Henter ut liste med alle skjema gitt en  organisasjon, evt. filtrert på skjematype'
       parameters:
         - schema:
             type: string
