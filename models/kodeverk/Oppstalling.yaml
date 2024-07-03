@@ -11,7 +11,6 @@ properties:
       - LOESDRIFT_MED_UTEAREAL
       - LOESDRIFT_UTEN_UTEAREAL
       - INNREDEDE_BUR
-      - OEKOLOGISK
       - ANNET
   annenOppstalling:
     type: string
