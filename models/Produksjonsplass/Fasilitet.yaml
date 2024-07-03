@@ -31,6 +31,8 @@ properties:
     $ref: ../kodeverk/Kapasitet.yaml
     x-stoplight:
       id: pvgjtmlqhy40b
+  driveOekologisk:
+    type: boolean
   stussMontert:
     type: boolean
     x-stoplight:
