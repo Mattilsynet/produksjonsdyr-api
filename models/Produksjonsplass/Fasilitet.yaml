@@ -17,6 +17,8 @@ properties:
     $ref: ../kodeverk/Oppstalling.yaml
   kapasitet:
     $ref: ../kodeverk/Kapasitet.yaml
+  driveOekologisk:
+    type: boolean
   stussMontert:
     type: boolean
   planlagtAntall:
