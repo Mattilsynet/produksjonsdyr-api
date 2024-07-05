@@ -1,6 +1,4 @@
 openapi: 3.0.0
-x-stoplight:
-  id: o94nyvd1d94mk
 info:
   title: Anlegg
   version: '1.0'
@@ -18,8 +16,6 @@ paths:
             application/json:
               schema:
                 $ref: ../models/Produksjonsplass/Anlegg.yaml
-      x-stoplight:
-        id: f5imxrkvk4mht
       requestBody:
         content:
           application/json:
@@ -44,8 +40,6 @@ paths:
             application/json:
               schema:
                 $ref: ../models/Produksjonsplass/AnleggSted.yaml
-      x-stoplight:
-        id: 5mqb4g6rpdzfy
       requestBody:
         content:
           application/json:
@@ -76,8 +70,6 @@ paths:
             application/json:
               schema:
                 $ref: ../models/Produksjonsplass/Sted.yaml
-      x-stoplight:
-        id: ex3cp7gnmn81g
   '/anlegg/{anleggid}/sted/{stedid}/fasilitet':
     parameters:
       - schema:
@@ -102,8 +94,6 @@ paths:
             application/json:
               schema:
                 $ref: ../models/Produksjonsplass/Fasilitet.yaml
-      x-stoplight:
-        id: ic58hj9ivxw6q
       requestBody:
         content:
           application/json:
@@ -139,8 +129,6 @@ paths:
             application/json:
               schema:
                 $ref: ../models/Produksjonsplass/Fasilitet.yaml
-      x-stoplight:
-        id: evk0z67nfokir
   '/anlegg/{anleggid}':
     parameters:
       - schema:
@@ -160,8 +148,6 @@ paths:
               schema:
                 $ref: ../models/Produksjonsplass/Anlegg.yaml
       operationId: get-anlegg-anleggid
-      x-stoplight:
-        id: lmdmze0vrlhj1
       description: Henter ut et anlegg gitt ressursid til anlegg
   /anleggForAnsvar:
     post:
@@ -170,8 +156,6 @@ paths:
       responses:
         '200':
           description: OK
-      x-stoplight:
-        id: hqfsje45l1wix
       requestBody:
         content:
           application/json:
@@ -180,13 +164,9 @@ paths:
               properties:
                 anleggFasilitetId:
                   type: integer
-                  x-stoplight:
-                    id: 0wm6rhmm0h2xo
                   format: int64
                 ansvarAktivitetId:
                   type: integer
-                  x-stoplight:
-                    id: pz7rbfny5651m
                   format: int64
       description: Kobler sammen et anlegg med driftsansvar. Dette gjøres på nivået aktivitet og fasilitet fordi en aktivitet knyttes mot dyrerommet aktiviteten foregår i.
   '/anlegg/tilsynsobjekt/{tilsynsobjektid}':
@@ -212,8 +192,6 @@ paths:
         '404':
           description: Not Found
       operationId: get-anlegg-tilsynsobjektid
-      x-stoplight:
-        id: mjumj33ruegb1
       description: 'Henter anlegg som er knyttet til angitt tilsynsobjektid. Dette er en referanse til MATS. '
 components:
   schemas: {}

@@ -1,12 +1,8 @@
 title: DatasettMaster
-x-stoplight:
-  id: cp3vk82bqij75
 type: object
 description: 'Angir type data i et datasett man har hentet. F.eks i kartdatasett for bygninger, så har man benyttet bygningsnummer som id. Brukes ved oppdateringer av datasettet.'
 properties:
   masterId:
-    x-stoplight:
-      id: mof3a6qqbv2p3
     enum:
       - bygningsnummer
       - teigid

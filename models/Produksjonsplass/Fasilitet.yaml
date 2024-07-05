@@ -1,6 +1,4 @@
 title: Fasilitet
-x-stoplight:
-  id: 4yg1anlq7jkfg
 type: object
 description: Beskriver hva produksjonsplassen er tilrettelangt for og hvilken utforming produksjonsplassen har. Ofte representert som et dyrerom eller innsiden på et bygg
 x-tags:
@@ -9,47 +7,25 @@ properties:
   id:
     type: string
     format: uuid
-    x-stoplight:
-      id: gb2qhwya7hrfi
   kategori:
     $ref: ../kodeverk/Kategori.yaml
-    x-stoplight:
-      id: vhcdkozu0g0rr
   aktivitetstype:
     $ref: ../kodeverk/Aktivitetstype.yaml
-    x-stoplight:
-      id: rsossdekzamjz
   verdikjede:
     $ref: ../kodeverk/Verdikjede.yaml
-    x-stoplight:
-      id: 7pne81dqlrekg
   oppstalling:
     $ref: ../kodeverk/Oppstalling.yaml
-    x-stoplight:
-      id: oc07ymz8pk5qe
   kapasitet:
     $ref: ../kodeverk/Kapasitet.yaml
-    x-stoplight:
-      id: pvgjtmlqhy40b
   stussMontert:
     type: boolean
-    x-stoplight:
-      id: r090sygibdogu
   planlagtAntall:
     $ref: ../kodeverk/PlanlagtAntall.yaml
-    x-stoplight:
-      id: e8q9wgoabnyj7
   planlagtDrift:
     $ref: ../kodeverk/Driftsperiode.yaml
-    x-stoplight:
-      id: 4ccog1nwvybyf
   aktiviteter:
     type: array
-    x-stoplight:
-      id: yvu313f377o1h
     items:
-      x-stoplight:
-        id: 8641o8c3wo799
       type: string
 required:
   - kategori

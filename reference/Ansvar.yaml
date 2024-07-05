@@ -1,6 +1,4 @@
 openapi: 3.0.0
-x-stoplight:
-  id: d9nffhenkve01
 info:
   title: ansvar
   version: '1.0'
@@ -15,8 +13,6 @@ paths:
         '201':
           description: Created
           content: {}
-      x-stoplight:
-        id: 1kuli5i1sycrh
       requestBody:
         content:
           application/json:
@@ -33,8 +29,6 @@ paths:
             application/json:
               schema:
                 $ref: ../models/Ansvar/Driftsansvarlig.yaml
-      x-stoplight:
-        id: pntgftk8gjyi2
       requestBody:
         content:
           application/json:
@@ -43,8 +37,6 @@ paths:
               properties:
                 foedselsnummer:
                   type: string
-                  x-stoplight:
-                    id: 2q7lydqztdt6w
               required:
                 - foedselsnummer
       description: 'Den som har juridisk ansvar for dyr, ofte eieren, men ikke alltid.'
@@ -60,8 +52,6 @@ paths:
             application/json:
               schema:
                 $ref: ../models/Ansvar/Driftsansvarlig.yaml
-      x-stoplight:
-        id: 0iwuev36xrij9
       requestBody:
         content:
           application/json:
@@ -70,8 +60,6 @@ paths:
               properties:
                 orgnummerHovedenhet:
                   type: string
-                  x-stoplight:
-                    id: 759ior5z46xcn
               required:
                 - orgnummerHovedenhet
       description: 'Den som har juridisk ansvar for dyr, ofte eieren, men ikke alltid.'
@@ -87,8 +75,6 @@ paths:
             application/json:
               schema:
                 $ref: ../models/Ansvar/Kontaktperson.yaml
-      x-stoplight:
-        id: 7af52j9zw3pa6
       requestBody:
         content:
           application/json:
@@ -135,8 +121,6 @@ paths:
             application/json:
               schema:
                 $ref: ../models/Ansvar/Ansvar.yaml
-      x-stoplight:
-        id: wcjwpmzi8daxl
       requestBody:
         content:
           application/json:
@@ -168,8 +152,6 @@ paths:
             application/json:
               schema:
                 $ref: ../models/Ansvar/Aktivitet.yaml
-      x-stoplight:
-        id: 8nc4li9ujbmic
       requestBody:
         content:
           application/json:
@@ -217,8 +199,6 @@ paths:
               schema:
                 $ref: ../models/Ansvar/Ansvar.yaml
       operationId: get-driftsansvar-driftsansvarid-ansvar-ansvarid
-      x-stoplight:
-        id: 6rti7091gj4w9
   '/driftsansvar/{driftsansvarid}/ansvar/{ansvarid}/aktivitet/{aktivitetid}':
     parameters:
       - schema:
@@ -276,8 +256,6 @@ paths:
         '404':
           description: Not Found
       operationId: get-driftsansvar-tilsynsobjektid
-      x-stoplight:
-        id: iqu4ok9cmt8s5
       description: Henter ut driftsansvarlig for angitt tilsynsobjekt. Tilsynsobjekt er knytningen mot MATS
 components:
   schemas: {}

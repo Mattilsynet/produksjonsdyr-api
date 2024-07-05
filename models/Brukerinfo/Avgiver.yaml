@@ -1,6 +1,4 @@
 title: Avgiver
-x-stoplight:
-  id: gkuxvr7pyb26c
 type: object
 description: Beskriver hvem en innlogget bruker kan representere. Hentes fra altinn hentAvgivere. Valgt avgiver vil bli driftsansvarlig i kontekst av registrering av nytt dyrehold.
 examples:
@@ -13,32 +11,18 @@ examples:
     organisasjonsnummerHovedenhet: '311068912'
 properties:
   type:
-    x-stoplight:
-      id: hbtof1fn3qsv5
     enum:
       - PERSON
       - ORGANISASJON
   navn:
     type: string
-    x-stoplight:
-      id: 5d1011kjlgp65
   organisasjonsnummer:
     type: string
-    x-stoplight:
-      id: 9yll32pdsrs4b
   navnHovedenhet:
     type: string
-    x-stoplight:
-      id: bg7xrmdfeogkx
   organisasjonsnummerHovedenhet:
     type: string
-    x-stoplight:
-      id: brrwl2mencnq9
   personId:
     type: string
-    x-stoplight:
-      id: 17hrvdccckz1t
   oppslagspunkt:
     $ref: ./Oppslagspunkt.yaml
-    x-stoplight:
-      id: lon3yavg8im0b

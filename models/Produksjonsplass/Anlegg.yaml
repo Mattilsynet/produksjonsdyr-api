@@ -1,27 +1,15 @@
 title: Anlegg
-x-stoplight:
-  id: 4ydmrihahp2es
 type: object
 description: Anlegg er en betegnelse av et eller flere steder hvor man har eller kan ha dyr. Den skal ha et unikt registreringsnummer som skal unikt identifisere hvor et dyr har oppholdt seg.
 properties:
   id:
     type: string
-    x-stoplight:
-      id: 2hhf2ksasya82
     format: uuid
   anleggsnummer:
     type: string
-    x-stoplight:
-      id: leiuw3zbkbcec
   anleggstype:
     $ref: ../kodeverk/Hovedtype.yaml
-    x-stoplight:
-      id: w9cmyzdmi2z69
   steder:
-    x-stoplight:
-      id: v2ywv03pld0i6
     type: array
     items:
       $ref: ./Sted.yaml
-      x-stoplight:
-        id: q1v2zcntbm80c

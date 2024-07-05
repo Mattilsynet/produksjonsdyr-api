@@ -1,6 +1,4 @@
 title: Kontaktperson
-x-stoplight:
-  id: 2sgc2kkmvo2rj
 type: object
 description: En kontaktperson som er tilknyttet ansvaret og som Mattilsynet kan kontakte.
 examples:
@@ -14,29 +12,17 @@ examples:
 properties:
   id:
     type: string
-    x-stoplight:
-      id: gcbvajxm4yz4j
     format: uuid
   navn:
     type: string
-    x-stoplight:
-      id: ecbvlpvcpz263
   telefonnummer:
     type: string
-    x-stoplight:
-      id: 91pbkxbfsvpqi
   epostadresse:
     type: string
-    x-stoplight:
-      id: mxtim95kaeu7d
   rolle:
     type: array
-    x-stoplight:
-      id: vlcohoyragyer
     items:
       $ref: ../kodeverk/Roller.yaml
-      x-stoplight:
-        id: v1587inp0s1m0
 required:
   - navn
   - telefonnummer

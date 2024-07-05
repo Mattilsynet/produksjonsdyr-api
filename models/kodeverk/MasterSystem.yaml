@@ -1,6 +1,4 @@
 title: MasterSystem
-x-stoplight:
-  id: s3lplisw8y56g
 type: object
 description: Hva er navnet på datasettet eller kildesystemet vi har hentet dataene fra.
 properties:
@@ -11,7 +9,5 @@ properties:
       - NO_KARTVERKET_MATRIKKELEN_TEIG
       - NO_KARTVERKET_MATRIKKELEN_FKB_BYGNING
       - ANNET
-    x-stoplight:
-      id: pc2jdzr83l3c5
 required:
   - masterSystem

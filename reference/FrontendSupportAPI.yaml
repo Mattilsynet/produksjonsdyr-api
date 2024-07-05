@@ -1,13 +1,10 @@
 openapi: 3.0.0
-x-stoplight:
-  id: sqerwwxc1cxui
 info:
   title: FrontendSupportAPI
   version: '1.0'
   description: Api som understøtter frontend
 servers:
   - url: 'http://localhost:3000'
-  - url: 'https://stoplight.io/mocks/mattilsynet/produksjonsdyr-api/382663'
     description: mock
 paths:
   /skjemakomponent:

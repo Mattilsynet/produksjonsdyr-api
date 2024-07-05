@@ -1,12 +1,8 @@
 title: Kunnskap
-x-stoplight:
-  id: 29nry251wvcd9
 type: object
 description: Relevant kunnskap for den aktiviteten man registrer
 properties:
   kunnskap:
-    x-stoplight:
-      id: w1pstpg8lxqba
     enum:
       - UTDANNING
       - KURS

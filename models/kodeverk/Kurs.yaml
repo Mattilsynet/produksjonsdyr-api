@@ -1,12 +1,8 @@
 title: Kurs
-x-stoplight:
-  id: e93ouemx5s5zh
 type: object
 description: Kurs som bonden har gjennomført som er relevant for sitt dyrehold
 properties:
   kurs:
-    x-stoplight:
-      id: 1jrhpcior35uf
     enum:
       - FJOERFEPRODUKSJON
       - DYREVELFERD_FOR_FJOERFE
