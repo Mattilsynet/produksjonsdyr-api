@@ -1,6 +1,4 @@
 title: Hovedtype
-x-stoplight:
-  id: jjf97c8nmvpxi
 x-tags:
   - ansvarstype
   - anleggstype
@@ -9,8 +7,6 @@ description: En sett med verdier som beskriver hovedtyper av ansvar og anlegg.
 properties:
   hovedtype:
     type: string
-    x-stoplight:
-      id: zo7wazx2vi93n
     enum:
       - DYREHOLD
       - AVLSMATERIALE

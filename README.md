@@ -2,7 +2,6 @@
 
 Dette er produksjonsdyrdomenets openapi-spesifikasjon og skal brukes av interne løsninger som i første omgang dreier seg om register over anlegg og ansvar og på sikt av eksterne aktører som trenger tilgang på registerdata om anlegg og ansvar for dyr. 
 
-Bruk gjerne [Stoplight ](https://mattilsynet.stoplight.io/docs/produksjonsdyr-api/5rsqq5op2wjt7-produksjonsdyr), som er utviklerportal for Mattilsynet, for å se på og eventuelt gjøre endringer. 
 
 [Visuell oversikt over domenemodellen](https://github.com/Mattilsynet/pdyr-arkitektur/blob/master/diagrammer/domene-modell-flere-bounded-contexts.drawio.png)
 

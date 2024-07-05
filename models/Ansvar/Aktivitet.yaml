@@ -1,56 +1,30 @@
 title: Aktivitet
-x-stoplight:
-  id: oi1fo2dejxg48
 type: object
 description: Aktivitet beskriver mer detaljert hva man har ansvar for og hva det skal brukes til
 properties:
   id:
     type: string
-    x-stoplight:
-      id: t2z00u2yhdjfi
     format: uuid
   aktivitetstype:
     $ref: ../kodeverk/Aktivitetstype.yaml
-    x-stoplight:
-      id: isqhc9mpgv0fq
   verdikjede:
     $ref: ../kodeverk/Verdikjede.yaml
-    x-stoplight:
-      id: o10989jwewmfg
   art:
     $ref: ../kodeverk/Art.yaml
-    x-stoplight:
-      id: o18h8nk9vafw8
   kunnskap:
     type: array
-    x-stoplight:
-      id: muyanj7p3canl
     items:
       $ref: ../kodeverk/Kunnskap.yaml
-      x-stoplight:
-        id: c75ff7ha97ygh
   kunnskapAnnen:
     type: string
-    x-stoplight:
-      id: sdhl3phnnk7jo
   antallAarsErfaing:
     type: integer
-    x-stoplight:
-      id: 8djtg5agfeqr0
   kurs:
     type: array
-    x-stoplight:
-      id: ilidj4t3eg34m
     items:
       $ref: ../kodeverk/Kurs.yaml
-      x-stoplight:
-        id: rkohhyo81jxpd
   salgTilPrivate:
     type: array
-    x-stoplight:
-      id: 1xx0zhyntjvwy
     items:
       $ref: ../kodeverk/PrivatSalg.yaml
-      x-stoplight:
-        id: xppvilwfykab7
 

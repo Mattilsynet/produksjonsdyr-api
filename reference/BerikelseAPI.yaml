@@ -1,6 +1,4 @@
 openapi: 3.0.0
-x-stoplight:
-  id: bspqaldw4k34q
 info:
   title: BerikelseAPI
   version: '1.0'
@@ -47,8 +45,6 @@ paths:
         '404':
           description: Not Found
       operationId: get-bygning-rektangel
-      x-stoplight:
-        id: suaag2d1kgsft
       description: Henter ut alle bygninger som ligger innenfor angitt rektangel
     parameters:
       - schema:
@@ -128,8 +124,6 @@ paths:
         '404':
           description: Not Found
       operationId: get-bygg-punkt
-      x-stoplight:
-        id: h6gn4in0h1zcd
       description: Gjør et geografisk søk etter de nærmeste bygningene
   '/berikelse/teig/{teigid}':
     parameters:
@@ -152,8 +146,6 @@ paths:
         '404':
           description: Not Found
       operationId: get-teig
-      x-stoplight:
-        id: 1h9c8aea8sobm
       description: Henter ut teigen med angitt teigid fra mastersystem
   '/berikelse/teig/rektangel/{bunnvenstre}/{toppvenstre}/{bunnhoyre}/{topphoyre}/{srid}':
     get:
@@ -172,8 +164,6 @@ paths:
         '404':
           description: Not Found
       operationId: get-teig-rektangel
-      x-stoplight:
-        id: suaag2d1kgsft
       description: Henter ut alle eiendomsteiger som ligger innenfor angitt rektangel
     parameters:
       - schema:
@@ -253,8 +243,6 @@ paths:
         '404':
           description: Not Found
       operationId: get-teig-punkt
-      x-stoplight:
-        id: hjtftbv2epjmg
       description: 'Gjør et geografisk søk etter de nærmeste eiendommene, dvs deres teiger eller anleggsprojeksjonsflate registrert i matrikkelsystemet.'
   '/berikelse/omrade/rektangel/{bunnvenstre}/{toppvenstre}/{bunnhoyre}/{topphoyre}':
     get:
@@ -279,8 +267,6 @@ paths:
         '404':
           description: Not Found
       operationId: get-omrade-rektangel
-      x-stoplight:
-        id: 67ivd1ttq78ys
       description: |-
         Henter ut geografiske områder som berører angitt rektangel. Områdene er typisk bygninger eller eiendommer. 
         Områdene er i srid/koordinatsystem EPSG_3857. 
@@ -333,8 +319,6 @@ paths:
         '404':
           description: Not Found
       operationId: get-omrade-rektangel-teig
-      x-stoplight:
-        id: df1rer7v1edf5
       description: Henter ut teiger som berører angitt rektangel. Områdene er eiendommersteiger fra matrikkelen. Områdene er i srid/koordinatsystem EPSG_3857.  Metoden er tilpasset frontend.
     parameters:
       - schema:
@@ -384,8 +368,6 @@ paths:
         '404':
           description: Not Found
       operationId: get-omrade-rektangel-bygg
-      x-stoplight:
-        id: 8zqkv401c2mjw
       description: Henter ut bygninger som berører angitt rektangel. Områdene er bygniger hentet fra FKB_Bygning.  Områdene er i srid/koordinatsystem EPSG_3857.  Metoden er tilpasset frontend.
     parameters:
       - schema:
@@ -444,8 +426,6 @@ paths:
         '404':
           description: Not Found
       operationId: get-omrade-punkt
-      x-stoplight:
-        id: hjtftbv2epjmg
       description: |-
         Gjør et geografisk søk etter de nærmeste områdene, dvs bygninger eller teiger registrert i matrikkelsystemet.
         Områdene er i srid/koordinatsystem EPSG_3857. 
@@ -482,8 +462,6 @@ paths:
         '404':
           description: Not Found
       operationId: get-omrade-punkt-teig
-      x-stoplight:
-        id: 2eppj30tz7ogy
       description: Gjør et geografisk søk etter de nærmeste teiger registrert i matrikkelsystemet. Områdene er i srid/koordinatsystem EPSG_3857.  Metoden er tilpasset frontend.
   '/berikelse/omrade/punkt/bygg/{nord}/{ost}':
     parameters:
@@ -517,8 +495,6 @@ paths:
         '404':
           description: Not Found
       operationId: get-omrade-punkt-bygg
-      x-stoplight:
-        id: zlgqzx4q1xntt
       description: Gjør et geografisk søk etter de nærmeste bygninger registrert i FKB_Bygning. Områdene er i srid/koordinatsystem EPSG_3857. Metoden er tilpasset frontend.
 tags:
   - name: berikelse

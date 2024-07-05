@@ -1,6 +1,4 @@
 title: Driftsansvarlig
-x-stoplight:
-  id: 89zg7sxme3ytg
 type: object
 description: 'Driftsansvarlig er den som står rettslig til ansvar for dyr, både individer og grupper av dyr. Driftsansvarlig kan enten være et foretak (identifisert med organisasjonsnummer) eller en privatperson (identifisert med fødselsnummer). Driftsansvarlig samsvarer med dagens virksomhetsmappe i MATS.'
 x-tags:
@@ -10,49 +8,29 @@ properties:
     type: string
     format: uuid
     minimum: 0
-    x-stoplight:
-      id: vnwba4wfbxofn
   produsentnummerP10:
     type: string
     description: En identifikator som brukes av bransjen til å identifisere en virksomhet som er koblet til en landbrukseiendom.
   virksomhetsmappeId:
     type: string
-    x-stoplight:
-      id: x5fkix1bbgysq
   orgnummerHovedenhet:
     type: string
-    x-stoplight:
-      id: n0uwg1q4u5lgy
   ansvar:
     type: array
     items:
       $ref: ./Ansvar.yaml
-      x-stoplight:
-        id: ca5w7h5nqzd08
   fodselsnummer:
     type: string
-    x-stoplight:
-      id: ponunieit3yez
   dyreholdId:
     type: string
-    x-stoplight:
-      id: 5x4rh0r0bvyxz
     description: |
       Nummerserie som benyttes av driftsansvarlig for å merke dyr. Tildeles av Mattilsynet.
   validert:
     type: boolean
-    x-stoplight:
-      id: bpl1komruygsf
   createdAt:
     type: string
-    x-stoplight:
-      id: n9i26bfadl1fo
     format: date
   kontaktpersoner:
     type: array
-    x-stoplight:
-      id: s6ntgx36w82yg
     items:
       $ref: ./Kontaktperson.yaml
-      x-stoplight:
-        id: 2l91wsxezfzok

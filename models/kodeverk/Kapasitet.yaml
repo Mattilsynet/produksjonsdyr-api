@@ -1,20 +1,14 @@
 title: Kapasitet
-x-stoplight:
-  id: 33jgqqdp9iwle
 type: object
 description: Beskriver benevning en mengde kan ha. F.eks om et tall er i f.eks kvadratmeter
 properties:
   benevning:
-    x-stoplight:
-      id: 05ucr91rwb1cc
     enum:
       - ANTALL_DYR
       - KVADRATMETER
       - ANTALL_RUGEEGG_PER_AAR
   antall:
     type: integer
-    x-stoplight:
-      id: rc5rlimo30qr5
     format: int64
 required:
   - benevning

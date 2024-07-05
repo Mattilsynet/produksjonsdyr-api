@@ -1,12 +1,8 @@
 title: Privatsalg
-x-stoplight:
-  id: 4q9u4y7erhoks
 type: object
 description: Faktorer som Mattilsynet er interessert i
 properties:
   type:
-    x-stoplight:
-      id: mgnu59bupc74b
     enum:
       - SALG_RUGEEGG
       - SALG_KONSUMEGG

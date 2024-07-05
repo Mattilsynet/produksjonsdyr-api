@@ -1,22 +1,14 @@
 title: Driftsperiode
-x-stoplight:
-  id: goafi90vrl2n1
 type: object
 description: 'Angir om det er kontinuerlig drift hele året. Hvis ikke, angis start og stop måned. Hvor måned angis i månedsnummer.'
 properties:
   driftsperiodeStartmaaned:
     type: integer
-    x-stoplight:
-      id: 0m77wg7etgn6h
     format: int32
   driftsperiodeStopmaaned:
     type: integer
-    x-stoplight:
-      id: w3rt0hlw1744b
     format: int32
   kontinuerligDrift:
     type: boolean
-    x-stoplight:
-      id: 7w02685q6pz8f
 required:
   - kontinuerligDrift

@@ -1,12 +1,8 @@
 title: StedDefinisjon
-x-stoplight:
-  id: olmircsvpuip5
 type: object
 description: 'Angir litt mer informasjon om et sted. '
 properties:
   id:
-    x-stoplight:
-      id: 4eqrw85vckoe3
     enum:
       - SENTERPUNKT
       - BESOEKSPUNKT

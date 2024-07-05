@@ -1,6 +1,4 @@
 title: Ansvar
-x-stoplight:
-  id: yo4wfcrtlyru8
 type: object
 description: Beskriver ansvaret en driftsansvarlig har for dyr. Dyrehold er et eksempel på et ansvar som gjelder landdyr (i motsetning til havbruk)
 x-tags:
@@ -42,34 +40,20 @@ examples:
 properties:
   ansvarId:
     type: string
-    x-stoplight:
-      id: rtejkvt35zikr
     minimum: 0
     format: uuid
   matsTilsynsobjektId:
     type: string
-    x-stoplight:
-      id: e5amwlpbno41k
     description: Usikker på om dette er nødvendig. Kanskje det er nok at Mats har ref til oss.
   orgnummerUnderenhet:
     type: string
-    x-stoplight:
-      id: xf21pi0be4p78
   ansvarskategori:
     $ref: ../kodeverk/Kategori.yaml
-    x-stoplight:
-      id: hijd2886azby5
     description: Angir hvilket type dyrehold driftsansvarlig har ansvar for
   ansvarstype:
     $ref: ../kodeverk/Hovedtype.yaml
-    x-stoplight:
-      id: bznfnvbxzrmkf
     description: samme som kategori
   aktiviteter:
-    x-stoplight:
-      id: v0y7o1vf6259v
     type: array
     items:
       $ref: ./Aktivitet.yaml
-      x-stoplight:
-        id: ucyz7o96u7pzd

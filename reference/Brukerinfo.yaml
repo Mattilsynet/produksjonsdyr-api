@@ -1,6 +1,4 @@
 openapi: 3.0.0
-x-stoplight:
-  id: m820exvi1g2cu
 info:
   title: Brukerinfo
   version: '1.0'
@@ -22,9 +20,7 @@ paths:
                 type: array
                 items:
                   $ref: ../models/Brukerinfo/Avgiver.yaml
-                  x-stoplight: null
       operationId: get-brukerinfo-avgivere
-      x-stoplight: null
       description: Endepunkt for å hente de foretak eller personer innlogget bruker kan opptre på vegne av.
       parameters:
         - schema:

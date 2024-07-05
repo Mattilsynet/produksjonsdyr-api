@@ -1,6 +1,4 @@
 title: Sted
-x-stoplight:
-  id: morx0jrcxj7st
 type: object
 x-tags:
   - Sted
@@ -9,34 +7,22 @@ properties:
   id:
     type: string
     format: uuid
-    x-stoplight:
-      id: ixs2rx6uvvz6q
   geom:
     type: string
   srid:
     type: integer
-    x-stoplight:
-      id: lwgjj08ihbrnc
   masterId:
     type: string
     description: Kildens identitet på objektet. Ofte kalt objektid
-    x-stoplight:
-      id: pbs8goucd44z2
   masterSystem:
     $ref: ../kodeverk/MasterSystem.yaml
     description: Et begrenset sett med kilder til stedsdefinisjon
-    x-stoplight:
-      id: p79t3bcphq18a
   masterTidspunkt:
     type: string
     format: date-time
     description: Kildens dato-tids stempel på endringen
-    x-stoplight:
-      id: 4qiq0o037zk9y
   masterTypeId:
     $ref: ../kodeverk/MasterTypeId.yaml
-    x-stoplight:
-      id: p5hfkjgzv28h1
     description: Beskriver hvilket felt i mastersystemet verdien er hentet fra.
   hentetTidspunkt:
     type: string
@@ -48,26 +34,16 @@ properties:
   stedDefinisjonKategori:
     $ref: ../kodeverk/StedKategori.yaml
     description: Vi har behov for å beskrive stedet på forskjellige måter
-    x-stoplight:
-      id: 5xkk0w45snz6s
   byggeår:
     type: integer
     format: int64
-    x-stoplight:
-      id: c3s6auofhc9uz
   ombyggingsår:
     type: integer
     format: int64
-    x-stoplight:
-      id: keio1sms55q50
   fasiliteter:
-    x-stoplight:
-      id: pg51oyo9jyh47
     type: array
     items:
       $ref: ./Fasilitet.yaml
-      x-stoplight:
-        id: d86a8hb90bdk3
 required:
   - geom
   - srid

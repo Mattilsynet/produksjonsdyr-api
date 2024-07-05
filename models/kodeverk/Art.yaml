@@ -1,6 +1,4 @@
 title: Art
-x-stoplight:
-  id: 3hu11pxzmtrdj
 type: object
 description: Art er en finere inndeling innenfor en aktivitetstype. Man kan kun sende inn for en aktivitetstype av gangen. Kombinasjon av to vil feile.
 properties:
@@ -18,7 +16,5 @@ properties:
       - STRUTSEFUGLER
       - ENDER
     example: HONS
-    x-stoplight:
-      id: dm0r55xjp8eql
 required:
   - fugleArt
