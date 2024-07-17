@@ -208,7 +208,9 @@ paths:
               type: object
               properties:
                 fasilitet:
-                  $ref: ../models/Produksjonsplass/FasilitetRequest.yaml
+                  type: array
+                  items:
+                    $ref: ../models/Produksjonsplass/FasilitetRequest.yaml
                 driftsansvar:
                   $ref: ../models/Ansvar/DriftsansvarRequest.yaml
               required:
