@@ -10,3 +10,5 @@ properties:
       - ANNET
   annenOppstalling:
     type: string
+  tilgangPaaUteareal:
+    type: boolean
