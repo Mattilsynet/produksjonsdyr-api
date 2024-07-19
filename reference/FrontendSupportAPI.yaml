@@ -350,6 +350,34 @@ paths:
           in: query
           name: skjematype
           description: angi en skjematype
+  '/skjemakomponent/orgnummer/{orgnummer}/skjema':
+    parameters:
+      - schema:
+           type: string
+        name: orgnummer
+        in: path
+        required: true
+    get:
+      summary: Hent alle skjema-metadata for orgnummer hvor det finnes et eksisterende anlegg med status GODKJENT_EIER
+      tags:
+        - Skjemakomponent
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ../models/Skjemakomponent/SkjemaMetadata.yaml
+      operationId: get-skjemakomponent-orgnummer-orgnummer-skjema
+      description: 'Henter ut liste med alle skjema gitt en  organisasjon, evt. filtrert på skjematype og status GODKJENT_EIER'
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: skjematype
+          description: angi en skjematype
   '/skjemakomponent/eier/{eierid}/orgnummer/{orgnummer}/skjema':
     parameters:
       - schema:
@@ -358,7 +386,7 @@ paths:
         in: path
         required: true
       - schema:
-           type: string
+          type: string
         name: orgnummer
         in: path
         required: true
