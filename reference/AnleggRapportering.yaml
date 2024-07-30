@@ -94,4 +94,33 @@ paths:
               schema:
                 type: string
                 example: '["anlegg1","anlegg2"]'
+  '/rapportering/anleggkontaktpersoner/{egenskap}/verdi/{verdi}/avsluttet/{avsluttet}':
+    parameters:
+      - schema:
+          type: string
+        name: egenskap
+        in: path
+        required: true
+      - schema:
+          type: string
+        name: verdi
+        in: path
+        required: true
+      - schema:
+          type: boolean
+        name: avsluttet
+        in: path
+        required: false
+    get:
+      summary: Hent anleggkontaktpersoner
+      operationId: get-anleggkontaktpersoner
+      description: Henter ut alle/ikke avsluttede anlegg som har angitt kontaktperson med del av gitt verdi (f.eks. "han", svar kan vær Hansen, Hans Olsen)
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: string
+                example: '["anlegg1","anlegg2"]'
 
