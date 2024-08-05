@@ -193,5 +193,33 @@ paths:
           description: Not Found
       operationId: get-anlegg-tilsynsobjektid
       description: 'Henter anlegg som er knyttet til angitt tilsynsobjektid. Dette er en referanse til MATS. '
+  '/anlegg/vedlikehold/endrejsonkey/{fraVerdi}/{tilVerdi}':
+    parameters:
+      - schema:
+          type: string
+        name: fraVerdi
+        in: path
+        required: true
+        description: fra json key verdi
+      - schema:
+          type: string
+        name: tilVerdi
+        in: path
+        required: true
+        description: til json key verdi
+    post:
+      summary: Vedlikehold endre json key
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: string
+        '404':
+          description: Not Found
+      operationId: vedlikehol-endrejsonkey-fraVerdi-tilVerdi
+      description: 'Dette er en vedlikeholdsoperasjon som skal brukes for å endre jsonkey i anleggstruktur. '
 components:
   schemas: {}
