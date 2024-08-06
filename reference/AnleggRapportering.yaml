@@ -196,27 +196,27 @@ paths:
               schema:
                 type: string
                 example: '["anlegg1","anlegg2"]'
-  '/rapportering/produksjonsform/{aktivitet}/{verdikjede}/{art}/avsluttet/{avsluttet}':
+  '/rapportering/produksjonsform':
     parameters:
       - schema:
           type: string
         name: aktivitet
-        in: path
+        in: query
         required: false
       - schema:
           type: string
         name: verdikjede
-        in: path
+        in: query
         required: false
       - schema:
-        type: string
+          type: string
         name: art
-        in: path
+        in: query
         required: false
       - schema:
           type: boolean
         name: avsluttet
-        in: path
+        in: query
         required: false
     get:
       summary: Hent anleggproduksjonsformer
