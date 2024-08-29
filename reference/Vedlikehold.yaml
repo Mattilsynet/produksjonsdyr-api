@@ -1,0 +1,36 @@
+openapi: 3.0.3
+info:
+  title: Vedlikehold
+  description: Vedlikehold Api for å kunne endre og oppdatere data i databasen f.eks ifb testing i dev
+  version: 1.0.0
+servers:
+  - url: 'url: 'http://localhost:3000'
+paths:
+  '/vedlikehold/endrejsonkey/{fraVerdi}/{tilVerdi}':
+    parameters:
+      - schema:
+          type: string
+        name: fraVerdi
+        in: path
+        required: true
+        description: fra json key verdi
+      - schema:
+          type: string
+        name: tilVerdi
+        in: path
+        required: true
+        description: til json key verdi
+    post:
+      summary: Vedlikehold endre json key
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: string
+        '404':
+          description: Not Found
+      operationId: vedlikehol-endrejsonkey-fraVerdi-tilVerdi
+      description: 'Dette er en vedlikeholdsoperasjon som skal brukes for å endre jsonkey i anleggstruktur. '
