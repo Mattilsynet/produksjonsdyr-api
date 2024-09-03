@@ -38,7 +38,8 @@ val openapiSpecs = mapOf(
     "ansvarapi" to "reference/Ansvar.yaml",
     "anleggapi" to "reference/Anlegg.yaml",
     "oppsummering" to "reference/Oppsummering.yaml",
-    "anleggrapportering" to "reference/AnleggRapportering.yaml"
+    "anleggrapportering" to "reference/AnleggRapportering.yaml",
+    "vedlikehold" to "reference/Vedlikehold.yaml"
 )
 
 openapiSpecs.forEach {
