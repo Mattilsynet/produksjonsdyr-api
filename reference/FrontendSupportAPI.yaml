@@ -350,8 +350,13 @@ paths:
           in: query
           name: skjematype
           description: angi en skjematype
-  '/skjemakomponent/orgnummer/{orgnummer}/skjema':
+  '/skjemakomponent/godkjenteier/eier/{eierid}/orgnummer/{orgnummer}/skjema':
     parameters:
+      - schema:
+          type: string
+        name: eierid
+        in: path
+        required: true
       - schema:
            type: string
         name: orgnummer
@@ -370,8 +375,41 @@ paths:
                 type: array
                 items:
                   $ref: ../models/Skjemakomponent/SkjemaMetadata.yaml
-      operationId: get-skjemakomponent-orgnummer-orgnummer-skjema
+      operationId: get-skjemakomponent-godkjenteier-eier-eierid-orgnummer-orgnummer-skjema
       description: 'Henter ut liste med alle skjema gitt en  organisasjon, evt. filtrert på skjematype og status GODKJENT_EIER'
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: skjematype
+          description: angi en skjematype
+  '/skjemakomponent/ikkegodkjenteier/eier/{eierid}/orgnummer/{orgnummer}/skjema':
+    parameters:
+      - schema:
+          type: string
+        name: eierid
+        in: path
+        required: true
+      - schema:
+          type: string
+        name: orgnummer
+        in: path
+        required: true
+    get:
+      summary: Hent alle skjema-metadata for orgnummer hvor det finnes et eksisterende anlegg og status ikke er GODKJENT_EIER
+      tags:
+        - Skjemakomponent
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ../models/Skjemakomponent/SkjemaMetadata.yaml
+      operationId: get-skjemakomponent-ikkegodkjenteier-eier-eierid-orgnummer-orgnummer-skjema
+      description: 'Henter ut liste med alle skjema gitt en  organisasjon, evt. filtrert på skjematype  hvor status ikke er GODKJENT_EIER'
       parameters:
         - schema:
             type: string
