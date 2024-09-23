@@ -19,5 +19,12 @@ properties:
     type: string
     description: |
       Status på skjema. E.g. aktiv, preutfylt, innsendt
+  anleggsnummer:
+     type: string
+     description: anleggsnummer
+required:
+  - eierid
+  - skjemaid
+  - skjematype
 x-tags:
   - Skjemakomponent
