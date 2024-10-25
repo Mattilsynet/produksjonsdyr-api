@@ -2,7 +2,7 @@ name: 'Build'
 on:
   pull_request:
     types: [ opened, synchronize, reopened, edited ]
-  workflow_dispatch: ~
+  workflow_dispatch:
 
 concurrency:
   group: build-${{ github.event.pull_request.number || github.ref }}
@@ -13,17 +13,23 @@ jobs:
     name: Build eksport-test-lib
     runs-on: ubuntu-latest
     permissions:
+      id-token: write
       contents: read
       pull-requests: write
       checks: write
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
           show-progress: 'false'
+
+      - name: YAML Lint
+        uses: reviewdog/action-yamllint@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          reporter: github-pr-review
+          filter_mode: nofilter
 
       - name: Setup Java
         uses: actions/setup-java@v4
@@ -37,10 +43,3 @@ jobs:
 
       - name: Build
         run: sh ./gradlew build
-
-      - name: YAML Lint
-        uses: reviewdog/action-yamllint@v1.19.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          reporter: github-pr-review
-          filter_mode: nofilter
