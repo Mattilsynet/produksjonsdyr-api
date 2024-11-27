@@ -8,5 +8,6 @@ properties:
       - SENTERPUNKT
       - OMRISS
       - BESOKSPUNKT
+      - EGENDEFINERT_PUNKT
 required:
   - stedKategori
