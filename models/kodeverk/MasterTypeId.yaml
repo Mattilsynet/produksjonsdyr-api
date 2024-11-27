@@ -9,5 +9,3 @@ properties:
       - TEIGID
       - LOKALID
     description: Beskriver hvilket felt i mastersystemet verdien er hentet fra.
-required:
-  - masterTypeId

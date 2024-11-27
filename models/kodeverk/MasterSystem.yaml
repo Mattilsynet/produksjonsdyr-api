@@ -8,6 +8,7 @@ properties:
     enum:
       - NO_KARTVERKET_MATRIKKELEN_TEIG
       - NO_KARTVERKET_MATRIKKELEN_FKB_BYGNING
+      - EGENDEFINERT
       - ANNET
 required:
   - masterSystem
