@@ -287,5 +287,51 @@ paths:
                 - anlegg
                 - status
       description: 'Innsending fra andre kilder. f.eks analyse eller uttrekk'
+
+  /innsending/anleggmedstatus/{virksomhetsmappeid}/{tilsynsobjektid}:
+    parameters:
+      - schema:
+          type: string
+        name: virksomhetsmappeid
+        in: path
+        required: true
+      - schema:
+          type: string
+        name: tilsynsobjektid
+        in: path
+        required: true
+    post:
+      summary: Innsending av driftsansvar og anlegg med status samt virksomhetsmappeid og tilsynsobjektid
+      operationId: post-innsending-ansvar-anlegg-med-status-gitt-virksomhetsmappeid-og-tilsynsobjektid
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: long
+                    format: int64
+                  anleggsnummer:
+                    type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                status:
+                  $ref: ../models/kodeverk/StatusRequest.yaml
+                driftsansvar:
+                  $ref: ../models/Ansvar/DriftsansvarRequest.yaml
+                anlegg:
+                  $ref: ../models/Produksjonsplass/AnleggRequest.yaml
+              required:
+                - driftsansvar
+                - anlegg
+                - status
+      description: 'Innsending konvertert fra MATS med virksomhetsmappeid og tilsynsobjektid'
 components:
   schemas: {}
