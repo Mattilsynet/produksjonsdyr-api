@@ -287,8 +287,8 @@ paths:
                 - anlegg
                 - status
       description: 'Innsending fra andre kilder. f.eks analyse eller uttrekk'
-
-  /innsending/anleggmedstatus/{virksomhetsmappeid}/{tilsynsobjektid}:
+      
+  /innsending/anleggmedstatus/{virksomhetsmappeid}/{tilsynsobjektid}/{opprettetdato}:
     parameters:
       - schema:
           type: string
@@ -300,9 +300,14 @@ paths:
         name: tilsynsobjektid
         in: path
         required: true
+      - schema:
+          type: string
+        name: opprettetdato
+        in: path
+        required: true
     post:
-      summary: Innsending av driftsansvar og anlegg med status samt virksomhetsmappeid og tilsynsobjektid
-      operationId: post-innsending-ansvar-anlegg-med-status-gitt-virksomhetsmappeid-og-tilsynsobjektid
+      summary: Innsending av driftsansvar og anlegg med status samt virksomhetsmappeid og tilsynsobjektid, opprettetdato
+      operationId: post-innsending-ansvar-anlegg-med-status-gitt-virksomhetsmappeid-og-tilsynsobjektid-og-opprettetdato
       responses:
         '200':
           description: OK
@@ -332,6 +337,6 @@ paths:
                 - driftsansvar
                 - anlegg
                 - status
-      description: 'Innsending konvertert fra MATS med virksomhetsmappeid og tilsynsobjektid'
+      description: 'Innsending konvertert fra MATS med virksomhetsmappeid og tilsynsobjektid og opprettetdato'
 components:
   schemas: {}
