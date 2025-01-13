@@ -22,6 +22,12 @@ properties:
   anleggsnummer:
      type: string
      description: anleggsnummer
+  senterPunkt:
+    type: string
+    description: senterpunkt
+  boundingBox:
+    type: string
+    description: bounding box
 required:
   - eierid
   - skjemaid
