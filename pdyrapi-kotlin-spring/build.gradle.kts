@@ -19,7 +19,7 @@ repositories {
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter")
     implementation("org.springframework.boot:spring-boot-starter-web")
-    implementation("org.springframework:spring-web:6.0.6")
+    implementation("org.springframework:spring-web:6.2.1")
     implementation("javax.servlet:servlet-api:2.5")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation ("org.openapitools:openapi-generator-gradle-plugin:6.2.1"){
