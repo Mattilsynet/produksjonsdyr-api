@@ -22,10 +22,10 @@ properties:
   anleggsnummer:
      type: string
      description: anleggsnummer
-  senterPunkt:
+  senterpunkt:
     type: string
     description: senterpunkt
-  boundingBox:
+  boundingbox:
     type: string
     description: bounding box
 required:
