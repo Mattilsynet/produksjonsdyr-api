@@ -2,7 +2,7 @@ plugins {
     id("org.springframework.boot") version "3.1.0"
     id("io.spring.dependency-management") version "1.1.0"
     kotlin("jvm") version "1.8.21"
-    kotlin("plugin.spring") version "1.8.21"
+    kotlin("plugin.spring") version "2.1.0"
     id ("org.openapi.generator") version "6.4.0"
     id ("java-library")
     id("maven-publish")
