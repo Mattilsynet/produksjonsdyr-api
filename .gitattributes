@@ -1,0 +1,7 @@
+* text=auto
+
+*.sh text eol=lf
+*.properties text eol=lf
+*.conf text eol=lf
+*.bat text eol=crlf
+/gradlew text eol=lf

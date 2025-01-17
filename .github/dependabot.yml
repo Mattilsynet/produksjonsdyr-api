@@ -8,6 +8,7 @@ updates:
     target-branch: "master"
     commit-message:
       prefix: "deps"
+    open-pull-requests-limit: 30
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
@@ -16,3 +17,4 @@ updates:
     target-branch: "master"
     commit-message:
       prefix: "actions"
+    open-pull-requests-limit: 30
