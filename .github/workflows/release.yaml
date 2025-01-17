@@ -1,25 +1,31 @@
 name: Release
 
 on:
-  push:
-    branches:
-      - master
   workflow_dispatch:
     inputs:
       release_tag:
         description: 'Hva skal vi kalle denne releasen?'
         required: true
         default: "SNAPSHOT"
+  release:
+    types:
+      - created
 
 jobs:
   release:
     name: Publish
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+      pull-requests: write
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v4
         name: Checkout
         with:
-          fetch-depth: 0
+          fetch-depth: 1
 
       - uses: actions/setup-java@v3
         with:
@@ -34,45 +40,21 @@ jobs:
 
       - name: Setup
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ env.GITHUB_TOKEN }}
         run: |
-          echo Release started by $GITHUB_ACTOR
-          git remote set-url origin https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git
+          echo Release started
+          git remote set-url origin https://oauth2:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git
           git config --global user.email "landdyrdata@mattilsynet.no"
-          git config --global user.name "$GITHUB_ACTOR"
+          git config --global user.name "Team Landdyrdata"
 
-      - name: Bump version and push tag
-        id: create_version
-        uses: mathieudutour/github-tag-action@v6.1
-        with:
-          github_token: ${{ env.GITHUB_TOKEN }}
       - name: openApiGenerate
         run: ./gradlew openApiGenerate-task
+
       - name: Publish library
         env:
           GITHUB_TOKEN: ${{ env.GITHUB_TOKEN }}
           GITHUB_ACTOR: ${{ env.GITHUB_ACTOR }}
         run: |
-          echo Release version ${{ steps.create_version.outputs.new_version }} of produksjonsdyr-api
-          ./gradlew publish -PreleaseVersion=${{ steps.create_version.outputs.new_version }}
-
-      - name: Create a GitHub release from master
-        if: "${{ github.event.inputs.release_tag == '' }}"
-        uses: ncipollo/release-action@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag: ${{ steps.create_version.outputs.new_tag }}
-          name: Release ${{ steps.create_version.outputs.new_tag }}
-          body: ${{ steps.create_version.outputs.changelog }}
-
-      - name: Create a GitHub release from branch
-        if: "${{ github.event.inputs.release_tag != '' }}"
-        uses: ncipollo/release-action@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag: ${{ github.event.inputs.release_tag }}
-          name: Release ${{ github.event.inputs.release_tag }}
-          body: ${{ github.event.inputs.release_tag }}
+          echo Release version ${{ github.event.inputs.release_tag }} of produksjonsdyr-api
+          ./gradlew publish -PreleaseVersion=${{ github.event.inputs.release_tag }} --info
           
