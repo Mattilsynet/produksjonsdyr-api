@@ -230,7 +230,7 @@ paths:
               schema:
                 type: string
                 example: '["anlegg1","anlegg2"]'
-  '/rapportering/orgnummer/{orgnummer}/avsluttet/{avsluttet}':
+  '/rapportering/orgnummerUnderenhetfoedselsnummer/{orgnummer}/avsluttet/{avsluttet}':
     parameters:
       - schema:
           type: string
