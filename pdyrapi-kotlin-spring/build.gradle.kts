@@ -22,7 +22,7 @@ dependencies {
     implementation("org.springframework:spring-web:6.0.6")
     implementation("javax.servlet:servlet-api:2.5")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
-    implementation ("org.openapitools:openapi-generator-gradle-plugin:6.2.1"){
+    implementation ("org.openapitools:openapi-generator-gradle-plugin:7.11.0"){
         exclude(group = "org.slf4j", module = "slf4j-simple")
         exclude(group = "ch.qos.logback", module = "logback-classic")
     }
