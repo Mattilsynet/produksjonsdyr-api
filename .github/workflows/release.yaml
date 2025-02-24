@@ -45,12 +45,12 @@ jobs:
         id: create_version
         uses: mathieudutour/github-tag-action@v6.1
         with:
-          github_token: ${{ env.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
       - name: openApiGenerate
         run: ./gradlew openApiGenerate-task
       - name: Publish library
         env:
-          GITHUB_TOKEN: ${{ env.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_ACTOR: ${{ env.GITHUB_ACTOR }}
         run: |
           echo Release version ${{ steps.create_version.outputs.new_version }} of produksjonsdyr-api
