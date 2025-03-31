@@ -28,6 +28,10 @@ properties:
   boundingbox:
     type: string
     description: bounding box
+  harFlereEiere:
+    type: boolean
+    description: |
+      Om skjemaet har flere driftsansvarlige
 required:
   - eierid
   - skjemaid
