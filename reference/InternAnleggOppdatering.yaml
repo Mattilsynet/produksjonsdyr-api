@@ -1,0 +1,38 @@
+openapi: 3.0.3
+info:
+  title: internAnleggOppdatering
+  description: api for oppdatering av anlegg internt
+  version: 1.0.0
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  '/internAnleggOppdatering/oppdaterGodkjenningsNummer/{tilsynsobjektid}/{godkjenningsnummer}':
+    parameters:
+      - schema:
+          type: string
+        name: tilsynsobjektid
+        in: path
+        required: true
+        description: tilsynsobjektid i mats
+      - schema:
+          type: string
+        name: godkjenningsnummer
+        in: path
+        required: true
+        description: godkjenningsnummer i fra mats
+    post:
+      summary: oppdatering av godkjenningsnummer i anleggsregister
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  anleggsnummer:
+                    type: string
+        '404':
+          description: Not Found
+      operationId: oppdaterGodkjenningsNummer-tilsynsobjektid-godkjenningsnummer
+      description: 'Dette er en opersjon som skal kjøres etter lesing av godkjenningsnummer fra mats fra nats kø mats-dyrehold.'
