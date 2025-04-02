@@ -27,4 +27,6 @@ properties:
     type: array
     items:
       $ref: ../kodeverk/PrivatSalg.yaml
+  godkjenningsNummer:
+    type: string
 
