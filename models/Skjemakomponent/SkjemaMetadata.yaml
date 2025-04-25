@@ -35,7 +35,7 @@ properties:
   anleggstatus:
     type: string
     description: |
-      Status på anlegget slik driftsnavarlig ser det. E.g. GODKJENT_EIER HENTET_FRA_MATS BLANDET
+      Status på anlegget slik driftsansvarlig ser det. E.g. GODKJENT_EIER HENTET_FRA_MATS BLANDET
 required:
   - eierid
   - skjemaid
