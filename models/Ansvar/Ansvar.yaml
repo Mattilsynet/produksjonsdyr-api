@@ -5,7 +5,6 @@ x-tags:
   - Ansvar
 examples:
   - ansvarId: '11da5016-5b01-4952-8092-71ad76abd550'
-    matsTilsynsobjektId: string
     orgnummerUnderenhet: string
     produksjonsplasser:
       - 0
@@ -42,9 +41,6 @@ properties:
     type: string
     minimum: 0
     format: uuid
-  matsTilsynsobjektId:
-    type: string
-    description: Usikker på om dette er nødvendig. Kanskje det er nok at Mats har ref til oss.
   orgnummerUnderenhet:
     type: string
   ansvarskategori:
