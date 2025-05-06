@@ -11,8 +11,6 @@ properties:
   produsentnummerP10:
     type: string
     description: En identifikator som brukes av bransjen til å identifisere en virksomhet som er koblet til en landbrukseiendom.
-  virksomhetsmappeId:
-    type: string
   orgnummerHovedenhet:
     type: string
   ansvar:
@@ -21,10 +19,6 @@ properties:
       $ref: ./Ansvar.yaml
   fodselsnummer:
     type: string
-  dyreholdId:
-    type: string
-    description: |
-      Nummerserie som benyttes av driftsansvarlig for å merke dyr. Tildeles av Mattilsynet.
   validert:
     type: boolean
   createdAt:
