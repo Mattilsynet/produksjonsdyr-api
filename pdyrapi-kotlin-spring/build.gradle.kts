@@ -6,7 +6,7 @@ plugins {
     id ("org.openapi.generator") version "6.4.0"
     id ("java-library")
     id("maven-publish")
-    id("org.sonarqube") version "4.2.1.3168"
+    id("org.sonarqube") version "6.1.0.5360"
 }
 
 group = "no.mattilsynet.produksjonsdyr"
