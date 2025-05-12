@@ -13,6 +13,9 @@ properties:
     enum:
       - PERSONNUMMER
       - ORGANISASJONSNUMMER_HOVEDENHET
+  produsentnummerP10:
+    type: string
+    description: En identifikator som brukes av bransjen til å identifisere en virksomhet som er koblet til en landbrukseiendom.
   kontaktpersoner:
     type: array
     items:
