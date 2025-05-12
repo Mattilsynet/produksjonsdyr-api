@@ -36,6 +36,9 @@ properties:
     type: string
     description: |
       Status på anlegget slik driftsansvarlig ser det. E.g. GODKJENT_EIER HENTET_FRA_MATS BLANDET
+  produsentnummer:
+    type: string
+    description: produsentnummer
 required:
   - eierid
   - skjemaid
