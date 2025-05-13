@@ -4,6 +4,7 @@ description: Beskriver funksjonell utforming av lokalene hvor dyrene er
 properties:
   oppstallingFjoerfe:
     enum:
+      - LOESDRIFT_MED_UTEAREAL_ALLTID
       - LOESDRIFT_MED_UTEAREAL
       - LOESDRIFT_UTEN_UTEAREAL
       - INNREDEDE_BUR
