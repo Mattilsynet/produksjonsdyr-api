@@ -28,3 +28,6 @@ properties:
     type: array
     items:
       $ref: ./Kontaktperson.yaml
+  navn:
+    type: string
+    description: Navn på driftsansvarlig. Kan være en person eller en organisasjon.
