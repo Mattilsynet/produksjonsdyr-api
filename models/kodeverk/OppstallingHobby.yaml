@@ -1,0 +1,9 @@
+title: OppstallingHobby
+type: object
+description: Beskriver funksjonell utforming av lokalene hvor dyrene er for hobby fjørfe
+properties:
+  oppstallingHobby:
+    enum:
+      - FRITT_UTEN_GJERDE
+      - INNGJERDET_UTEN_TAK
+      - INNGJERDET_MED_TAK
