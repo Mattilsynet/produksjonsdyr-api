@@ -408,5 +408,38 @@ paths:
           description: Not Found
       operationId: settanleggstatus-anlNummer-status
       description: 'Dette er en vedlikeholdsoperasjon som setter angitt status på hele anlegget.'
+  '/innsending/vedlikeholdsettprodusentnrorgnavn/{tilsynsobjektid}/{produsentnummer}/{orgnavn}':
+    parameters:
+      - schema:
+          type: string
+        name: tilsynsobjektid
+        in: path
+        required: true
+        description: tilsynsobjektid i mats
+      - schema:
+          type: string
+        name: produsentnummer
+        in: path
+        required: true
+        description: produsentnummer P10
+      - schema:
+          type: string
+        name: orgnavn
+        in: path
+        required: true
+        description: organisasjonen sitt navn
+    post:
+      summary: oppdatering av produsentnummer og orgnavn i anleggsregister
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: string
+        '404':
+          description: Not Found
+      operationId: oppdaterProdusentNrOrgNavn-tilsynsobjektid-produsentnummer-orgnavn
+      description: 'Dette er en vedlikeholdsoperasjon som oppdaterer produsentnummer og orgnavn gitt tilsynsobjid.'
 components:
   schemas: {}
