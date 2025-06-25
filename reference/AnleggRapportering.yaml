@@ -434,4 +434,129 @@ paths:
           description: Not Found
       operationId: endrejsonkey-fraVerdi-tilVerdi
       description: 'Dette er en vedlikeholdsoperasjon som skal brukes for å endre jsonkey i anleggstruktur.'
+  '/rapportering/antallanleggnaering/avsluttet/{avsluttet}/antalldager/{antalldager}/status/{status}':
+    parameters:
+      - schema:
+          type: boolean
+        name: avsluttet
+        in: path
+        required: true
+      - schema:
+          type: integer
+          format: int32
+        name: antalldager
+        in: path
+        required: true
+      - schema:
+          type: string
+        name: status
+        in: path
+        required: false
+    get:
+      summary: Hent antall anlegg i næring gitt avsluttet eller ikke samt antalldager for å hente de siste antalldager
+      operationId: get-antallanleggnaering
+      description: Hent ut antallet anlegg i næring gitt avsluttet eller ikke samt antalldager for å hente de siste antalldager
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: integer
+                format: int32
 
+  '/rapportering/antallanlegghobby/avsluttet/{avsluttet}/antalldager/{antalldager}/status/{status}':
+    parameters:
+      - schema:
+          type: boolean
+        name: avsluttet
+        in: path
+        required: true
+      - schema:
+          type: integer
+          format: int32
+        name: antalldager
+        in: path
+        required: true
+      - schema:
+          type: string
+        name: status
+        in: path
+        required: false
+    get:
+      summary: Hent antall anlegg som er hobby gitt avsluttet eller ikke samt antalldager for å hente de siste antalldager
+      operationId: get-antallanlegghobby
+      description: Hent ut antallet anlegg i hobby gitt avsluttet eller ikke samt antalldager for å hente de siste antalldager
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: integer
+                format: int32
+  '/rapportering/antallanlegggittstatus/status/{status}/avsluttet/{avsluttet}/antalldager/{antalldager}':
+    parameters:
+      - schema:
+          type: string
+        name: status
+        in: path
+        required: true
+      - schema:
+          type: boolean
+        name: avsluttet
+        in: path
+        required: false
+      - schema:
+          type: integer
+          format: int32
+        name: antalldager
+        in: path
+        required: false
+    get:
+      summary: Hent antall  anlegg gitt status  gitt avsluttet eller ikke samt antalldager for å hente de siste antalldager
+      operationId: get-antallanlegggittstatus
+      description: Hent ut antall anlegg gitt status  gitt avsluttet eller ikke samt antalldager for å hente de siste antalldager
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: integer
+                format: int32
+  '/rapportering/antallgittaktivitetstype/aktivitet/{aktivitet}/status/{status}/avsluttet/{avsluttet}/antalldager/{antalldager}':
+    parameters:
+      - schema:
+          type: string
+        name: aktivitet
+        in: path
+        required: true
+      - schema:
+          type: string
+        name: status
+        in: path
+        required: true
+      - schema:
+          type: boolean
+        name: avsluttet
+        in: path
+        required: false
+      - schema:
+          type: integer
+          format: int32
+        name: antalldager
+        in: path
+        required: false
+    get:
+      summary: Hent antall anlegg gitt aktivitet og status gitt antalldager for å hente de siste antalldager
+      operationId: get-antallgittaktivitetstype
+      description: Hent ut antall gitt aktivtetstype og status  gitt samt antalldager for å hente de siste antalldager
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: integer
+                format: int32
