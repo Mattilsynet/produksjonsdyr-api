@@ -254,6 +254,158 @@ paths:
               schema:
                 type: string
                 example: '["anlegg1","anlegg2"]'
+  '/rapportering/produsentnummer/{produsentnummer}/avsluttet/{avsluttet}':
+    parameters:
+      - schema:
+          type: string
+        name: produsentnummer
+        in: path
+        required: true
+      - schema:
+          type: boolean
+        name: avsluttet
+        in: path
+        required: true
+    get:
+      summary: Hent anlegg gitt produsentnummer
+      operationId: get-anlegg-produsentnummer
+      description: Henter ut anlegg gitt produsentnummer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: string
+                example: '["anlegg1","anlegg2"]'
+  '/rapportering/orgnavn/{orgnavn}/eksakt/{eksakt}/avsluttet/{avsluttet}':
+    parameters:
+      - schema:
+          type: string
+        name: orgnavn
+        in: path
+        required: true
+      - schema:
+          type: boolean
+        name: eksakt
+        in: path
+        required: true
+      - schema:
+          type: boolean
+        name: avsluttet
+        in: path
+        required: true
+    get:
+      summary: Hent anlegg gitt organisasjonsnavn
+      operationId: get-anlegg-orgnavn
+      description: Henter ut anlegg gitt orgnavn eller deler av orgnavn
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: string
+                example: '["anlegg1","anlegg2"]'
+  '/rapportering/anlegg/rektangel/{bunnvenstre}/{toppvenstre}/{bunnhoyre}/{topphoyre}/{srid}/avsluttet/{avsluttet}':
+    parameters:
+      - schema:
+          type: number
+          format: double
+        name: bunnvenstre
+        in: path
+        required: true
+      - schema:
+          type: number
+          format: double
+        name: toppvenstre
+        in: path
+        required: true
+      - schema:
+          type: number
+          format: double
+        name: bunnhoyre
+        in: path
+        required: true
+      - schema:
+          type: number
+          format: double
+        name: topphoyre
+        in: path
+        required: true
+      - schema:
+          type: integer
+          format: int32
+        name: srid
+        in: path
+        required: true
+        description: srid/koordinatsystemet som koord er oppgitt i
+      - schema:
+          type: boolean
+        name: avsluttet
+        in: path
+        required: true
+    get:
+      summary: Hent anlegg innenfor rektangel
+      operationId: get-anlegg-rektangel
+      description: Henter ut anlegg som ligger innenfor angitt rektangel
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: string
+                example: '["anlegg1","anlegg2"]'
+        '404':
+          description: Not Found
+  '/rapportering/sted/rektangel/{bunnvenstre}/{toppvenstre}/{bunnhoyre}/{topphoyre}/{srid}':
+    parameters:
+      - schema:
+          type: number
+          format: double
+        name: bunnvenstre
+        in: path
+        required: true
+      - schema:
+          type: number
+          format: double
+        name: toppvenstre
+        in: path
+        required: true
+      - schema:
+          type: number
+          format: double
+        name: bunnhoyre
+        in: path
+        required: true
+      - schema:
+          type: number
+          format: double
+        name: topphoyre
+        in: path
+        required: true
+      - schema:
+          type: integer
+          format: int32
+        name: srid
+        in: path
+        required: true
+        description: srid/koordinatsystemet som koord er oppgitt i
+    get:
+      summary: Hent sted innenfor rektangel
+      operationId: get-sted-rektangel
+      description: Henter ut steder som ligger innenfor angitt rektangel
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: string
+                example: '["sted1","sted2"]'
+        '404':
+          description: Not Found
   '/rapportering/endrejsonkey/{fraVerdi}/{tilVerdi}':
     parameters:
       - schema:
@@ -282,4 +434,129 @@ paths:
           description: Not Found
       operationId: endrejsonkey-fraVerdi-tilVerdi
       description: 'Dette er en vedlikeholdsoperasjon som skal brukes for å endre jsonkey i anleggstruktur.'
+  '/rapportering/antallanleggnaering/avsluttet/{avsluttet}/antalldager/{antalldager}/status/{status}':
+    parameters:
+      - schema:
+          type: boolean
+        name: avsluttet
+        in: path
+        required: true
+      - schema:
+          type: integer
+          format: int32
+        name: antalldager
+        in: path
+        required: true
+      - schema:
+          type: string
+        name: status
+        in: path
+        required: false
+    get:
+      summary: Hent antall anlegg i næring gitt avsluttet eller ikke samt antalldager for å hente de siste antalldager
+      operationId: get-antallanleggnaering
+      description: Hent ut antallet anlegg i næring gitt avsluttet eller ikke samt antalldager for å hente de siste antalldager
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: integer
+                format: int32
 
+  '/rapportering/antallanlegghobby/avsluttet/{avsluttet}/antalldager/{antalldager}/status/{status}':
+    parameters:
+      - schema:
+          type: boolean
+        name: avsluttet
+        in: path
+        required: true
+      - schema:
+          type: integer
+          format: int32
+        name: antalldager
+        in: path
+        required: true
+      - schema:
+          type: string
+        name: status
+        in: path
+        required: false
+    get:
+      summary: Hent antall anlegg som er hobby gitt avsluttet eller ikke samt antalldager for å hente de siste antalldager
+      operationId: get-antallanlegghobby
+      description: Hent ut antallet anlegg i hobby gitt avsluttet eller ikke samt antalldager for å hente de siste antalldager
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: integer
+                format: int32
+  '/rapportering/antallanlegggittstatus/status/{status}/avsluttet/{avsluttet}/antalldager/{antalldager}':
+    parameters:
+      - schema:
+          type: string
+        name: status
+        in: path
+        required: true
+      - schema:
+          type: boolean
+        name: avsluttet
+        in: path
+        required: false
+      - schema:
+          type: integer
+          format: int32
+        name: antalldager
+        in: path
+        required: false
+    get:
+      summary: Hent antall  anlegg gitt status  gitt avsluttet eller ikke samt antalldager for å hente de siste antalldager
+      operationId: get-antallanlegggittstatus
+      description: Hent ut antall anlegg gitt status  gitt avsluttet eller ikke samt antalldager for å hente de siste antalldager
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: integer
+                format: int32
+  '/rapportering/antallgittaktivitetstype/aktivitet/{aktivitet}/status/{status}/avsluttet/{avsluttet}/antalldager/{antalldager}':
+    parameters:
+      - schema:
+          type: string
+        name: aktivitet
+        in: path
+        required: true
+      - schema:
+          type: string
+        name: status
+        in: path
+        required: true
+      - schema:
+          type: boolean
+        name: avsluttet
+        in: path
+        required: false
+      - schema:
+          type: integer
+          format: int32
+        name: antalldager
+        in: path
+        required: false
+    get:
+      summary: Hent antall anlegg gitt aktivitet og status gitt antalldager for å hente de siste antalldager
+      operationId: get-antallgittaktivitetstype
+      description: Hent ut antall gitt aktivtetstype og status  gitt samt antalldager for å hente de siste antalldager
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: integer
+                format: int32

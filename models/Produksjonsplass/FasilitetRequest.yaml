@@ -41,6 +41,5 @@ required:
   - aktivitetstype
   - verdikjede
   - oppstalling
-  - kapasitet
   - planlagtDrift
   - aktivitetReferanseId
