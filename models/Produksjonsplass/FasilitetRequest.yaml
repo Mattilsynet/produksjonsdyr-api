@@ -40,6 +40,4 @@ required:
   - kategori
   - aktivitetstype
   - verdikjede
-  - oppstalling
-  - planlagtDrift
   - aktivitetReferanseId
