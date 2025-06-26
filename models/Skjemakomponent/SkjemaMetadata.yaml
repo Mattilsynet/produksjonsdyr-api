@@ -39,6 +39,10 @@ properties:
   produsentnummer:
     type: string
     description: produsentnummer
+  erHobby:
+    type: boolean
+    description: |
+      Om anlegget er et hobbyanlegg
 required:
   - eierid
   - skjemaid
