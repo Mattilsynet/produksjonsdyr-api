@@ -406,6 +406,30 @@ paths:
                 example: '["sted1","sted2"]'
         '404':
           description: Not Found
+  '/rapportering/anlegg/stedid/{stedid}/avsluttet/{avsluttet}':
+    parameters:
+      - schema:
+          type: string
+        name: stedid
+        in: path
+        required: true
+      - schema:
+          type: boolean
+        name: avsluttet
+        in: path
+        required: true
+    get:
+      summary: Hent anlegg stedid som guid
+      operationId: get-anlegg-stedid
+      description: Henter ut anlegg gitt stedid
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: string
+                example: '["anlegg1","anlegg2"]'
   '/rapportering/endrejsonkey/{fraVerdi}/{tilVerdi}':
     parameters:
       - schema:
