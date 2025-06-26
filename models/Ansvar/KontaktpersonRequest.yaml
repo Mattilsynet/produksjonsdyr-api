@@ -15,6 +15,12 @@ properties:
     type: array
     items:
       $ref: ../kodeverk/Roller.yaml
+  adresse:
+    type: string
+  poststed:
+    type: string
+  postnummer:
+    type: string
 required:
   - navn
   - telefonnummer

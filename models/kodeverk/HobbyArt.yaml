@@ -1,0 +1,19 @@
+title: Hobbyart
+type: object
+description: En liste over hobbyarter med tilhørende antall.
+properties:
+  art:
+    type: string
+    enum:
+      - ANDEFUGLER
+      - HOENSEFUGLER
+      - DUER
+      - ANNEN_TYPE_FUGLER
+  antall:
+    type: integer
+required:
+  - art
+  - antall
+example:
+  art: ANDEFUGLER
+  antall: 10

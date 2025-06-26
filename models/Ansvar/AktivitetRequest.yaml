@@ -11,6 +11,10 @@ properties:
     $ref: ../kodeverk/Verdikjede.yaml
   art:
     $ref: ../kodeverk/Art.yaml
+  hobbyArt:
+    type: array
+    items:
+      $ref: ../kodeverk/HobbyArt.yaml
   kunnskap:
     type: array
     items:
@@ -36,5 +40,4 @@ properties:
 required:
   - aktivitetstype
   - verdikjede
-  - art
   - aktivitetReferanseId
