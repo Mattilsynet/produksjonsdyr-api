@@ -117,8 +117,45 @@ paths:
           name: Authorization
   /innsending/oppdateranlegg:
     post:
-      summary: Oppdatering av eksisterende driftsansvar og anlegg
+      summary: Oppdatering av eksisterende driftsansvar og anlegg for næring
       operationId: post-innsending-oppdater-anlegg
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  driftsansvarId:
+                    type: integer
+                    format: int64
+                  anleggId:
+                    type: integer
+                    format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                driftsansvar:
+                  $ref: ../models/Ansvar/DriftsansvarRequest.yaml
+                anlegg:
+                  $ref: ../models/Produksjonsplass/AnleggRequest.yaml
+              required:
+                - driftsansvar
+                - anlegg
+      description: ''
+      parameters:
+        - schema:
+            type: string
+          in: header
+          name: Authorization
+  /innsending/oppdaterhobbyanlegg:
+    post:
+      summary: Oppdatering av eksisterende driftsansvar og anlegg for hobbyhold
+      operationId: post-innsending-oppdater-hobby-anlegg
       responses:
         '200':
           description: OK
