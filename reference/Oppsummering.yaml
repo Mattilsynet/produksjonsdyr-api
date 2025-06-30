@@ -264,7 +264,47 @@ paths:
           in: header
           name: Authorization
       description: 'Avslutter eksisterende anlegg. Anlegget kan være overført til noen andre'
-
+  /innsending/avsluttanlegghobby/{anleggsnummer}:
+    parameters:
+      - schema:
+          type: string
+        name: anleggsnummer
+        in: path
+        required: true
+        description: anleggsnummer som skal avsluttes
+    post:
+      summary: Avslutt eksisterende anlegg for hobbyhold
+      operationId: post-innsending-avslutthobbyanlegg
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  anleggsnummer:
+                    type: integer
+                    format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                avsluttetDyrehold:
+                  $ref: ../models/Produksjonsplass/AvsluttDyreholdRequest.yaml
+                driftsansvar:
+                  $ref: ../models/Ansvar/DriftsansvarRequest.yaml
+              required:
+                - avsluttetDyrehold
+                - driftsansvar
+      parameters:
+        - schema:
+            type: string
+          in: header
+          name: Authorization
+      description: 'Avslutter eksisterende anlegg. Anlegget kan være overført til noen andre for hoobbyhold'
   /innsending/oppdaterfasilitet:
     post:
       summary: Oppdater fasilitet på eksisterende anlegg
