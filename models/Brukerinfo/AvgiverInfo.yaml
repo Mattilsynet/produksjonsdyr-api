@@ -1,0 +1,29 @@
+title: AvgiverInfo
+type: object
+description: Informasjon om avgiver som den innloggede brukeren representerer.
+properties:
+  navn:
+    type: string
+    description: Navn på avgiveren.
+  adresse:
+    type: string
+    description: Adresse til avgiveren.
+    nullable: true
+  postnummer:
+    type: string
+    description: Postnummer til avgiveren.
+    nullable: true
+  poststed:
+    type: string
+    description: Poststed til avgiveren.
+    nullable: true
+  epost:
+    type: string
+    description: E-postadresse til avgiveren.
+    nullable: true
+  navnInneholderPersonNavn:
+    type: boolean
+    description: Indikerer om navnet inneholder personnavn.
+required:
+  - navn
+  - navnInneholderPersonNavn

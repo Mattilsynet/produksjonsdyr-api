@@ -1,0 +1,29 @@
+title: InnloggetBruker
+type: object
+description: Representasjon av en innlogget bruker med tilhørende informasjon.
+properties:
+  pid:
+    type: string
+    description: Personidentifikator.
+  kryptertPid:
+    type: string
+    description: Kryptert personidentifikator.
+  navn:
+    type: string
+    description: Navn på den innloggede brukeren.
+  authorization:
+    type: string
+    description: Autorisasjonsnøkkel for brukeren.
+  client:
+    type: string
+    description: Identifikator for klienten.
+    example: MT_MINE-DYREHOLD
+  valgAvgiverInfo:
+    $ref: ./AvgiverInfo.yaml
+required:
+  - pid
+  - kryptertPid
+  - navn
+  - authorization
+  - valgAvgiverInfo
+
