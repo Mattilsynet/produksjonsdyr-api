@@ -13,7 +13,7 @@ properties:
       - OPPAL-FORELDREDYR
       - OPPAL
       - SLAKTEFJORFE
-      - HOBBY_FJORFE
+#      - HOBBY_FJORFE
   aktivitetstypeStorfe:
     type: string
     enum:
