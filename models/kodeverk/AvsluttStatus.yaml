@@ -1,0 +1,14 @@
+title: AvsluttStatus
+type: object
+properties:
+  avsluttStatus:
+    type: string
+    enum:
+      - TVANGSAVVIKLING
+      - DOEDSFALL
+      - ANNET
+  kommentar:
+    type: string
+required:
+    - avsluttStatus
+description: 'Beskriver årsaken til at dyreholdet avsluttes. Dette er et kodeverk som brukes for å kategorisere årsaken til avslutning av dyreholdet.'

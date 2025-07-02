@@ -1,0 +1,29 @@
+title: AvsluttDyreholdInspektoerRequest
+type: object
+description: Requestobjekt for å avslutte et dyrehold av inspektør
+properties:
+  anleggsnummer:
+    type: string
+  orgnummerUnderenhet:
+    type: string
+  orgnummerHovedenhet:
+    type: string
+  foedselsnummer:
+    type: string
+  anleggstype:
+    $ref: ../kodeverk/Kategori.yaml
+  aktivitetstype:
+    $ref: ../kodeverk/Aktivitetstype.yaml
+  verdikjede:
+    $ref: ../kodeverk/Verdikjede.yaml
+  art:
+    $ref: ../kodeverk/Art.yaml
+  avsluttetStatus:
+    $ref: ../kodeverk/AvsluttStatus.yaml
+  avsluttetAv:
+    type: string
+required:
+  - anleggsnummer
+  - anleggstype
+  - avsluttetStatus
+  - avsluttetAv
