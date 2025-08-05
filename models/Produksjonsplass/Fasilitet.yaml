@@ -29,14 +29,14 @@ properties:
     type: array
     items:
       type: string
-#  oppstallingHobby:
-#    $ref: ../kodeverk/OppstallingHobby.yaml
-#  tilgangPaaVannkilde:
-#    type: boolean
-#    description: Om hobby fjorfe har tilgang på vannkilde
-#  strPaaHus:
-#    type: integer
-#    description: Størrelse på huset til hobbyfjørfe
+  oppstallingHobby:
+    $ref: ../kodeverk/OppstallingHobby.yaml
+  tilgangPaaVannkilde:
+    type: boolean
+    description: Om hobby fjorfe har tilgang på vannkilde
+  strPaaHus:
+    type: integer
+    description: Størrelse på huset til hobbyfjørfe
 required:
   - kategori
   - aktivitetstype
