@@ -9,6 +9,11 @@ properties:
       - LOESDRIFT_UTEN_UTEAREAL
       - INNREDEDE_BUR
       - ANNET
+  oppstallingHobby:
+    enum:
+      - FRITT_UTEN_GJERDE
+      - INNGJERDET_UTEN_TAK
+      - INNGJERDET_MED_TAK
   annenOppstalling:
     type: string
   tilgangPaaUteareal:
