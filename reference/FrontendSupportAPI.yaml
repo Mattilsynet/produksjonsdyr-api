@@ -64,6 +64,7 @@ paths:
       summary: Henter alle komponenter til angitt eier
       tags:
         - Skjemakomponent
+      deprecated: true
       responses:
         '200':
           description: OK
@@ -92,7 +93,81 @@ paths:
       summary: Slett eier
       tags:
         - Skjemakomponent
+      deprecated: true
       operationId: delete-skjemakomponent-eier-eierid
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: string
+      description: Sletter alle skjema med tilhørende komponenter som er knyttet til eierid
+  '/skjemakomponent/eier':
+    post:
+      summary: Henter alle komponenter til angitt eier
+      tags:
+        - Skjemakomponent
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                eierid:
+                  type: string
+              required:
+                - eierid
+            examples:
+              Example 1:
+                value:
+                  eierid: org342434
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ../models/Skjemakomponent/SkjemaKomponent.yaml
+              examples:
+                Example 1:
+                  value:
+                    - id: 4234234
+                      eierid: org342434
+                      skjemaid: skj3243
+                      skjematype: fjørfehold
+                      komponent: produksjonsform
+                      komponentid: komp2342
+                      endretdato: 12.11.2023
+                      datajson: '[{"id": 1, "navn": "rugeegg", "verdikjede": "konsumegg", "art": "hons", "kunnskap": {"id": 1, "tekst": "kurs"}]'
+        '404':
+          description: Not Found
+      operationId: post-skjemakomponent-eier
+      description: 'Henter ut alle komponenter som er registrert på denne eieren uavhengig av typeskjema, skjemaid'
+
+    delete:
+      summary: Slett eier
+      tags:
+        - Skjemakomponent
+      operationId: delete-skjemakomponent-eier
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                eierid:
+                  type: string
+              required:
+                - eierid
+            examples:
+              Example 1:
+                value:
+                  eierid: org342434
       responses:
         '200':
           description: OK
@@ -117,6 +192,7 @@ paths:
       summary: Henter alle komponenter til angitt skjema
       tags:
         - Skjemakomponent
+      deprecated: true
       responses:
         '200':
           description: OK
@@ -134,6 +210,7 @@ paths:
       summary: Opprett eller oppdater skjema-metadata
       tags:
         - Skjemakomponent
+      deprecated: true
       operationId: put-skjemakomponent-eier-eierid-skjema-skjemaid
       responses:
         '200':
@@ -154,6 +231,7 @@ paths:
       summary: Slett ett skjema
       tags:
         - Skjemakomponent
+      deprecated: true
       operationId: delete-skjemakomponent-eier-eierid-skjema-skjemaid
       responses:
         '200':
@@ -163,6 +241,108 @@ paths:
               schema:
                 type: string
       description: Sletter alle komponenter på et skjema
+  '/skjemakomponent/skjema/{skjemaid}':
+    parameters:
+      - name: skjemaid
+        in: path
+        required: true
+        schema:
+          type: string
+
+    post:
+      summary: Henter alle komponenter til angitt skjema
+      tags:
+        - Skjemakomponent
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                eierid:
+                  type: string
+              required:
+                - eierid
+            examples:
+              Example 1:
+                value:
+                  eierid: org342434
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ../models/Skjemakomponent/SkjemaKomponent.yaml
+        '404':
+          description: Not Found
+      operationId: post-skjemakomponent-skjema-skjemaid
+      description: Henter ut alle komponenter som er registrert på angitt skjemaid og eierid
+
+    put:
+      summary: Opprett eller oppdater skjema-metadata
+      tags:
+        - Skjemakomponent
+      operationId: put-skjemakomponent-skjema-skjemaid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                eierid:
+                  type: string
+                skjematype:
+                  type: string
+              required:
+                - eierid
+                - skjematype
+            examples:
+              Example 1:
+                value:
+                  eierid: org342434
+                  skjematype: fjørfehold
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../models/Skjemakomponent/SkjemaKomponent.yaml
+      description: Oppretter eller oppdaterer et skjema ved å lagre en spesialkomponent angitt av skjematype
+
+    delete:
+      summary: Slett ett skjema
+      tags:
+        - Skjemakomponent
+      operationId: delete-skjemakomponent-skjema-skjemaid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                eierid:
+                  type: string
+              required:
+                - eierid
+            examples:
+              Example 1:
+                value:
+                  eierid: org342434
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: string
+      description: Sletter alle komponenter på et skjema for gitt eier
   '/skjemakomponent/eier/{eierid}/skjema/{skjemaid}/komponent/{komponentblokk}':
     parameters:
       - schema:
@@ -184,6 +364,7 @@ paths:
       summary: Henter alle komponenter til angitt komponentblokk
       tags:
         - Skjemakomponent
+      deprecated: true
       responses:
         '200':
           description: OK
@@ -212,6 +393,7 @@ paths:
       summary: Opprett eller oppdater en skjemakomponent
       tags:
         - Skjemakomponent
+      deprecated: true
       operationId: put-skjemakomponent-eier-eierid-skjema-skjemaid-komponent-komponentblokk
       responses:
         '200':
@@ -231,6 +413,7 @@ paths:
       summary: Slett komponent blokk
       tags:
         - Skjemakomponent
+      deprecated: true
       operationId: delete-skjemakomponent-eier-eierid-skjema-skjemaid-komponent-komponentblokk
       responses:
         '200':
@@ -240,6 +423,133 @@ paths:
               schema:
                 type: string
       description: Sletter en komponentblokk
+  '/skjemakomponent/skjema/{skjemaid}/komponent/{komponentblokk}':
+    parameters:
+      - name: skjemaid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: komponentblokk
+        in: path
+        required: true
+        schema:
+          type: string
+
+    post:
+      summary: Henter alle komponenter til angitt komponentblokk
+      tags:
+        - Skjemakomponent
+      operationId: post-skjemakomponent-skjema-skjemaid-komponent-komponentblokk
+      description: >
+        Henter ut komponentene som er registrert på angitt `skjemaid` og `komponentblokk` for en spesifikk `eierid`.  
+        `komponentblokk` er navnet på feltet i JSON-strukturen som brukes som tag/id.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                eierid:
+                  type: string
+              required:
+                - eierid
+            examples:
+              Example 1:
+                value:
+                  eierid: org342434
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ../models/Skjemakomponent/SkjemaKomponent.yaml
+              examples:
+                Example 1:
+                  value:
+                    - id: 4234234
+                      eierid: org342434
+                      skjemaid: skj3243
+                      skjematype: fjørfehold
+                      komponent: produksjonsform
+                      komponentid: komp2342
+                      endretdato: 12.11.2023
+                      datajson: '[{"id": 1, "navn": "rugeegg", "verdikjede": "konsumegg", "art": "hons", "kunnskap": {"id": 1, "tekst": "kurs"}]'
+        '404':
+          description: Not Found
+
+    put:
+      summary: Opprett eller oppdater en skjemakomponent
+      tags:
+        - Skjemakomponent
+      operationId: put-skjemakomponent-skjema-skjemaid-komponent-komponentblokk
+      description: >
+        Lager eller oppdaterer komponenten som tilhører `eierid`, `skjemaid`, og `komponentblokk`.  
+        `komponentblokk` angir hvilken del av JSON-strukturen som lagres.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                eierid:
+                  type: string
+                body:
+                  type: string
+              required:
+                - eierid
+                - body
+            examples:
+              Example 1:
+                value:
+                  eierid: org342434
+                  data:
+                    skjematype: fjørfehold
+                    komponent: produksjonsform
+                    komponentid: komp2342
+                    datajson: '[{"id":1,"navn":"rugeegg","art":"hons"}]'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../models/Skjemakomponent/SkjemaKomponent.yaml
+
+    delete:
+      summary: Slett komponentblokk
+      tags:
+        - Skjemakomponent
+      operationId: delete-skjemakomponent-skjema-skjemaid-komponent-komponentblokk
+      description: >
+        Sletter en komponentblokk for en gitt `eierid`, `skjemaid` og `komponentblokk`.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                eierid:
+                  type: string
+              required:
+                - eierid
+            examples:
+              Example 1:
+                value:
+                  eierid: org342434
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: string
   '/skjemakomponent/eier/{eierid}/skjema/{skjemaid}/komponent/{komponentblokk}/id/{id}':
     parameters:
       - schema:
@@ -266,6 +576,7 @@ paths:
       summary: Henter alle en komponent med id av type komponentblokk
       tags:
         - Skjemakomponent
+      deprecated: true
       responses:
         '200':
           description: OK
@@ -294,6 +605,7 @@ paths:
       summary: Opprett eller oppdater en skjemakomponent
       tags:
         - Skjemakomponent
+      deprecated: true
       operationId: put-skjemakomponent-eier-eierid-skjema-skjemaid-komponent-komponentblokk-id-id
       responses:
         '200':
@@ -313,6 +625,7 @@ paths:
       summary: Slett komponent blokk
       tags:
         - Skjemakomponent
+      deprecated: true
       operationId: delete-skjemakomponent-eier-eierid-skjema-skjemaid-komponent-komponentblokk-id-id
       responses:
         '200':
@@ -322,6 +635,138 @@ paths:
               schema:
                 type: string
       description: Sletter en komponent under en kompnentblokk
+  '/skjemakomponent/skjema/{skjemaid}/komponent/{komponentblokk}/id/{id}':
+    parameters:
+      - name: skjemaid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: komponentblokk
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+
+    post:
+      summary: Henter én komponent med angitt id innenfor en komponentblokk
+      tags:
+        - Skjemakomponent
+      operationId: post-skjemakomponent-skjema-skjemaid-komponent-komponentblokk-id-id
+      description: >
+        Henter en komponent registrert på gitt `skjemaid`, `komponentblokk` og `id` for en spesifikk `eierid`.  
+        `komponentblokk` representerer en kategori, og `id` er taggen i JSON-strukturen.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                eierid:
+                  type: string
+              required:
+                - eierid
+            examples:
+              Example 1:
+                value:
+                  eierid: org342434
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ../models/Skjemakomponent/SkjemaKomponent.yaml
+              examples:
+                Example 1:
+                  value:
+                    - id: 4234234
+                      eierid: org342434
+                      skjemaid: skj3243
+                      skjematype: fjørfehold
+                      komponent: produksjonsform
+                      komponentid: komp2342
+                      endretdato: 12.11.2023
+                      datajson: '[{"id":1,"navn":"rugeegg","art":"hons"}]'
+        '404':
+          description: Not Found
+
+    put:
+      summary: Opprett eller oppdater en skjemakomponent
+      tags:
+        - Skjemakomponent
+      operationId: put-skjemakomponent-skjema-skjemaid-komponent-komponentblokk-id-id
+      description: >
+        Lagrer eller oppdaterer en komponent under gitt `komponentblokk` med identifikator `id`, knyttet til `skjemaid` og `eierid`.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                eierid:
+                  type: string
+                body:
+                  type: string
+              required:
+                - eierid
+                - body
+            examples:
+              Example 1:
+                value:
+                  eierid: org342434
+                  data:
+                    komponent: produksjonsform
+                    komponentid: komp2342
+                    skjematype: fjørfehold
+                    datajson: '[{"id":1,"navn":"rugeegg"}]'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../models/Skjemakomponent/SkjemaKomponent.yaml
+
+    delete:
+      summary: Slett komponent under komponentblokk
+      tags:
+        - Skjemakomponent
+      operationId: delete-skjemakomponent-skjema-skjemaid-komponent-komponentblokk-id-id
+      description: >
+        Sletter én komponent under `komponentblokk` for en spesifikk `skjemaid`, `id` og `eierid`.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                eierid:
+                  type: string
+              required:
+                - eierid
+            examples:
+              Example 1:
+                value:
+                  eierid: org342434
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: string
+
   '/skjemakomponent/eier/{eier}/skjema':
     parameters:
       - schema:
@@ -333,6 +778,7 @@ paths:
       summary: Hent alle skjema-metadata for eier
       tags:
         - Skjemakomponent
+      deprecated: true
       responses:
         '200':
           description: OK
@@ -350,6 +796,47 @@ paths:
           in: query
           name: skjematype
           description: angi en skjematype
+  '/skjemakomponent/skjema':
+    post:
+      summary: Hent alle skjema-metadata for eier
+      tags:
+        - Skjemakomponent
+      operationId: post-skjemakomponent-skjema
+      description: >
+        Henter ut liste med alle skjema tilhørende en eier.  
+        Kan filtreres på `skjematype` via query-param.
+      parameters:
+        - name: skjematype
+          in: query
+          description: Angi en skjematype for filtrering
+          required: false
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                eier:
+                  type: string
+              required:
+                - eier
+            examples:
+              Example 1:
+                value:
+                  eier: org342434
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ../models/Skjemakomponent/SkjemaMetadata.yaml
+
   '/skjemakomponent/godkjenteier/eier/{eierid}/orgnummer/{orgnummer}/skjema':
     parameters:
       - schema:
@@ -366,6 +853,7 @@ paths:
       summary: Hent alle skjema-metadata for orgnummer hvor det finnes et eksisterende anlegg med status GODKJENT_EIER
       tags:
         - Skjemakomponent
+      deprecated: true
       responses:
         '200':
           description: OK
@@ -383,6 +871,49 @@ paths:
           in: query
           name: skjematype
           description: angi en skjematype
+  '/skjemakomponent/godkjenteier/skjema':
+    post:
+      summary: Hent alle skjema-metadata for orgnummer med status GODKJENT_EIER
+      tags:
+        - Skjemakomponent
+      operationId: post-skjemakomponent-godkjenteier-skjema
+      description: >
+        Henter alle skjema tilhørende `orgnummer` og `eierid` hvor det finnes et anlegg med status GODKJENT_EIER.
+        Kan filtreres på `skjematype`.
+      parameters:
+        - name: skjematype
+          in: query
+          schema:
+            type: string
+          description: Angi en skjematype
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                eierid:
+                  type: string
+                orgnummer:
+                  type: string
+              required:
+                - eierid
+                - orgnummer
+            examples:
+              Example 1:
+                value:
+                  eierid: org342434
+                  orgnummer: 123456789
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ../models/Skjemakomponent/SkjemaMetadata.yaml
   '/skjemakomponent/ikkegodkjenteier/eier/{eierid}/orgnummer/{orgnummer}/skjema':
     parameters:
       - schema:
@@ -399,6 +930,7 @@ paths:
       summary: Hent alle skjema-metadata for orgnummer hvor det finnes et eksisterende anlegg og status ikke er GODKJENT_EIER
       tags:
         - Skjemakomponent
+      deprecated: true
       responses:
         '200':
           description: OK
@@ -416,6 +948,50 @@ paths:
           in: query
           name: skjematype
           description: angi en skjematype
+  '/skjemakomponent/ikkegodkjenteier/skjema':
+    post:
+      summary: Hent alle skjema-metadata for orgnummer hvor status IKKE er GODKJENT_EIER
+      tags:
+        - Skjemakomponent
+      operationId: post-skjemakomponent-ikkegodkjenteier-skjema
+      description: >
+        Henter alle skjema tilhørende `orgnummer` og `eierid` hvor det finnes et anlegg og status ikke er GODKJENT_EIER.
+        Kan filtreres på `skjematype`.
+      parameters:
+        - name: skjematype
+          in: query
+          schema:
+            type: string
+          description: Angi en skjematype
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                eierid:
+                  type: string
+                orgnummer:
+                  type: string
+              required:
+                - eierid
+                - orgnummer
+            examples:
+              Example 1:
+                value:
+                  eierid: org342434
+                  orgnummer: 987654321
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ../models/Skjemakomponent/SkjemaMetadata.yaml
+
   '/skjemakomponent/eier/{eierid}/orgnummer/{orgnummer}/skjema':
     parameters:
       - schema:
@@ -432,6 +1008,7 @@ paths:
       summary: Hent alle skjema-metadata for orgnummer hvor det finnes et eksisterende anlegg
       tags:
         - Skjemakomponent
+      deprecated: true
       responses:
         '200':
           description: OK
@@ -449,6 +1026,54 @@ paths:
           in: query
           name: skjematype
           description: angi en skjematype
+  '/skjemakomponent/orgnummer/{orgnummer}/skjema':
+    parameters:
+      - name: orgnummer
+        in: path
+        required: true
+        schema:
+          type: string
+    post:
+      summary: Hent alle skjema-metadata for orgnummer hvor det finnes et eksisterende anlegg
+      tags:
+        - Skjemakomponent
+      operationId: post-skjemakomponent-eier-orgnummer-skjema
+      description: >
+        Henter ut liste med alle skjema gitt en organisasjon (orgnummer) og eierid i body,
+        evt. filtrert på skjematype.
+      parameters:
+        - name: skjematype
+          in: query
+          schema:
+            type: string
+          description: angi en skjematype
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                eierid:
+                  type: string
+              required:
+                - eierid
+            examples:
+              example-1:
+                value:
+                  eierid: org342434
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: ../models/Skjemakomponent/SkjemaMetadata.yaml
+
+
+
   '/skjemakomponent/eier/{eierid}/skjema/{skjemaid}/komponent/{komponentblokk}/data':
     parameters:
       - schema:
@@ -470,6 +1095,7 @@ paths:
       summary: Henter kun datajson fra en komponentblokk
       tags:
         - Skjemakomponent
+      deprecated: true
       responses:
         '200':
           description: OK
@@ -479,6 +1105,49 @@ paths:
                 type: string
       operationId: get-skjemakomponent-eier-eierid-skjema-skjemaid-komponent-komponentblokk-data
       description: Brukes dersom man har stål kontroll på metadata og bare vil ha innholdet i en gitt komponent
+  '/skjemakomponent/skjema/{skjemaid}/komponent/{komponentblokk}/data':
+    parameters:
+      - name: skjemaid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: komponentblokk
+        in: path
+        required: true
+        schema:
+          type: string
+    post:
+      summary: Henter kun datajson fra en komponentblokk
+      tags:
+        - Skjemakomponent
+      operationId: post-skjemakomponent-eierid-skjema-skjemaid-komponent-komponentblokk-data
+      description: >
+        Brukes dersom man har stål kontroll på metadata og bare vil ha innholdet i en gitt komponent.
+        Eierid sendes i body.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                eierid:
+                  type: string
+              required:
+                - eierid
+            examples:
+              example-1:
+                value:
+                  eierid: org342434
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: string
+
 components:
   schemas: {}
 tags:
