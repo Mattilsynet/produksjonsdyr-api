@@ -278,27 +278,22 @@ paths:
               schema:
                 type: string
                 example: '["anlegg1","anlegg2"]'
-  '/rapportering/orgnavn/{orgnavn}/eksakt/{eksakt}/avsluttet/{avsluttet}':
-    parameters:
-      - schema:
-          type: string
-        name: orgnavn
-        in: path
-        required: true
-      - schema:
-          type: boolean
-        name: eksakt
-        in: path
-        required: true
-      - schema:
-          type: boolean
-        name: avsluttet
-        in: path
-        required: true
-    get:
+  '/rapportering/orgnavn':
+    post:
       summary: Hent anlegg gitt organisasjonsnavn
-      operationId: get-anlegg-orgnavn
-      description: Henter ut anlegg gitt orgnavn eller deler av orgnavn
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                orgnavn:
+                  type: string
+                eksakt:
+                  type: boolean
+                avsluttet:
+                  type: boolean
       responses:
         '200':
           description: OK
@@ -307,6 +302,10 @@ paths:
               schema:
                 type: string
                 example: '["anlegg1","anlegg2"]'
+        '404':
+          description: Not Found
+      operationId: post-anlegg-orgnavn
+      description: Henter ut anlegg gitt orgnavn eller deler av orgnavn
   '/rapportering/anlegg/rektangel/{bunnvenstre}/{toppvenstre}/{bunnhoyre}/{topphoyre}/{srid}/avsluttet/{avsluttet}':
     parameters:
       - schema:
