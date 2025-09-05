@@ -591,5 +591,38 @@ paths:
                 - innloggetBrukerApi
       operationId: lagre-til-arkiv-virksomhetmappeId
       description: 'Dette er en vedlikeholdsoperasjon som gjør det mulig å sende inn lagre til arkiv manuelt.'
+  '/innsending/vedlikeholdendrehobbyanlegghusantall/{anleggsnummer}/{strPaaHus}/{antall}':
+    parameters:
+      - schema:
+          type: string
+        name: anleggsnummer
+        in: path
+        required: true
+        description: anleggsnummer
+      - schema:
+          type: integer
+        name: strPaaHus
+        in: path
+        required: true
+        description: str på hus som skal inn i anleggstrukturen
+      - schema:
+          type: integer
+        name: antall
+        in: path
+        required: true
+        description: antall andre arter som skal inn i anleggstrukturen
+    post:
+      summary: oppdatering på hobbyhold som mangler str på hus og har feil antall på andre arter i anleggsregister
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: string
+        '404':
+          description: Not Found
+      operationId: endrehobbyanlegghusantall-anleggsnummer-strhus-antall
+      description: 'Dette er en vedlikeholdsoperasjon som oppdaterer hobbyhold på gitt anlegg.'
 components:
   schemas: {}
