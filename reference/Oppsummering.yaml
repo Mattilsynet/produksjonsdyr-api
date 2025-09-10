@@ -539,6 +539,41 @@ paths:
           description: Not Found
       operationId: oppdaterOrgNavn-tilsynsobjektid-orgnavn
       description: 'Dette er en vedlikeholdsoperasjon som oppdaterer orgnavn gitt tilsynsobjid.'
+  '/innsending/vedlikeholdendrehobbyhusantall/{anleggsnummer}/{strpaahus}/{antallandrefugler}':
+    parameters:
+      - schema:
+          type: string
+        name: anleggsnummer
+        in: path
+        required: true
+        description: anleggsnummer i anleggsregisteret
+      - schema:
+          type: integer
+          format: int64
+        name: strpaahus
+        in: path
+        required: true
+        description: størrelse på hus for hobbyhold
+      - schema:
+           type: integer
+           format: int64
+        name: antallandrefugler
+        in: path
+        required: true
+        description: antall andre fugler i hobbyhold
+    post:
+      summary: oppdatering av størrelse på hus og antall andre fugler på hobbyhold som hører til angitt anlegg
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: string
+        '404':
+          description: Not Found
+      operationId: oppdaterHobbyHusAntall-anleggsnummer-hus-antall
+      description: 'Dette er en vedlikeholdsoperasjon som størrelse på hus og antall andre fugler på hobbyhold gitt anleggsnummer.'
   '/innsending/vedlikeholdlagretilarkiv/{virksomhetmappeId}/status/{status}':
     parameters:
       - schema:
