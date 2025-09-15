@@ -626,5 +626,26 @@ paths:
           description: Not Found
       operationId: endrehobbyanlegghusantall-anleggsnummer-strhus-antall
       description: 'Dette er en vedlikeholdsoperasjon som oppdaterer hobbyhold på gitt anlegg.'
+  '/innsending/vedlikeholdendrenaeringtilhobby/{anleggsnummer}':
+    parameters:
+      - schema:
+          type: string
+        name: anleggsnummer
+        in: path
+        required: true
+        description: anleggsnummer
+    post:
+      summary: oppdaterer feilregistrerte næring til hobby. Feilregistreringer ifh antall, oversettes til hobby
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: string
+        '404':
+          description: Not Found
+      operationId: endrenaeringtilhobby-anleggsnummer
+      description: 'Dette er en vedlikeholdsoperasjon som oppdaterer feilregistrerte næring til hobby på gitt anlegg.'
 components:
   schemas: {}
