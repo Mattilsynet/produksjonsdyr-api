@@ -28,9 +28,7 @@ jobs:
           cache: gradle
 
       - name: Setup Gradle
-        uses: gradle/gradle-build-action@v3
-        with:
-          cache-read-only: true
+        uses: gradle/actions/setup-gradle@v5
 
       - name: Setup
         env:
