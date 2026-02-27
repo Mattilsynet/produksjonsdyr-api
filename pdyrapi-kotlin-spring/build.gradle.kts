@@ -9,6 +9,10 @@ plugins {
     id("org.sonarqube") version "7.2.2.6593"
 }
 
+val springWebVersion = "6.0.6"
+val servletApiVersion = "2.5"
+val openApiGeneratorVersion = "6.2.1"
+
 group = "no.mattilsynet.produksjonsdyr"
 version = "unspecified"
 
@@ -20,14 +24,14 @@ repositories {
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter")
     implementation("org.springframework.boot:spring-boot-starter-web")
-    implementation("org.springframework:spring-web:6.0.6")
-    implementation("javax.servlet:servlet-api:2.5")
+    implementation("org.springframework:spring-web:$springWebVersion")
+    implementation("javax.servlet:servlet-api:$servletApiVersion")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
-    implementation("org.openapitools:openapi-generator-gradle-plugin:6.2.1") {
+    implementation("org.openapitools:openapi-generator-gradle-plugin:$openApiGeneratorVersion") {
         exclude(group = "org.slf4j", module = "slf4j-simple")
         exclude(group = "ch.qos.logback", module = "logback-classic")
     }
-    implementation("javax.servlet:servlet-api:2.5")
+
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
