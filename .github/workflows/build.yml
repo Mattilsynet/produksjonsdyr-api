@@ -18,8 +18,9 @@ jobs:
         name: Setup Java
         with:
           distribution: 'temurin'
-          java-version: '17'
-          cache: gradle
+          java-version: 21
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v5
       - name: openApiGenerate
         run: ./gradlew openApiGenerate-task
       - name: Build
