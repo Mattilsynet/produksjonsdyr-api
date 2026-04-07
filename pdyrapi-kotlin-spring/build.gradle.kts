@@ -76,7 +76,7 @@ openapiSpecs.forEach {
                 "interfaceOnly" to "true",
                 "serializableModel" to "true",
                 "useBeanValidation" to "true",
-                "performBeanValuation" to "true",
+                "performBeanValidation" to "true",
                 "enumPropertyNaming" to "UPPERCASE",
                 "jakarta" to "true,",
             ),
