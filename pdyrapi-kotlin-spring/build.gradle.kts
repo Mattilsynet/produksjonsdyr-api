@@ -47,7 +47,7 @@ val openapiSpecs =
 openapiSpecs.forEach {
     tasks.register("openApiGenerate-${it.key}", GenerateTask::class) {
         group = "openapi"
-        description = "Generates OpenAPI spec for ${it.key}"
+        description = "Generates Kotlin/Spring source from the OpenAPI spec for ${it.key}"
         ignoreFileOverride.set("$rootDir/.openapi-generator-ignore")
         generatorName.set("kotlin-spring")
         additionalProperties.set(
@@ -81,7 +81,7 @@ openapiSpecs.forEach {
 
 tasks.register("openApiGenerate-task") {
     group = "openapi"
-    description = "Generates OpenAPI spec for all tasks"
+    description = "Generates Kotlin/Spring sources for the OpenAPI specs"
     dependsOn(openapiSpecs.keys.map { "openApiGenerate-$it" })
 }
 
