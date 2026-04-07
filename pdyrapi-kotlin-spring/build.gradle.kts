@@ -78,7 +78,7 @@ openapiSpecs.forEach {
                 "useBeanValidation" to "true",
                 "performBeanValidation" to "true",
                 "enumPropertyNaming" to "UPPERCASE",
-                "jakarta" to "true,",
+                "jakarta" to "true",
             ),
         )
         sourceSets.getByName(SourceSet.MAIN_SOURCE_SET_NAME).kotlin.srcDir("$buildDir/generated/src/main/kotlin")
