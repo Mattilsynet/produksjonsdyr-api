@@ -18,12 +18,6 @@ repositories {
     mavenCentral()
 }
 
-val openApiOutFolder =
-    layout.buildDirectory
-        .dir("generated/openapi")
-        .get()
-        .asFile
-
 dependencies {
     implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:3.0.2")
     // implementation("org.springframework.boot:spring-boot-starter")
