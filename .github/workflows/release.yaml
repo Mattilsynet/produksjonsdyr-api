@@ -16,21 +16,19 @@ jobs:
     name: Publish
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
-        name: Checkout
+      - name: Checkout code
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
         with:
           fetch-depth: 0
 
-      - uses: actions/setup-java@v5
+      - name: Setup Java
+        uses: actions/setup-java@be666c2fcd27ec809703dec50e508c2fdc7f6654 # v5
         with:
           distribution: 'temurin'
           java-version: '17'
-          cache: gradle
-
       - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v6
-
-      - name: Setup
+        uses: gradle/actions/setup-gradle@50e97c2cd7a37755bbfafc9c5b7cafaece252f6e # v6.1.0
+      - name: Setup git
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -38,14 +36,14 @@ jobs:
           git remote set-url origin https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git
           git config --global user.email "landdyrdata@mattilsynet.no"
           git config --global user.name "$GITHUB_ACTOR"
-
       - name: Bump version and push tag
         id: create_version
-        uses: mathieudutour/github-tag-action@v6.2
+        uses: mathieudutour/github-tag-action@a22cf08638b34d5badda920f9daf6e72c477b07b # v6.2
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-      - name: openApiGenerate
-        run: ./gradlew openApiGenerate-task
+      - name: Build
+        run: |
+          sh ./gradlew build
       - name: Publish library
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -53,20 +51,18 @@ jobs:
         run: |
           echo Release version ${{ steps.create_version.outputs.new_version }} of produksjonsdyr-api
           ./gradlew publish -PreleaseVersion=${{ steps.create_version.outputs.new_version }}
-
       - name: Create a GitHub release from master
         if: "${{ github.event.inputs.release_tag == '' }}"
-        uses: ncipollo/release-action@v1
+        uses: ncipollo/release-action@339a81892b84b4eeb0f6e744e4574d79d0d9b8dd # v1.21.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag: ${{ steps.create_version.outputs.new_tag }}
           name: Release ${{ steps.create_version.outputs.new_tag }}
           body: ${{ steps.create_version.outputs.changelog }}
-
       - name: Create a GitHub release from branch
         if: "${{ github.event.inputs.release_tag != '' }}"
-        uses: ncipollo/release-action@v1
+        uses: ncipollo/release-action@339a81892b84b4eeb0f6e744e4574d79d0d9b8dd # v1.21.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
