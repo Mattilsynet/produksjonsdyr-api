@@ -6,7 +6,6 @@ plugins {
     kotlin("jvm") version "2.3.20"
     kotlin("plugin.spring") version "2.3.20"
     id("org.openapi.generator") version "7.21.0"
-    `java-library`
     id("java-library")
     id("maven-publish")
 }
