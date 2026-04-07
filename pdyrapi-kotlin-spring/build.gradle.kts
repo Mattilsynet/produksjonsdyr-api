@@ -18,22 +18,18 @@ repositories {
     mavenCentral()
 }
 
+val openApiWebMvcApiVersion = "3.0.2"
+val jakartaServletApiVersion = "6.1.0"
+val jakartaValidationApiVersion = "3.1.1"
+
 dependencies {
-    implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:3.0.2")
-    // implementation("org.springframework.boot:spring-boot-starter")
-    // implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("org.springdoc:springdoc-openapi-starter-webmvc-api:$openApiWebMvcApiVersion")
     implementation("org.springframework:spring-web")
-    // implementation("javax.servlet:servlet-api:2.5")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310")
-    implementation("jakarta.servlet:jakarta.servlet-api:6.0.0")
-    implementation("jakarta.validation:jakarta.validation-api:3.0.2")
-    // implementation("org.openapitools:openapi-generator-gradle-plugin:6.2.1") {
-    //    exclude(group = "org.slf4j", module = "slf4j-simple")
-    //    exclude(group = "ch.qos.logback", module = "logback-classic")
-    // }
-    // implementation("javax.servlet:servlet-api:2.5")
+    implementation("jakarta.servlet:jakarta.servlet-api:$jakartaServletApiVersion")
+    implementation("jakarta.validation:jakarta.validation-api:$jakartaValidationApiVersion")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
