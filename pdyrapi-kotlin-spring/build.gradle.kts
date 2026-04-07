@@ -19,8 +19,6 @@ repositories {
 }
 
 val openApiWebMvcApiVersion = "3.0.2"
-val jakartaServletApiVersion = "6.1.0"
-val jakartaValidationApiVersion = "3.1.1"
 
 dependencies {
     implementation("org.springdoc:springdoc-openapi-starter-webmvc-api:$openApiWebMvcApiVersion")
@@ -28,8 +26,8 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310")
-    implementation("jakarta.servlet:jakarta.servlet-api:$jakartaServletApiVersion")
-    implementation("jakarta.validation:jakarta.validation-api:$jakartaValidationApiVersion")
+    implementation("jakarta.servlet:jakarta.servlet-api")
+    implementation("jakarta.validation:jakarta.validation-api")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
